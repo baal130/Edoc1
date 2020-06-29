@@ -118,6 +118,7 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 
 
@@ -216,7 +217,7 @@ STATIC_URL = '/static/'
 
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "Static_in_venv","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nalaze kopiraju se u static root koji se koristi
     os.path.join(BASE_DIR, "Static_in_pro","our_static"),
     # '/var/www/static/',
