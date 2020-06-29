@@ -1,0 +1,513 @@
+{% extends "base_package_discount.html" %}
+{% load crispy_forms_tags %}
+{%  load i18n %}
+{% load l10n %}
+{% load staticfiles %}
+{% localize off %}
+
+<style type="text/css">
+
+{% block style %}
+
+.dropdown-menu-edit{
+  min-width: 200px;
+}
+.post-thumb-max{
+  max-height: 100px;
+  min-height: 22vh;
+}
+.tools{
+    border-top: 1px solid #d8d8d8;
+    padding: 5px;
+}
+.close-icon-loc{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-message{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-tel{
+  z-index: 0; position: absolute; right: 9px; top: 3px;
+}
+.tel-box{
+  padding: 10px 10px 10px 10px;
+
+}
+.display-none{
+  display: none;
+  
+}
+.display-grid{
+ display: grid; 
+ grid-area: 1 / 1;
+}
+
+.navbar-doctor{
+position: absolute;
+margin-right: 20px!important;
+margin-top: 5px;
+z-index: -3;
+}
+@media (max-width: 992px){
+.navbar-doctor{
+position: relative;
+margin-right: 20px;
+margin-top: 5px;
+
+}  
+}
+.col-margin-5px{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/*.sticky {
+  position: fixed;
+  top: 200px;
+  right:0;
+  /*width: 100%;*/
+}*/
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.gmap {
+        height: 400px;
+        width: 100%;
+  }
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /*top: 150px;*/
+  }
+
+.discount_thumbnail_img{
+position: absolute;
+    top: 1%;
+    left: 3%;
+} 
+.petfriendly_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 22%;
+}
+.disability_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 37%;
+}
+.homevisit_thumbnail_img{
+  position: absolute;
+    top: 1%;
+    left: 56%;
+}
+.wrap-package-discount{
+   padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    min-height: 140px;
+    height: auto !important;
+    height: 140px;
+    /* padding-left: 230px; */
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+.wrap-package-discount:hover {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}  
+.btn-more-results{
+  background-color: #56cbfc!important;
+
+}
+.btn-more-results:hover{
+  background-color: #03afdc!important;
+  
+}
+
+
+.endless_container a {
+    color: white!important;
+    margin-top: 0px!important;
+    margin-left: 0px!important;
+    
+}
+.price{
+      /* float: left; */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    font-size: 11px;
+     line-height: 11px; 
+     font-weight: normal; 
+    text-transform: uppercase;
+    text-align: center;
+    color: #888;
+    
+}
+.strong{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444;
+    
+
+}
+.col-save{
+  background: #ed1c24;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+.strong-save{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    
+
+} 
+@media (max-width: 767px){
+.discount-headline  {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+}
+
+.discount-headline {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #636363;
+    float: right;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}    
+
+{%  endblock style %}
+</style>
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+{% if title %}<h3 class="text-left ">{{title}} </h3>{% endif %}
+
+  
+
+  
+  <a href='/doctor/?q={{ request.GET.q }}&state={{ request.GET.state }}{% if request.GET.city %}&city={{ request.GET.city }}{% endif %}&speciality={{ request.GET.speciality }}{% if request.GET.service %}&service={{ request.GET.service }}{% endif %}' style="display: none;" class="text-thm2" id='search-here'>{% trans "Search here?" %}</a></small></h3>
+  
+</div>
+</div>
+
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<div class="row  ">
+  
+   
+  <div id="content" class="col-xs-12 col-md-7 col-md-offset-2 content "> 
+                   
+   
+    
+
+    <!-- separator beetwen todos doctors and others -->
+     
+            
+              
+             {% include 'discount_package_list_pag.html' %}
+          
+     
+     <!--end  separator beetwen todos doctors and others -->
+
+    
+
+    
+
+
+
+  </div><!-- end column doctor -->
+  <div style =" " id="mapsearch" class=" sticky col-sm-12 col-md-3 locationsearchmobile height-desktop-search  ">
+      
+                    
+                    
+    <div style ="display: block; " id="locationcollapse" class="wrap-article ">
+      <div style ="" id='mapcontent' class="thumbnail post-background wrap-article"></div>               
+                    
+      </div> 
+
+  </div> <!-- end last col-->
+ 
+</div>   
+  
+
+  
+
+
+
+{% endblock content %}
+
+{%  block script %}
+
+<script>
+ 
+ $(document).ready(function(){
+            {% block jquery%}  
+                  
+                        
+                        
+                   
+                
+          {% endblock jquery%} 
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+            $(".search-location").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            /*alert($(this).parent().parent().prop("className"));*/
+            $(this).parent().parent().next(".thumbnail").fadeToggle();
+             
+            /*thumbnail je parent zadnji*/
+            /*alert($(this).parent().parent().parent().next(".thumbnail").prop("className"));*/
+           /* var name=$(this).parents('.blackqoute-margin').parent().next(".comment-reply");
+            alert($(this).parent().parent().prop("className"));*/
+            })
+            $(".close-icon-loc").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").fadeToggle();
+            alert($(this).parent().prop("className"));
+            
+            })   
+              
+            $(".fa-envelope").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            
+            $(this).parent().parent().next(".thumbnail").next(".thumbnail").fadeToggle();
+            
+            
+            })
+             $(".close-icon-message").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").prev(".thumbnail").fadeToggle();
+            
+            })
+
+            $(".fa-phone-alt").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            $(this).parent().parent().next(".thumbnail").next(".thumbnail").next(".thumbnail").fadeToggle();
+            
+            
+            })
+            $(".close-icon-tel").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").prev(".thumbnail").prev(".thumbnail").fadeToggle();
+            
+            })
+
+             $(".searchlocationmobilebutton").click(function(event){
+             
+            event.preventDefault();
+
+            $(".content").fadeToggle();
+            $(".locationsearchmobile").fadeToggle();
+            
+            })
+    })
+   </script>
+<script>
+ var content=document.getElementById("content");
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+var mapsearchoffsettop=mapsearch.offsetTop;
+var left= mapsearch.offsetLeft;
+var header = document.getElementById("header");
+var offsetheader = header.offsetTop;
+var headerhight=header.offsetHeight;
+
+var sticky = offsetheader+headerhight;
+var contentleftoff=content.offsetLeft;
+ var contentleftwidth=content.offsetWidth;
+
+
+  
+
+/*manage sticky effect on search location and on resize function resolves issues vith collapse on small screens */
+window.onscroll = function() 
+{
+  if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    locationSearchApplytop();
+  }  
+  
+};
+  
+function locationSearchApplytop() {
+ 
+
+  if (window.pageYOffset > sticky) {
+    var mapsearch = document.getElementById("mapsearch");
+    var locationcollapse= document.getElementById("locationcollapse");
+     
+    mapsearch.style.top=headerhight +"px"
+    
+  } else {
+    var mapsearch = document.getElementById("mapsearch");
+      
+  }
+}
+
+
+ 
+/*With resize remove visibily of last column and show when button for location is pressed
+return everything to normal state on normal view
+*/
+window.onresize=function() {checkResize()};
+function checkResize() {
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   /*if less then 992 for mobile */
+    if (content.style.display!="none")
+      /*ako se ponovno resiza ne stavljaj none ako je vec prikazan*/
+      {
+      mapsearch.style.display="none"
+      }
+      
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      locationcollapse.style.height="100%"
+      mapsearch.style.left = "unset" ;
+      mapsearch.style.top="auto";
+      
+  }
+else
+  { mapsearch.classList.remove("height-mob-search");
+    mapsearch.classList.add("height-desktop-search");
+    mapsearch.style.display="grid"
+    locationcollapse.style.height="100%"
+      /* for left of search location*/
+      var contentleftoff=content.offsetLeft;
+      var contentleftwidth=content.offsetWidth;
+      /*mapsearch.style.left =contentleftoff+contentleftwidth+ 10+"px"
+      console.log("drugo"+contentleftoff+contentleftwidth)*/
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  }  
+}
+/*kad se ucita stranica za mob*/
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   
+      mapsearch.style.display="none"
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      
+      
+  }
+else
+    {
+    mapsearch.classList.add("height-desktop-search");  
+    mapsearch.classList.remove("height-mob-search");
+    mapsearch.style.display="grid"
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  } 
+
+</script>
+
+{% localize off %}
+ 
+
+
+
+
+
+{% endlocalize %}
+
+{% endblock %}
+{% endlocalize %}

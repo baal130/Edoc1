@@ -1,0 +1,40 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="team" class="team bgc-snowshade">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">{% trans "Our" %} <span class="text-thm2">{% trans "Team" %}</span></h2>
+						<p>{% trans "Experts in our clinic can help you solve your problems" %}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="two-grid-slider">
+						{% for entry in team_list %}
+                   						 {{entry.description|title}}, 
+                   
+      										
+						<div class="item">
+							<div class="team-grid text-left">
+								<div class="thumb">
+									<img class="img-responsive img-whp" src="{% if entry.imagehometeam  %}{{entry.imagehometeam.url}}{% endif %}" alt="1.jpg">
+								</div>
+								<div class="details">
+									<h4 class="text-thm2">Dr. {{entry.teamname|title}} <small></small></h4>
+									<p>{{entry.teamtext|title}}</p>
+									<a class="btn btn-md ulockd-btn-thm2" href="{{entry.url}}">{% trans "More Info" %} <i class="fa fa-user"></i> </a>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>

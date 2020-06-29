@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+<style>
+{% block style %}
+
+.text-align-center{                       
+	text-align:center;
+}
+.text-align-justify{
+	text-align: justify;
+}
+
+@media screen and (min-width: 300px){
+	.test{
+		font-family: 'MeetMeInBrooklyn-Regular';
+	    font-size: 40px;
+	    line-height: 50px;
+	    color: #562b10;
+	    margin-bottom: 10px;
+	    text-align: center;
+
+	}
+
+#wrap:before {
+  content: "\f0e0 "; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 360px;
+  color: rgba(162, 158, 135, 0.5);
+  top: 43%;
+  left:0%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+	
+}
+
+
+
+@media screen and (min-width: 400px){
+	.test{
+		font-family: 'MeetMeInBrooklyn-Regular';
+	    font-size: 40px;
+	    line-height: 50px;
+	    color: #562b10;
+	    margin-bottom: 10px;
+	    text-align: center;
+
+	}
+
+#wrap:before {
+  content: "\f0e0 "; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 400px;
+  color: rgba(162, 158, 135, 0.5);
+  top: 35%;
+  left:0%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+	
+}
+
+
+@media screen and (min-width: 1000px){
+.test{
+	font-family: 'MeetMeInBrooklyn-Regular';
+    font-size: 86px;
+    line-height: 100px;
+    color: #562b10;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+
+#wrap:before {
+  content: "\f0e0 "; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 1100px;
+  color: rgba(162, 158, 135, 0.5);
+  top: -250%;
+  left:17%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+}
+@media screen and (min-width: 764px){
+	.test{
+		font-family: 'MeetMeInBrooklyn-Regular';
+	    font-size: 70px;
+	    line-height: 90px;
+	    color: #562b10;
+	    margin-bottom: 10px;
+	    text-align: center;
+
+	}
+
+
+	#wrap:before {
+	  content: "\f0e0 "; 
+	  font-family: FontAwesome;
+	  font-style: normal;
+	  font-weight: normal;
+	  text-decoration: inherit;
+	  position: absolute;
+	  font-size: 760px;
+	  color: rgba(162, 158, 135, 0.5);
+	  top: -200%;
+	  
+	  margin: 0 auto;
+	  z-index: -1;
+	}
+}
+
+#wrap{
+	position: relative;
+}
+body{
+	background-color: #525156!important;
+}
+
+.text-ul {
+    color: #4a633a;
+}
+{% endblock %}
+</style>
+
+
+{% block content %}
+
+
+<!-- <i class="fa fa-envelope fa-5x" style="position:relative;color:grey;">
+  <span style="
+        background-color: navy;
+        border-radius: 50%;
+        font-size: .25em;
+        display:block;
+        position:absolute;
+        text-align: center;
+        line-height: 2em;
+        top: -.5em;
+        right: -.5em;
+        width: 2em;
+        height: 2em;
+        border:solid 4px #fff;
+        box-shadow:0px 0px 1px #000;
+        color: #fff;
+    ">17</span>
+</i> -->
+<div id="wrap">
+
+{% if title %}
+
+<div class='row '>
+<div class='col-sm-12 '>
+<h1 class="test">{{title}}<h1>
+</div>
+</div>
+{% endif %}
+<!--  -->
+{% if messages %}
+	<ul  style="list-style: none;" class="messages">
+	    {% for message in messages %}
+	   <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><span class="glyphicon glyphicon-ok text-success"></span>{{ message }}</li>
+	    {% endfor %}
+	</ul>
+	{% endif %}
+
+
+	<div classs ='row'>
+		<div class='col-sm-2 col-sm-offset-3 test' style="font-size: 50px;
+	    line-height: 80px; ">
+		
+			IF:
+		</div>
+		<div class='col-sm-4 '>
+		
+			<ul  style="list-style: none;" class="">
+			   
+			   <li><span class="glyphicon glyphicon-cloud text-ul"></span><span  class="test" style="font-size: 18px;
+		    line-height: 14px;">You have idea how to improve our site </span></li>
+			   <li><span class="glyphicon glyphicon-cloud text-ul"></span><span  class="test" style="font-size: 18px;
+		    line-height: 14px;">There is a wish You can get involved in our cause</span></li>
+		    <li><span class="glyphicon glyphicon-cloud text-ul"></span><span  class="test" style="font-size: 18px;
+		    line-height: 14px;">Or just to say hi</span></li>
+			</ul>
+			 
+		</div>
+	</div>
+
+	<div  classs ='row'>
+		<div class='col-sm-2 col-sm-offset-3 test' style="font-size: 50px;
+	    line-height: 80px; ">
+		
+			THEN:
+		</div>
+		<div class='col-sm-4 '>
+		
+			<ul  style="list-style: none;" class="">
+			  <br>
+			   <li><span class="glyphicon glyphicon-pencil text-ul"></span><span  class="test" style="font-size: 18px;
+		    line-height: 14px;">Please fill form below </span></li>
+			  
+		</div>
+	</div>
+
+	<div classs ='row'>
+	<div class='col-sm-6 col-sm-offset-3'>
+		
+
+
+
+	<form method='POST' action=''>{% csrf_token %}
+		<!-- methoda je po defaultu get -->
+	<!-- {{ form.as_p}} -->
+	{{form|crispy}}
+	<!-- form as parameter  -->
+	<input class="btn btn-primary" type ='submit' value =" Send"/> <!-- # referira se na methodu od forma->
+	<!--<input type='text'>
+
+	<input>-->
+
+
+
+	</form>
+	</div>
+	</div>
+	</div>
+{% endblock %}
+
+{%  block script %}
+<script>
+ $(document).ready(function(){
+      
+
+        $("#id_full_name").attr("placeholder", "Your name");
+        $("#id_email").attr("placeholder", '{{form.email.label}}');
+        $("#id_message").attr("placeholder", 'Write Your message here');
+    })
+
+    </script>
+{% endblock %}

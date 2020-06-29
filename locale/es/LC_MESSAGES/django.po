@@ -1,0 +1,479 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-10 18:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\bootcamp\core\templates\core\cover.html:22
+#: .\bootcamp\core\templates\core\cover.html:40
+#: .\templates\registration\password_reset_complete.html:8
+msgid "Log in"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\cover.html:26
+#: .\bootcamp\core\templates\core\network.html:29
+msgid "Username"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\cover.html:33
+#: .\bootcamp\core\templates\core\partial_settings_menu.html:5
+msgid "Password"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\cover.html:41
+msgid "Sign up for Bootcamp"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\network.html:5
+msgid "Network"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\network.html:27
+msgid "Job Title"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\network.html:31
+msgid "Location"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\network.html:34
+msgid "Url"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\partial_settings_menu.html:3
+msgid "Profile"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\partial_settings_menu.html:4
+msgid "Picture"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\password.html:4
+#: .\bootcamp\core\templates\core\password.html:8
+#: .\bootcamp\core\templates\core\picture.html:5
+#: .\bootcamp\core\templates\core\picture.html:15
+#: .\bootcamp\core\templates\core\settings.html:10
+msgid "Account Settings"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\password.html:23
+msgid "Change Password"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\password.html:43
+#: .\bootcamp\core\templates\core\settings.html:57
+msgid "Save"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:30
+msgid "Change Picture"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:35
+msgid "Upload new picture"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:46
+msgid "Crop Picture"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:50
+msgid "Crop the profile picture and then click on the"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:50
+msgid "Save Picture"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:50
+msgid "button"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:65
+msgid "Close"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\picture.html:66
+msgid "Save changes"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:26
+msgid "Feeds"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:30
+msgid "Articles"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:34
+msgid "Comments"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:38
+msgid "Questions"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:42
+msgid "Answers"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:46
+msgid "Global Interactions"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\profile.html:71
+msgid "Last Feeds"
+msgstr ""
+
+#: .\bootcamp\core\templates\core\settings.html:25
+msgid "Edit Profile"
+msgstr ""
+
+#: .\bootcamp\messenger\models.py:26
+msgid "Message"
+msgstr ""
+
+#: .\bootcamp\messenger\models.py:27
+msgid "Messages"
+msgstr ""
+
+#: .\newsletter\forms.py:8
+msgid "flaticon"
+msgstr ""
+
+#: .\newsletter\forms.py:8
+msgid "flaticon-group"
+msgstr ""
+
+#: .\newsletter\forms.py:113
+msgid "Write about yourself"
+msgstr ""
+
+#: .\newsletter\forms.py:114
+msgid "Choose Picture for first top image, size: 1920x880px"
+msgstr ""
+
+#: .\newsletter\forms.py:115 .\newsletter\forms.py:118
+#: .\newsletter\forms.py:121
+msgid "First Title"
+msgstr ""
+
+#: .\newsletter\forms.py:116 .\newsletter\forms.py:119
+#: .\newsletter\forms.py:122
+msgid "Second Title"
+msgstr ""
+
+#: .\newsletter\forms.py:117
+msgid "Choose Picture for second top image, size: 1920x880px"
+msgstr ""
+
+#: .\newsletter\forms.py:120
+msgid "Choose Picture for third top image, size: 1920x880px"
+msgstr ""
+
+#: .\newsletter\forms.py:126
+msgid "Enter text about you"
+msgstr ""
+
+#: .\newsletter\forms.py:143
+msgid "Choose Picture for Gallery"
+msgstr ""
+
+#: .\newsletter\forms.py:161
+msgid "Service description"
+msgstr ""
+
+#: .\newsletter\forms.py:162
+msgid "Service"
+msgstr ""
+
+#: .\newsletter\forms.py:165
+msgid "Enter Service name"
+msgstr ""
+
+#: .\newsletter\forms.py:166
+msgid "Enter text about service"
+msgstr ""
+
+#: .\newsletter\forms.py:167
+msgid "Enter your web page url to this service"
+msgstr ""
+
+#: .\newsletter\forms.py:176
+msgid "Department description"
+msgstr ""
+
+#: .\newsletter\forms.py:177
+msgid "Department name"
+msgstr ""
+
+#: .\newsletter\forms.py:178
+msgid "Choose Picture for Department"
+msgstr ""
+
+#: .\newsletter\forms.py:181
+msgid "Enter department name"
+msgstr ""
+
+#: .\newsletter\forms.py:182
+msgid "Enter text about department"
+msgstr ""
+
+#: .\newsletter\forms.py:183
+msgid "Enter your web page url to this department"
+msgstr ""
+
+#: .\newsletter\forms.py:194
+msgid "Doctor description"
+msgstr ""
+
+#: .\newsletter\forms.py:195
+msgid "Doctor name"
+msgstr ""
+
+#: .\newsletter\forms.py:196
+msgid "Choose Picture for Team member"
+msgstr ""
+
+#: .\newsletter\forms.py:199
+msgid "Enter Doctor member name"
+msgstr ""
+
+#: .\newsletter\forms.py:200
+msgid "Enter text about doctor in team"
+msgstr ""
+
+#: .\newsletter\models.py:17
+msgid "Pacient"
+msgstr ""
+
+#: .\newsletter\models.py:17
+msgid "PACIENT"
+msgstr ""
+
+#: .\templates\blogs\complain_list_pag.html:13
+msgid "Check out our service"
+msgstr ""
+
+#: .\templates\blogs\complain_list_pag.html:13
+msgid "More about service..."
+msgstr ""
+
+#: .\templates\complain.html:26
+msgid "translate"
+msgstr "testtran"
+
+#: .\templates\doctortemplate\ouraboutsection.html:18
+msgid "Some of our services:"
+msgstr ""
+
+#: .\templates\doctortemplate\ouraboutsection.html:29
+msgid "Primary Care"
+msgstr ""
+
+#: .\templates\doctortemplate\ouraboutsection.html:30
+msgid "Lab Test"
+msgstr ""
+
+#: .\templates\doctortemplate\ouraboutsection.html:31
+msgid "Symptom Check"
+msgstr ""
+
+#: .\templates\doctortemplate\ouraboutsection.html:32
+msgid "Heart Rate"
+msgstr ""
+
+#: .\templates\index.html:44
+msgid "Interested in who are the best doctors and dentists in Mexico"
+msgstr ""
+"Interesado en saber quiénes son los mejores médicos y dentistas en México. "
+
+#: .\templates\index.html:46
+msgid "Help other people by leaving comments and ratings!"
+msgstr "Ayuda a otras personas dejando comentarios y calificaciones"
+
+#: .\templates\messenger\inbox.html:4 .\templates\messenger\inbox.html:6
+msgid "Inbox"
+msgstr ""
+
+#: .\templates\messenger\inbox.html:17
+msgid "This is the begining of a great new conversation."
+msgstr ""
+
+#: .\templates\messenger\inbox.html:18
+msgid "Let's get started now!"
+msgstr ""
+
+#: .\templates\registration\activate.html:6
+msgid "Account activation failed"
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:5
+msgid "Your account is now activated."
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:2
+msgid "Activate account at"
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:11
+#, python-format
+msgid "The above link is valid for %(expiration_days)s days."
+msgstr ""
+
+#: .\templates\registration\login.html:14
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Submit"
+msgstr ""
+
+#: .\templates\registration\login.html:23
+msgid "Forgot password"
+msgstr ""
+
+#: .\templates\registration\login.html:23
+msgid "Reset it"
+msgstr ""
+
+#: .\templates\registration\login.html:24
+msgid "Not member"
+msgstr ""
+
+#: .\templates\registration\login.html:24
+msgid "Register"
+msgstr ""
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset successfully"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:17
+msgid "Password reset failed"
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:5
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:2
+#, python-format
+msgid "Reset password at %(site_name)s"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:13
+msgid "Reset"
+msgstr ""
+
+#: .\templates\registration\registration_closed.html:5
+msgid "Registration is currently closed."
+msgstr ""
+
+#: .\templates\registration\registration_complete.html:5
+msgid "You are now registered. Activation email sent."
+msgstr ""
+
+#: .\templates\registration\registration_form.html:14
+msgid "Join"
+msgstr ""
+
+#: .\templates\user_detail_web.html:66
+msgid "Customize your profile  web page"
+msgstr ""
+
+#: .\templates\user_detail_web.html:75
+msgid "Top Home section"
+msgstr ""
+
+#: .\templates\user_detail_web.html:81
+msgid "Submit Home Section"
+msgstr ""
+
+#: .\templates\user_detail_web.html:92
+msgid "Service section"
+msgstr ""
+
+#: .\templates\user_detail_web.html:97
+msgid "Choose icon with your service"
+msgstr ""
+
+#: .\templates\user_detail_web.html:106
+msgid "Submit new service"
+msgstr ""
+
+#: .\templates\user_detail_web.html:115
+msgid "Our gallery"
+msgstr ""
+
+#: .\templates\user_detail_web.html:118
+msgid "Add picture to gallery"
+msgstr ""
+
+#: .\templates\user_detail_web.html:127
+msgid "Department section"
+msgstr ""
+
+#: .\templates\user_detail_web.html:130
+msgid "Add new department"
+msgstr ""
+
+#: .\templates\user_detail_web.html:139
+msgid "Team section"
+msgstr ""
+
+#: .\templates\user_detail_web.html:142
+msgid "Add Team member"
+msgstr ""
+
+#: .\templates\user_detail_web.html:151
+msgid "Insurance"
+msgstr ""
+
+#: .\templates\user_detail_web.html:154
+msgid "Add insurance"
+msgstr ""
+
+#: .\testzs\settings\local.py:168
+msgid "Espanol"
+msgstr ""
+
+#: .\testzs\settings\local.py:169
+msgid "English"
+msgstr ""
+
+#~ msgid "Show more"
+#~ msgstr "Más resultados"
+
+#~ msgid "Submit2"
+#~ msgstr "Enviar"
+
+#~ msgid "Welcome to our page"
+#~ msgstr " test3"
+
+#~ msgid "Publish - Select date when Post will be published"
+#~ msgstr "test1"
+
+#~ msgid "Punch  or news name"
+#~ msgstr " test2"
+
+#, fuzzy
+#~| msgid "Napisite komentar"
+#~ msgid "Napisite komentar1"
+#~ msgstr "test koment"

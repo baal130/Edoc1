@@ -1,0 +1,318 @@
+{% extends "base_doctor_userdetail.html" %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% block head_extra  %} 
+{{ form.media }}
+{% endblock head_extra  %}
+ {% block extra_js %}
+{{ form.media.js }}
+{% endblock %}
+
+<style type="text/css">
+{% block style %}
+
+.form-bg {
+	background-color: #f3f3f3;
+    padding: 5px 24px 5px;
+    border: 1px solid #ddd;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content:  'Select some files';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.myradio {
+  display: inline-block;
+}
+.text-thm2
+ {
+  display: inline-block;
+}
+.radio
+ {
+  display: inline-block;
+}
+.checkbox, .radio {
+    position: relative;
+  
+    margin-top: 21px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+.button-create{
+   border-top: 1px solid #57b4ed;
+   background: #5785a1;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3c91c9), to(#5785a1));
+   background: -webkit-linear-gradient(top, #3c91c9, #5785a1);
+   background: -moz-linear-gradient(top, #3c91c9, #5785a1);
+   background: -ms-linear-gradient(top, #3c91c9, #5785a1);
+   background: -o-linear-gradient(top, #3c91c9, #5785a1);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #cef5da;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   }
+.button-create:hover{
+   border-top-color: #2b6891;
+   background: #2b6891;
+   color: #c9b9c9;
+   }
+.button-create:active{
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+.button-delete {
+   border-top: 1px solid #db18c4;
+   background: #b53257;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e81543), to(#b53257));
+   background: -webkit-linear-gradient(top, #e81543, #b53257);
+   background: -moz-linear-gradient(top, #e81543, #b53257);
+   background: -ms-linear-gradient(top, #e81543, #b53257);
+   background: -o-linear-gradient(top, #e81543, #b53257);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   }
+
+
+
+
+
+.button-delete:hover {
+   border-top-color: #c90c3b;
+   background: #c90c3b;
+   color: #d9bfcb;
+   }
+.button-delete:active {
+   border-top-color: #eb0e2b;
+   background: #eb0e2b;
+   }
+
+.button-edit {
+   border-top: 1px solid #18d91e;
+   background: #14911d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2abd22), to(#14911d));
+   background: -webkit-linear-gradient(top, #2abd22, #14911d);
+   background: -moz-linear-gradient(top, #2abd22, #14911d);
+   background: -ms-linear-gradient(top, #2abd22, #14911d);
+   background: -o-linear-gradient(top, #2abd22, #14911d);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   }
+.button-edit:hover {
+   border-top-color: #3ea32a;
+   background: #3ea32a;
+   color: #d9bfcb;
+   }
+.button-edit:active {
+   border-top-color: #15570b;
+   background: #15570b;
+   }
+.button-fix-width{
+      width: 8pc;
+}
+    
+.button-full-width{
+      width: 100%;
+}
+.button-text-width {
+    width: auto;
+}
+{%  endblock style %}
+</style>
+
+{% block content %}
+
+
+
+<div class='row'>
+  <div class='col-sm-8 col-sm-offset-3 border-title-curve'>
+  <h1>{% trans  'Customize your packages '  %}</h1>
+  </div>
+</div>
+
+<!--  -->
+
+
+<div classs ='row'>
+		<div id="home" class='col-sm-3  '> 
+{% include 'sidebarPackage.html' %}
+	
+    
+
+	</div>
+
+	<div id="home" class='col-sm-7  form-bg' style="border-radius:8px; margin-bottom: 200px;"> 
+	<h3>{% trans  'Package section'  %} {% if package.name %}  {{package.name }} {% else %} {{package.id }} {%  endif %} </h3>
+  <p class=" label-form-user label-info">{% trans  'Use this section to make special prizes for few connected services.'  %} {% trans  'Patients often choose specialists with better and wide offers.'  %}</p>
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+	  <!-- methoda je po defaultu get -->
+	<!-- {{ form.as_p}} -->
+	{{form|crispy}}
+	<!-- form as parameter  -->
+	<input class="btn btn-primary" type ='submit' value ="{% trans '+ Add service to package' %}" name="Add service"/> 
+  <input class="btn btn-success" type ='submit' value ="{% trans 'Update package' %}" name="Update package"/> 
+
+	</form>
+	<form  class="formremark" method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+    <!-- methoda je po defaultu get -->
+  <!-- {{ form.as_p}} -->
+  {{formremark|crispy}}
+  <!-- form as parameter  -->
+  <input class="btn btn-primary formremarkbutton" type ='submit' value ="{% trans '+ Add remark ' %}" name="Add package remark"/> 
+
+  </form>
+
+    <h4>{% trans  'Remarks'  %}</h4>
+    <input class="btn btn-primary hidebutton"  value ="{% trans '_Hide remarks ' %}" name=""/> 
+    
+    <span class="hide-remarks"> 
+      {% for objects in remarklist %}
+      <li>  {{objects.descriptionremark|truncatewords_html:4}} </li>
+      {% endfor %}
+      <span class="add_ajax_remark">
+
+      </span>
+    </span>    
+    <h4>{% trans  'Services in this package'  %}</h4>
+	{% for objects in packageTextList %}
+	<li>  {{objects}} </li>
+	{% endfor %}
+
+	{% if package %}
+		<a href="{% url 'newsletter:package_delete'  pk=package.pk  %}" class="btn button-delete button-text-width"> {% trans "Delete Package" %} {% if package.name %}  {{package.name }} {% else %} {{objects.id }} {%  endif %} </a>
+	{%  endif %}
+    
+    <a class="btn button-create button-text-width" href="{% url 'user_detail_package' %}">{% trans "New Package" %} </a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{%  block script %}
+<script>
+ $('.remove').click(function(event){
+        event.preventDefault()
+        
+    })
+
+$(document).ready(function(){
+
+  timeFunction();
+  function timeFunction() {
+            setTimeout(function(){  $('.note-editor').css({'max-width' :'100%'});}, 400);
+           
+  }
+  var  remarkcontent =$(".hide-remarks")
+  var remarkhidebutton=$(".hidebutton")
+  remarkhidebutton.click(function(event){
+    remarkcontent.fadeToggle();
+  })
+  var remarkForm= $(".formremark ")
+  var buttonremarkform= $(".formremarkbutton")
+  buttonremarkform.click(function(event){
+    event.preventDefault() 
+    var thisForm=remarkForm
+    var actionEndpoint=thisForm.attr("action")//url
+    var httpMethod=thisForm.attr("method")//POST
+    var formDataDescription=$('#id_descriptionremark').val()
+
+    var formData=thisForm.serialize()
+
+    
+    var request= $.ajax({
+      method: httpMethod,
+      url:actionEndpoint,
+      data:{
+            package_id:"{{package.id}}",
+            formData: formData,
+            formDataDescriptionText:formDataDescription
+        
+          }
+
+
+     })
+    request.done(function(data){
+        var ajax_remark_span=$(".add_ajax_remark")
+        ajax_remark_span.append("<li> "  + data.newremark + "</li>" )
+        console.log(data.success)
+    })
+  })
+
+
+                    
+})
+</script> 
+
+
+
+
+
+
+{% endblock %}    

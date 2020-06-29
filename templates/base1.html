@@ -1,0 +1,347 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Punch List</title>
+    <!-- <link href="{% static 'css/bootcamp.css' %}?v=1" rel="stylesheet"> -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <script src=" {% static 'vendor/jquery/jquery.min.js'%}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+
+    <!-- Theme CSS  creative samo za pocetnu -->
+    
+      
+    <link href="{% static 'css/landing/full-slider.css'%}" rel="stylesheet">
+
+
+      
+    
+    {%  block css %}
+
+    {% endblock %}
+    <link href="{% static 'css/landing/footer.css'%}" rel="stylesheet">
+    <link href="{% static 'css/landing/content.css'%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="navbar-static-top.css" rel="stylesheet">-->
+    <link href="{% static 'css/navbar-static-top.css'%}" rel="stylesheet">
+   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+     {% block head_extra  %} {% endblock head_extra  %}
+     <link href="{% static 'css/MiddleContent.css'%}" rel="stylesheet">
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw"></script>
+<script src="{% static 'medicaltemplate/js/googlemaps.js'%}"></script>
+    
+    <script src="{% static 'channels/js/websocketbridge.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootcamp.js' %}"></script>
+    <script src="{% static 'js/django.csrf.js' %}"></script>
+{% load bootstrap3 %}       
+         
+
+     <style>
+    {% block style %}
+    
+    {% endblock %}
+    </style>
+
+  
+  
+  
+    <style>
+
+        header {
+     
+            background-image: url({% static 'img/backgrounds/back1_darker2.jpg'%});
+     
+        }
+
+        .sect{
+         
+          background-image: url({% static 'img/header.jpg'%});
+         
+          
+        }
+
+
+    
+    </style>
+    
+
+  
+  
+    
+    
+    <script>
+    var mainNav,yPos;
+    function yScroll(){
+        mainNav=document.getElementById('mainNav')
+        navbar=document.getElementById('navbar')
+        nav=document.getElementById('nav')
+            
+        
+        yPos=window.pageYOffset;
+        if (yPos>1){
+        mainNav.style.height='53px';
+        mainNav.style.background="rgba(77, 78, 82, 0.8)";
+        navbar.style.padding= '16px ';
+        nav.style.padding= '2px ';
+        }else {
+            
+            mainNav.style.height='42px';
+            mainNav.style.background="rgba(0, 0, 0, 0.0)";
+            navbar.style.padding= '15px';
+            nav.style.padding= '1px';
+        }
+        
+    }
+    
+    window.addEventListener("scroll",yScroll);
+
+
+
+
+    $(document).ready(function(){
+            
+        $(".navbar-default .navbar-nav>.open>a ").each(function (){
+            $(this).css('padding' ,'30px');
+            
+        })
+        /*$(".textarea").attr("placeholder", "Add public comment ...");*/
+        $(".textarea").css('height', '4em');
+    
+    })
+</script>
+
+<script>
+$(document).ready(function(){
+      
+
+        $("#id_publish_month").css({'width' :'40%','display': 'inline-block'});
+        $("#id_publish_day").css({'width' :'20%','display': 'inline-block','padding': '2px 6px'});
+        $("#id_publish_year").css({'width' :'33%','display': 'inline-block'});
+        $('.note-editor').css({'max-width' :'100%'});
+        console.log("ga")
+
+          
+        /*var ContentItem = $("#id_description");
+       
+       
+        function setContent(value){
+            var markedContent=marked(value)
+            console.log(markedContent) 
+            $("#preview-content").html(markedContent)
+            $("#preview-content img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+        }*/
+        
+        
+        var ContentItem = $('.note-editable');
+        var ContentItemText = $('.note-editable').html();
+        $('.note-editing-area').click(function(event){
+                console.log("nesto")
+        })
+        function setContent(value){
+            var markedContent=value
+            console.log(markedContent) 
+            $("#preview-content").html(markedContent)
+            $("#preview-content img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $("#preview-content iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+        }
+        /*setContent(ContentItem.html())*/
+
+       
+
+        var titleItem = $("#id_company_name");
+        function setTitle(value){
+            $("#preview-title").text(value)
+        }
+        setTitle(titleItem.val())
+
+        titleItem.keyup(function(){
+             var ContentItem1 = $(".note-editable").text();
+            /*console.log(ContentItem1)*/  
+
+             /*console.log("Nesto")*/
+            var newContent=$(this).val()
+            setTitle(newContent)
+            
+        })
+         ContentItem.keyup(function(){
+            
+            console.log(ContentItemText)
+            console.log("nesto") 
+            var newContent=$(this).html()
+            setContent(newContent)
+        })
+         
+         function createheight() {     
+            /*$(".navigation").hide();
+            $(".page").children(".panel").fadeIn(1000);*/
+            var ContentCreateHeight=$(".content-create").height();  
+       /* console.log(ContentCreateHeight) */
+        $(".content-preview").css("height", ContentCreateHeight+15);  /*+15 je od paddinga*/
+        var height1=$(".content-preview").height();
+        /*console.log(height1)*/
+         }
+
+         // use setTimeout() to execute
+         setTimeout(createheight, 5000)
+         setTimeout(createheight, 10000)
+
+
+        
+        
+        $( window ).resize(function() {    
+        var ContentCreateHeight=$(".content-create").height();
+        /*console.log(ContentCreateHeight)*/
+        $(".content-preview").css("height", ContentCreateHeight+15);
+        var height1=$(".content-preview").height();
+        /*console.log(height1)*/
+        })
+
+    })
+
+    </script> 
+  
+</head>
+
+<body id="page-top">
+
+{% include 'navbar1.html' %}
+
+
+{% block jumbotron %}
+
+{% endblock %} 
+                   
+      <div class="container">
+
+    
+
+{% block content %}
+
+
+    
+{% endblock %}
+
+     
+
+
+
+      <!-- Main component for a primary marketing message or call to action -->
+    
+
+    </div>       
+
+
+
+    <!-- jQuery -->
+    
+
+    <!-- Plugin JavaScript -->
+    
+    <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js'%}"></script>
+     <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js'%}"></script> 
+
+      <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 80000 //changes the speed
+    })
+
+
+    $('.fdi-Carousel .item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length > 0) {
+            next.next().children(':first-child').clone().appendTo($(this));
+        }
+        else {
+            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+    });
+    </script>
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js'%}"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+     
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".content-markdown").each(function(){
+            var content= $(this).text()
+            console.log(content)
+            var markedContent=marked(content)
+            
+            $(this).html(markedContent)
+        })
+        $(".post-detail-item  img ").each(function(){
+            $(this).addClass("img-responsive")
+        })
+         $(".date").each(function(){
+            $(this).addClass("fix-width")
+        })
+
+        $(".comment-reply-btn").click(function(event){
+             console.log("nesto")
+            event.preventDefault();
+            $(this).parent().parent().next().next(".comment-reply").fadeToggle();
+           
+           /* var name=$(this).parents('.blackqoute-margin').parent().next(".comment-reply");
+            alert($(this).parent().parent().prop("className"));*/
+        })
+
+        //preview-title
+        //preview-content
+       
+        
+        //console.log(titleItem)
+
+    })
+
+    </script>
+
+
+
+{% block script %}
+
+{% endblock %}
+
+{% block scripttop %}
+
+{% endblock %}
+{% block extra_js %}
+
+ {% endblock %}
+    <!-- Theme JavaScript  detection of sliding navbar-->
+   <!-- <script src="js/creative.min.js"></script>-->
+
+</body>
+
+</html>
+
+

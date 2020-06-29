@@ -1,0 +1,108 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="contact" class="our-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">{% trans "Our" %} <span class="text-thm2">{% trans "Contact" %}</span></h2>
+						<p>{% trans "Don't hesitate to ask, we are here for you" %}</p>
+					</div>
+				</div>
+			</div>
+  			<div class="row">
+  				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+					<div class="ulockd-ohour-info style2 text-center">
+						<div class="ulockd-icon text-thm2"><span class="fa fa-envelope"></span></div>
+						<div class="ulockd-info">
+							<h3>Mail Us</h3>
+							<p class="ulockd-addrss"><strong>Email:</strong>{{instance.email}} </p>
+						</div>
+					</div>
+  				</div>
+  				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+					<div class="ulockd-ohour-info style2 text-center">
+						<div class="ulockd-icon text-thm2"><span class="fa fa-phone"></span></div>
+						<div class="ulockd-info">
+							<h3>Call Us</h3>
+							<p class="ulockd-addrss">{{instance.telefon}}</p>
+						</div>
+					</div>
+  				</div>
+  				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+					<div class="ulockd-ohour-info style2 text-center">
+						<div class="ulockd-icon text-thm2"><span class="fa fa-map-signs"></span></div>
+						<div class="ulockd-info">
+							<h3>Address</h3>
+							<p>{{instance.adress}},{{instance.city}},{{instance.colony}}</p>
+						</div>
+					</div>
+  				</div>
+  				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+					<div class="ulockd-ohour-info style2 text-center">
+						<div class="ulockd-icon text-thm2"><span class="fa fa-edit"></span></div>
+						<div class="ulockd-info">
+							<h3>Mail Us</h3>
+							<p class="ulockd-addrss"><strong>Email:</strong> Left Some Word</p>
+						</div>
+					</div>
+  				</div>
+  			</div>
+			<div class="row ulockd-mrgn1250">
+				<div class="col-md-12">
+					<div class="ulockd-contact-form">
+                        <form id="contact_form" name="contact_form" class="contact-form" method="POST" data-toggle="validator" novalidate="" enctype='multipart/form-data'>{% csrf_token %}
+                            <div class="messages"></div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="name" name="name" class="form-control ulockd-form-fg required" placeholder="Your name" required="required" data-error="Name is required." type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="email" name="email" class="form-control ulockd-form-fg required email" placeholder="Your email" required="required" data-error="Email is required." type="email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+	                            <div class="col-md-3">
+	                                <div class="form-group">
+	                                    <input id="phone" name="form_phone" class="form-control ulockd-form-fg required" placeholder="Phone" required="required" data-error="Phone Number is required." type="text">
+	                                    <div class="help-block with-errors"></div>
+	                                </div>
+	                            </div>
+	                            <div class="col-md-3">
+	                                <div class="form-group">
+	                                    <input id="subject" name="subject" class="form-control ulockd-form-fg required" placeholder="Subject" required="required" data-error="Subject is required." type="text">
+	                                    <div class="help-block with-errors"></div>
+	                                </div>
+	                            </div>
+                                <div class="col-md-12">
+		                            <div class="form-group">
+		                                <textarea id="message" name="message" class="form-control ulockd-form-tb required" rows="12" placeholder="Your massage" required="required" data-error="Message is required."></textarea>
+		                                <div class="help-block with-errors"></div>
+		                            </div>
+		                            <div class="form-group ulockd-contact-btn">
+		                                <input id="form_botcheck" name="form_botcheck" class="form-control" value="" type="hidden">
+		                                
+
+		                                <input class="btn btn-lg ulockd-btn-thm2 " type ='submit' value ="{% trans 'Send' %}" name="contactdoctor"/>
+		                            </div>
+                                </div> 
+                            </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid ulockd-padz">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="ulockd-google-map">
+		                <div class="h300" id="map"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

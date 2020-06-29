@@ -1,0 +1,121 @@
+{% extends "base1.html" %}
+{% load staticfiles i18n %}
+
+
+  
+
+{%  block css %}
+<link href="{% static 'css/messages.css' %}" rel="stylesheet">
+<link href="{% static 'css/test.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if title %}
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>{{title}}<h1>
+</div>
+</div>
+{% endif %}
+
+        
+
+
+
+  <!-- methoda je po defaultu get -->
+<!-- {{ form.as_p}} -->
+<!-- {% for objects in object_list %}
+  {{objects.company_name}}<br>
+  {{ objects.description}}<br>
+  {{ objects.timestamp}}<br>
+{% endfor %} -->
+<!-- 
+<table class='table'>
+    {% for objects in object_list %}
+       <tr><td>{{forloop.counter }}{{ objects.company_name }} </td> <td>{{ objects.timestamp }} </td></tr>
+       <div> {{ objects.description }}</div>
+    {% endfor %}
+</table> -->
+<form method='GET' action=''>
+<input type='text' name='q' placeholder='Search users' value='{{ request.GET.q }}'/>
+<input type='submit' value='Search' />
+</form>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+  <div class="row">
+   <div class="col-sm-4 col-md-4"> <!-- SEARCH FORM FOR WORDS IN POSTS -->
+        <div class="list-group users-list  ">
+        {% for user in users %}
+          <a href="{% url 'messages' user.username %}"
+            class="list-group-item">
+            
+            <!-- <span class="btn btn-danger btn-circle" id="online-stat-{{ user.username }}"></span> -->
+            
+            <!-- <img src="{{ user.profile.get_picture }}" class="conversation-portrait"> -->
+            
+            <!-- {{ user.profile.get_screen_name }} -->
+            {% if user.userdetails in following  %}
+            
+            {% include 'profiles/snippet/follow-form1.html' with username=user is_following=followingTrue  %}
+            {% else %}
+            {% include 'profiles/snippet/follow-form1.html' with username=user is_following=followingFalse    %}
+
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    </div>       
+
+
+ 
+         
+             
+              
+    <div class="col-sm-4 col-md-4 ">
+          <div class="row">
+              
+
+     
+
+              
+          </div> <!-- row 2 -->
+    </div>
+  
+</div>  
+
+
+
+
+
+{% endblock content %}
+{%  block script %}
+<script>
+ $(document).ready(function(){
+      
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+       
+    })
+
+    </script>
+{% endblock %}

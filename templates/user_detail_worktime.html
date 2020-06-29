@@ -1,0 +1,59 @@
+{% extends "base_doctor_userdetail.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+ 
+
+
+{% block extra_js %}
+{{ form.media.js }}
+{% endblock %}
+{% block style %}
+ .fix-width{
+ width:100%;
+}
+
+ {% endblock %}
+{% block content %}
+
+{% if title %}
+{% endif %}
+<div class='row'>
+	<div class='col-sm-8 border-title-curve col-sm-offset-3 '  >
+	<h1>{% trans  'Fill working times'  %}</h1>
+
+	</div>
+</div>
+
+
+
+
+<div classs ='row'>
+	<div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+	{% include 'sidebar.html' %}
+	
+    </div>
+
+	<div class='col-sm-6 col-sm-offset-4 form-bg' style="border-radius:8px; margin-bottom: 200px;">  
+		<p class=" label-form-user label-info">{% trans  'Use this section for  setup time  when patients are accepted ' %}</p>
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+
+	{{form|crispy}}
+
+	<input class="btn btn-primary" type ='submit' value =" Submit"/> 
+
+
+
+
+	</form>
+	</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

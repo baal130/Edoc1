@@ -1,0 +1,83 @@
+{%  load i18n %}
+{% load crispy_forms_tags %}
+
+
+ 
+
+
+{% block extra_js %}
+{{ form.media.js }}
+{% endblock %}
+<div class="modal fade appointment_view" id="appointment_view">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header text-center">
+			                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+			                <h3 class="modal-title">{% trans "Appointment Form." %} </h3>
+			            </div>
+			            <div class="modal-body">
+			                <div class="row">
+			                    <div class="col-md-10 col-md-offset-1">
+									<!-- Appointment Form Starts -->
+				                    <form id="appointment_form" name="appointment_form"   class="appointment_form text-center" action="" 
+				                    method="POST" data-toggle="validator" novalidate="" enctype='multipart/form-data'>{% csrf_token %}
+				                        <div class="messages"></div>
+				                        <div class="row">
+				                            <div class="col-md-12">
+									        	<h2 class="text-thm2">{% trans "Appointment with " %} {{instance.name|title }} {{instance.surname|title }}</h2>
+									        	<p>{% trans "Let's Appointment With our Experts Who Try to Solve Your Problem." %}</p>
+				                                
+				                            </div>
+				                            <div class="col-md-6">
+									        	
+				                                <div class="form-group text-left">
+				                                    <label for="form_name"><i class="fa fa-user-circle"></i>{% trans " Name" %}  <small>*</small></label>
+				                                    <input id="name" name="name" class="form-control" placeholder="{% trans " enter a name" %}" required="required" data-error="{% trans " Name is required." %}" type="text">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>
+				                            <div class="col-md-6">
+				                                <div class="form-group text-left">
+				                                    <label for="form_email"><i class="fa fa-user-circle"></i>{% trans " Surname" %}  <small>*</small></label>
+				                                    <input id="surname" name="surname" class="form-control required surnmame" placeholder="{% trans " enter surnmame" %}" required="required" data-error="{% trans " surname is required " %}" type="surname">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>
+				                            <div class="col-md-12">
+				                                <div class="form-group text-left">
+				                                    <label for="form_email"><i class="fa fa-envelope-open"></i>{% trans " Email" %}  <small>*</small></label>
+				                                    <input id="email" name="email" class="form-control required email" placeholder="{% trans " enter an email" %}" required="required" data-error="{% trans " Email is required." %}" type="email">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>
+				                            <div class="col-md-6">
+				                            	<div class="form-group text-left">
+				                            	<label for="form_date"><i class="fa fa-calendar-check"></i>{% trans " Date" %}  <small>*</small></label>
+				                                {{formdate.date}}
+				                               	</div> 
+				                            </div> 
+				                            <div class="col-md-6">
+				                                <div class="form-group text-left">
+				                                    <label for="form_phone"><i class="fa fa-phone"></i>{% trans " Phone" %}  <small>*</small></label>
+				                                    <input id="phone" name="phone" class="form-control required" placeholder="{% trans " enter a phone" %}" required="required" data-error="{% trans " Phone Number is required." %}" type="text">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>  
+				                        </div>
+				                        <div class="form-group text-left">
+				                            <label for="form_name"><i class="fa fa-file-word"></i>{% trans " Message" %} <small>*</small></label>
+				                            <textarea id="message" name="message" class="form-control required" rows="5" placeholder="{% trans " type in a message" %}" required="required" data-error="{% trans " Message is required." %}"></textarea>
+				                            <div class="help-block with-errors"></div>
+				                        </div>
+				                        <div class="form-group text-center">
+				                            
+				                            
+				                            <input class="btn btn-lg ulockd-btn-thm2 " type ='submit' value ="{% trans 'Send' %}" name="appointment"/>
+				                        </div>
+				                    </form>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>

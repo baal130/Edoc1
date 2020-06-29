@@ -1,0 +1,62 @@
+{%  load i18n %}
+<div class="modal fade appointment_view" id="appointment_view">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header text-center">
+			                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+			                <h3 class="modal-title">{% trans "Appointment Form." %} </h3>
+			            </div>
+			            <div class="modal-body">
+			                <div class="row">
+			                    <div class="col-md-10 col-md-offset-1">
+									<!-- Appointment Form Starts -->
+				                    <form id="appointment_form" name="appointment_form" class="appointment_form text-center" action="includes/appointment.php" method="post" novalidate="novalidate">
+				                        <div class="messages"></div>
+				                        <div class="row">
+				                            <div class="col-md-12">
+									        	<h2 class="text-thm2">{% trans "Appointment with Expert" %}</h2>
+									        	<p>{% trans "Let's Appointment With our Exparts Who Try to Solved Your Problem." %}</p>
+				                                <div class="form-group text-left">
+				                                    <label for="form_name"><i class="fa fa-user-o"></i>{% trans "Name" %}  <small>*</small></label>
+				                                    <input id="form_name" name="form_name" class="form-control" placeholder="enter a name" required="required" data-error="Name is required." type="text">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>
+				                            <div class="col-md-12">
+				                                <div class="form-group text-left">
+				                                    <label for="form_email"><i class="fa fa-envelope-open-o"></i>{% trans "Email" %}  <small>*</small></label>
+				                                    <input id="form_email" name="form_email" class="form-control required email" placeholder="enter an email" required="required" data-error="Email is required." type="email">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>
+				                            <div class="col-md-6">
+				                                <div class="form-group text-left">
+				                                    <label for="form_date"><i class="fa fa-calendar-check-o"></i>{% trans "Date" %}  <small>*</small></label>
+				                                    <input id="form_date" name="form_date" class="form-control required datepicker" placeholder="enter a date" required="required" data-error="Subject is required." type="text">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div> 
+				                            <div class="col-md-6">
+				                                <div class="form-group text-left">
+				                                    <label for="form_phone"><i class="fa fa-phone"></i>{% trans "Phone" %}  <small>*</small></label>
+				                                    <input id="form_phone" name="form_phone" class="form-control required" placeholder="enter a phone" required="required" data-error="Phone Number is required." type="text">
+				                                    <div class="help-block with-errors"></div>
+				                                </div>
+				                            </div>  
+				                        </div>
+				                        <div class="form-group text-left">
+				                            <label for="form_name"><i class="fa fa-file-text-o"></i>{% trans "Message" %} </label>
+				                            <textarea id="form_message" name="form_message" class="form-control required" rows="5" placeholder="type in a message" required="required" data-error="Message is required."></textarea>
+				                            <div class="help-block with-errors"></div>
+				                        </div>
+				                        <div class="form-group text-center">
+				                            <input id="form_botcheck" name="form_botcheck" class="form-control" value="" type="hidden">
+				                            <button type="submit" class="btn btn-lg ulockd-btn-thm2" data-loading-text="Getting Few Sec...">{% trans "Send" %}</button>
+				                        </div>
+				                    </form>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>

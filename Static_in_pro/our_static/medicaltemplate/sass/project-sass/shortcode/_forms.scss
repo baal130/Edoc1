@@ -1,0 +1,239 @@
+/* Forms Sass */
+//== Course Search Form
+.course-search {
+  .form-group {
+    margin-bottom: 0;
+  }
+  .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    height: 45px;
+  }
+  button {
+    &.btn {
+      height: 45px;
+    }
+  }
+  select {
+    color: $white-ff;
+    text-align: center;
+  }
+  select.study_level,
+  select.course_length {
+    option {
+      font-size: 16px;
+      height: 24px;
+      padding: 0;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+}
+.search-box {
+  background-color: $white-f5;
+  @include box-shadow(0 2px 24px rgba($black-rgb, $alpha2));
+  padding: 25px 0;
+  position: relative;
+  z-index: 999;
+}
+
+//== APPOINTMENT FORM STYLE
+.appointment_form{
+  background-color: $white-f3;
+  padding: 15px 35px;
+  input {
+	border-radius: 0;
+	box-shadow: none;
+	height: 40px;
+  }
+  &.style2 {
+    background-color: $white-ff;
+    padding: 10px 15px 30px;
+  }
+}
+.appointment_view {
+  .modal-dialog {
+    max-width: 800px; 
+    width: 100%;
+  }
+}
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all, 
+.ui-timepicker-list .ui-timepicker-selected:hover, 
+.ui-timepicker-list li:hover, 
+li.ui-timepicker-selected {
+  background-color: $black-22;
+  color: $white-f3;
+}
+.ulockd-apmnmnt-schedule {
+  border: 1px solid $gray-lighter;
+  padding: 10px 15px;
+  text-align: center;
+}
+table {
+  &.table {
+  	&.ulockd-one {
+  	  border: 1px solid $gray-lighter;
+  	  h3 {
+  		margin-top: 0;
+  	  }
+  	}
+  	&.ulockd-two {
+  	  border: 1px solid $gray-lighter;
+  	  h3 {
+  		margin-top: 0;
+  	  }
+  	}
+  }
+}
+.table.ulockd-one>tbody>tr>td, 
+.table.ulockd-one>tbody>tr>th, 
+.table.ulockd-one>tfoot>tr>td, 
+.table.ulockd-one>tfoot>tr>th, 
+.table.ulockd-one>thead>tr>td, 
+.table.ulockd-one>thead>tr>th {
+  text-align: center;
+}
+//== BOOKING FORM STYLE
+.booking_form_style_home {
+  border: 3px solid $white-f9;
+  padding: 15px;
+}
+.form_control {
+  border-radius: 0;
+  box-shadow: none;
+  height: 45px
+}
+.booking_form {
+  background-color: $white-f3;
+  padding: 0 20px 5px;
+  &.home_style {
+    background-color: rgba($white-rgb, $alpha6);
+    padding: 25px 15px;
+  }
+}
+.booking_select,
+.booking_form input {
+  border-radius: 0;
+  box-shadow: none;
+  height: 45px;
+}
+.booking_form {
+  &.style2 {
+    padding: 15px 20px;
+  }
+  .booking_form_control {
+    border-radius: 0;
+    height: 45px;
+  }
+}
+//== Login/Register
+form {
+  &.ulockd-login-form,
+  &.ulockd-reg-form {
+    background-color: $white-f6;
+    padding: 10px 30px 40px;
+  }
+}
+.ulockd-login-form,
+.ulockd-reg-form {
+  input {
+    border-radius: 0;
+    box-shadow: none;
+    height: 40px;
+  }
+}
+
+//== New SIgnUp Form(evarevirus) 
+.signup_form {
+  background-color: $white-ff;
+  padding: 10px 25px 20px;
+  .form-group {
+    position: relative;
+    margin-top: 35px;
+  }
+  .form-control {
+    border: none;
+    display: block;
+    height: 36px;
+    box-shadow: none;
+    border-bottom: 1px solid $gray-lightgrey;
+    &:focus {
+      border-bottom: 2px solid $green2;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .float-label {
+    color: $black-99;
+    font-size: 16px;
+    font-weight: 300;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  input[type=checkbox] {
+    display: none;
+    visibility: hidden;
+  }
+  input[type="checkbox"] + label {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    &:before {
+      border: 2px solid #5a5a5a;
+      border-radius: 2px;
+      content: "";
+      display: inline-block;
+      height: 18px;
+      margin: 0 15px 3px 0px;
+      vertical-align: middle;
+      width: 18px;
+    }
+  }
+  input[type=checkbox]:checked + label:before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwcHgiIGhlaWdodD0iMTVweCIgdmlld0JveD0iMCAwIDIwIDE1Ij4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNy4xNDMsMTQuOTM4IDAsNy43OTYgMi4wMjEsNS43NzYgNy4xNDMsMTAuODk4IDE3Ljk3OSwwLjA2MiAyMCwyLjA4MiAiLz4NCjwvc3ZnPg0K');
+    background-color: $green2;
+    border-color: $green2;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: 11px auto;
+    -moz-background-size: 11px auto;
+    -o-background-size: 11px auto;
+    background-size: 11px auto;
+  }
+  button[type="submit"] {
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    background: $green2;
+    color: $white-ff;
+    float: right;
+    position: relative;
+  }  
+  [ripple] {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: box-shadow .4s;
+    -moz-transition: box-shadow .4s;
+    -ms-transition: box-shadow .4s;
+    -o-transition: box-shadow .4s;
+    transition: box-shadow .4s;
+    cursor: inherit;
+  }  
+  [ripple] .touch {
+    pointer-events: none;
+    border-radius: 100%;
+  }
+}
+.signup_form  .form-control:focus ~ .float-label,
+.signup_form .form-control:valid ~ .float-label {
+  top: -15px;
+  font-size: 12px;
+}

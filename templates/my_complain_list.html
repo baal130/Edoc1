@@ -1,0 +1,93 @@
+{% extends "base_article.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+
+<div class='row'>
+  <div class='col-sm-8 border-title-curve col-sm-offset-3 '  >
+  <h1 style=" color: #4d91d7;     
+    font-weight: 600;
+    letter-spacing: -.03em;">{% trans  'My articles '  %}</h1>
+
+  </div>
+</div>
+
+
+
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+   <div class="row">
+   <div class="col-sm-3 col-md-3">
+      <form method='GET' action=''>
+        <input type='text' name='q' placeholder='Search articles' value='{{ request.GET.q }}'/>
+        <input type='submit' value='Search' />
+      </form>
+      {% include 'sidebar.html' %}
+    </div>       
+
+
+ 
+         
+             
+              
+    <div class="col-sm-7 col-sm-offset-1 form-bg " style="border-radius:8px; margin-bottom: 200px;">
+       {% for objects in object_list %}
+      <div class="thumbnail post-background">
+        <div class="caption">
+                <h3>{{forloop.counter }} <a href='{{objects.get_absolute_url}}'>{{ objects.company_name|title }} </a><small>{{ objects.publish }}</small> 
+               </h3>
+               <div class="text-default post-detail-item ">{{ objects.get_markdown|truncatewords_html:40}}</div>
+               <a href='{{objects.get_absolute_url}}' class="btn btn-primary" role="button"> View</a> 
+               
+         
+  
+      </div>           
+    </div>
+    {% endfor %}
+    <div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class=" text-default">{% trans "Previous" %}</a>
+        {% endif %}
+
+        <span class="current text-default">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %} " class= "text-default" >{% trans "Next" %}</a>
+        {% endif %}
+    </span>
+</div>
+  
+
+
+
+
+{{time}}
+<br>
+{%  if request.user.is_authenticated %}
+     <a href="{% url 'dataadd:complain' %}" class=" btn button-create button-fix-width" >{% trans "Create article" } </a> <!--url with namespace dataaadin general url  and name in url of app -->
+     {% else %}
+     <a href="{% url 'registration_register'%}" class=" btn button-create button-fix-width">{% trans "REGISTER" } </a><span  class="text-default">{% trans "Register to view and create posts" }  </span><br>
+
+    <a href=" {% url  'account_signup'%}" class=" btn button-edit button-fix-width">{% trans "LOGIN" }</a>  <span  class="text-default">{% trans "Already registered, login now " } </span>
+{% endif %}
+
+  </div>
+  
+</div>  
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,94 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="pricing" class="our-pricing ulockd_bgp4 "  {% if package_list %} style="padding: 20px 0;" {% endif %}>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">{% trans "Our" %}  <span class="text-thm2">{% trans "Pricing" %} </span></h2>
+						<p>{% trans "Check discounts of our services only with todos doctors " %}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{% if price_list_all_discount %}
+		        <div class="col-xxs-6 col-xs-6 col-sm-6 col-md-6 no-padding">
+		            <div class="pricing_table hover-disable">
+		                <div class="pricing_table_header border-left-cust  ulockd-bgthm bck-color2">
+		                    <h3 class="title">{% trans "Old Prices" %}</h3>
+		                    
+		                </div>
+		                <div class="pricing-content">
+		                    <ul>
+										                	               
+							    {% for entry in price_list_all_discount %}
+							              
+							                     {% if entry.serviceprice   %}
+							                    	<li><del>{{entry.service|title}}... $ {{entry.serviceprice|title}}</li>
+							                    {% endif %}
+							                   
+							      {% endfor %}
+							     
+
+
+		                    </ul>
+		                    <div class="pricing_table_signup">
+		                        <a href="#">Select Package<i class=" fas fa-arrow-alt-circle-right"></i></a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="col-xxs-6 col-xs-6 col-sm-6 col-md-6 no-padding">
+		            <div class="pricing_table hover-disable">
+		                <div class="pricing_table_header  border-right-cust  ulockd-bgthm bck-color1">
+		                    <h3 class="title">{% trans " Discount prices" %}</h3>
+		                   
+		                </div>
+		                <div class="pricing-content">
+		                    <ul>
+			                	
+
+							    {% for entry in price_list_all_discount %}
+							              
+							                     {% if entry.serviceprice   %}
+							                    	<li>{{entry.service|title}}... $ {{entry.discounted_price}}</li>
+							    {% endif %}
+							                   
+							      {% endfor %}
+		                    </ul>
+		                    <div class="pricing_table_signup border-rightdown-cust">
+		                        <a href="#">Select Package<i class="fas fa-arrow-alt-circle-right"></i></a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        {% endif %}
+		        {% if price_list_all_nodiscount %}
+		        <div class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 no-padding space_top">
+		            <div class="pricing_table hover-disable">
+		                <div class="pricing_table_header  border-right-cust  ulockd-bgthm bck-color1">
+		                    <h3 class="title">{% trans " Standard prices" %}</h3>
+		                   
+		                </div>
+		                <div class="pricing-content">
+		                    <ul>
+			                	
+
+							    {% for entry in price_list_all_nodiscount %}
+							              
+							                     {% if entry.serviceprice   %}
+							                    	<li>{{entry.service|title}}... $ {{entry.discounted_price}}</li>
+							    {% endif %}
+							                   
+							    {% endfor %}
+		                    </ul>
+		                    <div class="pricing_table_signup">
+		                        <a href="#">Select Package<i class="fas fa-arrow-alt-circle-right"></i></a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        {% endif %}
+			</div>
+		</div>
+	</section>

@@ -1,0 +1,56 @@
+{% load staticfiles %}
+{%  load i18n %}
+{% load crispy_forms_tags %}
+<section id="testimonial" class="parallax bgc-overlay-white85 ulockd_bgi1" data-stellar-background-ratio="0.3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator"> <span class="text-thm2">{% trans "Reviews"%}</span></h2>
+						<p>{% trans " Latest reviews from our patients" %}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="three-grid-slider">
+						{% for comment in comments %}
+                   						 
+                   
+      										
+						<a href="{{instance.get_absolute_url_comments}}">
+						<div class="item">
+							<div class="ulockd-testimonials text-center ulockd-mrgn1250 ulockd-mrgn620">
+								<div class="testi-thumb">
+									<!-- <img class="img-responsive thumbnail" src="images/testimonial/1.jpg" alt="1.jpg"> -->
+									<div class="ib_details">
+									<span class="addrating" id="fixture" value="{{ comment.get_rating_from_user|safe}}"> </span>
+					               <big>{{ comment.get_rating_from_user|safe}}</big> 
+					              
+								</div>
+								</div>
+								<div><i class="flaticon-right-quotes-symbol fz30 text-thm2"></i></div>
+								<div class="testi-details">
+									<p>{{comment.content|truncatewords_html:5}}</p>
+									<!-- <p class="fz16 ulockd-mrgn60">Peaceful Behaviour</p> -->
+									<h4>{{comment.user}} </h4>
+								</div>
+							</div>
+						</div></a>
+						{% endfor %}
+
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class='row'>
+	<div class='col-sm-8 col-sm-offset-2  ' style="padding: 0;" >
+     	<a href="{{instance.get_absolute_url_comments}}"><button  class="btn ulockd-btn-thm2-full btn-lg ulockd-btn-thm2 ulockd-mrgn1215">{% trans " LEAVE COMMENT OR RATE" %}</button>  </a>
+     	
+
+     	<!-- <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div> -->
+
+	</div>
+		</div>
+	</section>

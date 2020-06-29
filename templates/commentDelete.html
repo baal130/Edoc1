@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if title %}
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>{{title}}<h1>
+</div>
+</div>
+{% endif %}
+<!--  -->
+
+<div classs ='row'>
+<div class='col-sm-6 col-sm-offset-3'>	
+<form method='POST' action=''>{% csrf_token %}
+	<!-- methoda je po defaultu get -->
+<!-- {{ form.as_p}} -->
+
+<!-- form as parameter  -->
+<p> Are you sure you want to delete your comment  {{object.get_absolute_url_delete}}</p>
+<input class="btn btn-warning" type ='submit' value =" Confirm"/>
+<a href="{{postobj.get_absolute_url}}" class="btn btn-default"> Cancel</a>
+
+
+
+
+
+
+</form>
+</div>
+</div>
+
+{% endblock %}

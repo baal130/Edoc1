@@ -1,0 +1,46 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+	{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+	{% block content %}
+<div class=' margin-top-bottom row'>
+	<div style="background-color: #f6f6f6;" class=' col-sm-6 col-sm-offset-3 text-center text-align-center '>	
+		<h1>{% trans "Sign Up" %}</h1>
+
+		<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+		{% load socialaccount %}
+		{% providers_media_js %}
+		
+		
+		<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+		  {% csrf_token %}
+		  {{ form|crispy }}
+		  {% if redirect_field_value %}
+		  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+		  {% endif %}
+		  <button class='btn btn-block btn-primary' type="submit">{% trans "Sign Up" %} &raquo;</button>
+		</form>
+	</div>
+
+
+	
+	<div class="col-sm-12 col-md-6 col-md-offset-3">
+				        						        <form class="ulockd-reg-form text-center row">
+				        						        	<h3> <span class="flaticon-house-key"></span> {% trans "OR Use" %} </h3>
+				        						        	
+													       
+													        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6">
+													        	<a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-lg btn-primary btn-block color-white">Facebook</a>
+													        </div>
+													        
+													        <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6">
+													        	<a href="{% provider_login_url "twitter" method="" %}" class="btn btn-lg btn-info btn-block color-white">Twitter</a>
+													        </div>
+				        						        </form>
+				        				      		</div>
+</div> <!-- row -->
+{% endblock %}

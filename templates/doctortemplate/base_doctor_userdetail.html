@@ -1,0 +1,487 @@
+{% load staticfiles %}
+{% load l10n %}
+
+<!-- emtpy base  -->
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- css file -->
+<link rel="stylesheet" href=" {% static 'medicaltemplate/css/bootstrap.min.css'%}"> 
+<link rel="stylesheet" href=" {% static 'medicaltemplate/css/style.css'%}">
+<link rel="stylesheet" href="{% static 'medicaltemplate/css/theme-color.css'%}">
+<!-- Responsive stylesheet -->
+<link rel="stylesheet" href="{% static 'medicaltemplate/css/responsive.css'%}">
+<!-- Title -->
+<link href="{% static 'css/animate.css'%}" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/animate.min.css'%}" />
+<link rel="stylesheet" href="{% static 'css/animateSpeed.css'%}" />
+<title>Todos Doctors</title>
+<!-- Favicon -->
+<link href="{% static 'medicaltemplate/images/favicon.ico'%}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+<link href="{% static 'medicaltemplate/images/favicon.ico'%}" sizes="128x128" rel="shortcut icon" />
+<link href="{% static 'css/pagination.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'vendor/font-awesome5/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery-1.12.4.js'%}"></script>
+    <script src="{% static 'channels/js/websocketbridge.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootcamp.js' %}"></script>
+    <script src="{% static 'js/django.csrf.js' %}"></script>
+
+{% block head_extra  %} 
+
+{% endblock head_extra  %}
+{% load bootstrap3 %}  
+
+  <style>
+    {% block style %}
+    
+    {% endblock %}
+    </style>
+<style>    
+.dropdown-content_wide{
+  width: 210px;
+} 
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.space_top {
+  margin-top: 5px;
+  height: auto;
+}
+.wrap-package{    
+    height: 100%;
+    background: #ffffff;
+    border-radius: 0 60px 60px 60px;
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+}  
+.wrap-article{    
+    height: 100%;
+    /*background: #ffffff;
+    border-radius: 0 60px 60px 60px;*/
+    /*width: 75%;*/
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+} 
+.pointer-none{
+ pointer-events: none; 
+}
+.pointer-auto{
+ pointer-events: auto; 
+}
+.fb-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.fb-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.li-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(0, 119, 181)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.li-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.tw-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.tw-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.sign-doctor-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.sign-doctor-link>a{
+ text-align: left;
+ padding-left: 5px;
+ border-radius: 5px;
+ padding: 2px; 
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color: white;
+}
+
+}
+
+.pin-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(200, 21, 22)!important;
+background: -moz-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+background: linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.pin-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.stumble-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(200, 21, 22)!important;
+background: -moz-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+background: linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.stumble-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.img-size-help{
+  height: 60vh;
+}
+.border-title-curve{
+border-bottom-left-radius: 18px;
+    border-bottom-style: ridge;
+    margin-bottom: 4px; 
+}
+@media (min-width: 768px){
+.fixed-side{
+  position: fixed;
+  width: 22%;
+}
+}
+.label-form-user {
+    /* display: inline; */
+    padding: .2em .6em .3em;
+    font-size: 85%;
+    font-weight: 700;
+    /* line-height: 1; */
+    color: #fff;
+    text-align: center;
+    /* white-space: nowrap; */
+    /* vertical-align: baseline; */
+    border-radius: .25em;
+}
+.form-bg {
+  background-color: #f3f3f3;
+    padding: 5px 24px 5px;
+    border: 1px solid #ddd;
+}
+.logo-text {
+    font-family: Nova Square;
+    /* font-size: 43px; */
+    vertical-align: middle;
+    color: #00b3ff;
+}
+</style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+	<div id="preloader" class="preloader">
+		<div id="pre" class="preloader_container"><div class="preloader_disabler btn btn-default">Disable Preloader</div></div>
+	</div>
+	<!-- Header Header Top -->
+   
+   {% include 'headersectionempty.html' %}
+	<!-- Home Design -->
+<div class="container">
+{% block content %}
+
+
+    
+{% endblock %}
+
+ </div> 	
+
+	<!-- Our Footer -->
+{% include 'footersection.html' %}
+
+<a class="scrollToHome" href="#"><i class="fa fa-home"></i></a>
+</div>
+<!-- Wrapper End -->
+
+<script type="text/javascript" src="{% static 'medicaltemplate/js/bootstrap.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/bootsnav.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/parallax.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/scrollto.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery-scrolltofixed-min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery.counterup.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/gallery.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/wow.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/slider.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/video-player.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery.barfiller.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/timepicker.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/tweetie.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/validator.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/form-script.js'%}"></script>
+<!-- Google Map Javascript Codes -->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw"></script>
+<script src="{% static 'medicaltemplate/js/googlemaps.js'%}"></script>
+<!-- Custom script for all pages --> 
+<script type="text/javascript" src="{% static 'medicaltemplate/js/script.js'%}"></script>
+<script> 
+
+</script>
+
+
+
+
+{% block extra_js %}
+
+{% endblock %}
+ 
+{% localize off %}
+
+
+
+<script>
+
+
+    //window.initMap = function()*/
+    function initMap(lat,lng,name,address,value){
+      var locations = [
+    
+        {
+        lat: lat, 
+        lng: lng, 
+        name: name, 
+        address:address 
+        }, 
+    
+      ] 
+  
+
+
+
+      var map;
+      var markers =[];
+      var infoWindow;
+           
+      console.log(locations)
+      console.log(name)
+      var uluru = {lat: lat, lng: lng}
+     
+       /*var uluru = {lat: -25.363, lng: 131.044};*/
+      console.log("test")
+      
+      map = new google.maps.Map(document.getElementById('map'+value), {
+        zoom: parseInt({{ request.GET.zoom }}) || 12, // 0 to 18
+        center: uluru
+      });
+      // Create the DIV to hold the control and call the CenterControl()
+        // constructor passing in this DIV.
+        var centerControlDiv = document.createElement('div');
+        var centerControl = new CenterControl(centerControlDiv, map);
+
+        centerControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+      var searchLink = $('#search-here')
+      var defaultSearchLink = searchLink.attr("href")
+      map.addListener('center_changed', function(){
+          window.setTimeout(function(){
+              var mLat = map.center.lat()
+              var mLng = map.center.lng()
+              getLocalName(mLat, mLng)
+              searchLink.fadeIn()
+              // searchLink.attr('href', defaultSearchLink + "&loc=" + mLat + "+" + mLng)
+              
+          }, 1000)
+         
+      })
+
+    // iz koordinata nadji ime
+      function getLocalName(lat, lng){
+          var geocoder = new google.maps.Geocoder()
+          var location = new google.maps.LatLng(lat, lng)
+          geocoder.geocode({'latLng': location}, function(results, status){
+              if( status== google.maps.GeocoderStatus.OK) {
+                  if (results[2].address_components[2]){
+                      var longName = results[2].address_components[2].long_name
+                      console.log(longName)
+                      searchLink.attr('href', defaultSearchLink + "&loc=" + longName + "&zoom=" + 6)
+                  }
+                  // return longName
+              }
+
+          })
+      }
+      $('.click').click(function(event){
+          event.preventDefault()
+          codeAddress()
+
+      })
+      // iz adrese nadji koordinate
+      function codeAddress() {
+                          var address = document.getElementById('address').value;
+                          var geocoder = new google.maps.Geocoder()
+                          geocoder.geocode( { 'address': address}, function(results, status) {
+                            if (status == 'OK') {
+                              /*map.setCenter(results[0].geometry.location);
+                              var marker = new google.maps.Marker({
+                                  map: map,
+                                  position: results[0].geometry.location
+                              });*/
+                               var position= results[0].geometry.location
+                               // tu treba grad i adresa stavir marker
+                               var marker =createMaker(position, 'test', 'puebla')
+                               /*creira se marker */
+                               markers.push(marker)
+                               google.maps.event.trigger(marker, 'click')
+                                  map.setCenter(position)
+                                  map.setZoom(16) 
+                                  /*zoma se na tu poziciju*/
+                            } else {
+                              alert('Geocode was not successful for the following reason: ' + status);
+                                }
+                              });
+                      }
+
+
+
+    var contentString =  
+       
+        '<div class="icon_gog position-icon ">'+
+        
+        '</div>'+
+        '<span class="navigate-icon-text position-icon-text ">'+ 'Directions'+ '</span>'+'</a>'
+        
+
+
+
+      infoWindow = new google.maps.InfoWindow()
+
+      function createMaker(latlng, name, address){  
+          console.log(latlng.lng)
+          var html = "<b>" + name + "</b><br/>" + address
+          /*+"<a href="+"https://www.google.com/maps?ll"+ latlng.lat +","+latlng.lng+ ">"+ contentString*/
+          var marker = new google.maps.Marker({
+                position: latlng,
+                map: map
+              });
+          google.maps.event.addListener(marker, 'click', function(){
+              infoWindow.setContent(html)
+              console.log(address)
+              infoWindow.open(map, marker)
+          })
+          return marker
+      }
+    if (locations.length > 0) {
+        for(var i = 0; i < locations.length; i++) {
+            var obj = locations[i]
+            var latlng = {lat: obj.lat, lng: obj.lng}
+            var marker = createMaker(latlng, obj.name, obj.address)
+            markers.push(marker)
+
+        }
+    }
+
+    function clearLocations(){
+        infoWindow.close()
+        for (var i = 0; i < markers.length; i++){
+            markers[i].setMap(null)
+        }
+        markers.length = 0
+    }
+    function CenterControl(controlDiv, map) {
+
+        // Set CSS for the control border.
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#7997e3';
+        controlUI.style.border = '1px solid #7997e3';
+        controlUI.style.borderRadius = '2px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.marginBottom = '22px';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Close';
+        /*controlUI.classList.add("close-icon-loc")*/
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior.
+        var controlText = document.createElement('div');
+        controlText.style.color = 'rgb(255,255,255)';
+        controlText.style.backgroundColor= '#7997e3';
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '20px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'X';
+        
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listeners: simply set the map to Chicago.
+        controlUI.addEventListener('click', function() {
+          
+          
+          $("#map"+value).fadeToggle();
+          $("#map"+value).prev(".thumbnail").fadeToggle();
+
+        });
+
+      }
+    
+
+
+
+
+    }
+
+
+
+</script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}">
+  
+
+
+  
+</script>
+{% block script %}
+
+{% endblock %}
+
+
+{% endlocalize %}
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+{% extends "base_doctor_userweb.html" %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load staticfiles %}
+
+<style type="text/css">
+{% block style %}
+
+.form-bg {
+	background-color: #f3f3f3;
+    padding: 5px 24px 5px;
+    border: 1px solid #ddd;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content:  'Select some files';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.myradio {
+  display: inline-block;
+}
+.text-thm2
+ {
+  display: inline-block;
+}
+.radio
+ {
+  display: inline-block;
+}
+.checkbox, .radio {
+    position: relative;
+  
+    margin-top: 21px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+@-webkit-keyframes zoomInTest1 {
+  from {
+    opacity: 0.2;
+    -webkit-transform: scale3d(.8, .8, .8);
+    transform: scale3d(.8, .8, .8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInTest1 {
+  from {
+    opacity: 0.2;
+    -webkit-transform: scale3d(.8, .8, .8);
+    transform: scale3d(.8, .8, .8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+.zoomInTest1 {
+  
+
+
+  -webkit-animation-name: zoomInTest1 ;
+  animation-name: zoomInTest1 ;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+ 
+    
+  
+}
+.image_help_zoom_right{
+	width: 80%;
+    height: 85%;
+    position: absolute;
+    top: 3%;
+    left: 30%;
+}
+.image_help_zoom_full{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.border-title-curve{
+border-bottom-left-radius: 18px;
+    border-bottom-style: ridge;
+    margin-bottom: 4px;	
+}
+    
+{%  endblock style %}
+</style>
+
+{% block content %}
+
+
+
+<div class='row'>
+<div class='col-sm-8 border-title-curve col-sm-offset-1'>
+<h1>{% trans  'Customize your profile  web page'  %}</h1>
+
+</div>
+</div>
+
+<!--  -->
+
+{% if  not verificated %}
+<div classs ='row'>
+  <div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+  {% include 'sidebar.html' %}
+  
+  </div>
+
+
+	<div id="home" class='col-sm-6 col-sm-offset-3 form-bg'> 
+	<h3>{% trans  'Top Home section'  %}</h3>
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+	  <!-- methoda je po defaultu get -->
+	<!-- {{ form.as_p}} -->
+	{{form|crispy}}
+	<!-- form as parameter  -->
+	<input class="btn btn-primary" type ='submit' value ="{% trans 'Submit Home Section' %}"/> <!-- # referira se na methodu od forma->
+	<!--<input type='text'>
+
+	<input>-->
+	</form>
+
+
+	</div>
+</div>
+
+<div id="service" class='col-sm-6 col-sm-offset-3 form-bg'>
+	<h3>{% trans  'Service section'  %}</h3>  
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+	{{form3.servicename|as_crispy_field}}
+	{{form3.servicetext|as_crispy_field}}
+	{{form3.weburl|as_crispy_field}}
+	<h4>{% trans  'Choose icon with your service'  %}</h4>
+	<div class="myradio">
+	{% for radio in form3.flavicon %}
+
+		<span class="radio"><input id="{{radio.id_for_label}}" name="flavicon" type="radio" value="{{radio.choice_label}}"> </span>
+	    <span class="{{radio.choice_label}} text-thm2"> </span>
+
+	{% endfor %}
+	</div>	
+	<input class="btn btn-primary " type ='submit' value ="{% trans 'Submit new service' %}" name="AddService"/>
+	</form>
+	{% for objects in service_list  %}
+	<p><a href="{%   url 'newsletter:delete_service'  pk=objects.pk  %}"> Remove {{objects.servicename}} </a></p>
+	{% endfor %}
+</div>
+
+<div  id ="gallery" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+	<h3>{% trans  'Our gallery'  %}</h3>  
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+	{{form2|crispy}}
+	<input class="btn btn-primary " type ='submit' value ="{% trans 'Add picture to gallery' %}" name="Add"/>
+	</form>
+	{% for objects in galery_list  %}
+	<p><a href="{%   url 'newsletter:delete_galery'  pk=objects.pk  %}"> Remove {{objects.imagehomegallery}} </a></p>
+	{% endfor %}
+</div>
+
+
+<div id="department" class='col-sm-6 col-sm-offset-3 form-bg'>
+	<h3>{% trans  'Department section'  %}</h3>  
+	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+	{{form4|crispy}}
+	<input class="btn btn-primary " type ='submit' value ="{% trans 'Add new department' %}" name="Add department"/>
+	</form>
+	{% for objects in department_list  %}
+	<p><a href="{%   url 'newsletter:delete_department'  pk=objects.pk  %}"> Remove {{objects.departmentname}} </a></p>
+	{% endfor %}
+</div>
+
+<div id="team" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+<h3>{% trans  'Team section'  %}</h3>  
+<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+{{form5|crispy}}
+<input class="btn btn-primary " type ='submit' value ="{% trans 'Add Team member' %}" name="Add member"/>
+</form>
+{% for objects in team_list %}
+<p><a href="{%   url 'newsletter:delete_team'  pk=objects.pk  %}"> Remove {{objects.teamname}} </a></p>
+{% endfor %}
+</div>
+
+<div id="insurance" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+<h3>{% trans  'Insurance'  %}</h3>  
+<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+{{form6|crispy}}
+<input class="btn btn-primary " type ='submit' value ="{% trans 'Add insurance' %}" name="Add Insurance"/>
+</form>
+</div>
+
+<div id="payment" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+<h3>{% trans  'Payment method'  %}</h3>  
+<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+{{form7|crispy}}
+<input class="btn btn-primary " type ='submit' value ="{% trans 'Add payment' %}" name="Add Payment"/>
+</form>
+
+
+</div>
+<div id="lang" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+<h3>{% trans  'Language'  %}</h3>  
+<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+{{form8|crispy}}
+<input class="btn btn-primary " type ='submit' value ="{% trans 'Add Language' %}" name="Add Language"/>
+</form>
+{% for objects in language_list %}
+<p><a href="{%   url 'newsletter:language_delete'  pk=objects.pk  %}"> Remove {{objects.language}} </a></p>
+{% endfor %}
+</div>
+<div id="image_help1" class="col-sm-4" style=" position:fixed;right: 0;top:200px;">
+<img class="img-size-help " id="imgsrchelp1" src="{% static 'img/help/imagehelp2.png'%}" alt="">
+<img class=" animated5s zoomInTest1 image_help_zoom_right" style="" id="imgsrchelp2" src="{% static 'img/help/helpabout.png'%}" alt="">	
+
+</div>
+
+
+{% endif %}
+
+
+</div>
+</div>
+
+{% endblock %}
+{%  block script %}
+<script>
+ $('.remove').click(function(event){
+        event.preventDefault()
+        
+    })
+  $('#id_about').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp2.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/helpabout.png'%}"; 
+        
+    })
+  
+ $('#id_imagehome1').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp3.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelpimg.png'%}"; 
+        
+    }) 
+
+ $('#div_id_imagehome1Text1').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    })
+$('#div_id_imagehome1Text2').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    })
+$('#div_id_imagehome2Text1').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    })
+$('#div_id_imagehome2Text2').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    })
+$('#div_id_imagehome3Text1').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    }) 
+$('#div_id_imagehome3Text2').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+        
+    })
+$('#id_servicename').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+        
+    })
+$('#id_servicetext').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+        
+    })
+$('#id_weburl').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+        
+    })
+$('#id_imagehomegallery').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/galleryhelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/galleryhelp.png'%}"; 
+        
+    })
+$('#id_imagehometeam').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/teamhelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/teamhelp.png'%}"; 
+        
+    })
+$('#id_departmentname').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/departmenthelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/departmenthelpname.png'%}"; 
+
+    })
+$('#id_departmenttext').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        event.preventDefault()
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/departmenthelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/departmenthelpdesc.png'%}"; 
+     
+    })
+$('#id_imagehomedep').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+        
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/departmenthelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/departmenthelpimg.png'%}"; 
+     
+    })
+$('#id_imagehometeam').click(function(event){
+  	/*kada likne na neki form promijeni sliku*/
+       
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/teamhelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/teamhelp.png'%}"; 
+     
+    })
+</script> 
+
+
+
+
+
+
+{% endblock %}    

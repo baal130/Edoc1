@@ -1,0 +1,114 @@
+/* Divider Sass */
+.divider-half {
+  overflow-x: hidden;
+  position: relative;
+  overflow-y: hidden;
+  &:before {
+    background-image: url("../images/background/2.jpg");
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    content: "";
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+  }
+  &.style2 {
+    &:before {
+      background-image: url("../images/background/5.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  }
+}
+.ulockd-frst-divider {
+  overflow-x: hidden;
+  position: relative;
+  &:before {
+	  background-color: rgba($black-rgb, $alpha5);
+	  content: "";
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  width: 100%;
+  }
+  .hvr-overline-from-center {
+    &:before{
+      background-color: $white-ff;
+    }
+  }
+  .style1 {
+  	background-attachment: scroll !important;
+  	background-color: transparent;
+  	background-image: url("../images/background/1.jpg");
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	  -o-background-size: cover;
+  	background-size: cover;
+  	background-position: center center;
+  	background-repeat: no-repeat;
+  	overflow-x: hidden;
+  	z-index: 1;
+  	&:before {
+  	  background-color: rgba($black-rgb, $alpha5);
+  	  content: "";
+  	  height: 100%;
+  	  position: absolute;
+  	  top: 0;
+  	  width: 100%;
+  	}
+  }
+}
+.divider {
+  background-attachment: scroll !important;
+  background-image: url("../images/background/1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
+  overflow-y: hidden;
+  &:before {
+  	background-color: rgba($black-1rgb, $alpha75);
+  	content: "";
+  	height: 100%;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+  }
+}
+//= Background Video
+.video-section {
+  .pattern-overlay {
+    background-image: url('../images/resource/videooverlay1.png');
+    background-color: rgba($black-rgb, $alpha3);
+    padding: 110px 0 25px;
+    min-height: 880px;
+    /* Incase of overlay problems just increase the min-height*/
+  }
+  h1 {
+    font-size: 72px;
+    text-transform: uppercase;
+    margin: 15% auto 0px;
+  }
+  h3 {
+    margin: 0px auto 15px;
+  }
+  .buttonBar {
+    display:none;
+  }
+}

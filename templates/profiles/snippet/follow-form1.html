@@ -1,0 +1,37 @@
+{% if request.user.is_authenticated %}
+<!-- <form class='' method='POST' action='{% url "followlist" %}'> {% csrf_token %}
+<img class="conversation-portrait " src='http://trybootcamp.vitorfs.com/static/img/user.png' class="conversation-portrait">
+            <span class=""  style="font: normal 16px 'Cookie', cursive;"> {{ user.username }}&nbsp   
+            
+              </span> 
+<input type='hidden' class='form-control' name='username' value='{% if username %}{{ username }}{% else %}baal130{% endif %}'/>
+
+
+<span class="input-group-btn" ">
+        <button class='btn btn-sm {% if is_following %}btn-default{% else %}btn-primary{% endif %}'>{% if is_following %}Unfollow{% else %}Follow{% endif %}</button>
+   </span>
+    
+</form> -->
+
+ <form class="form-inline" method='POST' action='{% url "followlist" %}'>{% csrf_token %}
+                    
+                    <!-- <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe"> -->
+                    <img class="conversation-portrait  " src='http://trybootcamp.vitorfs.com/static/img/user.png' class="conversation-portrait">
+                   	  <input type='hidden' class='form-control' name='username' value='{% if username %}{{ username }}{% else %}baal130{% endif %}'/>
+                   	  <button class='btn btn-sm mb-2 mr-sm-2 {% if is_following %}btn-default{% else %}btn-primary{% endif %}'>{% if is_following %}Unfollow{% else %}Follow{% endif %}</button>
+                    <span class=" "  style="font: normal 16px 'Cookie', cursive;"> {{ user.username }}&nbsp </span> 
+                    
+                      
+                     
+                   
+
+                    <!-- <div class="form-check mb-2 mr-sm-2">
+                      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                      
+                    </div> -->
+                    
+                  </form>
+                  
+{% endif %}
+
+		

@@ -1,0 +1,22 @@
+/* Partner Sass */
+.ulockd-divider-thumb {
+	background-color: $white-ff;
+	padding: 5px;
+	&:hover {
+		img  {
+		  cursor: pointer;
+		}
+	}
+}
+//== Office Location
+.office-location {
+	h3 {
+		margin-top: 0;
+	}
+	li {
+		a {
+		  font-size: 16px;
+		  line-height: 24px;
+		}
+	}
+}

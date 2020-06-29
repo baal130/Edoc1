@@ -1,0 +1,271 @@
+/* Service Sass */
+
+//== First Service
+.ulockd-service {
+  z-index: 1;
+  &:before {
+  	background-color: rgba($white-rgb, $alpha8);
+  	content: "";
+  	height: 100%;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+  	z-index: 0;
+  }
+}
+.service-col {
+  background-color: $white-ff;
+  text-align: center;
+  @include transition(all 0.3s ease-in-out 0s);
+  .srvc-icon {
+	color: $white-ff;
+	font-size: 30px;
+	padding: 8px 13px;
+  } 
+  .srvc-details {
+	  padding: 10px 15px;
+  	h3 {
+  	  font-size: 22px;
+  	  @include transition(all 0.2s ease-in-out 0s);
+  	}
+  }
+}
+//== Images Box
+.img-box {
+  background-color: $white-ff;
+  padding: 20px 25px;
+  position: relative;
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+  .thumb {
+    display: inline-block;
+    img {
+      margin: 10px 0;
+      width: 48px;
+    }
+  }
+}
+//== Service Details
+.ulockd-pd-content {
+  h3 {
+	color: $black-33;
+    margin-bottom: 15px;
+  }
+}
+.ulockd-all-service {
+  margin-top: 15px;
+  a {
+    border-radius: 0;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+	  &.active {
+	    background-color: $black-22;
+	    border-color:  $black-22;
+	  }
+  }
+}
+.agent-post {
+  background-color: $white-fa;
+  margin-top: 25px;
+  padding: 10px;
+}
+.list-group-item {
+  &.active {
+  background-color: $black-22; 
+    &:focus,
+    &:hover, {      
+      background-color: $black-22; 
+    }
+  }
+} 
+.ulockd-inr-brochure {
+  background-color: $white-f5;
+  margin-top: 35px;
+  padding: 10px 30px;
+  p {
+	  margin-bottom: 22px;
+  }
+  ul {
+  	li {
+  	  a {
+		    font-size: 14px;
+		    line-height: 24px;
+		    margin-bottom: 10px;
+		    text-transform: uppercase;
+	    }
+  	}
+  }
+}
+//== Feature Icon Box
+.service-box {
+  position: relative;
+  text-align: center;
+  .icon {
+    font-size: 70px;
+    line-height: 1.2;
+  }
+  .title {
+    color: $white-ff;
+    margin-top: 0;
+  }
+}
+.icon_box {
+  padding: 20px 0 0;
+  position: relative;
+  &.style2 {
+    margin-bottom: 50px;
+  }
+  .icon {
+    margin-top: 6px;
+    @include transition(all 0.3s ease-in-out 0s);
+    i {
+      font-size: 24px;
+      height: 55px;
+      line-height: 56px;
+      text-align: center;
+      width: 55px;
+    }
+    span {
+      display: inline-block;
+      font-size: 30px;
+      height: 55px;
+      line-height: 56px;
+      text-align: center;
+      width: 55px;
+    }
+  }
+  &:hover {
+    .icon {
+      i,
+      span {
+        color: $white-ff !important;
+        @include transition(all 0.2s ease-in-out 0s);
+      }
+    }
+  }
+  .ib_details {
+    margin-left: 75px;
+    &.two {
+      margin-left: 0;
+      position: relative;
+    }
+    &.left {
+      margin-right: 75px;
+      margin-left: 0;
+    }
+    h3,
+    h4 {
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+}
+
+//== Service Pagination
+.pagination>.active>a {
+  color: $white-ff !important;
+}
+
+//== Features Tab
+ul {
+  &.features-tab {
+    border: none;
+    li {
+      a {
+        border: 1px solid $gray-gainsboro;
+        border-radius: 0;
+        margin-left: 5px;
+        margin-bottom: 25px;
+        position: relative;
+        @include transition(all 0.3s ease-in-out);
+      }
+      &.active {
+        a {
+          &:before {
+            content: "";
+            height: 20px;
+            position: absolute;
+            top: 31px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.features-tab>li.active>a,
+.features-tab>li.active>a:focus, 
+.features-tab>li.active>a:hover {
+  color: $black-33;
+}
+//== Feature Services
+.media-heading {
+  @include transition(all 0.3s ease-in-out);
+}
+form {
+  &.volunteer-reg-form {
+    background-color: $white-f9;
+    padding: 10px 15px 20px;
+    input {
+      border-radius: 0;
+      box-shadow: none;
+      height: 45px;
+    }
+  }
+}
+//== Our Project
+.pb-details {
+  h3 {
+    margin-top: 0;
+  }
+}
+
+//== Second Service
+.ficon-box {
+  background-color: $white-ff;
+  padding: 15px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    span {
+      color: $white-ff !important;
+    }
+  }
+  .ficon {
+    display: inline-block;
+    font-size: 48px;
+    line-height: 1.3em;
+    margin-top: 0px;
+    padding: 0 15px;
+    position: relative;
+    @include transition(all 0.4s ease-in-out 0s);
+    h5 {
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      @include transition(all 0.2s ease-in-out 0s);
+      text-transform: uppercase;
+    }
+  }
+  .icon {
+    display: inline-block;
+    img {
+      width: 100px;
+    }
+  }
+}
+
+//== Department Box
+.department_box {
+  h4 {
+    margin-top: 0;
+  }
+}

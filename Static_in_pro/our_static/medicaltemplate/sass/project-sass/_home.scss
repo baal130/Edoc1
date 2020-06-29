@@ -1,0 +1,350 @@
+/* Home Sass */
+//== Main Slider New Start
+#sg-carousel {
+  position: relative;
+  height: 100%;
+  .carousel-inner {
+    .item {
+      height: 100%;
+    }
+  }
+  .carousel-control {
+    bottom: 0;
+    color: $white-ff;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: auto;
+    @include transition(all 0.8s ease 0s);
+    &.left {
+      background-image: none;
+      background-repeat: no-repeat;
+      opacity: 0;
+      text-shadow: none;
+      @include transition(all 0.8s ease 0s);
+      top: 35%;
+    }
+    &.right {
+      background-image: none;
+      background-repeat: no-repeat;
+      opacity: 0;
+      right: 0;
+      left: auto;
+      text-shadow: none;
+      @include transition(all 0.8s ease 0s);
+      top: 35%;
+      z-index: 999;
+    }
+  }
+  &:hover {
+    .carousel-control {
+      &.left {
+        left: 38px;
+        opacity: 1;
+        @include transition(all .2s ease 0);
+      }
+      &.right {
+        opacity: 1;
+        right: 38px;        
+        @include transition(all .2s ease 0);
+      }
+    }
+  }
+  h1 {
+    animation-delay: 1s;
+  }
+  p {
+    animation-delay: 2s;
+  }
+}
+.carousel-caption {
+  left: 10%;
+  padding-bottom: 5%;
+  right: 0;
+  text-align: left;
+  top:30%;
+  h1 {
+    color: $white-ff;
+    font-size: 48px;
+    text-shadow: none;
+    span {
+      border-radius: 35px;
+      padding: 10px 15px;
+    }
+  }
+  h2{
+    color: $white-ff;
+    margin-top: 25px;
+    text-shadow: none;
+    span {
+      border-radius: 35px;
+      padding: 10px 15px;
+    }
+  }
+  h3{
+    color: $white-ff;
+    margin-top: 25px;
+    text-shadow: none;
+    span {
+      border-radius: 35px;
+      padding: 10px 15px;
+    }
+  }
+  p {
+    color: $white-ff;
+  }
+  a {
+    text-transform: uppercase;
+    color: $white-ff;
+    background: $black-11;
+    padding: 6px 12px;
+  }
+  button {
+    border-radius: 25px;
+    margin-top: 10px;
+  }
+}
+.carousel-caption {
+  &.style3 {
+    bottom: 0;
+    left: 0;
+    padding: 0 5%;
+    padding-bottom: 0;
+    right: 0;
+    text-align: center;
+  }
+}
+.carousel-inner {
+  .item {
+    a {
+      img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;  
+      }
+    }
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;      
+    }
+  }
+}
+.item.active img {
+  transition: transform 5000ms linear 0s;
+  transform: scale(1.05, 1.05);
+}
+.carousel-fade {
+  .carousel-inner {
+    .active {
+      opacity: 1;
+    }
+    .next {
+      &.left {
+        opacity: 1;
+      }
+      &.right {
+        opacity: 1;
+      }
+    }
+  }
+  .carousel-control {
+    z-index: 2;
+    font-size: 80px;
+  }
+}
+.carousel-indicators li {
+  background-color: $gray-lightest;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+  margin: 1px;
+  text-indent: -999px;
+  width: 12px;
+  border: 0;
+  .active {
+    background-color: $black-44;
+    height: 12px;
+    margin: 0;
+    width: 12px;
+    border: 0;
+  }
+}
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+  .carousel-fade .carousel-inner > .item.next,
+  .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.prev,
+  .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.next.left,
+  .carousel-fade .carousel-inner > .item.prev.right,
+  .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+}
+// Main Slider New End
+.ulockd-home-slider {
+  overflow-x: hidden;
+  .home-app {
+    position: relative;
+  }
+  .pogoSlider--navBottom {
+    .pogoSlider-nav {
+      bottom: 25px;
+    }
+  }
+  .pogoSlider-nav-btn {
+    border-radius: 0;
+    height: 5px;
+    width: 20px;
+  }
+}
+.ulockd-home-btn {
+  border-radius: 30px;
+}
+.main-slider2 {
+  position: relative;
+  .item {
+    &:before {
+      background-color: rgba($black-rgb, $alpha25);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+  .mslider-caption {
+    padding: 15% 20%;
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+    .mslider-details {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  .slider-text1 {
+    color: $white-ff;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+  .slider-text2 {
+    color: $white-ff;
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 70px;
+  }
+  .slider-text3 {
+    p {
+      color: $white-ff;
+      font-size: 18px;
+      margin-top: 20px;
+    } 
+  }
+  .owl-next {
+    background: transparent none repeat scroll 0 0 !important;
+    border: 2px dashed $gray-gainsboro;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 40%;
+    @include transition(all 0.3s ease-in);
+    i {
+      font-size: 24px;
+      font-style: normal;
+      font-family: FontAwesome;
+      padding: 4px;
+    }
+  }
+  .owl-prev {
+    background: transparent none repeat scroll 0 0 !important;
+    border: 2px dashed $gray-gainsboro;
+    left: 10px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    @include transition(all 0.3s ease-in);
+    i {
+      font-size: 24px;
+      font-style: normal;
+      font-family: FontAwesome;
+      padding: 4px;
+    }
+  }
+}
+.ulockd-home-btn {
+  border-radius: 30px;
+}
+//== Shop Home Slider Start
+#custom_carousel  {
+  .item {
+    color: $black;
+    background-color: $gray-lighter;
+    padding: 20px 0;
+  }
+  .controls{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    background: $gray-gainsboro;
+    li {
+      display: table-cell;
+      width: 1%;
+      max-width: 90px;
+      &.active {
+        background-color: $gray-lighter;
+      }
+    }
+    a {
+      small {
+        display: block;
+        font-size: 10px;
+        font-weight: bold;
+        margin-top: 5px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+//== Shop Home Slider End
+.ulockd-parallax-bg {
+  padding-bottom: 500px;
+  padding-top: 300px;
+  &.form_style {
+    padding: 200px 0;
+  }
+}
+//== PgSlider
+.pogoSlider {
+  h1, 
+  h2,
+  h3, 
+  h4, 
+  p {
+    color: $white-ff;
+  }
+}

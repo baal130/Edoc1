@@ -1,0 +1,147 @@
+/* Header Sass */
+
+//== Header Top
+.header-top {
+  padding: 10px 0;
+  position: relative;
+}
+.header-top-two {
+  background: $black-44 none repeat scroll 0 0;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+.header-top-two {
+  span {
+    color: $white-ff;
+    font-weight: 400;
+  }
+}
+.ulockd-padz {
+  padding: 0;
+}
+.welcm-ht {
+  position: relative;
+  a {
+  color: $black-44;
+    &.btn {
+      padding: 5px 20px;
+    }
+  }
+}
+.welcm-ht-two {
+  color: $gray-lightgrey;
+}
+.ulockd-welcntxt {
+  color: $black-44;
+  margin: 0;
+}
+header {
+  &.header-nav {
+    z-index: 99;
+  }
+}
+//== Header middle
+.welcm-header-middle > p {
+  margin-bottom: 0;
+}
+.header-middle{
+  background-color: $white-f6;
+  border-top: 1px solid $white-ff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.ulockd-ohour-info {
+  &.style2 {
+    border: 2px solid $white-f5;
+    padding: 10px 0;
+    @include box-shadow(0 2px 24px rgba($black-rgb, $alpha2));
+    @include transition(all 0.3s ease-in-out);
+    .ulockd-info {
+      padding-left: 0;
+    }
+  }
+  .ulockd-icon {
+    font-size: 20px;
+    line-height: 1.3em;
+  }
+  .ulockd-info {
+    display: inline-block;
+    padding-left: 15px;
+    position: relative;
+    h3 {
+      color: $black-33;
+      font-weight: 400;
+      line-height: 28px;
+      margin-bottom: 0;
+      margin-top: 12px;
+    }
+    h5,
+    h4 {
+      font-weight: bold;
+      margin: 0;
+    }
+    p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+  }
+}
+.htc-info {
+  .ulockd-icon{
+    border: 2px solid $gray-gainsboro;
+    font-size: 26px;
+    margin-right: 16px;
+    padding: 3px 10px;
+  }
+  .ulockd-info {
+    padding-right: 25%;
+    h3 {
+      color: $black-33;
+      font-weight: 400;
+      line-height: 28px;
+      margin-bottom: 0;
+      margin-top: 12px;
+    }
+  }
+}
+.ulockd-cell,
+.ulockd-addrss {
+  color: $black-55;
+}
+.ulockd-main-logo2 {
+  img {
+    margin-top: 10px;
+  }
+}
+//== Language Button
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  color: $black-44;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  &:hover {
+     .dropdown-content {
+      display: block;
+    }
+  }
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $white-f9;
+  padding: 6px 0;
+  width: 85px;
+  z-index: 9999;
+  a {
+    color: black;
+    padding: 5px 0px;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      background-color: $gray-darkgrey;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{% load staticfiles %}
+{%  load i18n %}
+
+<!-- Our About -->
+	<section id="about" class="ulockd-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="about-box">
+						<h1 class="title-bottom ulockd-mrgn620 ulockd-mrgn120">{% trans " Welcome To" %} Dr. <span class="text-thm2">{{instance.name|title }} {{instance.surname|title }} </span>page</h1>
+						<h4 class="lead">Medical specialist in {{instance.speciality }} vascular diseases</h4>
+						
+                        {% if instance.about %}
+                          <p>{{instance.about}} </p>
+                        {% else %}   
+						        <p>{% trans "We are specialists and professors of our respective specialties, certified in the respective councils of specialties, with publications in different journals and medical books. We offer medical services with the most advanced technology and the most up-to-date knowledge." %}  </p>
+						{% endif %}	
+                        <p>{% trans "Some of our services:" %}</p>
+						{% if service_list_6 %} 
+								<ul class="list-unstyled list-style-circle">
+									
+								{% for objects in service_list_6  %}
+									<li>{{objects.servicename}}.</li>
+								{% endfor %}
+								</ul>
+						{% else %} 
+							<ul class="list-unstyled list-style-circle">
+								
+								<li>{% trans "Primary Care" %}</li>
+								<li>{% trans "Lab Test" %}</li>
+								<li>{% trans "Symptom Check" %}</li>
+								<li>{% trans "Heart Rate" %}</li>
+								
+							</ul>
+						    We Provide Best Medical Service. 
+						{% endif %}	
+					   
+
+					    <span class="scroll"><a href="#service">
+						<button type="submit" class="btn btn-lg ulockd-btn-thm2 ulockd-mrgn1215">{% trans "Explore Service" %}</button>
+						</a></span>
+
+						<span class="scroll"><a href="#contact">
+						<button type="submit" class="btn btn-lg ulockd-btn-blue ulockd-mrgn1215">{% trans "Contact Us" %}</button>
+						</a></span>
+
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about-box">
+						<div class="ab-thumb ovh">
+							<img  style="max-width: fit-content; " class="img-responsive img-whp" src="
+							{% if instance.profilepicture %}{{instance.profilepicture.url}} {% else %}{% static 'medicaltemplate/images/about/profile_about_610x410.png' %}  {% endif %} " alt="2.png">
+							<div class="doc-name-left ulockd-bgthm">
+								<h4> Dr. {{instance.name|title}} {{instance.surname|title}}</h4>
+								<p>- {{instance.speciality}}</p>
+							</div>
+							<!-- <div class="doc-name-right ulockd-bgthm">
+								<h4>Dr. Neeson</h4>
+								<p>- Dentist</p>
+							</div> -->
+						</div>
+					</div>
+					<div class="row">
+						{% if instance.web %}    
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt pull-left fn-smd"><span class=" text-thm2"><img src="https://img.icons8.com/cute-clipart/40/000000/web.png"></span>
+								
+									<span> <a href="{{instance.web}}">{{instance.web}}</a></span>
+									
+								</div>	
+							</div>
+						</div>
+						{% endif %} 
+						{% if instance.speciality %} 
+						<div class="col-xs-12 col-sm-12">
+							<div class=" icon_box_abt text-left tac-smd">
+								<div class=" icon_abt icon_abt_bord  pull-left fn-smd"><span class="flaticon-medical-11 text-thm2"></span></div><span><big>{{instance.speciality}}</big></span>
+								
+							</div>
+						</div>
+						{% endif %} 
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="glyphicon glyphicon-stats text-thm2"></span></div>
+								<div class="ib_details">
+									<span class="addrating" id="fixture" value="{{ instance.get_total_rating.rating__avg|safe}}"> </span>
+					               <big>{{ instance.get_total_rating.rating__avg|safe}}</big> <small> by ({{instance.get_total_rating.rating__count|safe}} pacients) </small>
+					               <a href="{{instance.get_absolute_url_comments}}"><button type="" class=" btn btn-sm btn btn-outline-info ">
+					               	<span class="one-stars-container stars-100">★</span>  {% trans "RATE / COMMENT" %}</button></a>
+
+								</div>
+
+							</div>
+						</div>
+						
+						
+
+						{% if insurance_list %} 
+						<div class="col-xs-2 col-sm-2">
+							<div class=" icon_box_abt  tac-smd">
+								<div class=" icon_abt icon_abt_bord   fn-smd"><span class="fas fa-shield-alt text-thm2"></span> </div>
+									
+									
+								
+							</div>
+						</div>
+						<div class="col-xs-10 col-sm-10">
+							<span>
+
+									
+                                    <li>{% trans "Private patients (without insurance)" %}</li>
+									{% include 'complain_list_pag1.html' %}
+										</span>
+
+						</div>
+						{% endif %} 
+						{% if payment_list %} 
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fa fa-money text-thm2"></span></div>
+								<div class="ib_details">
+
+									{% for entry in payment_list %}
+                   						 {{entry.description|title}}, 
+                   
+      										{% endfor %}
+      										
+								</div>
+
+							</div>
+						</div>	
+						{% endif %}
+						{% if instance.acceptchildren %} 
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fa fa-child text-thm2"></span></div>
+								<div class="ib_details">
+									<li>{% trans "Accepts children under 12" %}</li>
+
+								</div>
+							</div>
+						</div>
+						{% endif %}
+						{% if instance.specialprice %}
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fa fa-percent text-thm2"></span></div>
+								<div class="ib_details">
+									{% trans "Have discounts for todos doctors" %}
+
+								</div>
+							</div>
+						</div>
+						{% endif %}
+						{% if instance.homevisit %}
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fa fa-home text-thm2"></span></div>
+								<div class="ib_details">
+									{% trans "Home visits available" %}
+
+								</div>
+							</div>
+						</div>	
+						{% endif %}
+						{% if language_list %}
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fa fa-language text-thm2"></span></div>
+								<div class="ib_details">
+									
+									{% for entry in language_list %}
+                   						 {{entry.language|title}},
+                   
+      										{% endfor %}
+      											
+								</div>
+							</div>
+						</div>
+						{% endif %}	
+						{% if instance.invalidsaccess %}	
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fab fa-accessible-icon text-thm2"></span></div>
+								<div class="ib_details">
+									{% trans "Have access for people with disabilities" %}
+
+								</div>
+							</div>
+						</div>	
+						{% endif %}
+						{% if instance.acceptanimales %}
+						<div class="col-xs-12 col-sm-12">
+							<div class="icon_box_abt text-left tac-smd">
+								<div class="icon_abt icon_abt_bord pull-left fn-smd"><span class="fas fa-dog text-thm2"></span></div>
+								<div class="ib_details">
+									{% trans "Pet friendly" %}
+
+								</div>
+							</div>
+						</div>	
+						{% endif %}
+						<div class="col-xs-2 col-sm-2">
+							<div class=" icon_box_abt  tac-smd">
+								<div class=" icon_abt icon_abt_bord   fn-smd"><span class="flaticon-medical-2 text-thm2"></span> </div>
+									
+									
+								
+							</div>
+						</div>
+						<div class="col-xs-10 col-sm-10">
+							<span>
+
+									
+                                    {% include 'price_list_pag.html' %}
+										</span>
+
+						</div>
+						
+                         <span class="scroll"><a href="#pricing"><button type="submit" class="btn  btn-lg ulockd-btn-thm2 ulockd-mrgn1215">{% trans "Check Special offers" %}</button></a></span>	
+						
+						
+
+					</div><!-- end row -->
+				</div>
+			</div>
+		</div>
+	</section>

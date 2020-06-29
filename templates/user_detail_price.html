@@ -1,0 +1,52 @@
+{% extends "base_doctor_userdetail.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+
+
+<!--  -->
+
+<div class='row'>
+	<div class='col-sm-8 border-title-curve col-sm-offset-3 '  >
+	<h1>{% trans  'Add price and discount for you services'  %}</h1>
+
+	</div>
+</div>
+
+
+
+<div classs ='row'>
+	<div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+	{% include 'sidebar.html' %}
+	
+    </div>
+	<div class='col-sm-6 col-sm-offset-4 form-bg' style=" border-radius:8px; margin-bottom: 200px;">
+		<p class=" label-form-user label-info">{% trans  'Use this section to adjust prices for your services' %}
+		{% trans  'and to use dicounted prices.  ' %}{% trans  'Most of patients check prizes when searching for specialists  ' %}<br>
+		{% trans  '-->Services are added in web module section  ' %}
+		</p>	
+	{% for entry in service_price_list %}
+		{{entry.service.servicename}}, 
+	                   
+	{% endfor %}
+
+		<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+		 
+		{{formset|crispy}}
+
+		<input class="btn btn-primary" type ='submit' value ="Submit"/> 
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

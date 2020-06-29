@@ -1,0 +1,13 @@
+{% if request.user.is_authenticated %}
+<form class='' method='POST' action='{% url "follow" %}'> {% csrf_token %}
+
+<input type='hidden' class='form-control' name='username' value='{% if username %}{{ username }}{% else %}baal130{% endif %}'/>
+<input type='hidden' class='form-control' name='slug' value='{{ slug }}'/>
+
+<span class="input-group-btn">
+        <button class='btn btn-default {% if is_following %}btn-default{% else %}btn-primary{% endif %}'>{% if is_following %}Unfollow{% else %}Follow{% endif %}</button>
+   </span>
+</form>
+{% endif %}
+
+		

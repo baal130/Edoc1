@@ -1,0 +1,210 @@
+{% load staticfiles %}
+{%  load i18n %}
+{% load crispy_forms_tags %}
+<section id="testimonial" class="parallax bgc-overlay-white85 ulockd_bgi1" data-stellar-background-ratio="0.3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">DR <span class="text-thm2">{{instance.name|title }} {{instance.surname|title }}</span></h2>
+						<p>{% trans "Leave your opinion, because your opinion matters"   %}</p>
+					</div>
+				</div>
+			</div>
+		<div class='row'>
+  <div class='col-sm-8 col-sm-offset-2   ' >
+  
+
+  
+  <!--  -->
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  <p><div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <hr/>
+  </p>
+
+  {% if instance.image %}
+  <img src='{{instance.image.url}}' class='img-responsive'>
+   {% endif %} 
+  <h1 class="punch-title"> Like to punch {{instance.name }} <small style="float:right;margin-bottom:2px;">Published on: {{ instance.surname }}</small><br> 
+  <small style="float:right;margin-bottom:2px;"> Updated  on: {{ instance.updated|date }}</small> </h1><br> 
+  <p> Read time : {% if instance.read_time|time:"i" <= "01" %} < 1 minute {% elif instance.read_time|time:"i" < "10" %} < 10 minutes {% else %} {{instance.read_time|time:"i"}}minutes{% endif %}</p>
+  <div class="rating_wrap">  
+    <div class="rating helpLevel">
+                              
+                     <p>
+                   Helpfulness 
+                  
+                    </p>    
+                    
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5">5 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4">4 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                
+               
+
+
+             </div> 
+        
+                
+                
+             
+      <!-- <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div> -->
+        
+        <div class="rating helpLevel">
+                              
+                           <p>
+                  Kindess 
+                  
+                </p>     
+                    
+                    <input type="radio" id="star15" name="rating1" value="5" /><label for="star15" title="5">5 stars</label>
+                    <input type="radio" id="star14" name="rating1" value="4" /><label for="star14" title="4">4 stars</label>
+                    <input type="radio" id="star13" name="rating1" value="3" /><label for="star13" title="Meh">3 stars</label>
+                    <input type="radio" id="star12" name="rating1" value="2" /><label for="star12" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star11" name="rating1" value="1" /><label for="star11" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                  <div class="rating helpLevel">
+                              
+                           <p>
+                  Ethic 
+                  
+                </p>     
+                    
+                    <input type="radio" id="star115" name="rating2" value="5" /><label for="star115" title="5">5 stars</label>
+                    <input type="radio" id="star114" name="rating2" value="4" /><label for="star114" title="4">4 stars</label>
+                    <input type="radio" id="star113" name="rating2" value="3" /><label for="star113" title="Meh">3 stars</label>
+                    <input type="radio" id="star112" name="rating2" value="2" /><label for="star112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star111" name="rating2" value="1" /><label for="star111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                  <div class="rating helpLevel">
+                              
+                           <p>
+                  Waiting time
+                  
+                </p>     
+                    
+                    <input type="radio" id="star1115" name="rating3" value="5" /><label for="star1115" title="5">5 stars</label>
+                    <input type="radio" id="star1114" name="rating3" value="4" /><label for="star1114" title="4">4 stars</label>
+                    <input type="radio" id="star1113" name="rating3" value="3" /><label for="star1113" title="Meh">3 stars</label>
+                    <input type="radio" id="star1112" name="rating3" value="2" /><label for="star1112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1111" name="rating3" value="1" /><label for="star1111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                  <div class="rating helpLevel">
+                              
+                           <p>
+                  Staff
+                  
+                </p>     
+                    
+                    <input type="radio" id="star11115" name="rating4" value="5" /><label for="star11115" title="5">5 stars</label>
+                    <input type="radio" id="star11114" name="rating4" value="4" /><label for="star11114" title="4">4 stars</label>
+                    <input type="radio" id="star11113" name="rating4" value="3" /><label for="star11113" title="Meh">3 stars</label>
+                    <input type="radio" id="star11112" name="rating4" value="2" /><label for="star11112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star11111" name="rating4" value="1" /><label for="star11111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+
+            <br>    
+                <p>
+                  {{rating_avg.rating__avg}}Rating average by {{rating_avg.rating__count}}   users 
+          </p>  
+
+     </div><!-- end wrapper rating -->              
+  </div>
+   <div class='col-sm-6'>
+        <h3>My Google Maps Demo <small><a href='/search/?q={{ request.GET.q }}' style="display:none" id='search-here'>Search here?</a></small></h3>
+        <div id='map' class="gmap"></div>
+    </div>
+    {{instance.lat}}
+</div>
+</div>	
+				
+			
+			<div class='row'>
+	<div class='col-sm-8 col-sm-offset-2  ' style="padding: 0;" >
+     	
+     	<p class='lead lead-comment'>Comments</p>
+     	 <p class='commentdisclaimer '> {% trans "Opinions expressed on this web site are those of the authors alone and do not have anything with punchlist.com.Any comments that contain profanity, vulgarity, threats, commercial promotion, incoherence  will be immediately deleted and sent to service of the relevant public institution" %}  </p>
+    </div>
+	<div class='col-sm-8 col-sm-offset-2  ' >
+     	
+     	
+       
+     	<form method='POST' action='.' >{% csrf_token %}
+			<!-- methoda je po defaultu get -->
+		<!-- {{ form.as_p}} -->
+		{{comment_form|crispy}}
+
+		<!-- form as parameter  -->
+		<input class="btn btn-primary float-right" type ='submit' value =" Submit"/> <!-- # referira se na methodu od forma->
+		<!--<input type='text'>
+
+		<input>-->
+		</form class="test">
+     	{% for comment in comments %}
+     		
+     			<!-- { #{# comment.content_object#} #}  --><!-- get object trough foreign key   -->
+     		
+                
+	     			<blockquote class="blackqoute-margin">
+	     			<footer class="test1"><small>by {{comment.user}} | {{comment.timestamp|timesince}} ago |{% if comment.children.count > 0 %}{{ comment.children.count}} Comments |{% endif %}<a  class="comment-reply-btn " href="#">Reply</a>{% ifequal instance.user user %}|<a  class="" href="{{comment.get_absolute_url_delete  }}">Delete</a>{% endifequal %}</small></footer>
+				  	<p class="triangle-isosceles top">{{comment.content}}</p>
+				 	
+					<div class="comment-reply">	
+					 	{% for child_comment in comment.children %}
+						 	<blockquote>
+						  	<p class="triangle-right ">{{child_comment.content}}</p>
+						 	<footer><small>by {{child_comment.user}} | {{child_comment.timestamp|timesince}} ago {% ifequal instance.user user %}|<a  class="" href="{{child_comment.get_absolute_url_delete  }}">Delete</a>{% endifequal %}</small>
+
+						 		{{child_comment.user}}
+						 		{{child_comment.id}}
+						 	</footer>
+						 	</blockquote>
+						 {% endfor %}
+				        <form method='POST' action='.' >{% csrf_token %}
+								
+							{{comment_form|crispy}}
+							<input type='hidden' name='parent_id' value='{{ comment.id}}'>
+							<input class="btn btn-primary float-right" type ='submit' value =" Reply"/> 
+
+	                    </form>   
+	                </div>    
+				</blockquote>
+				
+     		<hr/>
+
+
+     	{% endfor %}
+
+     	<!-- <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div> -->
+
+	</div>
+	</div>
+	</section>

@@ -1,0 +1,600 @@
+{% extends "base_package_discount.html" %}
+{% load crispy_forms_tags %}
+{%  load i18n %}
+{% load l10n %}
+{% load staticfiles %}
+{% localize off %}
+
+<style type="text/css">
+
+{% block style %}
+
+.dropdown-menu-edit{
+  min-width: 200px;
+}
+.post-thumb-max{
+  max-height: 100px;
+  min-height: 22vh;
+}
+.tools{
+    border-top: 1px solid #d8d8d8;
+    padding: 5px;
+}
+.close-icon-loc{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-message{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-tel{
+  z-index: 0; position: absolute; right: 9px; top: 3px;
+}
+.tel-box{
+  padding: 10px 10px 10px 10px;
+
+}
+.display-none{
+  display: none;
+  
+}
+.display-grid{
+ display: grid; 
+ grid-area: 1 / 1;
+}
+
+.navbar-doctor{
+position: absolute;
+margin-right: 20px!important;
+margin-top: 5px;
+z-index: -3;
+}
+@media (max-width: 992px){
+.navbar-doctor{
+position: relative;
+margin-right: 20px;
+margin-top: 5px;
+
+}  
+}
+.col-margin-5px{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/*.sticky {
+  position: fixed;
+  top: 200px;
+  right:0;
+  /*width: 100%;*/
+}*/
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.gmap {
+        height: 400px;
+        width: 100%;
+  }
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /*top: 150px;*/
+  }
+
+.discount_thumbnail_img{
+position: absolute;
+    top: 1%;
+    left: 3%;
+} 
+.petfriendly_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 22%;
+}
+.disability_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 37%;
+}
+.homevisit_thumbnail_img{
+  position: absolute;
+    top: 1%;
+    left: 56%;
+}
+.wrap-package-discount{
+   padding: 10px;
+    border: 1px solid #ddd;
+    /*margin-bottom: 15px;*/
+    min-height: 140px;
+    height: auto !important;
+    height: 140px;
+    /* padding-left: 230px; */
+    position: relative;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+
+}
+
+.wrap-description{
+      border: 1px solid #ddd;
+    -webkit-box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.3);
+    
+    box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.3);
+}  
+.btn-more-results{
+  background-color: #56cbfc!important;
+
+}
+.btn-more-results:hover{
+  background-color: #03afdc!important;
+  
+}
+
+
+.endless_container a {
+    color: white!important;
+    margin-top: 0px!important;
+    margin-left: 0px!important;
+    
+}
+.price{
+      /* float: left; */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    font-size: 11px;
+     line-height: 11px; 
+     font-weight: normal; 
+    text-transform: uppercase;
+    text-align: center;
+    color: #888;
+    
+}
+.strong{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444;
+    
+
+}
+.col-save{
+  background: #ed1c24;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+.strong-save{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    
+
+}     
+@media (max-width: 767px){
+.discount-headline  {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+}
+
+.discount-headline {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #636363;
+    float: right;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.this-offers{
+  font-size: 18px;
+    line-height: 22px;
+    color: #444;
+    font-weight: bold;
+}
+.time-end{
+  font-size: 11px;
+    line-height: 12px;
+    color: rgb(119, 119, 119);
+    text-transform: uppercase;
+    display: block;
+    padding: 15px 10px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+.success{
+  background: #dfd;
+  color: #333;
+  padding: 15px;
+}
+.error{
+  background: #fadcdc;
+  color: #333;
+  padding: 15px;
+}
+
+{%  endblock style %}
+</style>
+
+
+
+
+{% block content %}
+
+ 
+
+
+
+
+
+
+
+
+{% if messages %}
+        <ul  style="list-style: none;" class="messages slideInDown animated3s">
+          {% for message in messages %}
+         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+          
+            {% if message.tags == 'error' %}
+              <span class="glyphicon glyphicon-warning-sign text-danger"></span>
+            {% endif %}
+            {% if message.tags == 'success' %}
+              <span class="glyphicon glyphicon-ok text-success"></span>
+            {% endif %}
+          {{ message }} 
+        </li>
+        {% endfor %}
+        </ul>
+{% endif %}
+
+
+<div class="row  ">
+  
+   
+  <div id="content" class="col-xs-12 col-md-7 col-md-offset-2 content "> 
+                   
+   
+    
+
+    <!-- separator beetwen todos doctors and others -->
+     <div id="" class=" col-xs-12 wrap-package-discount "> 
+             
+    <div class="post-thumb  col-xs-12 col-sm-5  ">
+      <img class="img-responsive img-whp post-thumb-inherit post-thumb-max" 
+      src="{% if objects.packageimage %}{{objects.packageimage.url}}{% else %}{% static 'img/sparta2.jpg' %}{% endif %}" alt="1.jpg">
+       
+      
+
+
+      </div>
+      <div class="post-thumb col-xs-12  col-sm-7  ">
+        <h3>Package <span class="text-thm2 ">  {{ objects.name|title }} </span></h3>
+            <span class="discount-headline  ">{{objects.headdescription }}</span>
+            
+            <div class="pricing-content">
+                <span class=" this-offers" >{%  trans "OFFER INCLUDE THIS SERVICES" %} </span>
+                <ul>
+                {% for list in objects.get_service_list %}
+                       
+                    <li>{{list}}</li>
+                {% endfor %} 
+                
+                </ul>
+             
+            </div>
+             {% if objects.extragift %}
+             <div class="pricing-content">
+               <h1 style="color: #F1601F;">+ {{objects.extragift}}</h1>
+             
+            </div>  
+            {% endif %}
+
+
+      </div>
+      <div class="post-thumb col-xs-12  ">
+        <div class=" col-xs-3 col-md-2  " style="    padding-left: 0;
+            padding-right: 0;"> 
+          <div  class="price " style="
+                                    margin-top: 4px;">
+
+                                   FULL PRICE <br><small style="text-decoration: line-through;" class="  strong text-dark">{{objects.totalregularprice}} $</small> &nbsp 
+                                   
+                </div>
+            </div> 
+
+            <div class=" col-xs-3  col-md-2  " style="    padding-left: 0;
+            padding-right: 0;" > 
+          <div  class="price col-save" style="
+                                    margin-top: 4px;">
+
+                                   <big>Save </big><br> <small style="" class="  text-dark strong-save ">{{objects.packagepricediscount}} %</small> &nbsp 
+                                   
+                </div>
+            </div> 
+            <div class=" col-xs-3 col-md-2   " style="    padding-left: 0;
+            padding-right: 0;" > 
+          <div  class="price" style="
+                                    margin-top: 4px;">
+
+                                   <big>PRICE </big><br> <small style="" class="  text-dark strong ">{{objects.get_discount_price}} $</small> &nbsp 
+                                   
+                </div>
+            </div> 
+            <div class=" col-xs-3  col-md-2   col-md-offset-4  " style="    padding-left: 0;
+            padding-right: 0;" > 
+         
+
+                                   
+                                   <a class="btn button-create button-text-width" href="#package_view " data-toggle="modal">{% trans "BOOK NOW" %} </a>
+
+                                   
+                
+            </div> 
+            
+
+      </div>
+        
+      
+        
+               
+    </div>
+    <div class="post-thumb col-xs-12  wrap-description " style="    padding-left: 0;">
+        <div class=" col-xs-4 col-md-3  " style="  background: #ddd;   padding-left: 0;
+            padding-right: 0;"> 
+          
+          <div class="time-end">
+          {% trans " YOU CAN STILL BUY FOR" %} <br>  <span class="  text-dark strong "> {{objects.get_time_left}} </span>
+          </div>
+          <div  class=" " style="
+                                    ">
+
+            <h3> {%  trans "REMARKS"  %} </h3> 
+            <ul  style="list-style: none;" class="">
+                    
+                   {% for remark in remark_list %}
+                   <li  style="border-top: 1px solid;" class=""> 
+                    
+                    
+                      
+                        <span class="glyphicon glyphicon-ok text-success"></span>
+                      <small style="" class="  strong text-dark">{{ remark.descriptionremark }} </small>
+                    
+                  </li>
+                  {% endfor %}
+                  
+            </ul> 
+                                   
+          </div>
+        </div> 
+        <div class=" col-xs-8 col-md-9  " style="    
+            padding-top:10px;"> 
+          <div  class=" " style="
+                                    ">
+
+                                    <small style="" class="  strong text-dark">{{ objects.get_markdown }}</small> 
+                                   
+          </div>
+        </div> 
+           
+            
+
+            
+
+      </div>
+            
+              
+             
+          
+     
+     <!--end  separator beetwen todos doctors and others -->
+
+    
+
+    
+
+
+
+  </div><!-- end column doctor -->
+  <div style =" " id="mapsearch" class=" sticky col-sm-12 col-md-3 locationsearchmobile height-desktop-search  ">
+      
+                    
+                    
+    <div style ="display: block; " id="locationcollapse" class="wrap-article ">
+      <div style ="" id='mapcontent' class="thumbnail post-background wrap-article"></div>               
+               gfd     
+      </div> 
+
+  </div> <!-- end last col-->
+{% include 'modal_detail_package.html' %} 
+
+</div>   
+  
+{% endblock content %}
+
+
+{%  block script %}
+
+<script>
+ 
+ $(document).ready(function(){
+            {% block jquery%}  
+                  
+                        
+                        
+                   
+                
+          {% endblock jquery%} 
+
+            
+       
+        
+           
+
+             $(".searchlocationmobilebutton").click(function(event){
+             
+            event.preventDefault();
+
+            $(".content").fadeToggle();
+            $(".locationsearchmobile").fadeToggle();
+            
+            })
+    })
+   </script>
+<script>
+ var content=document.getElementById("content");
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+var mapsearchoffsettop=mapsearch.offsetTop;
+var left= mapsearch.offsetLeft;
+var header = document.getElementById("header");
+var offsetheader = header.offsetTop;
+var headerhight=header.offsetHeight;
+
+var sticky = offsetheader+headerhight;
+var contentleftoff=content.offsetLeft;
+ var contentleftwidth=content.offsetWidth;
+
+
+  
+
+/*manage sticky effect on search location and on resize function resolves issues vith collapse on small screens */
+window.onscroll = function() 
+{
+  if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    locationSearchApplytop();
+
+  }  
+  
+};
+  
+function locationSearchApplytop() {
+ 
+
+  if (window.pageYOffset > sticky) {
+    var mapsearch = document.getElementById("mapsearch");
+    var locationcollapse= document.getElementById("locationcollapse");
+     console.log(headerhight)
+    mapsearch.style.top=headerhight +"px"
+    
+  } else {
+    var mapsearch = document.getElementById("mapsearch");
+      
+  }
+}
+
+
+ 
+/*With resize remove visibily of last column and show when button for location is pressed
+return everything to normal state on normal view
+*/
+window.onresize=function() {checkResize()};
+function checkResize() {
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   /*if less then 992 for mobile */
+    if (content.style.display!="none")
+      /*ako se ponovno resiza ne stavljaj none ako je vec prikazan*/
+      {
+      mapsearch.style.display="none"
+      }
+      
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      locationcollapse.style.height="100%"
+      mapsearch.style.left = "unset" ;
+      mapsearch.style.top="auto";
+      
+  }
+else
+  { mapsearch.classList.remove("height-mob-search");
+    mapsearch.classList.add("height-desktop-search");
+    mapsearch.style.display="grid"
+    locationcollapse.style.height="100%"
+      /* for left of search location*/
+      var contentleftoff=content.offsetLeft;
+      var contentleftwidth=content.offsetWidth;
+      /*mapsearch.style.left =contentleftoff+contentleftwidth+ 10+"px"
+      console.log("drugo"+contentleftoff+contentleftwidth)*/
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  }  
+}
+/*kad se ucita stranica za mob*/
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   
+      mapsearch.style.display="none"
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      
+      
+  }
+else
+    {
+    mapsearch.classList.add("height-desktop-search");  
+    mapsearch.classList.remove("height-mob-search");
+    mapsearch.style.display="grid"
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  } 
+
+</script>
+
+{% localize off %}
+ 
+
+
+
+
+
+{% endlocalize %}
+
+{% endblock %}
+{% endlocalize %}

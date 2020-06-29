@@ -1,0 +1,148 @@
+{% extends "base1.html" %}
+
+
+
+
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if title %}
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>{{title}}<h1>
+</div>
+</div>
+{% endif %}
+
+
+
+
+
+  <!-- methoda je po defaultu get -->
+<!-- {{ form.as_p}} -->
+<!-- {% for objects in object_list %}
+  {{objects.company_name}}<br>
+  {{ objects.description}}<br>
+  {{ objects.timestamp}}<br>
+{% endfor %} -->
+<!-- 
+<table class='table'>
+    {% for objects in object_list %}
+       <tr><td>{{forloop.counter }}{{ objects.company_name }} </td> <td>{{ objects.timestamp }} </td></tr>
+       <div> {{ objects.description }}</div>
+    {% endfor %}
+</table> -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+  <div class="row">
+   <div class="col-sm-3 col-md-3"> <!-- SEARCH FORM FOR WORDS IN POSTS -->
+    <form method='GET' action=''>
+    <input  class="select form-control" type='text' name='q' placeholder='Search posts' value='{{request.GET.q }}'/>
+    <br>
+    {{category|crispy}} <!-- // category je vec objekt s td, option tagovima  -->
+    
+    <option value="name1">name1</option>
+    </select></td>
+
+    <input type='submit' value='Search' />
+    </form>
+    
+
+    
+
+    {% include 'sidebar.html' %}
+    </div>       
+
+
+ 
+         
+             
+              
+    <div class="col-sm-7  ">
+          <div class="row">
+            <div class="col-sm-3  ">  
+            <h3>Friend list <h3>  
+              
+        {% for follower in followers %}   <!-- ako su prijatelji u objektu Friends prikazi -->
+          <li><a href="{%   url 'dataadd:connect' operation='remove' pk=friend.pk  %}"> remove</a>
+            {{ follower }} {{ id }}</li>
+          {% endfor %}
+          </div>
+        <div class="col-sm-3  "> 
+          <h3>Pending invitations <h3>  
+      {% for user in users %} <!-- svi useri -->
+          {% if user in friendsrequests %}
+          <li>
+            <a href="{%   url 'dataadd:connect' operation='add' pk=user.pk  %}"> accept </a>{{ user }} {{ id }} </li>
+           {% endif %} 
+          {% endfor %}
+          </div>
+          <div class="col-sm-3  "> 
+      {% for user in users %}<!-- svi useri -->
+          {% if not user in friendsrequests and not user in friendsrequestssent and  not user in friends %}<!-- ako user nema requesta od nikoga--> <!--  i ako vec request nije poslan i ako nije prijatelj posalji request  -->
+          <li>
+            <a href="{%   url 'dataadd:connectrequest' operation='add' pk=user.pk  %}"> request </a>{{ user }} {{ id }} </li>
+            
+           {% endif %} 
+          {% endfor %}   
+          </div> 
+      <div class="col-sm-3  ">  
+       {% for friendsrequestsent in friendsrequestssent %}
+          
+          <li>
+            <a href="{%   url 'dataadd:connectrequest' operation='remove' pk=friendsrequestsent.pk  %}"> remove request </a>{{ friendsrequestsent }} {{ id }} </li>
+           
+          {% endfor %}
+
+        
+
+      <!-- {% for friend2 in friends2 %}
+          <li><a href="">remove</a>
+            {{ friend2 }} {{ id }}</li>
+          {% endfor %}
+
+          <li><a href="">remove</a>
+            {{ friend_rev}} {{ id }}</li> -->
+      
+
+              </div> <!-- cm 3 -->
+          </div> <!-- row 2 -->
+    </div>
+  
+</div>  
+
+
+
+
+
+{% endblock content %}
+{%  block script %}
+<script>
+ $(document).ready(function(){
+      
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+       
+    })
+
+    </script>
+{% endblock %}

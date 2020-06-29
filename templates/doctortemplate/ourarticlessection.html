@@ -1,0 +1,47 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="blog" class="ulockd-blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">{% trans "Our" %} <span class="text-thm2">{% trans "Articles" %}</span></h2>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="row equal">
+				 {% for article in article_list %}
+							              
+							                    
+							      
+				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 ">
+					<article class="blog-post wrap-article">
+						<div class="post-thumb post-thumb-max ">
+							<img class="img-responsive img-whp post-thumb-inherit" src="{{instance.profilepicture.url}}" alt="1.jpg">
+							<div class="post_date ulockd-bgthm"><span class="fa fa-calendar"></span> {{ article.publish }}</div>
+							{{instance.profilepicture.url}}
+						</div>
+						<div class="bp-details">
+							<h3 class="post-title">{{article.company_name|title}}</h3>
+							<ul class="list-inline">
+								<li><span class="icon-Administrator text-thm2">{{article.user|title}}</span> </li>
+								<li><span class="icon-Speach-Bubble2 text-thm2"></span>{{article.commentscount}}  Comment</li>
+								<!-- <li><span class="icon-Heart text-thm2"></span> 62</li> -->
+							</ul>
+							<p>{{article.get_markdown|truncatewords_html:10}} </p>
+							
+							
+						</div>
+						<div style=" margin-top: auto;text-align: right;" class="align-self-end">
+							<a href="{{article.get_absolute_url}}"><button type="submit" style="margin: 5px;
+    							border-radius: 5px;" class="btn btn-md ulockd-btn-thm2">{% trans "Read More" %}</button></a>
+						</div>	
+					</article>
+				</div>
+				{% endfor %}
+				
+			</div>
+		</div>
+	</section>

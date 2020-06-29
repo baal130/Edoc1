@@ -1,0 +1,24 @@
+{% load el_pagination_tags %}
+{%  load i18n %}
+
+{% lazy_paginate 3,6 price_list_all using "price-page" %} <!-- lazy paginate loads faster final number of objects is unknown -->
+      
+                  
+    {% for entry in price_list_all %}
+              
+                     {% if entry.serviceprice   %}
+                    	<li>{{entry.service|title}}... $ {{entry.serviceprice|title}}</li>
+                    {% endif %}
+                   
+      {% endfor %}
+   {% show_more "More results" class_name="test btn" %}  
+  
+       
+            
+    
+   
+  
+
+
+
+

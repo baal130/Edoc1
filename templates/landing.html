@@ -1,0 +1,1059 @@
+{% load staticfiles %}
+{%  load i18n %}
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.12.3, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="todosdoctores, todosdoctores.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'landing/assets/images/td-trans-32x32.png'%}" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Todos Doctores</title>
+  <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons2/mobirise2.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap-grid.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap-reboot.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/tether/tether.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/socicon/css/styles.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/dropdown/css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/theme/css/style.css'%}">
+  <link href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'vendor/font-awesome5/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link rel="preload" as="style" href="{% static 'landing/assets/mobirise/css/mbr-additional.css'%}"><link rel="stylesheet" href="{% static 'landing/assets/mobirise/css/mbr-additional.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'landing/assets/animatecss/animate.min.css'%}">
+ <style >
+      .sign-doctor-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.sign-doctor-link>a{
+ text-align: left;
+ padding-left: 5px;
+ border-radius: 5px;
+ padding: 2px; 
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color: white;
+}
+
+}
+
+
+
+
+.stars-0 { width: 0%; }
+.stars-5{ width: 5%; }
+.stars-10 { width: 10%; }
+.stars-15 { width: 15%; }
+.stars-20 { width: 20%; }
+.stars-25{ width: 25%; }
+.stars-30 { width: 30%; }
+.stars-35 { width: 35%; }
+.stars-40 { width: 40%; }
+.stars-45 { width: 45%; }
+.stars-50{ width: 50%; }
+.stars-55{ width: 55%; }
+.stars-60 { width: 60%; }
+.stars-65 { width: 65%; }
+.stars-70{ width: 70%; }
+.stars-75 { width: 75%; }
+.stars-80{ width: 80%; }
+.stars-85 { width: 85%; }
+.stars-90{ width: 90%; }
+.stars-95 { width: 95%; }
+.stars-100 { width: 100; }
+
+
+.rating-align-bottom{
+position: absolute;
+    bottom: 10%;
+}
+.rating-align-bottom-google{
+position: absolute;
+    bottom: 17%;
+}
+.dropdown-menu-edit{
+  min-width: 200px;
+}
+.post-thumb-max{
+  max-height: 100px;
+  min-height: 22vh;
+} 
+
+
+.star-rating {
+   display: flex;
+    align-items: center;
+    font-size: 1em;
+    
+    
+}
+.back-stars {
+    display: flex;
+    
+    position: relative;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+.front-stars {
+    display: flex;
+    
+    overflow: hidden;
+    position: absolute;
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    top: 0;
+    transition: all .5s
+}
+
+
+.percent {
+    color: #bb5252;
+    font-size: 1.5em;
+}
+
+.discount_thumbnail_img{
+position: absolute;
+    top: 1%;
+    left: 3%;
+} 
+.petfriendly_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 22%;
+}
+.disability_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 37%;
+}
+.homevisit_thumbnail_img{
+  position: absolute;
+    top: 1%;
+    left: 56%;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.space_top {
+  margin-top: 5px;
+  height: auto;
+}
+.wrap-package{    
+    height: 100%;
+    background: #ffffff;
+    border-radius: 0 60px 60px 60px;
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+}  
+.wrap-article{    
+    height: 100%;
+    min-height: 45vh;
+    /*background: #ffffff;
+    border-radius: 0 60px 60px 60px;*/
+    /*width: 75%;*/
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+} 
+.blog-post {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+}
+.blog-post .post-thumb .post_date {
+    color: #ffffff;
+    background-color: #00b3ff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px;
+    position: absolute;
+    left: 0%;
+    top:0%;
+    text-align: center;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.text-thm2{
+  color: #00b3ff;  
+}
+.full-size{
+    width: 100%;
+    height:100%;
+}
+.card-flex{
+display: -ms-flexbox!important;
+    display: flex!important;
+}
+ </style>
+
+
+
+  
+  
+  
+
+</head>
+<body>
+  <section class="menu cid-s0Kd5hW5Yy" once="menu" id="menu1-u">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="">
+                         <img src="{% static 'landing/assets/images/td-trans-32x32.png'%}" alt="" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="">Todos doctores</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.co">
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.co">
+                        
+                        For doctors</a>
+                </li>
+                {%  if request.user.is_authenticated %}
+                
+                    {%  if request.user.userdetails.occupancy != "Doctor" %}
+                        <li class="nav-item">             
+                                        <a style="background-color: #00b3ff;
+                                                    border-radius: 4px 4px 4px 4px;
+                                                    color: #f9f9f9;padding:3px!important;" 
+                                                    href="{% url 'user_details' %}">
+                                                {% trans "Are you a doctor?"%}
+                                        </a> 
+                        </li>            
+                                     
+                    {% else %}
+                        <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.co" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        {{user}}</a>
+                        <div class="dropdown-menu">
+                        
+                        <a class="text-white dropdown-item display-4" href="{% url 'user_details' %}">{% trans "My profile" %}</a>
+                                                <a class="text-white dropdown-item display-4" href="{% url 'user_details_web' %}">{% trans "Web page settings" %}</a>
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'user_detail_extra' %}">{% trans "Accepted patients"  %}</a>
+                                                <a class="text-white dropdown-item display-4"  href="{% url 'user_detail_package' %}">{% trans "Package/discounts offers"  %}</a>
+                                                
+                                                
+                                                <a class="text-white dropdown-item display-4" href="{% url 'dataadd:myarticle' %}">{% trans "My posts" %}</a>
+                                                
+                                                <!-- <a href="{% url 'chat:chatpage' %}">My posts</a> -->
+                                                <!-- <a href="{% url 'inbox' %}">Inbox  <span class="glyphicon glyphicon-envelope" style="display: none" id="unread-count"></span></a> -->
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'dataadd:complain' %}" class=" " > {% trans "New article"  %}</a> 
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'account_logout'%}"><span style=" background-color: #5564ac;
+                                                    border-radius: 5px;
+                                                    padding: 7px!important;
+                                                     margin-right: 3px;">
+                                                {% trans "LOGOUT" %} </span>  {{user}}
+                                                </a>
+                        </div>
+                       
+                                        
+                                        
+                        </li>  
+                 {% endif %}                 
+                 {% else %}
+                               
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="{% url 'account_login' %}"><span class="mbri-key mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        {% trans "Sign In " %} </a>
+                </li>
+                {% endif %}                   
+                
+            </ul>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="{% url 'newsletter:doctor_list' %}"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    
+                  {% trans "Try It Now!" %}  
+                </a>
+
+              
+               
+              
+            </span></div>
+        </div>
+    </nav>
+</section>
+ 
+  <section class="cid-qTkA127IK8 mbr-fullscreen mbr-parallax-background" id="header2-1">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.1; background-color: rgb(255, 255, 105);"></div>
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">BEST DEALS FOR YOUR HEALTH</h1>
+                
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">Search best doctors with best deals from different sources<br>&nbsp;</p>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="{% url 'newsletter:doctor_list' %}">{% trans "Find doctors" %}</a>
+
+                    <a class="btn btn-md btn-white-outline display-4" href="{% url 'newsletter:discount_list' %}">
+                    {% trans " CHECK OFFERS" %}</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+<section class="clients cid-s0Qu6cupEX" data-interval="false" id="slider2-x">
+  <div class="container">
+          <div class="row title-block">
+            <div class="media-container-row">
+              <div class="align-left">
+                
+                <h3 class="mbr-section-title mbr-fonts-style mbr-info display-2">
+                  Featured doctors</h3>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+
+    <div class="container-fluid ">
+        <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="500000">
+            <div class="carousel-inner " data-visible="4">
+                
+                
+                
+                
+                
+           {% for objects in object_list %}      
+            <div class="carousel-item ">
+                  <div class="media-container-row">
+                    <div style=" height:100%" class="col-md-12 wrapper">
+                      
+                      <div style=" height:100%" class="wrap-img">
+                        
+                        <div class="card-box card-box-back">
+                         
+                        </div>
+                        <div class="post-thumb "  style="padding: 3px; background-color: white;   ">
+                              <img  style="filter:none;     width: 100%;" class="img-responsive img-whp post-thumb-inherit post-thumb-max" 
+                              src="{% if objects.profilepicture %}{{objects.profilepicture.url}}{% else %}{% static 'img/sparta2.jpg' %}{% endif %}" alt="1.jpg">
+                               
+                               <span ><img class="discount_thumbnail_img" style="filter:none;"   data-toggle="tooltip" data-placement="top" title="{% trans "Offer discount prices" %}"
+                               
+                              src= "{% static 'img/iconssocial/iconDiscount.png' %} " alt=""> </span>
+                              {% if objects.invalidsaccess %}<span ><img  style="filter:none;" class="disability_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Have access for people with dissabilites" %}"
+                               
+                              src= "{% static 'img/iconssocial/disability.png' %} " alt=""> </span>{% endif %}
+
+                              {% if objects.acceptanimales %}<span ><img  style="filter:none;" class="petfriendly_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Pet friendly" %}"
+                               
+                              src= "{% static 'img/iconssocial/pet.png' %} " alt=""> </span>{% endif %}
+                              {% if objects.homevisit %}<span ><img style="filter:none;" class="homevisit_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Make home visits" %}"
+                               
+                              src= "{% static 'img/iconssocial/homevisit.png' %} " alt=""> </span>{% endif %}
+
+
+                         </div>
+                        <div class="py-2 text-left " style="padding: 3px;background-color: white;height: 100%;">
+                                <h3>dr. <a class="text-thm2 " href='{{objects.get_absolute_url}}'>{{ objects.name|title }} {{ objects.surname|title }}</a>
+                               </h3>
+                               <br>
+                               <small>{% if objects.speciality  %} ({{objects.speciality}}) {% else %} {% endif %}  </small>
+                               <br>
+                               <small>{% if objects.adress  %}{{ objects.adress }} {% endif %}</small>
+                               <br>
+                               <small>{% if objects.city  %}{{ objects.city }}{% endif %}{% if objects.colony  %},{{ objects.colony }}{% endif %} 
+                               {% if objects.state  %},{{ objects.state }}{% endif %} </small>
+                               <br>
+                   
+                  
+                                
+                                <span class="star-rating "  >
+                                    <span class="back-stars">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        
+                                        <span class="front-stars " value="{{ objects.get_total_rating.rating__avg|safe}}">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                    </span>
+                                    {% if objects.get_total_rating.rating__avg|safe != "None" %}
+                                     <big style="margin-top: 5px;">
+                                     {{ objects.get_total_rating.rating__avg|safe}}</big> 
+                                     <small> by ({{objects.get_total_rating.rating__count|safe}} pacients) </small>
+                                     {% else %}
+                                     <small>
+                                     {% trans "Not rated "%}
+                                     </small>
+                                     {% endif %}   
+                                </span>    
+                                <br>               
+                        </div> 
+                                
+                    </div><!-- end  wrap-->
+
+                             
+                 </div><!-- end  col-->
+                 </div><!-- end  row -->
+
+                </div> <!-- end item -->
+                {% endfor %}
+
+               
+                
+        </div><!-- end carousel inner -->
+            <div class="carousel-controls">
+              <div class="controls-wrapper">
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev">
+                  <span aria-hidden="true" class="mobi-mbri mobi-mbri-left mbr-iconfont"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-next " role="button" data-slide="next">
+                  <span aria-hidden="true" class="mobi-mbri mobi-mbri-right mbr-iconfont"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="features1 cid-s0rrZPcU0K" id="features1-5">
+    
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mobi-mbri-cash mobi-mbri"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">
+                       {% trans "Value your money"  %} </h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                                
+                                
+                                
+                            <li class="">
+                                     <span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "Check out best deals offers"  %}   
+                                    </li>
+                                    <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "With  great discounts"  %}</p> 
+                                    
+                                </li>
+                                
+                            </ul>
+
+                        <br> 
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mbri-search"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">{% trans "Find all " %} &nbsp;{% trans "doctors " %} <br> {% trans "by: " %} </h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                         <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                                
+                                
+                                
+                            <li class="">
+                                     <span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "speciality " %}  
+                                    </li>
+                                    <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "nearest location " %} 
+                                    
+                                </li>
+                                <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp;{% trans "ratings" %} 
+                                    
+                                </li>
+                                <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp;{% trans "special possibilites" %} 
+                                    
+                                </li>
+                                <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp;{% trans "and many other" %} 
+                                    
+                                </li>
+                            </ul>
+
+                       
+                    </p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mobi-mbri-users mobi-mbri"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">
+                        Stay connected</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                         <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                                
+                                
+                                
+                            <li class="">
+                                     <span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "Follow doctors for news " %}  
+                                    </li>
+                                    <li class=""><span class="mbr-iconfont mbri-arrow-next"></span>&nbsp; {% trans "Leave rating and comment " %} 
+                                    
+                                </li>
+                                <li class=""></span>&nbsp;{% trans "for help doctors and other pacients" %} 
+                                    
+                                </li>
+                             
+                            </ul>
+                        
+
+                    </p>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="tabs1 cid-s0rr4P97nY mbr-parallax-background" id="tabs1-4">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
+    </div>
+    <div class="container">
+        <h2 class="mbr-white align-center pb-5 mbr-fonts-style mbr-bold display-2">
+            FOR DOCTORS AND CLINICS</h2>
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style active show display-7" role="tab" data-toggle="tab" href="#tabs1-4_tab0" aria-selected="true">{% trans " Personal web page" %}</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style active show display-7" role="tab" data-toggle="tab" href="#tabs1-4_tab1" aria-selected="true">{% trans "Improve marketing of your products" %}</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style active show display-7" role="tab" data-toggle="tab" href="#tabs1-4_tab2" aria-selected="true">
+                            {% trans "Online support" %}</a></li>
+                    
+                    
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">{% trans "Get your own web page based on your profile" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-pane" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">
+                                   {% trans "Improve your marketing and make yourself visible" %} 
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab3" class="tab-pane" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text py-5 mbr-fonts-style display-7">
+                                    {% trans "Get fast online support" %} 
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel slide testimonials-slider features4 cid-s0F9fw2gf3" data-interval="false" id="features4-i">
+
+    
+
+    
+
+    <div class="container text-center">
+
+        
+
+        <h2 class="mbr-fonts-style mbr-section-title align-center mbr-bold display-2">
+            Latest offers</h2>
+        <p class="mbr-text mbr-fonts-style align-center mbr-regular display-7">
+            {% trans "Find packages with biggest saving"%}</p>
+    </div>
+    <div class="carousel slide container" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="500000">
+        <div class="carousel-inner">
+            
+          
+         {% if package_list_3 %}
+         <div class="carousel-item">
+                <div class="row justify-content-center">
+                    {% for entry in package_list_3 %}  
+                    <div class="col-md-4 ">
+                        <div style="height: 100%;" class="card card-flex">
+                            <div class="card-img">
+                                <img src="{% static 'landing/assets/images/01.jpg'%}" title="">
+
+                            </div>
+                            <div class="service-icon">
+
+                                <div class="service-icon-wrapper">
+                                    <span style="z-index: 10;position: relative;font-size: 2em;">{{entry.packagepricediscount}}%</span>
+                                    <span class="front mbr-iconfont mbri-sale mdi-image-blur-on">
+
+                                    </span>
+                                </div>
+                            </div>
+                            <h4 class="mbr-fonts-style signature mbr-bold align-center display-7">{{entry.name}}</h4>
+                            <div class="mbr-text mbr-fonts-style align-center card-text display-7">
+                                 <ul style="text-align: left;"  class="list-inline">
+                                
+                                {% for list in entry.get_service_list %}
+                                     
+                                    <li class="list-inline-item"><span class="mbri-arrow-next mbr-iconfont text-thm2"></span>{{list}}</li>
+                                {% endfor %} 
+                                    
+                                </ul>
+                            </div>
+                            <div style=" margin-top: auto;" class="mbr-text mbr-fonts-style align-left card-text display-7">
+                               <div style="border-radius: 5px;
+                                         padding: 10px;
+                                    border: 1px solid #ccc;">
+
+                                   <big>Now great price </big> <small style="text-decoration: line-through;" class="  text-dark">{{entry.totalregularprice}} $</small> &nbsp 
+                                   <span style="color: #ff3366;">{{entry.get_discount_price}} $</span> 
+                               </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+
+                    
+                </div>
+            </div>
+        {% endif %}  
+        {% if package_list_6 %}
+         <div class="carousel-item">
+                <div class="row justify-content-center">
+                    {% for entry in package_list_6 %}  
+                    <div class="col-md-4 ">
+                        <div style="height: 100%;" class="card card-flex">
+                            <div class="card-img">
+                                <img src="{% static 'landing/assets/images/01.jpg'%}" title="">
+
+                            </div>
+                            <div class="service-icon">
+
+                                <div class="service-icon-wrapper">
+                                    <span style="z-index: 10;position: relative;font-size: 2em;">{{entry.packagepricediscount}}%</span>
+                                    <span class="front mbr-iconfont mbri-sale mdi-image-blur-on">
+
+                                    </span>
+                                </div>
+                            </div>
+                            <h4 class="mbr-fonts-style signature mbr-bold align-center display-7">{{entry.name}}</h4>
+                            <div class="mbr-text mbr-fonts-style align-center card-text display-7">
+                                 <ul style="text-align: left;"  class="list-inline">
+                                
+                                {% for list in entry.get_service_list %}
+                                     
+                                    <li class="list-inline-item"><span class="mbri-arrow-next mbr-iconfont text-thm2"></span>{{list}}</li>
+                                {% endfor %} 
+                                    
+                                </ul>
+                            </div>
+                            <div style=" margin-top: auto;" class="mbr-text mbr-fonts-style align-left card-text display-7">
+                               <div style="border-radius: 5px;
+                                         padding: 10px;
+                                    border: 1px solid #ccc;">
+
+                                   <big>Now great price </big> <small style="text-decoration: line-through;" class="  text-dark">{{entry.totalregularprice}}</small> &nbsp 
+                                   <span style="color: #ff3366;">{{entry.get_discount_price}} $</span> 
+                               </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+
+                    
+                </div>
+            </div>
+        {% endif %}  
+        </div>
+
+        <div class="carousel-indicators">
+            <li data-slide-to="0" class="active"></li>
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            
+            
+            
+            
+            
+            
+            
+        </div>
+
+        <div class="carousel-controls">
+            <a class="carousel-control-prev" role="button" data-slide="prev">
+                <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" role="button" data-slide="next">
+                <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    
+</section>
+
+<section class="carousel slide testimonials-slider extTestimonials cid-s0G8vEhEiH" data-interval="false" id="extTestimonials1-l">
+    
+    
+
+    
+
+    <div class="container text-center">
+        <h2 class="mbr-fonts-style mbr-section-title mbr-white display-2">
+            Latest comments</h2>
+
+        <div class="carousel slide pt-3" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="500000">
+            <div class="carousel-inner">
+                
+            {% for comment in last_comments %}   
+            <div class="carousel-item">
+                    <div class="user col-md-10 col-lg-8">
+                        <div style="    color: #ff3366;" class="user_text pb-3">
+                          <h4>Dr. {{comment.get_usercommented_from_user.name}} {{comment.get_usercommented_from_user.surname}}</h4> 
+                            <span class="left-top mbr-iconfont mbri-quote-left inactive"></span>
+                            <p class="mbr-fonts-style mbr-text m-0 mbr-white display-7">
+                               {{comment.content}}</p>
+                            <span class="right-bottom mbr-iconfont mbri-quote-right inactive"></span>
+                            
+                        </div>
+                        <div class="user_image">
+                            <img src="assets/images/face8.jpg" alt="" title="">
+                        </div>
+                        <div style="display: flex;" class="user_name justify-content-center  mbr-fonts-style mbr-white display-7">
+                            by {{comment.user}}<br>
+                           
+                        </div>
+                         <div style="display: flex;" class="user_name justify-content-center  mbr-fonts-style mbr-white display-7">
+                           
+                          <span class="star-rating "  >
+                                <span class="back-stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                
+                                <span class="front-stars " value="{{ comment.get_rating_from_user|safe}}">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </span>
+                            </span>
+                       
+                    </span>   
+                        </div>
+                        <big style="    color: #ff3366;">{{ comment.get_rating_from_user|safe}}</big>
+                           
+                       
+                    </div>
+                </div>
+                {% endfor %}
+               </div>
+
+            <div class="carousel-controls">
+                <a class="carousel-control-prev" role="button" data-slide="prev">
+                  <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                
+                <a class="carousel-control-next" role="button" data-slide="next">
+                  <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section extFeatures cid-s0FbwjM6Kr" id="extFeatures25-k">
+
+    
+
+    
+
+    <div class="container">
+        
+
+        
+    
+        <h2 class="mbr-section-title main-title mbr-fonts-style align-center pb-5 display-2">{% trans "Latest Articles" %}</h2>
+        
+
+  
+    <div class="row equal">
+                 {% for article in article_list %}
+                                          
+                                                
+                                  
+                <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 ">
+                    <article class="blog-post wrap-article">
+                        <div class="post-thumb post-thumb-max ">
+                            <img class="img-responsive full-size post-thumb-inherit" src="{{article.user.userdetails.profilepicture.url}}" alt="1.jpg">
+                            <div class="post_date ulockd-bgthm"><span class="fa fa-calendar"></span> {{ article.publish }}</div>
+                            
+                        </div>
+                        <div class="bp-details">
+                            <h3 class="post-title">{{article.company_name|title}}</h3>
+                            <ul class="list-inline">
+                                <li class="list-inline-item" ><span class="mbri-user mbr-iconfont text-thm2 ">{{article.user|title}}</span> </li>
+                                <li class="list-inline-item" > <span class="mbri-help mbr-iconfont text-thm2 "></span>{{article.commentscount}}  Comments</li>
+                               <!--  <li class="list-inline-item" ><span class="mbri-hearth mbr-iconfont text-thm2 "></span> 15</li> -->
+                            </ul>
+                            
+                            <p>{{article.get_markdown|truncatewords_html:10}} </p>
+                            
+                        </div>
+                        <div style=" margin-top: auto;" class="align-self-end">
+                           
+                            
+                            <a href="{{article.get_absolute_url}}"><button type="submit" class="btn btn-sm btn-primary display-4">{% trans "Read More" %}</button></a>
+                        </div>
+                    </article>
+                    
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+</section>
+
+<section class="cid-qTkAaeaxX5" id="footer1-2">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row content text-white">
+            <div class="col-12 col-md-3">
+                <div class="media-wrap">
+                    <a href="https://mobirise.com/">
+                        <img src="assets/images/logo2.png" alt="Mobirise">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Address
+                </h5>
+                <p class="mbr-text">
+                    1234 Street Name
+                    <br>City, AA 99999
+                </p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Contacts
+                </h5>
+                <p class="mbr-text">
+                    Email: support@mobirise.com
+                    <br>Phone: +1 (0) 000 0000 001
+                    <br>Fax: +1 (0) 000 0000 002
+                </p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Links
+                </h5>
+                <p class="mbr-text">
+                    <a class="text-primary" href="https://mobirise.com/">Website builder</a>
+                    <br><a class="text-primary" href="https://mobirise.com/mobirise-free-win.zip">Download for Windows</a>
+                    <br><a class="text-primary" href="https://mobirise.com/mobirise-free-mac.zip">Download for Mac</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2017 Mobirise - All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/mobirise" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{% static 'landing/assets/web/assets/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'landing/assets/popper/popper.min.js'%}"></script>
+  <script src="{% static 'landing/assets/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'landing/assets/smoothscroll/smooth-scroll.js'%}"></script>
+  <script src="{% static 'landing/assets/tether/tether.min.js'%}"></script>
+  <script src="{% static 'landing/assets/touchswipe/jquery.touch-swipe.min.js'%}"></script>
+  <script src="{% static 'landing/assets/parallax/jarallax.min.js'%}"></script>
+  <script src="{% static 'landing/assets/mbr-tabs/mbr-tabs.js'%}"></script>
+  <script src="{% static 'landing/assets/dropdown/js/nav-dropdown.js'%}"></script>
+  <script src="{% static 'landing/assets/dropdown/js/navbar-dropdown.js'%}"></script>
+  <script src="{% static 'landing/assets/theme/js/script.js'%}"></script>
+
+  <script src="{% static 'landing/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js'%}"></script>
+  <script src="{% static 'landing/assets/mbr-clients-slider/mbr-clients-slider.js'%}"></script>
+  
+  <script src="{% static 'landing/assets/mbr-testimonials-slider/mbr-testimonials-slider.js'%}"></script>
+  <script src="{% static 'landing/assets/viewportchecker/jquery.viewportchecker.js'%}"></script>
+
+  
+  
+  <input name="animation" type="hidden">
+<script>
+$(document).ready(function(){
+             {% block jquery%}  
+                 
+                        
+    $(function() {
+              function addScore(score, $domElement) {
+                $domElement.addClass("stars-" + score.toString())
+                
+                  
+                  
+    }
+             
+              
+              
+              
+    $( ".front-stars").each(function() {
+                  var inputValue=$(this).attr("value")
+                 
+                  var average=((Math.round(inputValue*2))*10)  
+                  addScore(average, $(this));
+                 /*a value atribute se dodjeljuje vrijednost te se pomocu add scora creira clasa koji daje duljinu*/
+                  
+                });
+              /*tu treba dodata average*/
+
+
+    });/*kraj*/
+                    
+    const numberInput = document.querySelector('input');
+    const starRatingWrapper = document.querySelector('.star-rating');
+    const frontStars =  document.querySelector('.front-stars');
+
+    const rate = e => {
+        const percentage = e.target.value + '%';
+        
+        starRatingWrapper.title = percentage;
+        frontStars.style.width = percentage;
+    };                       
+                        
+                   
+                
+          {% endblock jquery%} 
+})
+</script>  
+</body>
+</html>

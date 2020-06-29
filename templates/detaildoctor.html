@@ -1,0 +1,577 @@
+{% extends "base1.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load l10n %}
+
+
+<style type="text/css">
+{% block style %}
+.rating {
+    /*float:left;*/
+    width: 175px;
+    height: 97px;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    /*top:-9999px;*/
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.rating_wrap>div {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 0px 0px 35px;
+    background-position: 0 5px;
+    font-weight: 300;
+}
+.helpLevel {
+    background-repeat: no-repeat;
+}
+.helpLevel {
+    background-image: url({% static 'img/parachute32.png'%});
+   /* background-image: url({% static 'medicaltemplate/images/gallery/10.jpg'%});*/
+}
+
+
+.gmap {
+        height: 400px;
+        width: 100%;
+  }
+
+.navigate-icon {
+  margin: 15px 5px 6px 0px;  
+}
+.navigate-icon-text {
+    margin-top: 5px;
+    text-align: center;
+    color: #3a84df;
+    font-size: 12px;
+    max-width: 55px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: Roboto,Arial;   
+}
+.position-icon {
+    position: relative;
+   
+    top: 50%;
+    left: 40%;
+    
+}
+.position-icon-text {
+    position: relative;
+   
+    top: 50%;
+    left: 30%;
+    
+}
+.icon {
+    background-image: url(https://maps.gstatic.com/mapfiles/embed/images/entity11_hdpi.png);
+    background-size: 70px 210px;
+    background-repeat: no-repeat;
+     width: 22px;
+    height: 22px;
+    border: 0;
+    
+    background-position: 0px 0px;
+}
+
+
+ 
+{%  endblock style %}
+</style>
+
+
+
+
+
+
+
+
+{% block content %}
+
+{% if title %}
+
+<div class='row'>
+	<div class='col-sm-10 col-sm-offset-2   ' >
+	<h1 class="text-align-center title-detail" style="    border-top: 6px solid #84550d;;">{{title}}<h1>
+	</div>	
+	
+</div>
+{% endif %}
+
+<div class='row'>
+	<div class='col-sm-8 col-sm-offset-2   ' >
+	
+
+	
+	<!--  -->
+	{% if messages %}
+	<ul class="messages">
+	    {% for message in messages %}
+	    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+	    {% endfor %}
+	</ul>
+	{% endif %}
+	<p><div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+	<hr/>
+	</p>
+
+	{% if instance.image %}
+	<img src='{{instance.image.url}}' class='img-responsive'>
+	 {% endif %} 
+	<h1 class="punch-title"> Like to punch {{instance.name }} <small style="float:right;margin-bottom:2px;">Published on: {{ instance.surname }}</small><br> 
+	<small style="float:right;margin-bottom:2px;"> Updated  on: {{ instance.updated|date }}</small> </h1><br> 
+	<p> Read time : {% if instance.read_time|time:"i" <= "01" %} < 1 minute {% elif instance.read_time|time:"i" < "10" %} < 10 minutes {% else %} {{instance.read_time|time:"i"}}minutes{% endif %}</p>
+	<div class="rating_wrap">  
+	  <div class="rating helpLevel">
+                              
+                     <p>
+                	 Helpfulness 
+                	
+                    </p>    
+                    
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5">5 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4">4 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                
+               
+
+
+             </div> 
+			  
+                
+                
+             
+     	<!-- <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div> -->
+     		
+				<div class="rating helpLevel">
+                              
+                           <p>
+                	Kindess 
+                	
+                </p>     
+                    
+                    <input type="radio" id="star15" name="rating1" value="5" /><label for="star15" title="5">5 stars</label>
+                    <input type="radio" id="star14" name="rating1" value="4" /><label for="star14" title="4">4 stars</label>
+                    <input type="radio" id="star13" name="rating1" value="3" /><label for="star13" title="Meh">3 stars</label>
+                    <input type="radio" id="star12" name="rating1" value="2" /><label for="star12" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star11" name="rating1" value="1" /><label for="star11" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                	<div class="rating helpLevel">
+                              
+                           <p>
+                	Ethic 
+                	
+                </p>     
+                    
+                    <input type="radio" id="star115" name="rating2" value="5" /><label for="star115" title="5">5 stars</label>
+                    <input type="radio" id="star114" name="rating2" value="4" /><label for="star114" title="4">4 stars</label>
+                    <input type="radio" id="star113" name="rating2" value="3" /><label for="star113" title="Meh">3 stars</label>
+                    <input type="radio" id="star112" name="rating2" value="2" /><label for="star112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star111" name="rating2" value="1" /><label for="star111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                	<div class="rating helpLevel">
+                              
+                           <p>
+                	Waiting time
+                	
+                </p>     
+                    
+                    <input type="radio" id="star1115" name="rating3" value="5" /><label for="star1115" title="5">5 stars</label>
+                    <input type="radio" id="star1114" name="rating3" value="4" /><label for="star1114" title="4">4 stars</label>
+                    <input type="radio" id="star1113" name="rating3" value="3" /><label for="star1113" title="Meh">3 stars</label>
+                    <input type="radio" id="star1112" name="rating3" value="2" /><label for="star1112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1111" name="rating3" value="1" /><label for="star1111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+                	<div class="rating helpLevel">
+                              
+                           <p>
+                	Staff
+                	
+                </p>     
+                    
+                    <input type="radio" id="star11115" name="rating4" value="5" /><label for="star11115" title="5">5 stars</label>
+                    <input type="radio" id="star11114" name="rating4" value="4" /><label for="star11114" title="4">4 stars</label>
+                    <input type="radio" id="star11113" name="rating4" value="3" /><label for="star11113" title="Meh">3 stars</label>
+                    <input type="radio" id="star11112" name="rating4" value="2" /><label for="star11112" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star11111" name="rating4" value="1" /><label for="star11111" title="Sucks big time">1 star</label>
+                   
+              
+                 
+
+                </div> 
+
+
+        		<br>    
+                <p>
+                	{{rating_avg.rating__avg}}Rating average by {{rating_avg.rating__count}}   users 
+     			</p>  
+
+     </div><!-- end wrapper rating -->              
+	</div>
+	 <div class='col-sm-6'>
+        <h3>My Google Maps Demo <small><a href='/search/?q={{ request.GET.q }}' style="display:none" id='search-here'>Search here?</a></small></h3>
+        <div id='map' class="gmap"></div>
+    </div>
+    {{instance.lat}}
+</div>
+</div>
+
+<a href='https://www.google.com/maps?ll{{ instance.lat }},{{ instance.lng }}&daddr=Blvrd%20Atlixco%203513%20Puebla@{{ instance.lat }},{{ instance.lng }}' style="" id='t'>dir</a>
+
+
+
+{% endblock %}
+
+{%  block script %}
+<script>
+ $(document).ready(function(){
+ 		{% block jquery %}  
+                  /*var rnd=Math.round({{rating_avg.rating__avg}})*/
+                  console.log({{rating_avg_int}})
+                  $( ".rating input[value='{{rating_avg_int}}']").attr("checked","checked");
+
+                  $( ".rating input[name='rating']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"{% url 'newsletter:ajax_rating' %}",
+                      data:{
+                        detail_id:"{{instance.id}}",
+                        rating_value_help: $(this).val(),
+                        
+                     }
+
+
+                      }) 
+                                       
+                  })
+                  $( ".rating input[name='rating1']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"{% url 'newsletter:ajax_rating' %}",
+                      data:{
+                        detail_id:"{{instance.id}}",
+                        rating_value_kind: $(this).val(),
+                        
+                     }
+
+
+                      })                   
+                  })
+
+                  $( ".rating input[name='rating2']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"{% url 'newsletter:ajax_rating' %}",
+                      data:{
+                        detail_id:"{{instance.id}}",
+                        rating_value_time: $(this).val(),
+                        
+                     }
+
+
+                      })                   
+                  })
+
+                     $( ".rating input[name='rating3']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"{% url 'newsletter:ajax_rating' %}",
+                      data:{
+                        detail_id:"{{instance.id}}",
+                        rating_value_staff: $(this).val(),
+                        
+                     }
+
+
+                      })                   
+                  })
+				
+				    $( ".rating input[name='rating4']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"{% url 'newsletter:ajax_rating' %}",
+                      data:{
+                        detail_id:"{{instance.id}}",
+                        rating_value_ethic: $(this).val(),
+                        
+                     }
+
+
+                      })                   
+                  })	
+                  	
+                        
+                 
+                        
+                        
+                   
+                
+        {% endblock jquery %} 
+
+
+
+
+
+      
+
+        $(".textarea").attr("placeholder", "Add public comment ...");
+        $(".textarea").css('height', '4em');
+
+
+        var ContentItem = $(".post-detail-item");
+         console.log(ContentItem)
+         var ContentItem1 = $(".post-detail-item").text();
+         console.log(ContentItem1)
+    
+    })
+
+   </script>
+{% localize off %}
+
+
+
+<script>
+var locations = [
+    
+        {
+        lat: {{ instance.lat }}, 
+        lng: {{ instance.lng }}, 
+        name: "{{ instance.name }}", 
+        address:"{{ instance.adress }} {{ instance.city }} "
+        }, 
+    
+] 
+
+
+
+var map;
+var markers =[];
+var infoWindow;
+
+  //window.initMap = function()*/
+  function initMap(){
+    var uluru = {lat: {{ instance.lat }}, lng: {{ instance.lng  }}}
+    // var uluru = {lat: -25.363, lng: 131.044};
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: parseInt({{ request.GET.zoom }}) || 12, // 0 to 18
+      center: uluru
+    });
+    var searchLink = $('#search-here')
+    var defaultSearchLink = searchLink.attr("href")
+    map.addListener('center_changed', function(){
+        window.setTimeout(function(){
+            var mLat = map.center.lat()
+            var mLng = map.center.lng()
+            getLocalName(mLat, mLng)
+            searchLink.fadeIn()
+            // searchLink.attr('href', defaultSearchLink + "&loc=" + mLat + "+" + mLng)
+            
+        }, 1000)
+       
+    })
+
+  // iz koordinata nadji ime
+    function getLocalName(lat, lng){
+        var geocoder = new google.maps.Geocoder()
+        var location = new google.maps.LatLng(lat, lng)
+        geocoder.geocode({'latLng': location}, function(results, status){
+            if( status== google.maps.GeocoderStatus.OK) {
+                if (results[2].address_components[2]){
+                    var longName = results[2].address_components[2].long_name
+                    console.log(longName)
+                    searchLink.attr('href', defaultSearchLink + "&loc=" + longName + "&zoom=" + 6)
+                }
+                // return longName
+            }
+
+        })
+    }
+    $('.click').click(function(event){
+        event.preventDefault()
+        codeAddress()
+
+    })
+    // iz adrese nadji koordinate
+    function codeAddress() {
+                        var address = document.getElementById('address').value;
+                        var geocoder = new google.maps.Geocoder()
+                        geocoder.geocode( { 'address': address}, function(results, status) {
+                          if (status == 'OK') {
+                            /*map.setCenter(results[0].geometry.location);
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                            });*/
+                             var position= results[0].geometry.location
+                             // tu treba grad i adresa stavir marker
+                             var marker =createMaker(position, 'test', 'puebla')
+                             /*creira se marker */
+                             markers.push(marker)
+                             google.maps.event.trigger(marker, 'click')
+                                map.setCenter(position)
+                                map.setZoom(16) 
+                                /*zoma se na tu poziciju*/
+                          } else {
+                            alert('Geocode was not successful for the following reason: ' + status);
+                              }
+                            });
+                    }
+
+
+
+  var contentString =  
+      '<a href="https://www.google.com/maps?ll{{ instance.lat }},{{ instance.lng }}&daddr={{instance.adress.split|join:"%20"}}%20{{instance.city.split|join:"%20"}}@{{ instance.lat }},{{ instance.lng }}">'+
+      '<div class="icon position-icon ">'+
+      
+      '</div>'+
+      '<span class="navigate-icon-text position-icon-text ">'+ 'Directions'+ '</span>'+'</a>'
+      
+
+
+
+    infoWindow = new google.maps.InfoWindow()
+
+    function createMaker(latlng, name, address){  
+        var html = "<b>" + name + "</b><br/>" + address+ contentString
+        var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+            });
+        google.maps.event.addListener(marker, 'click', function(){
+            infoWindow.setContent(html)
+            console.log(address)
+            infoWindow.open(map, marker)
+        })
+        return marker
+    }
+    if (locations.length > 0) {
+        for(var i = 0; i < locations.length; i++) {
+            var obj = locations[i]
+            var latlng = {lat: obj.lat, lng: obj.lng}
+            var marker = createMaker(latlng, obj.name, obj.address)
+            markers.push(marker)
+        }
+    }
+
+    function clearLocations(){
+        infoWindow.close()
+        for (var i = 0; i < markers.length; i++){
+            markers[i].setMap(null)
+        }
+        markers.length = 0
+    }
+
+
+    $('.biz-item').click(function(event){
+        event.preventDefault()
+        var locData = $(this)
+        console.log(locData)
+        var name = locData.attr("data-name")
+        var address = locData.attr("data-address")
+        var lat = parseFloat(locData.attr("data-lat"))
+        var lng = parseFloat(locData.attr("data-lng"))
+        var latlng = {lat: lat, lng: lng} 
+        // 
+        // clearLocations()
+        var marker = createMaker(latlng, name, address)
+        markers.push(marker)
+        google.maps.event.trigger(marker, 'click')
+        map.setCenter(latlng)
+        map.setZoom(16)
+    })
+
+
+
+
+  }
+</script>
+<script onload="initMap();"
+
+ async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw&callback=initMap&language=en&region=EN">
+</script> 
+
+
+
+{% endlocalize %}
+
+
+{% endblock %}
+
+

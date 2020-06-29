@@ -1,0 +1,133 @@
+/* Progress Bar Sass */
+//== Progress Bar
+.progress-levels {
+  position: relative;
+  .progress-box {
+	margin-bottom: 15px;
+ 	overflow: hidden; 
+	position: relative;
+ 	.inner {
+	  background-color: $gray-lighter;
+	}
+	.bar {
+	  position: relative;
+	  height: 20px;
+	  .bar-innner {
+		height: 20px;
+		left: 0px;
+		position: relative;
+		top: 0px;
+		width: 100%;
+	  }
+	  .bar-fill {
+		border-radius: 2px;
+		height: 20px;
+		left: -100%;
+		position: absolute;
+		top: 0px;
+		@include transition(all 2000ms ease 300ms);
+		width: 0px;
+	  }
+	}
+	&.animated {
+	  .bar {
+		.bar-fill {
+		  left: 0px;
+		}
+	  }
+	  .percent {
+		opacity: 1;
+	  }
+	}
+	.percent {
+	  font-size: 15px;
+	  font-weight: bold;
+	  letter-spacing: 1px;
+	  line-height: 26px;
+	  opacity: 0;
+	  position: absolute;
+	  right: 0px;
+	  text-align: center;
+	  top: -35px;
+	  @include transition(all 2000ms ease 700ms);
+	}
+  }
+  &:last-child {
+	margin-bottom: 0px;
+  }
+  .box-title {
+	margin-bottom: 10px;
+	position: relative;
+	text-transform: uppercase;
+  }
+}
+//== Bar FIll
+.barfiller {
+  width: 100%;
+  height: 12px;
+  background: $white-fc;
+  border: 1px solid $gray-lightested;
+  position: relative;
+  margin-bottom: 20px;
+  @include box-shadow(1px 4px 9px -6px lighten($black, $alpha5));
+  .fill {
+	display: block;
+	position: relative;
+	width: 0px;
+	height: 100%;
+	background: $black-33;
+	z-index: 1;
+  }
+  .tipWrap {
+	display: none;
+  }
+  .tip {
+	background: $black-33;
+	color: $white-ff;
+	font-size: 11px;
+	left: 0px;
+	margin-top: -30px;
+	padding: 2px 4px;
+	position: absolute;
+	z-index: 2;
+	&:after {
+	  border: solid;
+	  border-color: rgba($black-rgb, $alpha8) transparent;
+	  border-width: 6px 6px 0 6px;
+	  content: "";
+	  display: block;
+	  position: absolute;
+	  left: 9px;
+	  top: 100%;
+	  z-index: $zindex-nine;
+	}
+  }
+}
+//== Chart
+#graph-wrapper {
+  button {
+  	color: $white-ff;
+  }
+}
+.legend-of-0 .rect-of-0,
+text.legend-of-0,
+.legend-of-1 {
+  display: none;
+}
+//==  Particle Js
+//== particles.js container
+#particles-js{
+  width: 100%;
+  height: 1080px;
+  background-color: #b61924;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#particles2-effect {
+  width: 100%;
+  canvas {
+  	height: 880px;
+  }
+}

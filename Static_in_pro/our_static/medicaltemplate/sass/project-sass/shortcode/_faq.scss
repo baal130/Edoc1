@@ -1,0 +1,151 @@
+/* Faq Sass */
+.ulockd-ap-faq {
+  background-color: $white-f6;
+}
+.ulockd-faq-title {
+  h2 {
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  &.style2 {
+    h2 {
+      margin-bottom: 45px;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+.ulockd-faq-content {
+  .panel-default {
+    border: none;
+    .panel-heading {
+      border: medium none;
+      border-radius: 0;
+      color: $white-ff;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0;
+      &:hover,
+      &:visited {
+        a {
+          color: $white-ff;          
+        }
+      }
+    }
+  }
+  .panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    .panel-title {
+      a {
+        .icon-1 {
+          display: inline-block;
+        }
+        .icon-2 {
+          display: none;
+        }
+        &.collapsed {
+          .icon-1 {
+            display: none;
+          }
+          .icon-2 {
+            display: inline-block;
+          }
+        }
+        i {
+          background-color: $gray-lightest;
+          color: $white-ff;
+          height: 50px;
+          line-height: 50px;
+          margin-right: 10px;
+          text-align: center;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+.ulockd-faq-content {
+  &.style2 {
+    .panel {
+      .panel-title {
+        a {
+          i {
+            background-color: transparent;
+            height: auto;
+            padding: 0 10px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+.faq-content {
+  .panel-default {
+    border: none;
+    .panel-heading {
+      border: medium none;
+      border-radius: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0;
+    }
+  }
+  .panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    .panel-title {
+      a {
+        .icon-1 {
+          display: inline-block;
+        }
+        .icon-2 {
+          display: none;
+        }
+        &.collapsed {
+          .icon-1 {
+            display: none;
+          }
+          .icon-2 {
+            display: inline-block;
+          }
+        }
+        i {
+          background-color: $gray-lightest;
+          color: $white-ff;
+          height: 50px;
+          line-height: 50px;
+          margin-right: 10px;
+          text-align: center;
+          width: 50px;
+        }
+      }
+    }
+    .panel-body {
+      padding-left: 60px;
+    }
+  }
+}
+.ulockd-faq-box {
+  .panel-body {
+    background: $white-f9 none repeat scroll 0 0;
+    padding: 20px 25px;
+  }
+  .panel {
+    .panel-title {
+      a {
+        i {
+          background-color: $gray-lightest;
+          color: $white-ff;
+          height: 50px;
+          line-height: 50px;
+          margin-right: 10px;
+          text-align: center;
+          width: 50px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-10 18:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\dataadd\forms.py:25
+msgid "Punch name"
+msgstr ""
+
+#: .\dataadd\forms.py:26 .\dataadd\forms.py:53
+msgid "Draft - Save Your post for later"
+msgstr ""
+
+#: .\dataadd\forms.py:27 .\dataadd\forms.py:54 .\dataadd\forms.py:55
+msgid "Publish - Select date when Post will be published"
+msgstr ""
+
+#: .\dataadd\forms.py:28
+msgid "Select if you want to show your name with post"
+msgstr ""
+
+#: .\dataadd\forms.py:29 .\dataadd\forms.py:56
+msgid "Upload files to prove Your statements"
+msgstr ""
+
+#: .\dataadd\forms.py:30
+msgid "Use text as article for general info"
+msgstr "gagaga"
+
+#: .\dataadd\forms.py:34 .\dataadd\forms.py:61
+msgid "Some useful help text."
+msgstr ""
+
+#: .\dataadd\forms.py:52
+msgid "Punch  or news name"
+msgstr "test2"
+
+#: .\dataadd\forms.py:57
+msgid "Use text as news fos site"
+msgstr ""
+
+#: .\dataadd\forms.py:81
+msgid "CITIES"
+msgstr ""
+
+#: .\dataadd\views.py:137
+msgid "Napisite komentar1"
+msgstr "test1"

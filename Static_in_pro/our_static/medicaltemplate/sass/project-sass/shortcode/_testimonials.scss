@@ -1,0 +1,81 @@
+/* Testimonials Sass */
+
+//== Our Testimonials
+.ulockd-testimonial {
+  background-color: $white-ff;
+}
+.testimonial-grid {
+  background-color: $white-ff;
+  border: 1px solid  $gray-lighter;
+  border-radius: 0 45px 0;
+  padding: 10px 20px;
+  position: relative;
+  @include box-shadow(0 4px 10px 0px rgba($black-rgb, $alpha2));
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+  }
+  img {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+.ulockd-testimonials {
+  background-color: $white-ff;
+  border: 1px solid  $gray-lighter;
+  border-radius: 0 45px 0;
+  padding: 10px 20px;
+  position: relative;
+  @include box-shadow(0 4px 10px 0px rgba($black-rgb, $alpha2));
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+	  cursor: pointer;
+	  box-shadow: none;
+  }
+  .testi-thumb {
+  	img {
+  	  border: 1px solid $gray-lighter;
+      border-radius: 0 20px;
+  	  height: 70px;
+  	  margin: -50px auto 0;
+  	  width: 70px;
+  	}
+    ul {
+      li {
+        padding: 0;
+      }
+    }
+  }
+  p {
+	  margin-bottom: 20px;
+	  text-transform: capitalize;
+  }
+  &.style2 {
+	  background-color: $white-ff;
+	  margin-top: 25px;
+  }
+}
+.testimonial-col {
+  position: relative;
+  .content {
+    padding: 20px 40px 10px 10px;
+  }
+}
+//== Blog Details Tesimonials
+.ulockd-inr-testimonials {
+  background-color: $white-f9;
+  padding: 10px 25px;
+  p {
+	  color: $black-31;
+  }
+  h3 {
+	  color: $black-33;
+	  margin-bottom: 0;
+  }
+}
+.ulockd-tcompliment {
+  span {
+    color: $black-22;
+  }
+}

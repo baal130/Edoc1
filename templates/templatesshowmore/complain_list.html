@@ -1,0 +1,138 @@
+{% extends "base1.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if title %}
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>{{title}}<h1>
+</div>
+</div>
+{% endif %}
+
+
+
+
+
+	<!-- methoda je po defaultu get -->
+<!-- {{ form.as_p}} -->
+<!-- {% for objects in object_list %}
+	{{objects.company_name}}<br>
+	{{ objects.description}}<br>
+	{{ objects.timestamp}}<br>
+{% endfor %} -->
+<!-- 
+<table class='table'>
+    {% for objects in object_list %}
+       <tr><td>{{forloop.counter }}{{ objects.company_name }} </td> <td>{{ objects.timestamp }} </td></tr>
+       <div> {{ objects.description }}</div>
+    {% endfor %}
+</table> -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+  <div class="row">
+   <div class="col-sm-3 col-md-3"> <!-- SEARCH FORM FOR WORDS IN POSTS -->
+    <form method='GET' action=''>
+    <input  class="select form-control" type='text' name='q' placeholder='Search posts' value='{{request.GET.q }}'/>
+    <br>
+    {{category|crispy}} <!-- // category je vec objekt s td, option tagovima  -->
+    
+    <option value="name1">name1</option>
+    </select></td>
+
+    <input type='submit' value='Search' />
+    </form>
+    
+
+    
+
+    {% include 'sidebar.html' %}
+    </div>       
+
+
+ 
+         
+             
+              
+    <div class="col-sm-7  ">
+       {% for objects in object_list %}
+      <div class="thumbnail post-background">
+        <div class="caption">
+                <h3>{{forloop.counter }}<a href='{{objects.get_absolute_url}}'>{{ objects.company_name }} </a><small>{{ objects.publish }}</small> 
+               </h3>
+               <div class="text-default post-detail-item ">{{ objects.get_markdown|truncatewords_html:40}}</div>
+              <p> <a href='{{objects.get_absolute_url}}' class="btn btn-primary" role="button"> View</a> </p>
+               
+         
+  
+      </div>           
+    </div>
+    {% endfor %}
+    <div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class=" text-default">Previous</a>
+        {% endif %}
+
+        <span class="current text-default">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %} "class= "text-default" >Next</a>
+        {% endif %}
+    </span>
+</div>
+  
+
+
+
+
+{{time}}
+<br>
+{%  if request.user.is_authenticated %}
+     <a href="{% url 'dataadd:complain' %}" class=" btn button-create button-fix-width" > complain_create</a> <!--url with namespace dataaadin general url  and name in url of app -->
+     {% else %}
+     <a href="{% url 'registration_register'%}" class=" btn button-create button-fix-width">REGISTER </a><span  class="text-default"> Register to view and create posts </span><br>
+
+    <a href=" {% url  'auth_login'%}" class=" btn button-edit button-fix-width">LOGIN</a>  <span  class="text-default"> Already registered, login now </span>
+{% endif %}
+
+  </div>
+  
+</div>  
+
+
+
+
+
+{% endblock content %}
+{%  block script %}
+<script>
+ $(document).ready(function(){
+      
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+       
+    })
+
+    </script>
+{% endblock %}

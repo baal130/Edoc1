@@ -1,0 +1,36 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="gallery" class="service-two">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator text-uppercase">{% trans "Our" %}  <span class="text-thm2">{% trans "Gallery" %}</span></h2>
+						
+					</div>
+				</div>
+			</div>
+            <div class="row">
+            	<div class="col-md-12">
+            		<div class="fancybox-gallery-slider">
+            			{% for objects in galery_list   %}
+            			<div class="item">
+            				<div class="gs-thumb">
+            					<img class="img-responsive img-whp" src="{{objects.imagehomegallery.url}}" alt="2.jpg">
+            					<div class="gallery-overlay">
+									<div class="lbox-caption">
+										<div class="lbox-details">
+		            						<a class="lightbox-image" data-fancybox-group="preject" href="{{objects.imagehomegallery.url}}">
+		            							<span class="fa fa-plus-square"></span>
+		            						</a>
+										</div>
+									</div>
+            					</div>
+            				</div>
+            			</div>
+            			{% endfor %}
+	            	</div>
+            	</div>
+            </div>
+		</div>
+	</section>

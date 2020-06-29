@@ -1,0 +1,21 @@
+{% extends "base1.html" %}
+{% load crispy_forms_tags %}
+{% load el_pagination_tags %}
+
+ {% block content %}
+include template
+<h2>Entries:</h2>
+<div class="col-sm-7  ">
+{% include page_template %}
+</div>   
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    
+  <script>
+    $.endlessPaginate();
+  </script>
+{% endblock %}
+
+
+

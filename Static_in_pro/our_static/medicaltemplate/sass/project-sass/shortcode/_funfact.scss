@@ -1,0 +1,50 @@
+/* Funfact Sass */
+//== Funfact
+.ulockd-ffact-one {
+  border-right: 1px solid $white-ff;
+  position: relative;
+  span {
+    color: $white-ff;
+    font-size: 48px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+  .timer {
+    color: $white-ff;
+    font-family: $font-serif;
+	  font-size: 30px;
+    font-weight: 700;
+  }
+}
+.ulockd-ffact-two {
+  span {
+    font-size: 60px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+  .timer {
+    font-family: $font-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    &:before {
+      background-color: $white-ff;
+      bottom: 35%;
+      content: "";
+      height: 2px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      width: 50px;
+    }
+  }
+}

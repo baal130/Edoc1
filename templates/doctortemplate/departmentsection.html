@@ -1,0 +1,33 @@
+{% load staticfiles %}
+{%  load i18n %}
+<section id="department" class="ulockd-department bgc-whitef0">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="ulockd-main-title">
+						<h2 class="mt-separator">{% trans "Our" %}   <span class="text-thm2"> {% trans "Department" %}</span></h2>
+						<p>{% trans "We have it all" %}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+					
+								{% for objects in department_list   %}
+									
+								
+				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+					<figure class="department_box imghvr-push-down">
+					    <img class="img-responsive" src="{% if objects.imagehomedep %}{{objects.imagehomedep.url}}{% endif %}" alt="1.jpg">
+					    <figcaption>
+					        <h4> {{objects.departmentname|title}}</h4>
+							<p>{{objects.departmenttext}}</p>
+							
+							<a  class="absolute-disable " href="{{objects.url}}"><button class="btn btn-md ulockd-btn-white"> {% trans "More Info" %}
+							</button></a>
+					    </figcaption>
+					</figure>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>

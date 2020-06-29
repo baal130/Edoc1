@@ -1,0 +1,525 @@
+hr { 
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+
+
+
+
+.picture1{
+
+	max-width: 45%;
+	padding: 10px 10px 10px 10px;
+	float:left;
+	display: inline-block;
+
+}
+.picture2{
+
+	max-width: 45%;
+	padding: 10px 10px 10px 10px;
+	height :100%;
+	
+    position: relative;
+}
+.text-grad{
+	position: absolute;
+	top: 10%;
+	z-index: 2;
+	text-align: center;
+	color: white;
+}
+.text-dubrovnik{
+	
+     color:  black;
+	font: bold 18px 'Kreon';
+	text-align: center;
+}
+.text-FAQ{
+	
+     color:  black;
+	font: bold 18px 'Kreon';
+	
+}
+.text-dubrovnik a{
+     color:  red;
+     float:right;
+	font: normal 20px 'Kreon';
+}
+.text-dubrovnik:hover a{
+     color:  blue;
+     text-decoration: none;
+	
+}
+
+.wrap-dubrovnik{
+background-color: rgba(161,184,213,.1);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	
+	padding: 15px 20px 15px 20px;
+	text-decoration: none;
+	border-radius: 10px 10px 10px 10px;
+	float: left;
+}
+.red-pozicija{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	height: 45vh;
+}
+body {
+    
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+97,b5c6d0+100,e0eff9+100 */
+background: #f2f6f8; /* Old browsers */
+background: -moz-linear-gradient(top,  #f2f6f8 0%, #d8e1e7 97%, #b5c6d0 100%, #e0eff9 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 97%,#b5c6d0 100%,#e0eff9 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f2f6f8 0%,#d8e1e7 97%,#b5c6d0 100%,#e0eff9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+
+  }
+
+
+.navbar-style{
+	
+	/*background:rgba(192,192,192, 0.96);*/
+	background: #d8e0de; /* Old browsers */
+background: -moz-linear-gradient(top, #d8e0de 0%, #aebfbc 11%, #99afab 25%, #8ea6a2 38%, #829d98 44%, #4e5c5a 66%, #2b2b2b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #d8e0de 0%,#aebfbc 11%,#99afab 25%,#8ea6a2 38%,#829d98 44%,#4e5c5a 66%,#2b2b2b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #d8e0de 0%,#aebfbc 11%,#99afab 25%,#8ea6a2 38%,#829d98 44%,#4e5c5a 66%,#2b2b2b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#2b2b2b',GradientType=0 );
+opacity: 0.93;
+font: bold 16px sans-serif;
+
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #D4CFCF;
+}
+.post-background{
+   background: -moz-linear-gradient(to top, #c1c3da 0%,#bdbec7 11%,#b4b4bb 25%,#a0a0a5 38%,#9c9aa9 44%,#98989e 66%,#9e9ea5 100%); 
+    background: -webkit-linear-gradient(to top, #c1c3da 0%,#bdbec7 11%,#b4b4bb 25%,#a0a0a5 38%,#9c9aa9 44%,#98989e 66%,#9e9ea5 100%); 
+    background:linear-gradient(to top, #c1c3da 0%,#bdbec7 11%,#b4b4bb 25%,#a0a0a5 38%,#9c9aa9 44%,#98989e 66%,#9e9ea5 100%);
+    box-shadow: 10px 10px 5px #888888;
+    
+}
+.button-create{
+   border-top: 1px solid #57b4ed;
+   background: #5785a1;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3c91c9), to(#5785a1));
+   background: -webkit-linear-gradient(top, #3c91c9, #5785a1);
+   background: -moz-linear-gradient(top, #3c91c9, #5785a1);
+   background: -ms-linear-gradient(top, #3c91c9, #5785a1);
+   background: -o-linear-gradient(top, #3c91c9, #5785a1);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #cef5da;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   }
+.button-create:hover{
+   border-top-color: #2b6891;
+   background: #2b6891;
+   color: #c9b9c9;
+   }
+.button-create:active{
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+.button-delete {
+   border-top: 1px solid #db18c4;
+   background: #b53257;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e81543), to(#b53257));
+   background: -webkit-linear-gradient(top, #e81543, #b53257);
+   background: -moz-linear-gradient(top, #e81543, #b53257);
+   background: -ms-linear-gradient(top, #e81543, #b53257);
+   background: -o-linear-gradient(top, #e81543, #b53257);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   }
+
+
+
+
+
+.button-delete:hover {
+   border-top-color: #c90c3b;
+   background: #c90c3b;
+   color: #d9bfcb;
+   }
+.button-delete:active {
+   border-top-color: #eb0e2b;
+   background: #eb0e2b;
+   }
+
+.button-edit {
+   border-top: 1px solid #18d91e;
+   background: #14911d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2abd22), to(#14911d));
+   background: -webkit-linear-gradient(top, #2abd22, #14911d);
+   background: -moz-linear-gradient(top, #2abd22, #14911d);
+   background: -ms-linear-gradient(top, #2abd22, #14911d);
+   background: -o-linear-gradient(top, #2abd22, #14911d);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom: 5px;
+   }
+.button-edit:hover {
+   border-top-color: #3ea32a;
+   background: #3ea32a;
+   color: #d9bfcb;
+   }
+.button-edit:active {
+   border-top-color: #15570b;
+   background: #15570b;
+   }
+.button-fix-width{
+      width: 8pc;
+}
+
+
+
+
+.text-default{
+    font-size: 1.2em;
+    font-family: palatino;
+    margin: 0 auto 2.4em;
+
+}
+
+.wmd-panel{
+  margin-left:0px;
+  margin-right:0px;
+  margin-bottom:5px;
+  width: 99%;
+  min-width: auto;
+}
+
+
+
+
+
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+
+.comment-reply{
+display: none;
+}
+.display-none{
+  display: none;
+  
+}
+
+
+
+.triangle-right {
+  position: relative;
+  padding: 15px;
+  margin: -0.1em 0 0em;
+  color:#fff;
+  background:#075698; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#46789a), to(#4d667b));
+  background:-moz-linear-gradient(#46789a, #4d667b);
+  background:-o-linear-gradient(#46789a, #4d667b);
+  background:linear-gradient(#46789a, #4d667b);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for top positioned triangle
+------------------------------------------ */
+
+.triangle-right.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+  background:-moz-linear-gradient(#075698, #2e88c4);
+  background:-o-linear-gradient(#075698, #2e88c4);
+  background:linear-gradient(#075698, #2e88c4);
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-right.left {
+  margin-left:40px;
+ /* background:#075698;*/
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-right.right {
+  margin-right:40px;
+/*  #background:#075698;*/
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-right:after {
+  content:"";
+  position:absolute;
+  bottom:-18px; /* value = - border-top-width - border-bottom-width */
+  left:20px; /* controls horizontal position */
+  border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#4c687f transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-right.top:after {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  right:50px; /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:20px 20px 0 0; /* vary these values to change the angle of the vertex */
+  border-color:transparent #075698;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-right.left:after {
+  top:0px;
+  left:-33px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:0px 42px 25px 0; /* vary these values to change the angle of the vertex */
+  border-color:transparent #2e88c4;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-right.right:after {
+  top:15px;
+  right:-40px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  left:auto;
+  border-width:15px 0 0 40px; /* vary these values to change the angle of the vertex */
+  border-color:transparent #075698 ;
+}
+
+
+
+.triangle-isosceles {
+  position:relative;
+  padding:15px;
+  margin:1em 0 0em;
+  color:#000;
+  background:#f3961c; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+  background:-moz-linear-gradient(#f9d835, #f3961c);
+  background:-o-linear-gradient(#f9d835, #f3961c);
+  background:linear-gradient(#f9d835, #f3961c);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for top positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#8da78d), to(#becac0));
+  background:-moz-linear-gradient(#8da78d, #becac0);
+  background:-o-linear-gradient(#8da78d, #becac0);
+  background:linear-gradient(#8da78d, #becac0);
+}
+
+/* Variant : for left/right positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.left {
+  margin-left:50px;
+  background:#becac0;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.right {
+  margin-right:50px;
+  background:#f3961c;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#f3961c transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-isosceles.top:after {
+  top:-14px; /* value = - border-top-width - border-bottom-width */
+  /*right:0px;*/ /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color:#8da78d transparent;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-isosceles.left:after {
+  top:16px; /* controls vertical position */
+  left:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:10px 50px 10px 0;
+  border-color:transparent #f3961c;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-isosceles.right:after {
+  top:16px; /* controls vertical position */
+  right:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  left:auto;
+  border-width:10px 0 10px 50px;
+  border-color:transparent #f3961c;
+}
+
+
+.form-group {
+     margin-bottom: 3px; 
+}
+.float-right{
+float:right;
+
+}
+
+.blackqoute-margin{
+  margin-top: 15px;
+  
+}
+.blockquote{
+  
+  padding: 10px 10px;
+  margin: 0 0 10px;
+}
+
+
+.commentdisclaimer {
+    color: #6b6b5e;
+    font-style: normal;
+    font-size: 11px;
+}
+.lead-comment{
+   background: green;
+    color: black;
+
+}
+.title-detail{
+  background: #847272;
+  color: black;
+  text-align:center;
+    font-family: Fjalla One;
+    text-transform: uppercase;
+    line-height: 105%;
+    letter-spacing: -5px;
+    font-weight: 100;
+    text-align: center;
+    margin: 15px 0 0;
+    
+    font-size: 70px;
+
+} 
+.punch-title{
+  font-size: 33px;
+    line-height: 140%;
+    text-shadow: none;
+    font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: black;
+    font-style: italic;
+    margin-bottom: 45px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.content-punch{
+  font-family: palatino;
+  }
+
+
+  .content-create{
+    background: linear-gradient(to top, #c1c3da 0%,#bdbec7 11%,#b4b4bb 25%,#a0a0a5 38%,#9c9aa9 44%,#98989e 66%,#9e9ea5 100%);
+    box-shadow: 2px 2px 2px 1px #888888;
+    padding: 5px 5px 10px 10px;
+    margin-bottom: 10px;
+
+  }
+  .content-preview{
+    background: linear-gradient(to top, #d8d8e3 0%,#d1d2e0 11%,#d5d5e0 25%,#d2d2e5 38%,#d2d0df 44%,#c9c9e1 66%,#b5b5d3 100%);
+    box-shadow: 2px 2px 2px 1px #888888;
+    padding: 5px 5px 10px 10px;
+    min-height: 635px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: inherit; /* da nema y scrolla*/
+}
+
+

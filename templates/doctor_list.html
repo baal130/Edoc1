@@ -1,0 +1,886 @@
+{% extends "base_doctor.html" %}
+{% load crispy_forms_tags %}
+{%  load i18n %}
+{% load l10n %}
+{% load staticfiles %}
+{% localize off %}
+
+<style type="text/css">
+
+{% block style %}
+.rating {
+    float:left;
+    width: 140px;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  font-size: 20px;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color:#ddd;
+  text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  
+  color: gold;
+  text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+  overflow: hidden;
+}
+
+.stars-0:after { width: 0%; }
+.stars-5:after { width: 5%; }
+.stars-10:after { width: 10%; }
+.stars-15:after { width: 15%; }
+.stars-20:after { width: 20%; }
+.stars-25:after { width: 25%; }
+.stars-30:after { width: 30%; }
+.stars-35:after { width: 35%; }
+.stars-40:after { width: 40%; }
+.stars-45:after { width: 45%; }
+.stars-50:after { width: 50%; }
+.stars-55:after { width: 55%; }
+.stars-60:after { width: 60%; }
+.stars-65:after { width: 65%; }
+.stars-70:after { width: 70%; }
+.stars-75:after { width: 75%; }
+.stars-80:after { width: 80%; }
+.stars-85:after { width: 85%; }
+.stars-90:after { width: 90%; }
+.stars-95:after { width: 95%; }
+.stars-100:after { width: 100; }
+
+
+.rating-align-bottom{
+position: absolute;
+    bottom: 10%;
+}
+.rating-align-bottom-google{
+position: absolute;
+    bottom: 17%;
+}
+.dropdown-menu-edit{
+  min-width: 200px;
+}
+.post-thumb-max{
+  max-height: 100px;
+  min-height: 22vh;
+}
+.tools{
+    border-top: 1px solid #d8d8d8;
+    padding: 5px;
+}
+.close-icon-loc{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-message{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-tel{
+  z-index: 0; position: absolute; right: 9px; top: 3px;
+}
+.tel-box{
+  padding: 10px 10px 10px 10px;
+
+}
+.display-none{
+  display: none;
+  
+}
+.display-grid{
+ display: grid; 
+ grid-area: 1 / 1;
+}
+
+.navbar-doctor{
+position: absolute;
+margin-right: 20px!important;
+margin-top: 5px;
+z-index: -3;
+}
+@media (max-width: 992px){
+.navbar-doctor{
+position: relative;
+margin-right: 20px;
+margin-top: 5px;
+
+}  
+}
+.col-margin-5px{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/*.sticky {
+  position: fixed;
+  top: 200px;
+  right:0;
+  /*width: 100%;*/
+}*/
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.gmap {
+        height: 400px;
+        width: 100%;
+  }
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /*top: 150px;*/
+  }
+.yelp-color{
+color:#e83131 ;
+}
+.google-color{
+ color: #00e64d;
+}
+
+.discount_thumbnail_img{
+position: absolute;
+    top: 1%;
+    left: 3%;
+} 
+.petfriendly_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 22%;
+}
+.disability_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 37%;
+}
+.homevisit_thumbnail_img{
+  position: absolute;
+    top: 1%;
+    left: 56%;
+}
+{%  endblock style %}
+</style>
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+{% if title %}<h3 class="text-left ">{{title}} </h3>{% endif %}
+<h3 class="text-right ">{% trans "Move map to a location for search" %} <small>
+  
+
+  
+  <a href='/doctor/?q={{ request.GET.q }}&state={{ request.GET.state }}{% if request.GET.city %}&city={{ request.GET.city }}{% endif %}&speciality={{ request.GET.speciality }}{% if request.GET.service %}&service={{ request.GET.service }}{% endif %}' style="display: none;" class="text-thm2" id='search-here'>{% trans "Search here?" %}</a></small></h3>
+  
+</div>
+</div>
+
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<div class="row  ">
+  
+   
+  <div id="content" class="col-sm-12 col-md-9 content equal"> 
+      {% for objects in object_list %}              
+    <div style ="     display: grid;
+    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+       
+      <div  style ="     
+    grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
+        <div class="post-thumb  ">
+              <img class="img-responsive img-whp post-thumb-inherit post-thumb-max" 
+              src="{% if objects.profilepicture %}{{objects.profilepicture.url}}{% else %}{% static 'img/sparta2.jpg' %}{% endif %}" alt="1.jpg">
+               
+               {% if objects.get_uses_discount %}<span ><img class="discount_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Offer discount prices" %}"
+               
+              src= "{% static 'img/iconssocial/iconDiscount.png' %} " alt=""> </span>{% endif %}
+              {% if objects.invalidsaccess %}<span ><img class="disability_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Have access for people with dissabilites" %}"
+               
+              src= "{% static 'img/iconssocial/disability.png' %} " alt=""> </span>{% endif %}
+
+              {% if objects.acceptanimales %}<span ><img class="petfriendly_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Pet friendly" %}"
+               
+              src= "{% static 'img/iconssocial/pet.png' %} " alt=""> </span>{% endif %}
+              {% if objects.homevisit %}<span ><img class="homevisit_thumbnail_img"  data-toggle="tooltip" data-placement="top" title="{% trans "Make home visits" %}"
+               
+              src= "{% static 'img/iconssocial/homevisit.png' %} " alt=""> </span>{% endif %}
+
+
+        </div>
+        <div class="caption">
+                <h3>dr. <a class="text-thm2 " href='{{objects.get_absolute_url}}'>{{ objects.name|title }} {{ objects.surname|title }}</a>
+               </h3>
+               <br>
+               <small>{% if objects.speciality  %} ({{objects.speciality}}) {% else %} {% endif %}  </small>
+               <br>
+               <small>{% if objects.adress  %}{{ objects.adress }} {% endif %}</small>
+               <br>
+               <small>{% if objects.city  %}{{ objects.city }}{% endif %}{% if objects.colony  %},{{ objects.colony }}{% endif %} 
+               {% if objects.state  %},{{ objects.state }}{% endif %} </small>
+               <br>
+               
+              
+              
+              <span class="addrating" id="fixture" value="{{ objects.get_total_rating.rating__avg|safe}}"> </span>
+               {% if objects.get_total_rating.rating__avg|safe != "None" %}
+               <big>{{ objects.get_total_rating.rating__avg|safe}}</big> <small> by ({{objects.get_total_rating.rating__count|safe}} pacients) </small>
+               <span class="dropdown"> 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-edit">
+                <li><span class="addrating" id="fixture" value="{{ objects.get_total_rating_help.ratinghelp__avg|safe}}">
+                 </span> &nbsp {{ objects.get_total_rating_help.ratinghelp__avg}} help</li>
+                <li><span class="addrating" id="fixture" value="{{ objects.get_total_rating_kind.ratingkind__avg|safe}}">
+                 </span> &nbsp {{ objects.get_total_rating_kind.ratingkind__avg}} kind</li>
+                <li><span class="addrating" id="fixture" value="{{ objects.get_total_rating_time.ratingtime__avg|safe}}">
+                 </span> &nbsp {{ objects.get_total_rating_time.ratingtime__avg}} time</li>
+                <li><span class="addrating" id="fixture" value="{{ objects.get_total_rating_staff.ratingstaff__avg|safe}}">
+                 </span> &nbsp {{ objects.get_total_rating_staff.ratingstaff__avg}} staff</li>
+                 <li><span class="addrating" id="fixture" value="{{ objects.get_total_rating_ethic.ratingethic__avg|safe}}">
+                 </span> &nbsp {{ objects.get_total_rating_ethic.ratingethic__avg}} ethic</li>
+              </ul>
+            </span>
+            {% endif %}
+          <br>
+      </div> 
+      <div class="tools ">
+      <i style="margin-top: 10px;margin-right: 5px;" class="fa fa-search-location search-location text-thm2 fa-1x "> </i> <i  style="margin-right: 5px;" class="fa fa-envelope text-thm2 fa-1x "></i> <i class="fa fa-phone-alt text-thm2 fa-1x "></i>  <a style="float: right;" href='{{objects.get_absolute_url}}' class="btn btn-primary" role="button"> View</a> 
+      </div>
+
+    </div>
+     <div  style ="     
+    grid-area: 1 / 1;display: none;" value="{{forloop.counter}}" id="map{{forloop.counter}}" class="thumbnail post-background wrap-article   test 2">
+    <div class="fa fa-times-circle text-thm2 close-icon-loc "> </div>
+    
+      <script>
+         timeFunction();
+         function timeFunction() {
+            setTimeout(function(){ initMap({{objects.lat}},{{objects.lng}}, 
+            "{{objects.name}}","{{objects.adress}} {{objects.city}}","{{forloop.counter}}"   ); }, 400);
+        }
+      </script>
+      
+      }
+      
+
+      </div>
+    <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 3">
+        
+        <h4  class="align-middle" style="padding:10px; font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Please visit doctor page for appoitment " %}</h4>
+        
+        <a style=" " href='{{objects.get_absolute_url}}' class="btn btn-primary" role="button"> View</a>
+      <span class="fa fa-times-circle text-thm2 close-icon-message ">
+
+      </div>
+      <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 4">
+        <div class="close-icon-tel" ><div title="Close" style="background-color: rgb(121, 151, 227); border: 1px solid rgb(121, 151, 227); border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px; cursor: pointer; margin-bottom: 22px; text-align: center;"><div style="color: rgb(255, 255, 255); background-color: rgb(121, 151, 227); font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 20px; padding-left: 5px; padding-right: 5px;">X</div></div></div>
+      
+        <div class="tel-box"><h4 style="font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Call ordinacy of doctor dr. " %}{{ objects.name|title }} {{ objects.surname|title }} </h4>
+        
+        
+        <span style=" color: #28a44a;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #28a44a;
+    padding-top: 10px;
+    padding-bottom: 10px;" class="fa fa-phone-square-alt fa-4x">
+          <br>
+          <span style="font-size: 20px; line-height: 20px;" > {{objects.telefon}}</span>
+        
+        
+        
+      
+        
+      </div>
+        
+
+      </div><!-- end wrap  -->
+  </div> <!-- end thumbnail col -->
+    {% endfor %}
+
+    <!-- separator beetwen todos doctors and others -->
+     <div style ="     display: grid;
+      grid-area: 1 / 1;" class="col-sm-12 col-margin-5px  ">
+           
+           <nav aria-label="...">
+            <ul class="pagination">
+              {% if object_list.has_previous %}
+              <li class="page-item ">
+                <a class="page-link" href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" tabindex="-1">{% trans "Previous" %}</a>
+              </li>
+              {% endif %}
+              {% for i in object_list.paginator.page_range %}
+              
+              {% if object_list.number == i %}
+              <li class="page-item active">
+                <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
+              </li>
+               {% else %}
+              <li class="page-item"><a class="page-link" href="?page={{ i }}">{{i}}</a></li>
+              {% endif %}
+              {% endfor %}
+
+              {% if object_list.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %} ">{% trans "Next" %}</a>
+              </li>
+               {% endif %}
+            </ul>
+        </nav>
+      {% if otherresults %}<span class="align-middle" style="border-bottom: 2px solid #d8d8d8;border-top: 2px solid #d8d8d8;margin-bottom: 4px;"> {% trans " Doctors outside DoctorForVacation" %}</span>{% endif %}
+     </div>
+     <!--end  separator beetwen todos doctors and others -->
+
+    {% for objects in results.businesses %}  
+        <div style ="     display: grid;
+    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+       
+      <div  style ="     
+    grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
+        <div class="post-thumb  ">
+              <img class="img-responsive img-whp post-thumb-inherit post-thumb-max" 
+              src="{% if objects.profilepicture %}{{objects.profilepicture.url}}{% else %}{{objects.image_url}}{% endif %}" alt="1.jpg">
+           
+        </div>
+        <div class="caption">
+                <h3> <span class="yelp-color " >{{ objects.name|title }} </span>
+                   </h3>
+                   <br>
+                   <small>{% for cat in objects.categories %} 
+                   ({{cat.title}}) 
+                    {% endfor %}
+                 </small>
+                   <br>
+                   <small>{% if objects.location.display_address %} {{ objects.location.display_address }} {% endif %}</small>
+                   <br>
+                   
+                   
+                  
+                  <span class="rating-align-bottom">
+                  <span class="addrating" id="fixture" value="{{ objects.rating|safe}}"> </span>
+                   <big>{{ objects.rating|safe}}</big> <small> by ({{objects.review_count|safe}} pacients) </small></span>
+          <br>
+      </div> 
+      <div class="tools ">
+      <i style="margin-top: 10px;margin-right: 5px;" class="fa fa-search-location search-location yelp-color fa-1x "> </i> <i  style="margin-right: 5px;" class="fa fa-envelope yelp-color fa-1x "></i> <i class="fa fa-phone-alt yelp-color fa-1x "></i>  <a style="float: right;" href='{{objects.url}}' class="btn btn-primary" role="button"> View</a> 
+      </div>
+
+    </div>
+     <div  style ="     
+    grid-area: 1 / 1;display: none;" value="{{forloop.counter}}000" id="map{{forloop.counter}}000" class="thumbnail post-background wrap-article   test 2">
+    <div class="fa fa-times-circle yelp-color close-icon-loc "> </div>
+    
+      <script>
+         timeFunction();
+         function timeFunction() {
+            setTimeout(function(){ initMapYelp({{objects.coordinates.latitude}},{{objects.coordinates.longitude}}, 
+            "{{objects.name}}","{{objects.location.adress1}} {{objects.location.city}}","{{forloop.counter}}000" ); }, 400);
+        }
+      </script>
+      
+      }
+      
+
+      </div>
+    <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 3">
+        
+        <h4  class="align-middle" style="padding:10px; font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Please visit doctor page for appoitment " %}</h4>
+        
+        <a style=" " href='{{objects.get_absolute_url}}' class="btn btn-primary" role="button"> View</a>
+      <span class="fa fa-times-circle yelp-color close-icon-message ">
+
+      </div>
+      <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 4">
+        <div class="close-icon-tel" ><div title="Close" style="background-color: rgb(121, 151, 227); border: 1px solid rgb(121, 151, 227); border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px; cursor: pointer; margin-bottom: 22px; text-align: center;"><div style="color: rgb(255, 255, 255); background-color: rgb(121, 151, 227); font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 20px; padding-left: 5px; padding-right: 5px;">X</div></div></div>
+      
+        <div class="tel-box"><h4 style="font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Call ordinacy of doctor dr. " %}{{ objects.name|title }}  </h4>
+        
+        
+        <span style=" color: #28a44a;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #28a44a;
+    padding-top: 10px;
+    padding-bottom: 10px;" class="fa fa-phone-square-alt fa-4x">
+          <br>
+          <span style="font-size: 20px; line-height: 20px;" > {{ objects.phone }}</span>
+        
+        
+        
+      
+        
+      </div><!-- end yelp  -->
+      
+
+      </div><!-- end wrap  -->
+  </div> <!-- end thumbnail col -->   
+
+    {% endfor %} <!-- yelp  end -->
+
+    <!-- google search  doctors START -->
+    {% for objects in placesgoogle.results %}  
+        <div style ="     display: grid;
+    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+       
+      <div  style ="     
+    grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
+       
+        <div class="caption">
+                <h3> <span class="google-color " >{{ objects.name|title }} </span>
+                   </h3>
+                   <br>
+                   
+                   <small>{% if objects.vicinity %} {{ objects.vicinity }} {% endif %}</small>
+                   <br>
+                   
+                   
+                  
+                  <span class="rating-align-bottom-google">
+                  <span class="addrating" id="fixture" value="{{ objects.rating|safe}}"> </span>
+                   <big>{{ objects.rating|safe}}</big> <small> by ({{objects.user_ratings_total|safe}} pacients) </small></span>
+          <br>
+      </div> 
+      <div class="tools ">
+      <i style="margin-top: 10px;margin-right: 5px;" class="fa fa-search-location search-location google-color fa-1x "> </i> <i  style="margin-right: 5px;" class="fa fa-envelope google-color fa-1x "></i>
+      {% if objects.international_phone_number  %}  <i class="fa fa-phone-alt google-color fa-1x "></i>{% endif %}
+       {% if objects.website  %}  <a style="float: right;" href='{{objects.website}}' class="btn btn-primary" role="button"> View</a> {% endif %}
+      </div>
+
+    </div>
+     <div  style ="     
+    grid-area: 1 / 1;display: none;" value="{{forloop.counter}}00000" id="map{{forloop.counter}}00000" class="thumbnail post-background wrap-article   test 2">
+    <div class="fa fa-times-circle google-color close-icon-loc "> </div>
+    
+      <script>
+         timeFunction();
+         function timeFunction() {
+            setTimeout(function(){ initMapYelp({{objects.geometry.location.lat}},{{objects.geometry.location.lng}}, 
+            "{{objects.name}}","{{objects.location.adress1}} {{objects.location.city}}","{{forloop.counter}}00000" ); }, 400);
+        }
+      </script>
+      
+      }
+      
+
+      </div>
+    <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 3">
+        
+        <h4  class="align-middle" style="padding:10px; font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Please visit doctor page for appoitment " %}</h4>
+        
+        <a style=" " href='{{objects.website}}' class="btn btn-primary" role="button"> View</a>
+      <span class="fa fa-times-circle text-thm2 close-icon-message ">
+
+      </div>
+      <div  style="
+    grid-area: 1 / 1; display: none;" class="thumbnail post-background wrap-article   test 4">
+        <div class="close-icon-tel" ><div title="Close" style="background-color: rgb(121, 151, 227); border: 1px solid rgb(121, 151, 227); border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px; cursor: pointer; margin-bottom: 22px; text-align: center;"><div style="color: rgb(255, 255, 255); background-color: rgb(121, 151, 227); font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 20px; padding-left: 5px; padding-right: 5px;">X</div></div></div>
+      
+        <div class="tel-box"><h4 style="font-family: Open Sans,sans-serif; font-weight: bold;"> {% trans "Call ordinacy of doctor dr. " %}{{ objects.name|title }}  </h4>
+        
+        
+        <span style=" color: #28a44a;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #28a44a;
+    padding-top: 10px;
+    padding-bottom: 10px;" class="fa fa-phone-square-alt fa-4x">
+          <br>
+          <span style="font-size: 20px; line-height: 20px;" > {{ objects.international_phone_number }}</span>
+        
+        
+        
+      
+        
+      </div><!-- end yelp  -->
+       
+
+      </div><!-- end wrap  -->
+  </div> <!-- end thumbnail col -->   
+
+    {% endfor %} <!--  google end -->
+
+
+
+  </div><!-- end column doctor -->
+  <div style =" " id="mapsearch" class=" sticky col-sm-12 col-md-3 locationsearchmobile height-desktop-search  ">
+      
+                    
+                    
+    <div style ="display: block; " id="locationcollapse" class="wrap-article ">
+      <div style ="" id='mapcontent' class="thumbnail post-background wrap-article"></div>               
+                    
+      </div> 
+
+  </div> <!-- end last col-->
+ 
+</div>   
+  
+
+  
+
+
+
+{% endblock content %}
+
+{%  block script %}
+
+<script>
+ 
+ $(document).ready(function(){
+             {% block jquery%}  
+                  $( ".rating input[type='radio']").click(function(event){
+                    /*event.preventDefault()*/
+                    var inputValue= $(this).val()
+                    var request= $.ajax({
+                      method: "POST",
+                      url:"",
+                      data:{
+                        product_id:"{{object.id}}",
+                        rating_value: $(this).val(),
+                        csrfmiddlewaretoken:"{{csrf_token}}",
+                      }
+
+
+                      })
+
+
+
+                    
+                  })
+                        
+                               $(function() {
+              function addScore(score, $domElement) {
+                $("<span class='stars-container'>")
+                  .addClass("stars-" + score.toString())
+                  .text("★★★★★")
+                  .appendTo($domElement);
+                  
+              }
+             
+              
+              
+              
+                $( ".addrating").each(function() {
+                  var inputValue=$(this).attr("value")
+                  
+                  var average=((Math.round(inputValue*2))*10)  
+                  addScore(average, $(this));
+                 /*a value atribute se dodjeljuje vrijednost te se pomocu add scora creira clasa koji daje duljinu*/
+                  
+                });
+              /*tu treba dodata average*/
+
+
+            });/*kraj*/
+                    
+                        
+                        
+                   
+                
+          {% endblock jquery%} 
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+            $(".search-location").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            /*alert($(this).parent().parent().prop("className"));*/
+            $(this).parent().parent().next(".thumbnail").fadeToggle();
+             
+            /*thumbnail je parent zadnji*/
+            /*alert($(this).parent().parent().parent().next(".thumbnail").prop("className"));*/
+           /* var name=$(this).parents('.blackqoute-margin').parent().next(".comment-reply");
+            alert($(this).parent().parent().prop("className"));*/
+            })
+            $(".close-icon-loc").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").fadeToggle();
+            alert($(this).parent().prop("className"));
+            
+            })   
+              
+            $(".fa-envelope").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            
+            $(this).parent().parent().next(".thumbnail").next(".thumbnail").fadeToggle();
+            
+            
+            })
+             $(".close-icon-message").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").prev(".thumbnail").fadeToggle();
+            
+            })
+
+            $(".fa-phone-alt").click(function(event){
+             
+            event.preventDefault();
+            
+            $(this).parent().parent().fadeToggle();
+            $(this).parent().parent().next(".thumbnail").next(".thumbnail").next(".thumbnail").fadeToggle();
+            
+            
+            })
+            $(".close-icon-tel").click(function(event){
+             
+            event.preventDefault();
+            $(this).parent().fadeToggle();
+            $(this).parent().prev(".thumbnail").prev(".thumbnail").prev(".thumbnail").fadeToggle();
+            
+            })
+
+             $(".searchlocationmobilebutton").click(function(event){
+             
+            event.preventDefault();
+
+            $(".content").fadeToggle();
+            $(".locationsearchmobile").fadeToggle();
+            
+            })
+    })
+   </script>
+<script>
+ var content=document.getElementById("content");
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+var mapsearchoffsettop=mapsearch.offsetTop;
+var left= mapsearch.offsetLeft;
+var header = document.getElementById("header");
+var offsetheader = header.offsetTop;
+var headerhight=header.offsetHeight;
+
+var sticky = offsetheader+headerhight;
+var contentleftoff=content.offsetLeft;
+ var contentleftwidth=content.offsetWidth;
+
+window.onscroll = function() 
+{
+  if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    locationSearchApplytop();
+  }  
+  
+};
+  
+
+/*manage sticky effect on search location and on resize function resolves issues vith collapse on small screens */
+
+
+function locationSearchApplytop() {
+  /*ima css  gotov za sticky */
+  /*console.log("sticky"+sticky)
+console.log("pageYOffset"+pageYOffset)
+console.log(offsetheader)*/
+  if (window.pageYOffset > sticky) {
+    var mapsearch = document.getElementById("mapsearch");
+    var locationcollapse= document.getElementById("locationcollapse");
+     /*mapsearch.style.left =contentleftoff+contentleftwidth+10+"px"
+     console.log("prvo"+contentleftoff+contentleftwidth)
+    mapsearch.classList.add("sticky");*/
+    mapsearch.style.top=headerhight +"px"
+    /*console.log("top"+headerhight)*/
+  } else {
+    var mapsearch = document.getElementById("mapsearch");
+      /*console.log(mapsearch.classList.contains('sticky'))*/
+      /*mapsearch.classList.remove("sticky");*/
+      /*mapsearch.style.left = "unset" ;
+      mapsearch.style.top="auto";*/
+  }
+}
+/*With resize remove visibily of last column and show when button for location is pressed
+return everything to normal state on normal view
+*/
+window.onresize=function() {checkResize()};
+function checkResize() {
+var mapsearch = document.getElementById("mapsearch");
+var locationcollapse= document.getElementById("locationcollapse");
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   /*if less then 992 for mobile */
+    if (content.style.display!="none")
+      /*ako se ponovno resiza ne stavljaj none ako je vec prikazan*/
+      {
+      mapsearch.style.display="none"
+      }
+      
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      locationcollapse.style.height="100%"
+      mapsearch.style.left = "unset" ;
+      mapsearch.style.top="auto";
+      
+  }
+else
+  { mapsearch.classList.remove("height-mob-search");
+    mapsearch.classList.add("height-desktop-search");
+    mapsearch.style.display="grid"
+    locationcollapse.style.height="100%"
+      /* for left of search location*/
+      var contentleftoff=content.offsetLeft;
+      var contentleftwidth=content.offsetWidth;
+      /*mapsearch.style.left =contentleftoff+contentleftwidth+ 10+"px"
+      console.log("drugo"+contentleftoff+contentleftwidth)*/
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  }  
+}
+/*kad se ucita stranica za mob*/
+if (window.matchMedia('(max-width: 992px)').matches)
+  {   
+      mapsearch.style.display="none"
+      /*mapsearch.classList.remove("sticky");*/
+      mapsearch.classList.remove("equal");
+      mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");
+      
+      
+  }
+else
+    {
+    mapsearch.classList.add("height-desktop-search");  
+    mapsearch.classList.remove("height-mob-search");
+    mapsearch.style.display="grid"
+    if (mapsearch.style.display=="none"){
+      $(".locationsearchmobile").fadeToggle();
+      
+    }
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  } 
+
+</script>
+
+{% localize off %}
+ 
+
+
+
+
+
+{% endlocalize %}
+
+{% endblock %}
+{% endlocalize %}

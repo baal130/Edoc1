@@ -1,0 +1,262 @@
+{% load staticfiles %}
+{% load l10n %}
+
+<!-- emtpy base  -->
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="{% static 'img/TD_Trans.png' %}">
+<!-- css file -->
+<link rel="stylesheet" href=" {% static 'medicaltemplate/css/bootstrap.min.css'%}"> 
+<link rel="stylesheet" href=" {% static 'medicaltemplate/css/style.css'%}">
+<link rel="stylesheet" href="{% static 'medicaltemplate/css/theme-color.css'%}">
+<!-- Responsive stylesheet -->
+<link rel="stylesheet" href="{% static 'medicaltemplate/css/responsive.css'%}">
+<!-- Title -->
+<title>Todos Doctores</title>
+<link rel="stylesheet" href="{% static 'css/animate.min.css'%}" />
+<link rel="stylesheet" href="{% static 'css/animateSpeed.css'%}" />
+<link rel="stylesheet" href="{% static 'css/buttons.css'%}" />
+<!-- Favicon -->
+<link href="{% static 'medicaltemplate/images/favicon.ico'%}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+<link href="{% static 'medicaltemplate/images/favicon.ico'%}" sizes="128x128" rel="shortcut icon" />
+<link href="{% static 'css/pagination.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'vendor/font-awesome5/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery-1.12.4.js'%}"></script>
+{% load bootstrap3 %}  
+  
+  <style>
+    {% block style %}
+    
+    {% endblock %}
+    </style>
+<style>    
+.dropdown-content_wide{
+  width: 210px;
+} 
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.space_top {
+  margin-top: 5px;
+  height: auto;
+}
+.wrap-package{    
+    height: 100%;
+    background: #ffffff;
+    border-radius: 0 60px 60px 60px;
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+}  
+.wrap-article{    
+    height: 100%;
+    min-height: 45vh;
+    /*background: #ffffff;
+    border-radius: 0 60px 60px 60px;*/
+    /*width: 75%;*/
+    display: flex;
+    flex-direction:  column;
+    justify-content:  space-between;
+    
+} 
+.pointer-none{
+ pointer-events: none; 
+}
+.pointer-auto{
+ pointer-events: auto; 
+}
+.logo-text{
+   font-family: Nova Square;
+    /*font-size: 43px;*/
+    vertical-align: middle;
+    color: #00b3ff;
+}
+
+.fb-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(49, 68, 111) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.fb-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.li-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(0, 119, 181)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(0, 119, 181) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.li-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.tw-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.tw-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.pin-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(200, 21, 22)!important;
+background: -moz-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+background: linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(200, 21, 22) 60%, rgb(206, 105, 118) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.pin-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.stumble-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(200, 21, 22)!important;
+background: -moz-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+background: linear-gradient(0deg, rgb(206, 105, 118) 0%, rgb(235, 73, 36) 60%, rgb(206, 105, 118) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.stumble-link>a{
+ text-align: left;
+ padding-left: 5px; 
+}
+.sign-doctor-link>a:hover{
+   /*background-color:rgba(42, 90, 139, 0.5)!important;*/
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+background: linear-gradient(0deg, rgb(119, 131, 158) 0%, rgb(116, 177, 239) 60%, rgb(90, 122, 155) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color:white;
+}
+.sign-doctor-link>a{
+ text-align: left;
+ padding-left: 5px;
+ border-radius: 5px;
+ padding: 2px; 
+ background: rgb(119, 131, 158)!important;
+background: -moz-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: -webkit-linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+background: linear-gradient(0deg, rgb(113, 215, 255) 0%, rgb(99, 203, 248) 20%, rgb(197, 227, 239) 100%)!important;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31456f",endColorstr="#366faa",GradientType=1);
+color: white;
+}
+
+   
+</style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- PURE CHAT PLUGIN -->
+<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '77c327bc-9a17-46df-a6f1-dff418037a7b', f: true }); done = true; } }; })();</script>
+<body>
+<div class="wrapper">
+	<div id="preloader" class="preloader">
+		<div id="pre" class="preloader_container"><div class="preloader_disabler btn btn-default">Disable Preloader</div></div>
+	</div>
+	<!-- Header Header Top -->
+   {{ formdate.media }} <!-- ZA bootstrap datetime picker-->
+   {% include 'headersectionsearchdiscount.html' %}
+	<!-- Home Design -->
+
+<div class="container">
+{% block content %}
+
+
+    
+{% endblock %}
+
+ </div> 	
+
+	<!-- Our Footer -->
+{% include 'footersection.html' %}
+
+<a class="scrollToHome" href="#"><i class="fa fa-home"></i></a>
+</div>
+<!-- Wrapper End -->
+
+<script type="text/javascript" src="{% static 'medicaltemplate/js/bootstrap.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/bootsnav.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/parallax.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/scrollto.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery-scrolltofixed-min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery.counterup.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/gallery.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/wow.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/slider.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/video-player.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/jquery.barfiller.js'%}"></script>
+
+<script type="text/javascript" src="{% static 'medicaltemplate/js/tweetie.js'%}"></script>
+<script type="text/javascript" src="{% static 'medicaltemplate/js/validator.js'%}"></script>
+
+<!-- Google Map Javascript Codes -->
+
+
+<!-- Custom script for all pages --> 
+<script type="text/javascript" src="{% static 'medicaltemplate/js/script.js'%}"></script>
+{% block extra_js %}
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}
+
+<script src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+<script>
+    $.endlessPaginate();
+</script>
+{% localize off %}
+
+
+
+<script>
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+</script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+
+
+
+{% endlocalize %}
+<script>
+
+
+</script>
+</body>
+</html>

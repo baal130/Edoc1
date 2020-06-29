@@ -1,0 +1,143 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>PUNCH LIST</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- <img src="{% static "my_app/myexample.jpg" %}" alt="My image"/>-->
+
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="navbar-static-top.css" rel="stylesheet">-->
+    <link href="{% static 'css/navbar-static-top.css'%}" rel="stylesheet">
+   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+   
+    
+     {% block head_extra  %} {% endblock head_extra  %}
+     <link href="{% static 'css/MiddleContent.css'%}" rel="stylesheet">
+
+     <style>
+    {% block style %}
+    
+    {% endblock %}
+    </style>
+
+    
+     
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+ </head>
+  <body style="background-color: #bfbfbf;">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+    <!-- Static navbar -->
+    
+
+    <!-- ako je logiran prikazi ovo  -->
+  <!--   {%  if request.user.is_authenticated %}
+    <h1> you are in</h1> -->
+
+    
+    <!-- {{ queryset }}  -->
+    <table class='table'>
+    {% for instance in queryset%}
+       <tr><td>{{forloop.counter }}{{ instance.full_name }} </td> <td>{{ instance.timestamp }} </td></tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+
+     {# else #}  <!-- template django comments needs ## to ucomment instead %% or {%comment%} {% endcomment%} -->
+    <div class="container">
+
+    {% block jumbotron %}
+
+    {% endblock %}
+
+    {% block content %}
+
+
+    
+    {% endblock %}
+
+     
+
+
+
+      <!-- Main component for a primary marketing message or call to action -->
+    
+
+    </div> <!-- /container -->
+    {# endif#}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- /*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>*/ -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js'%}"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+     
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".content-markdown").each(function(){
+            var content= $(this).text()
+            console.log(content)
+            var markedContent=marked(content)
+            console.log(markedContent)
+            $(this).html(markedContent)
+        })
+        $(".post-detail-item  img ").each(function(){
+            $(this).addClass("img-responsive")
+        })
+
+        $(".comment-reply-btn").click(function(event){
+             console.log("nesto")
+            event.preventDefault();
+            $(this).parent().parent().next().next(".comment-reply").fadeToggle();
+           
+           /* var name=$(this).parents('.blackqoute-margin').parent().next(".comment-reply");
+            alert($(this).parent().parent().prop("className"));*/
+        })
+
+        //preview-title
+        //preview-content
+       
+        
+        //console.log(titleItem)
+
+    })
+
+    </script>
+
+{% block script %}
+
+{% endblock %}
+    
+  </body>
+</html>
