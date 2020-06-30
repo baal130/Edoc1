@@ -30,7 +30,7 @@ SECRET_KEY = '_9sfr9be0ogbt7jz!5k9euc19af0gzt_0^bp$!xgcyzcv6&ws+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['testzs.herokuapp.com']
+ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com']
 SERVICE_LIST = []
 
 EMAIL_HOST='smtp.gmail.com'
