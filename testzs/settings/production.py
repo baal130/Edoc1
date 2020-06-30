@@ -219,12 +219,12 @@ STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nala
    
 ) 
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
+STATIC_ROOT = os.path.join(BASE_DIR), "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 MEDIA_URL= '/media/'
-MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR), "live-static-files","media_root")
+MEDIA_ROOT=os.path.join(BASE_DIR), "live-static-files","media_root")
 
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
