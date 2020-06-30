@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '_9sfr9be0ogbt7jz!5k9euc19af0gzt_0^bp$!xgcyzcv6&ws+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com']
 SERVICE_LIST = []
@@ -220,7 +220,8 @@ STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nala
 ) 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 MEDIA_URL= '/media/'
