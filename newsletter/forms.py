@@ -375,9 +375,11 @@ class UserDetailsSearchSpecialityForm(forms.Form):
 class UserDetailsSearchServiceForm(forms.Form):  
 	object_list=UserDetailsServiceSearch.objects.all()
 	Service_CHOICES=[('', _('Select_service')),]
-	for service in object_list:
-		Service_CHOICES.append((service.servicename,service.servicename))
-	
+	try :
+		for service in object_list:
+			Service_CHOICES.append((service.servicename,service.servicename))
+	except:
+		pass
 	service=forms.ChoiceField(
 					choices=Service_CHOICES,label='')			
 	def __init__(self, *args, **kwargs):
