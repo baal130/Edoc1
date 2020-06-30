@@ -214,18 +214,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "Static_in_pro","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nalaze kopiraju se u static root koji se koristi
-    os.path.join(BASE_DIR, "Static_in_pro","our_static"),
-    # '/var/www/static/',
-    #os.path.join(os.path.dirname(BASE_DIR), "Static_in_env"),
+    os.path.join(BASE_DIR, "Static_in_pro"),
+   
 ) 
 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
 MEDIA_URL= '/media/'
-MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR), "Static_in_pro","media_root")
+MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR), "live-static-files","media_root")
 
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
