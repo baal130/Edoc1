@@ -1,0 +1,61 @@
+.form-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+
+.form-inline .form-control{ 
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+}
+
+@media (min-width: 576px){
+    .mr-sm-2, .mx-sm-2 {
+        margin-right: .5rem!important;}
+}
+.mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+}
+
+@media (min-width: 576px){
+.mr-sm-2, .mx-sm-2 {
+    margin-right: .5rem!important;}
+}
+.mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+}
+
+.button, .input {
+    overflow: visible;
+}
+.button, .input, .optgroup, .select, .textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.button, .input {
+    overflow: visible;
+}
+.button, .input, .optgroup, .select, .textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+	
+	.input-group-prepend {
+    margin-right: -1px;
+}
+
