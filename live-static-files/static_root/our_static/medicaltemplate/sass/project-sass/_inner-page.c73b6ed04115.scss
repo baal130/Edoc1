@@ -1,0 +1,126 @@
+/* Inner Pages */
+
+//== Error Or 404 Page
+
+//== Career Page
+.ulockd-error {
+  color: $white-ff;
+  font-family: $body-font;
+  font-size: 345px;
+  font-style: italic;
+  letter-spacing: 5px;
+}
+.ulockd-error-paragraph {
+  color: $white-ff;
+  font-size: 36px;
+  line-height: 48px;
+}
+//== COMING SOON PAGES
+.ulockd-csoon {
+  color: $white-ff;
+  font-size: 80px;
+}
+.ulockd-coming-soon,
+.ulockd-uconctruction {
+  padding: 250px 0;
+}
+.ulockd-coming-soon::before,
+.ulockd-uconctruction::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+//== Uner Construction Pages
+.ulockd-uconctruction {
+  padding: 200px 0;
+}
+.ulockd-uconctruction-ttl {
+  color: $white-ff;
+  font-size: 100px;    
+}
+.ulockd-uconctruction-paragraph {
+  color: $white-ff;
+  font-size: 36px;
+  line-height: 48px;    
+}
+//== Sitemap Page
+.ulockd-site-map{
+  background-image: url("../images/pattern/p3.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &:before {
+  	background-color: rgba($white-rgb, $alpha95);
+  	content: "";
+  	height: 100%;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+  }
+}
+.ulockd-sitemap {
+  li {
+	font-size: 18px;
+	line-height: 30px;
+	padding: 5px;
+  	a {
+  	  color: $black-33;
+  	  text-transform: uppercase;
+  	}
+  }
+}
+//== Flip Clock
+.ulockd-flip-clock {
+  display: inline-block;
+  .clock{
+  	padding-left: 50px;
+  	.flip-clock-label {
+  	  color: $white-ff;
+  	  font-size: 18px;
+  	}
+  }
+  .timeTo {
+  	figcaption {
+  	  color: $white-ff;
+  	}
+  }
+}
+.upcoming-event {
+  .flip-clock-wrapper {
+    .flip {
+      @include box-shadow(0 2px 24px rgba($black-rgb, $alpha2));
+    }
+    .flip-clock-label {
+      color: $white-f7;
+    }
+    ul {
+      margin: 3px;
+      li {
+        a {
+          div {
+            div {
+              &.inn {
+                text-shadow: 0 1px 2px $black-99;
+                background-color: $white-f5;
+              }
+            }
+          }
+        }
+      }
+    }
+    .flip-clock-dot {
+      background-color: $white-f7;
+    }
+  }  
+  &.ulockd-flip-clock {
+    .clock{
+      padding-left: 0;
+    }
+  }
+}

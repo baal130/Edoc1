@@ -1,0 +1,148 @@
+/* Footer Sass */
+.ulockd-footer {
+  background-color: $black-22;
+  position: relative;
+  &.fixed-footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: -1;
+  }
+}
+.ulockd-footer-logo {
+  margin-bottom: 20px;
+}
+.ulockd-footer-log {
+  margin-bottom: 20px;
+}
+.ulockd-ftr-text {
+  color: $gray-silver;
+}
+.ulockd-footer-newsletter {
+  .title {
+    color: $white-ff;
+    margin-top: 30px;
+  }
+}
+.ulockd-media-box {
+  &:hover {
+    cursor: pointer;
+  }
+  .post-date {
+    color: $white-ff;
+  }
+  .media-heading {
+    color: $black-99;
+  } 
+  .media-body {
+    p {
+      color: $gray-silver;
+    }
+  }
+}
+.ulockd-footer-fst-col {
+  padding-right: 10px;
+  p {
+    color: $gray-silver;
+    font-family: $body-font;
+    margin-bottom: 20px;
+  }
+}
+.footer-fst-col {
+  p {
+    color: $black-22;
+    font-family: $body-font;
+    margin-bottom: 20px;
+  }
+}
+//= Footer contact Widget
+.ulockd-footer-lnews h3,
+.ulockd-footer-qlink h3 {
+  color: $white-ff;
+  font-weight: bold;
+  margin-bottom: 27px;
+  margin-top: 0;
+}
+.footer-lnews h3,
+.footer-qlink h3 {
+  color: $white-ff;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.ulockd-footer-contact {
+  h3 {
+    color: $white-ff;
+    font-weight: bold;
+    margin-bottom: 27px;
+    margin-top: 0;
+  }
+  p {
+    color: $gray-lighter;
+    margin-bottom: 20px;
+  }
+}
+.footer-contact {
+  h3 {
+    color: $white-ff;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  p {
+    color: $black-22;
+    margin-bottom: 20px;
+  }
+} 
+.ulockd-ftr-phone, .ulockd-ftr-fax, .ulockd-ftr-mail {
+  color: $gray-lighter;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.ftr-phone, .ftr-fax, .ftr-mail {
+  color: $black-22;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.ulockd-ftr-phone > span,
+.ulockd-ftr-fax > span,
+.ulockd-ftr-mail > span,
+.ulockd-ftr-phone > a,
+.ulockd-ftr-fax > a,
+.ulockd-ftr-mail > a  {
+  color: $gray-lighter;
+}
+.ulockd-footer-qlink {
+  .list-unstyled {
+    li {
+      span {
+        padding-right: 10px;
+      }
+      a {
+        color: #eee;
+        font-size: 16px;
+        line-height: 28px;
+        @include transition(all 400ms ease-in-out);
+        &:hover{
+          color: $white-ff;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+.footer-qlink {
+  .list-unstyled {
+     li {
+      a {
+        font-size: 16px;
+        line-height: 28px;
+        @include transition(all 400ms ease-in-out);
+        &:hover{
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

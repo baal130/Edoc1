@@ -1,0 +1,87 @@
+/* Project Sass */
+//== Project One
+.project-box {
+  background-color: $white-f5;
+  position: relative;
+  @include transition(all 0.5s ease 0s);
+  .pb-thumb {
+	height: 100%;
+    position: relative;
+    overflow: hidden;
+	width: 100%;
+	.overlay {
+	  background-color: rgba($white-rgb, $alpha8);
+	  padding: 10% 0;
+	  position: absolute;
+	  overflow: hidden;
+	  width: 90%;
+	  height: 90%;
+	  left: 5%;
+	  top: 5%;
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	  transition: opacity 0.35s, transform 0.35s;
+	  -webkit-transform: scale(0,1);
+	  -ms-transform: scale(0,1);
+	  transform: scale(0,1);
+	  span {
+		color: $white-f5;
+		font-size: 36px;
+		line-height: 2rem;
+	  }
+	  p {
+	    color: $white-ff;
+	  }
+	}
+	h4 {
+	  text-transform: uppercase;
+	  position: relative;
+	  opacity: 0;
+	  filter: alpha(opacity=0);
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	  transition: opacity 0.35s, transform 0.35s;
+	  -webkit-transform: translate3d(0,-100%,0);
+	  transform: translate3d(0,-100%,0);
+	}
+  }
+  .pb-details {
+    padding: 20px;
+    position: relative;
+  }
+  &:hover {
+	.pb-thumb {
+	  .overlay {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	  }
+	}
+  }
+  &:hover {
+	h4 {
+	  opacity: 1;
+	  filter: alpha(opacity=100);
+	  -webkit-transform: translate3d(0,0,0);
+	  transform: translate3d(0,0,0);
+	}
+  }
+}
+//== Images Hover Effects
+.img_hvr_box {
+  display: inline-grid;
+  width: 100%;
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  textarea {
+	-webkit-box-sizing: padding-box;
+	box-sizing: padding-box;
+	font-size: 0.9em;
+	height: 32px;
+	padding: 6px 0px;
+	resize: none;
+	text-align: center;
+	width: 100%;
+	border: 1px solid rgba($black-rgb, $alpha2);
+  }
+}
