@@ -44,7 +44,7 @@ django-markdown-deux==1.0.5
 django-markdownx==2.0.21
 django-messages==0.5.3
 django-model-utils==3.0.0
-django-pagedown==0.1.1
+django-pagedown==2.1.2
 django-registration-redux==2.4
 django-select2==7.1.1
 django-summernote==0.8.11.4
@@ -97,6 +97,7 @@ pylint==1.8.2
 pylint-common==0.2.5
 pylint-django==0.9.0
 pylint-plugin-utils==0.2.6
+pypiwin32==223
 pytest==3.6.0
 pytest-cov==2.5.1
 pytest-django==2.9.1

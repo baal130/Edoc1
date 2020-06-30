@@ -294,7 +294,7 @@ class UserDetailsServicePriceForm(forms.ModelForm):
 		# else:
 		# 	return self.cleaned_data.get('service', None)	
 class UserDetailsServicePackagePriceForm(forms.ModelForm):  
-	description=forms.CharField(widget=PagedownWidget(show_preview=False))
+	description=forms.CharField(widget=PagedownWidget())
 	description=forms.CharField(widget=SummernoteInplaceWidget())
 	class Meta:     
 		model = UserDetailsServicePackagePrice

@@ -11,7 +11,7 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django.utils.translation import ugettext_lazy as _
 
 class IdiotForm(forms.ModelForm):  #koristi se form iz modela 
-	description=forms.CharField(widget=PagedownWidget(show_preview=False))
+	description=forms.CharField(widget=PagedownWidget())
 	description=forms.CharField(widget=SummernoteInplaceWidget())
 	# description= MarkdownxFormField()
 	# description=RichTextField()
@@ -39,7 +39,7 @@ class IdiotForm(forms.ModelForm):  #koristi se form iz modela
 
 		###
 class NewsForm(forms.ModelForm):  #koristi se form iz modela 
-	description=forms.CharField(widget=PagedownWidget(show_preview=False))
+	description=forms.CharField(widget=PagedownWidget())
 	description=forms.CharField(widget=SummernoteInplaceWidget())
 	# description= MarkdownxFormField()
 	# description=RichTextField()
