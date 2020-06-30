@@ -1,0 +1,49 @@
+/* Inner Pages Sass */
+.ulockd-inner-home {
+  background-attachment: fixed;
+  background-image: url("../images/background/inner-pagebg.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
+  padding: 120px 0;
+  position: relative;
+}
+.inner-conraimer-details {
+  h1{
+    color: $white-ff;
+    position: relative;
+    margin: 0;
+  }
+  &:before {
+    background-color: rgba($black-1rgb, $alpha3);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+.ulockd-inner-page {
+  background-color: $white-f7;
+  border-bottom: 1px solid $gray-gainsboro;
+  border-top: 1px solid $gray-gainsboro;
+}
+.ulockd-icd-layer {
+  padding: 20px;
+  position: relative;
+  ul {
+    margin-bottom: 0;
+  }
+}
+.ulockd-icd-sub-menu {
+  li {
+    a {
+      color: $black-44;
+    }
+  }
+}

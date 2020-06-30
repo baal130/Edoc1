@@ -1,0 +1,158 @@
+/* Feature Sass */
+.feature-box {
+  margin-bottom: 50px;
+  max-height: 220px;
+  overflow: hidden;
+  position: relative;
+  .icon {
+    font-size: 24px;
+    color: $white-ff;
+    padding: 10px 15px 5px;
+  }
+  .title {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    @include transition(all 0.3s ease-in-out 0s);
+    &.blue {
+      background-color: rgba($blue-rgb, $alpha9);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .title {
+      bottom: 0;
+    }
+  }
+  img {
+    height: 100%;
+  }
+  h3 {
+    color: $white-ff;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    position: relative;
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+  .overlay {
+    height: 100%;
+    left: 0;
+    padding: 15px 25px 0px;
+    position: absolute;
+    right: 0;
+    top: 0%;
+    width: 100%;
+    @include transition(all 0.3s ease-in-out 0s);
+    &.blue {
+      background-color: rgba($blue-rgb, $alpha9);
+    }
+    span,
+    p {
+      color: $white-ff;
+    }
+    h3 {
+      margin-top: 0;
+    }
+  }
+  &:hover {
+    .overlay {
+      top: -100%;
+    }
+  }
+}
+.icon-box {
+  border-radius: 0 45px 0;
+  font-family: $body-font;
+  padding: 20px;
+  position: relative;
+  &.icon-left {
+    .icon {
+      float: left;
+      margin-top: 15px;
+    }
+    .details {
+      display: table;
+      padding: 15px;
+    }
+  }
+  .icon {
+    font-size: 70px;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  h4 {
+    margin-top: 0;
+    font-size: 20px;
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+  &.style2 {
+    background-color: $white-ff;
+    @include box-shadow(0 0px 30px 0px rgba($black-rgb, $alpha2));
+    @include transition(all 0.3s ease-in-out 0s);
+    padding: 0 20px 25px 20px;
+    .icon {
+      font-size: 48px;
+    }
+  }
+  &.style3 {
+    background-color: $white-ff;
+    @include box-shadow(0 0px 30px 0px rgba($black-rgb, $alpha2));
+    @include transition(all 0.3s ease-in-out 0s);
+    padding: 10px;
+    h3 {
+      margin-top: 10px;
+    }
+    .icon {
+      font-size: 48px;
+    }
+  }
+  &:hover {
+    &.style2,
+    &.style3 {
+      box-shadow: none;
+    }
+  }
+}
+.feature-box2 {
+  border-radius: 0 45px 0;
+  padding: 40px 25px;
+  position: relative;
+  .icon {
+    font-size: 30px;
+    text-align: center;
+  }
+  h3 {
+    color: $white-ff;
+    margin-top: 0;
+  }
+  p {
+    color: $white-ff;
+    margin-bottom: 22px;
+  }
+  .list-group {
+    li {
+      border-bottom: 1px solid $white-ff;
+      color: $white-ff;
+      line-height: 30px;
+      padding: 5px;
+    }
+  }
+  .lead {
+    margin-bottom: 19px;
+  }
+}
+.img-icon-box {
+  .thumb {
+    img {
+      border-radius: 0 45px;
+    }
+  }
+  .details {
+    .icon {
+      background-color: $white-ff;
+      font-size: 30px;
+      padding: 10px;
+    }
+  }
+}

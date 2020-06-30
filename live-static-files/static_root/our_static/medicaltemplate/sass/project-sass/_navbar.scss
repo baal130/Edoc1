@@ -1,0 +1,455 @@
+/* Navbar Sass */
+.fixedup {
+  position: relative;
+  @include transition(all 0.3s ease-in-out);
+}
+//== New Header
+.main-header-nav {
+  position: relative;
+}
+.main-header-nav-two {
+  background-color: $white-ff;
+}
+nav {
+  &.navbar {
+    &.bootsnav{
+      &.menu-style1{
+        border: none;
+        position: relative;
+      }
+    }
+  }
+}
+.nav {
+  &.navbar-nav {
+    &.single-page{
+      li {
+        &.active {
+          a {
+            color: $black-31;
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar {
+    &.bootsnav{
+      &.menu-style1{
+        ul {
+          &.nav {
+            li {
+              a {
+                padding: 30px 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar {
+    &.bootsnav{
+      ul {
+        &.nav {
+          li {
+            a {
+              font-size: $font-size-base;
+              font-family: $heading-font;
+              font-weight: 600;
+              text-transform: uppercase;
+              @include transition(all 0.2s ease-in-out);
+              &.active {
+                color: $black-31;
+                font-weight: 600;
+              }
+              &:hover,
+              &:focus {
+                color: $black-31;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.navbar {
+  &.bootsnav{
+    .nav {
+      &.navbar-nav {
+        .dropdown {
+          li {
+            a {
+              @include transition(all 0.3s ease-in-out);  
+            } 
+          }
+        }
+      }
+    }
+  }
+}
+.attr-nav {
+  ul {
+    li {
+      a {
+        color: $black-31;
+      }
+    }
+  }
+}
+nav {
+  &.navbar{
+    &.bootsnav {
+      li {
+        &.dropdown {
+          ul {
+            &.dropdown-menu {
+              li {
+                a {
+                  font-family: $body-font;
+                  font-size: 13px;
+                  @include transition(all 0.4s ease-in-out);
+                  &:hover {
+                    padding-left: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar{
+    &.bootsnav {
+      &.menu-style2 {
+        li {
+          &.dropdown {
+            ul {
+              &.dropdown-menu {
+                li {
+                  a {
+                    color: $black-31;
+                    @include transition(all 0.3s ease-in-out);
+                    &:hover {
+                      padding-right: 20px;                      
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.header-nav {
+  .main-header-nav {
+    &.navbar-scrolltofixed {
+      background: $white-ff;
+      border-top: 1px solid $white-ff;
+    }
+  }
+}
+nav {
+  &.navbar {
+    &.bootsnav{
+      &.menu-style2 {
+        border: none;
+      }
+    }
+  }
+}
+//== Menu Color
+//== Navbar Dropdown Background Color
+.attr-nav {
+  ul {
+    li {
+      a {
+        span {
+          &.badge {
+            background-color: $black-22;
+            padding: 3px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar{
+    &.bootsnav {
+      ul {
+        &.nav {
+          li {
+            a {
+              &.active,
+              &:hover,
+              &:focus {
+                color: $black-11 !important;
+              }
+            }
+          }
+        }
+      }
+      li {
+        &.dropdown {
+          ul {
+            &.dropdown-menu {
+              li {
+                a {
+                  &:hover,
+                  &:focus {
+                    color: $black-11 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar{
+    &.bootsnav {
+      li {
+        &.dropdown {
+          ul {
+            &.dropdown-menu {
+              border-top: 5px solid $gray-gainsboro;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  &.navbar{
+    &.bootsnav {
+      &.menu-style1 {
+        ul {
+          &.dropdown-menu {
+            &.megamenu-content {
+              .title {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.dropdown-menu {
+  .cart-list {
+    p,
+    a {
+      color: $black-31;
+    }
+    p {
+      .price {
+        color: $black-31;
+      }
+    }
+  }
+}
+.total {
+  a {
+    &.btn-cart {
+      color: $black-31 !important;      
+    }
+  }
+}
+//== Mega Menu
+nav {
+  &.navbar{
+    &.bootsnav {
+      &.menu-style1 {
+        ul {
+          &.dropdown-menu {
+            &.megamenu-content {
+              .content {
+                ul {
+                  &.menu-col {
+                    li {
+                      a {
+                        color: $black-31;
+                        font-size: $font-size-base;
+                        line-height: 12px;
+                        margin-bottom: 8px;
+                        @include transition(all 0.3s ease-in);
+                      }
+                      &:hover {
+                        a {
+                          padding-left: 10px;                          
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.top-search {
+  .input-group-addon {
+    &.close-search {
+      color: $black-31;
+    }
+  }
+}
+.navbar-brand {
+  padding: 3px;
+}
+.header-nav {
+  &.nav-app {
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+.ulockd-quote-btn {
+  position: relative;
+}
+//== Side Menu
+nav {
+  &.menu-style1 {
+    .side {
+      .widget {
+        ul {
+          &.link {
+            li {
+              a {
+                font-family: $body-font;                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ulockd-quote-btn {
+  a {
+    font-size: $font-size-base;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+}
+//== Style two
+.ulockd-quote-btn-two {
+  a {
+    font-size: $font-size-base;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+}
+//== New Bootstrap Mega menu style
+nav.navbar.unlock-megamenu {
+  margin-bottom: 0;
+}
+.mega-dropdown {
+  position: static !important;
+}
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  li {
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        a {
+          display: block;
+          color: $black-22;
+          padding: 3px 5px;
+        }
+      }
+    }
+  }
+  .dropdown-header {
+    font-size: 24px;
+    padding: 5px 60px 5px 5px;
+    line-height: 30px;
+  }
+}
+//== Right Sidebar
+body {
+  &.on-side {
+    margin-left: 0;
+  }
+}
+//== Left Side Menu
+body.wrap-nav-sidebar .wrapper {
+  padding-left: 0 !important;
+}
+//== Navbar Transparent
+.header-nav {
+  &.transparent {
+    position: absolute;
+    z-index: 999 !important;
+    nav {
+      left: 0;
+    }
+  }
+}
+//== Navbar Fixed
+.fixedup {
+  .navbar-scrolltofixed {
+    &.scroll-to-fixed-fixed {
+      background-color: $white-ff;
+      margin-top: 0;
+    }
+  }
+}
+.menu-fixed-center {
+  left: 0;
+  margin-top: -35px;
+  position: absolute;
+  right: 0;
+}
+/*
+.navbar-scrolltofixed {
+  nav {
+    &.menu-fixed-center {
+      margin-top: 0;
+    }
+  }
+}*/
+.menu-style-fixed,
+.menu-style1,
+.menu-style2 {
+  .side {
+    .widget {
+      ul {
+        &.link {
+          li {
+            a {
+              color: $white-ff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

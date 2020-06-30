@@ -1,0 +1,44 @@
+/* Mainchimp Sass */
+.ulockd-mailchimp {
+  width: 75%;
+  input {
+    background-color: $white-ff;
+    border: 1px solid transparent;
+    border-radius: 0 ;
+  }
+  button {
+    background-color: $gray-dark;
+    border-radius: 0 ;
+    color: $white-ff;
+  }
+}
+.subscribe {
+  text-align:center;
+  h1 {
+    margin:0px;
+  }
+  h4 {
+    margin: 10px 0px 20px 0px;
+    color: $white-f9;
+  }
+  input {
+    border: 1px solid transparent;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black-22;
+    padding: 7px 14px;
+    min-width: 20%;
+  }
+  button {
+    background-color:$gray-lightest;
+    font-size:14px;
+    line-height:20px;
+    font-weight:bold;
+    color:$white-ff;
+    padding:8px 16px;
+    border:none;
+    margin-left:-5px;
+  }
+}
+

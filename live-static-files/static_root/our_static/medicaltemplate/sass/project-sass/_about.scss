@@ -1,0 +1,162 @@
+/* About Sass */
+
+//== First About Section
+.about-box {
+  position: relative;
+  h3 {
+	  position: relative;
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+}
+.ab-thumb {
+  position: relative;
+  img {
+    @include transition(all 0.4s ease-in-out 0s);
+    border-radius: 0 80px;
+  }
+  .lbox-caption {
+    position: absolute;
+    top: 25%;
+  }
+  .doc-name-left {
+    left: 15%;
+  }
+  .doc-name-right {
+    right: 15%;
+  }
+  .doc-name-left,
+  .doc-name-right {
+    bottom: -15%;
+    color: $white-ff;
+    padding: 0 30px;
+    position: absolute;
+    @include transition(all 0.4s ease-in-out 0s);
+    h4 {
+      color: $white-ff;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &:hover {
+    .doc-name-left,
+    .doc-name-right {
+      bottom: 0;
+    }
+  }
+}
+.diamond {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40%;
+  text-align: center;
+  a {
+    font-size: 30px;
+    span {
+      color: $white-ff;
+      display: inline-flex;
+      padding: 5px 10px;
+    }
+  }
+}
+.about-icon {
+  height: 60px;
+  margin: -30px auto 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 60px;
+  i {
+    color: $white-ff;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 60px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+.about-box2 {
+  border: 1px solid $gray-gainsboro;
+  padding: 25px 10px;
+  position: relative;
+  h3 {
+    position: relative;
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+  &:hover {
+    .about-icon2 {      
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);      
+      i {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.about-icon2 {
+  height: 60px;
+  margin: 0 auto;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  @include transition(all 0.3s ease-in-out 0s);
+  width: 60px;
+  i {
+    color: $white-ff;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 60px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+}
+.ulockd-about-one {
+  &.inner {
+    background-color: $white-f7;
+  }
+}
+.ulockd-about-thumb {
+  position: relative;
+}
+.ulockd-main-title {
+  &.details {
+    h2 {
+      line-height: 30px;
+    }
+    h3 {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+//== About Bottom Video Section
+.ulockd-about-video {
+  margin-top: 12px;
+}
+//== Doctors Timetable
+.doctors-table {
+  background-color: $white-ff;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  text-align: center;
+}
+.doctors-table
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th {
+  border: none;
+}
+.bdr1 {
+  border: 1px solid $white-ff !important;
+}

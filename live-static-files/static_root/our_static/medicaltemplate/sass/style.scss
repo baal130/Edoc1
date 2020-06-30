@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*******
+Project/Template Name:  The Hekim's Health Care & Medical HTML Template
+Template Url:  https://themeforest.net/item/
+Author: unlockdesign
+Author Url: https://themeforest.net/user/unlockdesign
+Version: 1.0
+Description: The Hekim's Health Care & Medical HTML Template
+Tag: ambulance, beauty, clinic, corporate, creative, cosmetic, dental, dentist, doctor, family gynecology, gynecology, health care, health & care, hospital, medical, medical template,pediatric, plastic surgery, skin care, surgeon, retail etc
+********/
+
+// Import bootstrap variables and mixins for reference
+@import "bootstrap-sass/variables";
+@import "bootstrap-sass/mixins";
+
+/* CSS Document */
+@import url(../css/jquery-ui.min.css);
+@import url(../css/font-awesome.min.css);
+@import url(../css/font-awesome-animation.min.css);
+@import url(../css/elegantIcons.css);
+@import url(../css/flaticon.css);
+@import url(../css/pe-icon-7-stroke.css);
+@import url(../css/icon-moon.css);
+@import url(../css/animate.css);
+@import url(../css/bootsnav.css);
+@import url(../css/fullcalendar.min.css);
+@import url(../css/slider.css);
+@import url(../css/hover.css);
+@import url(../css/imagehover.css);
+@import url(../css/fancyBox.css);
+@import url(../css/owl.css);
+@import url(../css/isotop.css);
+@import url(../css/magnific-popup.css);
+@import url(../css/flipclock.css);
+@import url(../css/timecounter.css);
+@import url(../css/3d-buttons.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Raleway:600,700);
+@import url(https://fonts.googleapis.com/css?family=Lora|Lato|Montserrat:600,700,800);
+
+
+/* Table of contents */
+@import "project-sass/table-of-content.scss"; 
+@import "project-sass/variables.scss";
+@import "project-sass/typography.scss";
+@import "project-sass/header.scss";
+@import "project-sass/navbar.scss";
+@import "project-sass/home.scss";
+@import "project-sass/main.scss";
+@import "project-sass/about.scss";
+@import "project-sass/service.scss";
+@import "project-sass/gallery.scss";
+@import "project-sass/team.scss";
+@import "project-sass/blog.scss";
+@import "project-sass/project.scss";
+@import "project-sass/contact.scss";
+@import "project-sass/slider.scss";
+@import "project-sass/footer.scss";
+@import "project-sass/parallax.scss";
+@import "project-sass/divider.scss";
+@import "project-sass/inner-heading.scss";
+@import "project-sass/shop.scss";
+@import "project-sass/inner-page.scss";
+
+// Shortcodes
+@import "project-sass/shortcodes.scss";

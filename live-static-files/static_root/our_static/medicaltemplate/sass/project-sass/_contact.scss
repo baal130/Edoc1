@@ -1,0 +1,46 @@
+/* Contact Sass */
+//== Contact Section
+.ulockd-contact-form {
+  .ulockd-form-fg {
+  	border: 1px solid $gray-lightgrey;
+	border-radius: 0;
+	box-shadow: none;
+	color: $gray-dark;
+	height: 40px;
+	margin-bottom: 20px;
+  }  
+  .ulockd-form-tb {
+	border: 1px solid $gray-lighter;
+	border-radius: 0;
+	box-shadow: none;
+	color: $gray-dark;
+  }
+  &.style2 {
+	background: white none repeat scroll 0 0;
+	border: 1px solid $gray-gainsboro;
+	padding: 50px;
+  }
+}
+.ulockd-google-map {
+  .ulockd-style-two {
+	margin-top: -9%;
+	position: relative;
+	z-index: -1;
+  }
+}
+.ulockd-contact-btn {
+  &:hover {
+	button{
+	  background-color: $black-11;
+	  color: $white-ff;
+	}
+  }
+}
+.ulockd-cp-title {
+  position: relative;
+  padding-bottom: 30px;
+  h2 {
+	color: $black-11;
+	margin-top: 0;
+  }
+}
