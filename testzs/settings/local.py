@@ -213,19 +213,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "Static_in_venv","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
+
 STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nalaze kopiraju se u static root koji se koristi
-    os.path.join(BASE_DIR, "Static_in_pro"),
-   
+    os.path.join(BASE_DIR, "Static_in_pro","our_static"),
+    # '/var/www/static/',
+    #os.path.join(os.path.dirname(BASE_DIR), "Static_in_env"),
 ) 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
 MEDIA_URL= '/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR, "live-static-files","media_root")
+MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR), "Static_in_venv","media_root")
+
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 #Crispy FORM TAGs SETTINGs

@@ -30,7 +30,7 @@ SECRET_KEY = '_9sfr9be0ogbt7jz!5k9euc19af0gzt_0^bp$!xgcyzcv6&ws+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com']
+ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com','127.0.0.1']
 SERVICE_LIST = []
 
 EMAIL_HOST='smtp.gmail.com'
@@ -215,7 +215,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nalaze kopiraju se u static root koji se koristi
-    os.path.join(BASE_DIR, "Static_in_pro"),
+    os.path.join(BASE_DIR, "Static_in_pro","our_static"),
    
 ) 
 

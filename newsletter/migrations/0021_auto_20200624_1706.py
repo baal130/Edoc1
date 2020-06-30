@@ -16,5 +16,13 @@ class Migration(migrations.Migration):
             name='headdescription',
             field=models.TextField(blank=True, null=True),
         ),
+         migrations.CreateModel(
+            name='UserDetailsServicePackagePriceRemark',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('descriptionremark', models.CharField(blank=True, max_length=100, null=True)),
+                ('userdetailsservicepackageprice', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='newsletter.UserDetailsServicePackagePrice')),
+            ],
+        ),
        
     ]
