@@ -253,7 +253,7 @@ SUMMERNOTE_CONFIG = {
 'disable_upload': True,
 
 
-'attachment_upload_to': MEDIA_ROOT,
+# 'attachment_upload_to': MEDIA_ROOT,
 }
 
 # REDIS setup
