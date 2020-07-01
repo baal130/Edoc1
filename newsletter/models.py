@@ -94,7 +94,7 @@ class UserDetails(models.Model):
 	state			   =models.CharField(max_length=40,choices=STATE_CHOICES,
 										 blank=True)
 	colony             =models.CharField(max_length=60,blank=True,null=True)
-	telefon            =models.IntegerField(blank=True,null=True,default='0')
+	telefon            =models.IntegerField(blank=True,null=True)
 	startworkingtimeMonday=models.TimeField(auto_now_add=False,auto_now=False,default="08:00")
 	endworkingtimeMonday=models.TimeField(auto_now_add=False,auto_now=False,default="17:00")
 	mondaywork    =models.BooleanField(default=True)
