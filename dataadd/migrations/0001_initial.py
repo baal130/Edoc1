@@ -43,4 +43,21 @@ class Migration(migrations.Migration):
                 'ordering': ['-timestamp', '-updated'],
             },
         ),
+        migrations.CreateModel(
+            name='FriendsRequests',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('current_user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ownerrequest', to=settings.AUTH_USER_MODEL)),
+                ('usersRequests', models.ManyToManyField(related_name='senderrequests', to=settings.AUTH_USER_MODEL)),
+                ('usersRequestsSent', models.ManyToManyField(related_name='senderrequestssent', to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Friends',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('current_user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='owner', to=settings.AUTH_USER_MODEL)),
+                ('users', models.ManyToManyField(related_name='sender', to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
     ]
