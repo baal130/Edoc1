@@ -47,7 +47,7 @@ django-model-utils==3.0.0
 django-pagedown==2.1.2
 django-registration-redux==2.4
 django-select2==7.1.1
-django-summernote==0.8.11.4
+django-summernote==0.8.11.6
 django-taggit==0.22.2
 django-test-plus==1.0.22
 django-widget-tweaks==1.4.5
