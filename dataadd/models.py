@@ -106,7 +106,7 @@ class Idiot(models.Model):
 	updated = models.DateTimeField(auto_now_add=False,auto_now=True)
 	article=models.BooleanField(default=False) # true if used for article 
 	news=models.BooleanField(default=False) # true if used for news(only for admin)
-	cities = models.CharField(max_length=40,choices=CITY_CHOICES,
+	cities = models.CharField(max_length=60,choices=CITY_CHOICES,
 				 default='null',blank=True)
 
  
