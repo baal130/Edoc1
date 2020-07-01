@@ -67,7 +67,7 @@ urlpatterns = [
     url(r'^chat/', include('chat.urls', namespace="chat") ),
     url(r'^search/$', SearchView.as_view(), name='search'),
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
-    url(r'^i18n/', include('django.conf.urls.i18n', namespace='i18n')),
+    url(r'^i18n/', include(('django.conf.urls.i18n','i18n'), namespace='i18n')),
     url(r'^select2/', include('django_select2.urls')),
 
    # url(r'^i18n/', include('django.conf.urls.i18n')),
