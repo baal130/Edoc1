@@ -256,8 +256,15 @@ display: -ms-flexbox!important;
                                                     href="{% url 'user_details' %}">
                                                 {% trans "Are you a doctor?"%}
                                         </a> 
-                        </li>            
-                                     
+                        </li> 
+                        <li class="nav-item">
+                          <a  class="text-white dropdown-item display-4" href="{% url 'account_logout'%}"><span style=" background-color: #5564ac;
+                                                      border-radius: 5px;
+                                                      padding: 7px!important;
+                                                       margin-right: 3px;">
+                                                  {% trans "LOGOUT" %} </span>  {{user}}
+                          </a>           
+                        </li>             
                     {% else %}
                         <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.co" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
                         

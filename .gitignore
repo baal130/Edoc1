@@ -1,7 +1,8 @@
 bin/
 include/
 pip-selfcheck.json
-
+src/testzs/settings/local.py
+testzs/settings/local.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -56,8 +57,7 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
-testzs/settings/__init__.py
+
 
 # Flask stuff:
 instance/

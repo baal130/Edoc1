@@ -214,7 +214,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nalaze kopiraju se u static root koji se koristi
     os.path.join(BASE_DIR, "Static_in_pro","our_static"),
    
@@ -222,10 +222,10 @@ STATICFILES_DIRS = (                    #staticne filovi u projektu gdje se nala
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files","static_root")# copied from staticfiles(our static) dirs u invirormnt directory(izvan roota)
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-MEDIA_URL= '/media/'
+# MEDIA_URL= '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, "live-static-files","media_root")
 
 
@@ -292,25 +292,25 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#              'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+#         },
+#     },
+# }
 
 
 AWS_ACCESS_KEY_ID = "AKIAWDFTQUMH57RFOZNM"
-AWS_SECRET_ACCESS_KEY = "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 "
+AWS_SECRET_ACCESS_KEY = "Hmi8DAIGf8dquDrQ7e03aLbTfeHTULn0WO7vgghi"
 
 
 AWS_FILE_EXPIRE = 200
@@ -319,8 +319,8 @@ AWS_QUERYSTRING_AUTH = True
 
 DEFAULT_FILE_STORAGE = 'testzs.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'testzs.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'tododoctores'
-S3DIRECT_REGION = 'us-west-2'
+AWS_STORAGE_BUCKET_NAME = 'todosdoctores'
+S3DIRECT_REGION = 'sa-east-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
@@ -333,15 +333,16 @@ two_months = datetime.timedelta(days=61)
 date_two_months_later = datetime.date.today() + two_months
 expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
-AWS_HEADERS = { 
+AWS_S3_OBJECT_PARAMETERS = { 
     'Expires': expires,
-    'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
+    'CacheControl': 'max-age=%d' % (int(two_months.total_seconds()), ),
 }
+
 
 SUMMERNOTE_CONFIG = {
 
 'disable_upload': True,
 
 
-'attachment_upload_to': MEDIA_URL,
+# 'attachment_upload_to': MEDIA_URL,
 }
