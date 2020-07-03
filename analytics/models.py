@@ -60,11 +60,12 @@ def user_logged_in_receiver(sender, request,user, *args, **kwargs):
     # mora se napraviti signal u backandu za authentikaciju
     #ili smo uzeli signal iz auth, ali ima extra armgument user instanca, inacse sender bude instanca
     user = user
-    print("nestoposlano")
+    # print("nestoposlano")
     ip_address = get_client_ip(request)
-    print(ip_address)
-    ip_address='201.175.134.50' # od mexico city adresa
-    # ip_address='188.129.62.90' #zagreb  
+    # print(ip_address)
+    if(ip_address=='72.14.207.99'): #local
+        ip_address='201.175.134.50' # od mexico city adresa
+        # ip_address='188.129.62.90' #zagreb  
     
     city_data = get_client_city_data(ip_address) #ne radi na local serveru
     request.session['CITY'] = str(city_data.get('city', 'New York'))

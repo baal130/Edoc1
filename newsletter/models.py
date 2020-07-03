@@ -555,13 +555,15 @@ def pre_save_details_receiver(sender,instance, *args, **kwargs):
 
 	# print(instance.slug)
 	# need to use later
-	# gmaps = googlemaps.Client(key='AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw')	
-	# geocode_result = gmaps.geocode(instance.adress+instance.city+instance.colony)
-	# # print(geocode_result)
-	# # print(geocode_result[0]['geometry']['location']['lat'])
-	# instance.lat=geocode_result[0]['geometry']['location']['lat']
-	# instance.lng=geocode_result[0]['geometry']['location']['lng']
-
+	try:
+		gmaps = googlemaps.Client(key='AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw')	
+		geocode_result = gmaps.geocode(instance.adress+instance.city+instance.colony)
+		# print(geocode_result)
+		# print(geocode_result[0]['geometry']['location']['lat'])
+		instance.lat=geocode_result[0]['geometry']['location']['lat']
+		instance.lng=geocode_result[0]['geometry']['location']['lng']
+	except:
+		pass	
 pre_save.connect(pre_save_details_receiver, sender=UserDetails)
 
 
