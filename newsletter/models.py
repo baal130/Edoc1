@@ -18,7 +18,7 @@ from .languages import STATE_CHOICES
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePickerInput
 from django.utils import timezone
 from markdown_deux import markdown
-
+from django.core.validators import RegexValidator
 
 
 User = settings.AUTH_USER_MODEL
@@ -94,7 +94,8 @@ class UserDetails(models.Model):
 	state			   =models.CharField(max_length=40,choices=STATE_CHOICES,
 										 blank=True)
 	colony             =models.CharField(max_length=60,blank=True,null=True)
-	telefon            =models.IntegerField(blank=True,null=True)
+	phone_regex 	   =RegexValidator(regex=r'^\+\d{8,15}$', message=_("Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."))
+	telefon			   =models.CharField(validators=[phone_regex], max_length=16, blank=True, null=True) # validators should be a list
 	startworkingtimeMonday=models.TimeField(auto_now_add=False,auto_now=False,default="08:00")
 	endworkingtimeMonday=models.TimeField(auto_now_add=False,auto_now=False,default="17:00")
 	mondaywork    =models.BooleanField(default=True)
@@ -164,9 +165,9 @@ class UserDetails(models.Model):
 	# def __unicode__(self):
 	#  	return self.name #ono sto se vidi u databasa kad gledamo ( u adminu npr)
 	def __str__(self):
-		return self.user.username 
+		return self.user.username + ' Name:'+ self.name + ' ' +self.surname
 	def __unicode__(self):
-		return self.user.username 
+		return self.user.username + ' Name: '+ self.name + ' '+ self.surname
 
 	def get_absolute_url(self):
 		#return "/complain/%s/" %(self.id)
@@ -223,7 +224,7 @@ class UserDetails(models.Model):
 		return content_type
 	def get_time_list_dict(self):
 		# return dictionary as dict={1:{'days':['Mon','Fri'],'time':'17.30-19.00'},
-     	# 						2:{'days':['thu','wed'],'time':'17.00-19.00'}}
+		# 						2:{'days':['thu','wed'],'time':'17.00-19.00'}}
 
 
 
@@ -378,16 +379,16 @@ class UserDetailsFeatured(models.Model):
 	def __unicode__(self):
 		return "%s" %(self.rating)
 	def __str__(self):
-		return "%s" %(self.rating) + self.detail.surname	
+		return "%s" %(self.rating) +' '+ self.detail.surname +' '+ self.detail.name	
 
 class UserDetailsGallery(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	imagehomegallery   =models.ImageField(upload_to=uplodad_location_gal, null=True,blank=True)
 
 	def __unicode__(self):
-		return self.detail.surname
+		return self.detail.surname +' '+ self.detail.name	
 	def __str__(self):
-		return self.detail.surname
+		return self.detail.surname + ' '+ self.detail.name	
 class UserDetailsService(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	flavicon           =models.CharField(max_length=60,blank=True,null=True)
@@ -399,7 +400,7 @@ class UserDetailsService(models.Model):
 	def __unicode__(self):
 		return self.detail.surname
 	def __str__(self):
-		return self.servicename
+		return self.servicename + ' ' + self.detail.name + ' '+ self.detail.surname	
 class UserDetailsServiceSearch(models.Model):
 	#used for generating sevices which can be searched
 	servicename        =models.CharField(max_length=60,blank=False,null=False)
@@ -416,9 +417,9 @@ class UserDetailsDepartment(models.Model):
 	departmentname     =models.CharField(max_length=60,blank=True,null=True)
 	departmenttext     =models.TextField(max_length=120,blank=True)
 	def __unicode__(self):
-		return self.detail.surname
+		return self.detail.surname + ' ' + self.detail.name
 	def __str__(self):
-		return self.detail.surname
+		return self.detail.surname + ' ' + self.detail.name
 class UserDetailsTeam(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	imagehometeam 	   =models.ImageField(upload_to=uplodad_location_gal, null=True,blank=True)
@@ -426,16 +427,16 @@ class UserDetailsTeam(models.Model):
 	teamname     	   =models.CharField(max_length=60,blank=True,null=True)
 	teamtext           =models.TextField(max_length=120,blank=True)
 	def __unicode__(self):
-		return self.detail.surname
+		return self.detail.surname + ' ' + self.detail.name
 	def __str__(self):
-		return self.detail.surname
+		return self.detail.surname + ' ' + self.detail.name
 class UserDetailsServicePrice(models.Model):
 	detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	service 		   		=models.ForeignKey(UserDetailsService,on_delete=models.CASCADE)
 	serviceprice       		=models.IntegerField(max_length=10,blank=True,null=True)
 	servicepricediscount    =models.IntegerField(max_length=3,blank=True,null=True,validators=[MinValueValidator(0), MaxValueValidator(100)],default=0)
 	def __str__(self):
-		return  self.service.servicename
+		return  self.service.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
 	def detail_name(self):
 		return self.detail.surname	
 	 #za admin drugacije zove
@@ -466,7 +467,7 @@ class UserDetailsServicePackagePrice(models.Model):
 	offerstarts             =models.DateTimeField(null=True,blank=True)
 	slug               		=models.SlugField(unique=False)
 	def __str__(self):
-		return  self.selectservice.servicename
+		return  self.selectservice.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
 	def get_service_list(self):
 		instance=self
 		jsonDec = json.decoder.JSONDecoder()
