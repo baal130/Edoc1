@@ -75,16 +75,18 @@
      	
      	
         <p class='commentdisclaimer '>Opinions expressed on this web site are those of the authors alone and do not have anything with punchlist.com.Any comments that contain profanity, vulgarity, threats, commercial promotion, incoherence  will be immediately deleted and sent to service of the relevant public institution  </p>
+     	{% if request.user.is_authenticated %}
      	<form method='POST' action='.' >{% csrf_token %}
 			<!-- methoda je po defaultu get -->
 		<!-- {{ form.as_p}} -->
 		{{comment_form|crispy}}
 
 		<!-- form as parameter  -->
-		<input class="btn btn-primary float-right" type ='submit' value =" Submit"/> <!-- # referira se na methodu od forma->
-		<!--<input type='text'>
+		<input class="btn btn-primary float-right" type ='submit' value =" Submit"/> 
+	    </form>
+		{% endif %}
 
-		<input>-->
+		
 		</form class="test">
      	{% for comment in comments %}
      		

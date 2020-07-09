@@ -26,7 +26,7 @@
 						<div class="bp-details">
 							<h3 class="post-title">{{article.company_name|title}}</h3>
 							<ul class="list-inline">
-								<li><span class="icon-Administrator text-thm2">{{article.user|title}}</span> </li>
+								<li><span class="icon-Administrator text-thm2">{{article.get_user_name|title}} {{article.get_user_surname|title}} </span> </li>
 								<li><span class="icon-Speach-Bubble2 text-thm2"></span>{{article.commentscount}}  Comment</li>
 								<!-- <li><span class="icon-Heart text-thm2"></span> 62</li> -->
 							</ul>

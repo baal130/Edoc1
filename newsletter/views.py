@@ -39,6 +39,7 @@ from analytics.models import UserSession
 import ast
 from .languages import categoryYelp
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI')
 
@@ -158,6 +159,7 @@ def contact(request):
 		"title":title,
 	}           
 	return render(request,"contact.html",context)
+@login_required
 def user_detail(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -208,7 +210,8 @@ def user_detail(request):
 
 
 	
-	return render(request,"user_detail.html",context)   
+	return render(request,"user_detail.html",context) 
+@login_required	  
 def user_detail_worktime(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -235,7 +238,8 @@ def user_detail_worktime(request):
 
 
 	
-	return render(request,"user_detail_worktime.html",context)  
+	return render(request,"user_detail_worktime.html",context) 
+@login_required	 
 def user_detail_extra(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -289,6 +293,7 @@ def user_detail_extra(request):
 		} 
 	
 	return render(request,"user_detail_extra.html",context)
+@login_required
 def user_detail_price(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -356,6 +361,7 @@ def user_detail_price(request):
 		} 
 	
 	return render(request,"user_detail_price.html",context)   
+@login_required
 def user_detail_web(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -656,16 +662,21 @@ def doctor_list(request): #list items
 			categories=categoryYelp[speciality]
 		except:
 			categories='doctor'
+	else:
+		categories='doctor'
 		
 	items={'businesses':[]}	
 	if any((query,state,city,speciality,service,latgetexist)):
+		
 		try:
 			items = yelp_search(keyword=key, location=location,lat=lat,lng=lng,categories=categories)
+			
 		except:
 			items={'businesses':[]}	
 		# for biz in items['businesses']:
 		# 	print(biz['location'])
 	
+
 	if (items['businesses']):
 		resultsYelpExist="true" # true je za javascript koji se salje tamo
 		# salje koordinate u ulurusearch jer tamo nemoze proc debug ako je varijabla prazna
@@ -697,7 +708,7 @@ def doctor_list(request): #list items
 			placesgoogle={'results':[]}
 		# print(placesgoogle)
 		if(placesgoogle['results']):
-			print('imagogole')
+			print("imagoogle")
 		else:
 			print("nemagoogle")
 		fields = [ 'international_phone_number', 'website',]
@@ -843,35 +854,41 @@ def discount_list(request,template=None, extra_context=None):
 
 	}      
 	return render(request,template,context) 	
+@login_required
 def delete_galery(request,pk):
 	to_delete=UserDetailsGallery.objects.get(pk=pk)
 	  
 	to_delete.delete()  
 	return redirect('/userwebsetup/')
+@login_required
 def delete_service(request,pk):
 	to_delete=UserDetailsService.objects.get(pk=pk)
 	  
 	to_delete.delete()  
 	return redirect('/userwebsetup/')
+@login_required
 def delete_team(request,pk):
 	to_delete=UserDetailsTeam.objects.get(pk=pk)
 	print(to_delete)  
 	to_delete.delete()  
 	return redirect('/userwebsetup/')
+@login_required
 def delete_department(request,pk):
 	to_delete=UserDetailsDepartment.objects.get(pk=pk)
 	print(to_delete)  
 	to_delete.delete()  
 	return redirect('/userwebsetup/')
-
+@login_required
 def package_delete(request,pk):
 	to_delete=UserDetailsServicePackagePrice.objects.get(pk=pk) 
 	to_delete.delete()  
 	return redirect('/userwebsetup/')	  
+@login_required
 def language_delete(request,pk):
 	to_delete=UserDetailsLanguage.objects.get(pk=pk) 
 	to_delete.delete()  
 	return redirect('/userwebsetup/')	
+
 def entry_list(request, slug,template=None, extra_context=None): #retrieve
 	
 	instance=get_object_or_404(UserDetails,slug=slug) 
@@ -1094,6 +1111,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 	return render(request,template,context)    
 
 # u formi napraviti samo da se selektira service i doda se u objekt od package vraca se na taj package i mora bit edit packaga
+@login_required
 def user_detail_package(request):
 	if not request.user.is_authenticated:
 		raise Http404
@@ -1377,6 +1395,7 @@ def discount_detail(request, slug,template=None, extra_context=None): #retrieve
 		context.update(extra_context)
 	
 	return render(request,template,context) 
+@login_required
 def user_detail_social(request):
 	if not request.user.is_authenticated:
 		raise Http404

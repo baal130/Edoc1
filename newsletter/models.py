@@ -19,6 +19,11 @@ from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePi
 from django.utils import timezone
 from markdown_deux import markdown
 from django.core.validators import RegexValidator
+#for image resize
+import sys
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
 User = settings.AUTH_USER_MODEL
@@ -37,6 +42,12 @@ Insurance_CHOICES = (
 )
 # Create your models here.
 # models jednak databases u formama se oblikuju databasevi sto i kako se pretrazuje potrebno importirati odavde u formu
+def has_changed(instance, field):
+		if not instance.pk:
+			return False
+		old_value = instance.__class__._default_manager.\
+				 filter(pk=instance.pk).values(field).get()[field]
+		return not getattr(instance, field) == old_value
 class Insurancecompany(models.Model):
 	description = models.CharField(max_length=50,default='null',blank=True,)
 	
@@ -168,7 +179,26 @@ class UserDetails(models.Model):
 		return self.user.username + ' Name:'+ self.name + ' ' +self.surname
 	def __unicode__(self):
 		return self.user.username + ' Name: '+ self.name + ' '+ self.surname
-
+	def save(self, *args, **kwargs):
+		if has_changed(self, 'imagehome1'):
+			self.imagehome1= self.compressImage(self.imagehome1)
+		if has_changed(self, 'imagehome2'):
+			self.imagehome2= self.compressImage(self.imagehome2)
+		if has_changed(self, 'imagehome3'):
+			self.imagehome3= self.compressImage(self.imagehome3)
+		if has_changed(self, 'profilepicture'):	
+			self.profilepicture = self.compressImage(self.profilepicture)
+			
+		super(UserDetails, self).save(*args, **kwargs)
+	def compressImage(self,uploadedImage):
+		imageTemproary = Image.open(uploadedImage)
+		outputIoStream = BytesIO()
+		imageTemproaryResized = imageTemproary.resize( (1020,573) ) 
+		imageTemproary.save(outputIoStream , format='JPEG', quality=60)
+		outputIoStream.seek(0)
+		uploadedImage = InMemoryUploadedFile(outputIoStream,'ImageField', "%s.jpg" % uploadedImage.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+		return uploadedImage
+			
 	def get_absolute_url(self):
 		#return "/complain/%s/" %(self.id)
 		#return reverse("dataadd:detail", kwargs={"id":self.id}) Za dynamicno prikazivanje urla
@@ -388,7 +418,22 @@ class UserDetailsGallery(models.Model):
 	def __unicode__(self):
 		return self.detail.surname +' '+ self.detail.name	
 	def __str__(self):
-		return self.detail.surname + ' '+ self.detail.name	
+		return self.detail.surname + ' '+ self.detail.name
+	def save(self, *args, **kwargs):
+		if has_changed(self, 'imagehomegallery'):
+			self.imagehomegallery= self.compressImage(self.imagehomegallery)
+		
+			
+		super(UserDetailsGallery, self).save(*args, **kwargs)
+	def compressImage(self,uploadedImage):
+		imageTemproary = Image.open(uploadedImage)
+		outputIoStream = BytesIO()
+		imageTemproaryResized = imageTemproary.resize( (1020,573) ) 
+		imageTemproary.save(outputIoStream , format='JPEG', quality=60)
+		outputIoStream.seek(0)
+		uploadedImage = InMemoryUploadedFile(outputIoStream,'ImageField', "%s.jpg" % uploadedImage.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+		return uploadedImage
+			
 class UserDetailsService(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	flavicon           =models.CharField(max_length=60,blank=True,null=True)
@@ -430,6 +475,20 @@ class UserDetailsTeam(models.Model):
 		return self.detail.surname + ' ' + self.detail.name
 	def __str__(self):
 		return self.detail.surname + ' ' + self.detail.name
+	def save(self, *args, **kwargs):
+		if has_changed(self, 'imagehometeam'):
+			self.imagehometeam= self.compressImage(self.imagehometeam)
+		
+			
+		super(UserDetailsTeam, self).save(*args, **kwargs)
+	def compressImage(self,uploadedImage):
+		imageTemproary = Image.open(uploadedImage)
+		outputIoStream = BytesIO()
+		imageTemproaryResized = imageTemproary.resize( (1020,573) ) 
+		imageTemproary.save(outputIoStream , format='JPEG', quality=60)
+		outputIoStream.seek(0)
+		uploadedImage = InMemoryUploadedFile(outputIoStream,'ImageField', "%s.jpg" % uploadedImage.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+		return uploadedImage	
 class UserDetailsServicePrice(models.Model):
 	detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	service 		   		=models.ForeignKey(UserDetailsService,on_delete=models.CASCADE)
@@ -499,7 +558,20 @@ class UserDetailsServicePackagePrice(models.Model):
 	def get_absolute_url(self):
 		
 		return reverse("newsletter:discount_detail", kwargs={"slug":self.slug}) 
-
+	def save(self, *args, **kwargs):
+		if has_changed(self, 'packageimage'):
+			self.packageimage= self.compressImage(self.packageimage)
+		
+			
+		super(UserDetailsServicePackagePrice, self).save(*args, **kwargs)
+	def compressImage(self,uploadedImage):
+		imageTemproary = Image.open(uploadedImage)
+		outputIoStream = BytesIO()
+		imageTemproaryResized = imageTemproary.resize( (1020,573) ) 
+		imageTemproary.save(outputIoStream , format='JPEG', quality=60)
+		outputIoStream.seek(0)
+		uploadedImage = InMemoryUploadedFile(outputIoStream,'ImageField', "%s.jpg" % uploadedImage.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+		return uploadedImage	
 class UserDetailsServicePackagePriceRemark(models.Model):
 	
 	userdetailsservicepackageprice =models.ForeignKey(UserDetailsServicePackagePrice,on_delete=models.CASCADE)

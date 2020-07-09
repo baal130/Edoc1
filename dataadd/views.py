@@ -45,14 +45,9 @@ class ProfileFollowToggleList(View):
 		
 		profile_, is_following = UserDetails.objects.toggle_follow(request.user, username_to_toggle)
 		return redirect("/complain/friends/")		  
-		# return redirect("/complain/{ slugtest }/")
-#def complain_detail(request, id): #retrieve
-	#instance=Idiot.objects.get(id=1)
-	#instance=get_object_or_404(Idiot,id=id) #predajue parametar kod requesta
-# get=1 object, filter =[] objects
 
-def complain_detail(request, slug): #retrieve
-	#instance=Idiot.objects.get(id=1)
+def doctor_article_detail(request, slug): #retrieve
+	
 	instance=get_object_or_404(Idiot,slug=slug) #predajue parametar kod requesta
 	
 	## with normal way get comment 
@@ -60,7 +55,7 @@ def complain_detail(request, slug): #retrieve
 	# obj_id=instance.id
 	# comments=Comment.objects.filter(content_type=content_type,object_id= obj_id)
 	
-	# print(get_read_time(instance.get_markdown()))
+	
 
 	initial_data={
 		"content_type":instance.get_content_type,
@@ -114,9 +109,9 @@ def complain_detail(request, slug): #retrieve
 		"slug":slug,
 		"otherarticles":otherarticles,
 	}
-	#return HttpResponse ("<h1> helo3  </h1>")
-	return render(request,"detail.html",context)
-def complain_create(request):
+	
+	return render(request,"detail_article.html",context)
+def doctor_article_create(request):
 	if not request.user.is_authenticated:
 		raise Http404
 		
@@ -162,9 +157,9 @@ def complain_create(request):
 			  #"time": instance.timestamp,
 			}
 		else:#    Verification else ( wait for verification )
-			print ( user_detail_instance.surname)
 			
-			title =' Please wait until Your account is verificated'
+			
+			title =('Please wait until Your account is verificated')
 			context={
 			"title":title,
 			
@@ -173,7 +168,7 @@ def complain_create(request):
 
 				 
 	else:
-		title='Molimo ispunitu svoje podatke'
+		title=_('Fill your profile')
 		userdatafilled=False
 		context={
 		"title":title,
@@ -183,7 +178,7 @@ def complain_create(request):
 	return render(request,"complain.html",context)
 	#return HttpResponse ("<h1> helo144 </h1>")
 
-def complain_list (request): #list items
+def doctor_article_list (request): #list items
 	#queryset_list=Idiot.objects.filter(draft=False).filter(publish__lte=timezone.now())#all()  #lte means l then or equal pusblish is model field ovo se koristi normalno
 
 	category_form=CategoryForm(request.POST or None)
@@ -231,9 +226,9 @@ def complain_list (request): #list items
 		"category":category_form,
 	}      
 	
-	return render(request,"complain_list.html",context)
+	return render(request,"article_list.html",context)
 	#return HttpResponse ("<h1> helo14454252</h1>")
-def complain_update (request, slug): #update
+def doctor_article_update (request, slug): #update
 	instance=get_object_or_404(Idiot, slug=slug)
 	if instance.draft:
 		if not request.user.is_staff or not request.user.is_superuser:
@@ -254,7 +249,7 @@ def complain_update (request, slug): #update
 	  "userdatafilled":userdatafilled,
 	}           
 	return render(request,"complain.html",context)
-def complain_delete (request,slug=None): #delete
+def doctor_article_delete (request,slug=None): #delete
 	instance=get_object_or_404(Idiot, slug=slug)
 	
 	instance.delete()

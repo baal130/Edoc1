@@ -47,34 +47,34 @@
 	
 
 	  <div class="input-group" style="margin: 5px;"">
-	  	<span class="input-group-btn content-punch" style="font: normal 16px 'Cookie'; ">Author: 
+	  	<span class="input-group-btn content-punch" style="font: normal 16px 'Cookie'; ">{% trans "Author " %}: 
         
 	   </span> 
-		  <span class="input-group-btn"  style="font: normal 16px 'Cookie', cursive;"> {{ instance.user}}&nbsp   
+		  <span class="input-group-btn"  style="font: normal 16px 'Cookie', cursive; float:left;"> {{instance.get_user_name|title}} {{instance.get_user_surname|title}}&nbsp   
         
 	   </span> 
-	   {% if request.user.is_authenticated %}
+	   <!-- {% if request.user.is_authenticated %}
 	   {% include 'profiles/snippet/follow-form.html' with username=instance.user slug=slug  %}
 	  	{% else %}
 		<p><i>Login to follow</i></p>
-		{% endif %}
+		{% endif %} -->
 	</div> 
 	
 
 	
-	 <a href="{% url 'dataadd:complain_list' %}" class=" btn button-create"> Posts</a> 
+	 <a href="{% url 'dataadd:complain_list' %}" class=" btn button-create"> {% trans " All articles"  %}</a> 
 	
     {% ifequal instance.user user %}
-	<a href="{{instance.get_absolute_url_delete}}" class=" btn button-delete"> Delete</a> 
-	<a href="./edit/" class=" btn button-edit"> Edit</a> 
+	<a href="{{instance.get_absolute_url_delete}}" class=" btn button-delete"> {% trans " Delete"  %} </a> 
+	<a href="./edit/" class=" btn button-edit"> {% trans " Edit"  %} </a> 
     {% endifequal %}
     </div>
-    <div class='col-sm-3 ' >
+    <div  style="margin-bottom: 1em;" class='col-sm-3 ' >
     	<hr/>
     	<h4>
-    	Other authors articles </h4>
+    	{% trans "Other" %} {{instance.get_user_name|title}} {{instance.get_user_surname|title}} {% trans "articles" %}  </h4>
     	{% for article in otherarticles   %}
-             		<article class="blog-post wrap-article">
+             		<article style="background-color: #fdfafa;border-top:1px; border-style: outset;" class="blog-post wrap-article">
 						<div class="post-thumb post-thumb-max ">
 							
 							<div class="post_date ulockd-bgthm"><span class="fa fa-calendar"></span> {{ article.publish }}</div>
@@ -83,14 +83,14 @@
 							<h3 class="post-title">{{article.company_name|title}}</h3>
 							<ul class="list-inline">
 								<li><span class="icon-Administrator text-thm2">{{article.user|title}}</span> </li>
-								<li><span class="icon-Speach-Bubble2 text-thm2"></span>{{article.commentscount}}  Comment</li>
-								<li><span class="icon-Heart text-thm2"></span> 62</li>
+								<li><span class="icon-Speach-Bubble2 text-thm2"></span>{{article.commentscount}}  {% trans " Comment" %}</li>
+								<!-- <li><span class="icon-Heart text-thm2"></span> 62</li> -->
 							</ul>
 							<p>{{article.get_markdown|truncatewords_html:10}}</p>
 							<a href="{{article.get_absolute_url}}"><button type="submit" class="btn btn-md ulockd-btn-thm2">{% trans "Read More" %}</button></a>
 						</div>
 					</article>
-				</div>    
+				   
 
     	{% endfor %}
      </div>	
@@ -100,22 +100,23 @@
 <div class='row'>
 	<div class='col-sm-8 col-sm-offset-2  ' style="padding: 0;" >
      	
-     	<p class='lead lead-comment'>Comments</p>
+     	<p class='lead lead-comment'>{% trans " Comments" %}</p>
     </div>
 	<div class='col-sm-8 col-sm-offset-2  ' >
      	
      	
-        <p class='commentdisclaimer '>Opinions expressed on this web site are those of the authors alone and do not have anything with punchlist.com.Any comments that contain profanity, vulgarity, threats, commercial promotion, incoherence  will be immediately deleted and sent to service of the relevant public institution  </p>
+        <p class='commentdisclaimer '>{% trans "Opinions expressed on this web site are those of the authors alone and do not have anything with punchlist.com.Any comments that contain profanity, vulgarity, threats, commercial promotion, incoherence  will be immediately deleted and sent to service of the relevant public institution" %}  </p>
+     	{% if request.user.is_authenticated %}
      	<form method='POST' action='.' >{% csrf_token %}
 			<!-- methoda je po defaultu get -->
 		<!-- {{ form.as_p}} -->
 		{{comment_form|crispy}}
 
 		<!-- form as parameter  -->
-		<input class="btn btn-primary float-right" type ='submit' value =" Submit"/> <!-- # referira se na methodu od forma->
-		<!--<input type='text'>
-
-		<input>-->
+		<input class="btn btn-primary float-right" type ='submit' value =" Submit"/> 
+		{% else %}
+		<a class="btn btn-primary float-right" href="{% url 'account_login' %}"> {% trans " LOGIN TO COMMENT "%} <span class=""></span> </a>
+		{% endif %}
 		</form class="test">
      	{% for comment in comments %}
      		
@@ -130,7 +131,7 @@
 					 	{% for child_comment in comment.children %}
 						 	<blockquote>
 						  	<p class="triangle-right ">{{child_comment.content}}</p>
-						 	<footer><small>by {{child_comment.user}} | {{child_comment.timestamp|timesince}} ago {% ifequal instance.user user %}|<a  class="" href="{{child_comment.get_absolute_url_delete  }}">Delete</a>{% endifequal %}</small>
+						 	<footer><small>by {{child_comment.user}} | {{child_comment.timestamp|timesince}} ago {% ifequal instance.user user %}|<a  class="" href="{{child_comment.get_absolute_url_delete  }}">{% trans "Delete" %}</a>{% endifequal %}</small>
 
 						 		{{child_comment.user}}
 						 		{{child_comment.id}}
@@ -141,7 +142,12 @@
 								
 							{{comment_form|crispy}}
 							<input type='hidden' name='parent_id' value='{{ comment.id}}'>
-							<input class="btn btn-primary float-right" type ='submit' value =" Reply"/> 
+
+							{% if request.user.is_authenticated %}
+				              <input class="btn btn-primary float-right" type ='submit' value =" Reply"/>
+				              {% else %}
+				               <a class="btn btn-primary float-right" href="{% url 'account_login' %}"> {% trans " LOGIN TO REPLY "%} <span class=""></span> </a>
+				            {% endif %}
 
 	                    </form>   
 	                </div>    

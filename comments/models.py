@@ -9,6 +9,7 @@ from django.urls import reverse
 
 
 
+
 class CommentManager(models.Manager):  # Mijenjanje dafultnih modela npr Idiot.objects.all()
 	def all(self):
 		qs=super(CommentManager,self).filter(parent=None)

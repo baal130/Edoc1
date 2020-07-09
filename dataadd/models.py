@@ -132,8 +132,17 @@ class Idiot(models.Model):
 		return mark_safe(content) # for sumernote content already html
 	def get_user(self):
 		article_user=self.user
-		print(user.profilepicture.url)
-		return self.user	
+		print(article_user.userdetails.surname)
+		# print(user.profilepicture.url)
+		return self.user
+	def get_user_name(self):
+		article_user=self.user
+		
+		return article_user.userdetails.name
+	def get_user_surname(self):
+		article_user=self.user
+		
+		return article_user.userdetails.surname			
 	@property 
 	def comments(self):
 		instance=self

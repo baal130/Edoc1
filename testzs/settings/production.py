@@ -319,7 +319,7 @@ AWS_QUERYSTRING_AUTH = False
 
 DEFAULT_FILE_STORAGE = 'testzs.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'testzs.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'todosdoctores'
+AWS_STORAGE_BUCKET_NAME = 'todosdoctores1'
 S3DIRECT_REGION = 'sa-east-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME

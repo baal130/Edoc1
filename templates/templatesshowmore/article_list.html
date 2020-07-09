@@ -1,0 +1,362 @@
+{% extends "base_package_discount.html" %}
+
+{% load crispy_forms_tags %}
+{%  load i18n %}
+{% load l10n %}
+<style>
+{% block style %}
+
+.dropdown-menu-edit{
+  min-width: 200px;
+}
+.post-thumb-max{
+  max-height: 100px;
+  min-height: 22vh;
+}
+.tools{
+    border-top: 1px solid #d8d8d8;
+    padding: 5px;
+}
+.close-icon-loc{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-message{
+  position: absolute;
+  top:4px;
+  right: 20px;
+}
+.close-icon-tel{
+  z-index: 0; position: absolute; right: 9px; top: 3px;
+}
+.tel-box{
+  padding: 10px 10px 10px 10px;
+
+}
+.display-none{
+  display: none;
+  
+}
+.display-grid{
+ display: grid; 
+ grid-area: 1 / 1;
+}
+
+.navbar-doctor{
+position: absolute;
+margin-right: 20px!important;
+margin-top: 5px;
+z-index: -3;
+}
+@media (max-width: 992px){
+.navbar-doctor{
+position: relative;
+margin-right: 20px;
+margin-top: 5px;
+
+}  
+}
+.col-margin-5px{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/*.sticky {
+  position: fixed;
+  top: 200px;
+  right:0;
+  /*width: 100%;*/
+}*/
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.gmap {
+        height: 400px;
+        width: 100%;
+  }
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /*top: 150px;*/
+  }
+
+.discount_thumbnail_img{
+position: absolute;
+    top: 1%;
+    left: 3%;
+} 
+.petfriendly_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 22%;
+}
+.disability_thumbnail_img{
+  position: absolute;
+    top: 2%;
+    left: 37%;
+}
+.homevisit_thumbnail_img{
+  position: absolute;
+    top: 1%;
+    left: 56%;
+}
+.wrap-package-discount{
+   padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    min-height: 140px;
+    height: auto !important;
+    height: 140px;
+    /* padding-left: 230px; */
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+.wrap-package-discount:hover {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}  
+.btn-more-results{
+  background-color: #56cbfc!important;
+
+}
+.btn-more-results:hover{
+  background-color: #03afdc!important;
+  
+}
+
+
+.endless_container a {
+    color: white!important;
+    margin-top: 0px!important;
+    margin-left: 0px!important;
+    
+}
+.price{
+      /* float: left; */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    font-size: 11px;
+     line-height: 11px; 
+     font-weight: normal; 
+    text-transform: uppercase;
+    text-align: center;
+    color: #888;
+    
+}
+.strong{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444;
+    
+
+}
+.col-save{
+  background: #ed1c24;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+.strong-save{
+  
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    
+
+} 
+@media (max-width: 767px){
+.discount-headline  {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+}
+
+.discount-headline {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #636363;
+    float: right;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}    
+
+{%  endblock style %}
+</style>
+
+{% block content %}
+
+
+
+
+
+
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} {{ id }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+  <div class="row">
+   <div class="col-sm-3 col-md-3"> <!-- SEARCH FORM FOR WORDS IN POSTS -->
+    
+   </div>       
+
+
+ 
+         
+             
+              
+    <div class="col-sm-7  ">
+     
+        {% for objects in object_list %}
+    
+         
+      <div id="" class=" col-xs-12 wrap-package-discount "> 
+               
+      <div class="post-thumb  col-xs-12 col-sm-5  ">
+        <img class="img-responsive img-whp post-thumb-inherit post-thumb-max" 
+        src="{{objects.user.userdetails.profilepicture.url}}" alt="1.jpg">
+         
+        
+
+
+        </div>
+        <div class="post-thumb col-xs-12  col-sm-7  ">
+          <h3>{% trans "Article" %} <a class="text-thm2 " href='{{objects.get_absolute_url}}'>{{ objects.company_name|title }} </a> <small>{{ objects.publish }}</small> 
+              </h3>
+
+              <span class="discount-headline  ">{{objects.headdescription }}</span>
+              <div class="pricing-content">
+                {{ objects.get_markdown|truncatewords_html:40}}
+               
+              </div>
+              
+        
+
+
+        </div>
+        <div class="post-thumb col-xs-12  ">
+          
+
+            
+            
+
+              <div class=" col-xs-3  col-md-2   col-md-offset-10  " style="    padding-left: 0;
+              padding-right: 0;" > 
+            
+
+                                     
+                                     <a class="btn button-create button-text-width" href="{{objects.get_absolute_url}} ">{% trans "VIEW" %} </a>
+                                     
+                  
+              </div> 
+
+        </div>
+          
+
+          
+                 
+      </div>           
+                
+                                         
+    {% endfor %}
+
+    
+    
+    <nav aria-label="...">
+            <ul class="pagination">
+              {% if object_list.has_previous %}
+              <li class="page-item ">
+                <a class="page-link" href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" tabindex="-1">{% trans "Previous" %}</a>
+              </li>
+              {% endif %}
+              {% for i in object_list.paginator.page_range %}
+              
+              {% if object_list.number == i %}
+              <li class="page-item active">
+                <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
+              </li>
+               {% else %}
+              <li class="page-item"><a class="page-link" href="?page={{ i }}">{{i}}</a></li>
+              {% endif %}
+              {% endfor %}
+
+              {% if object_list.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %} ">{% trans "Next" %}</a>
+              </li>
+               {% endif %}
+            </ul>
+        </nav>
+  
+
+
+
+
+
+
+
+
+  </div>
+  
+</div>  
+
+
+
+
+
+{% endblock content %}
+{%  block script %}
+<script>
+ $(document).ready(function(){
+      
+
+            
+       
+        
+            $(".caption img").each(function(){
+                $(this).addClass("img-responsive")
+            })
+             $(".caption iframe").each(function(){
+                $(this).addClass("img-responsive")
+            })
+       
+    })
+
+    </script>
+{% endblock %}
