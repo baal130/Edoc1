@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 18:38+0200\n"
+"POT-Creation-Date: 2020-07-12 11:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,45 +19,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\dataadd\forms.py:25
-msgid "Punch name"
+msgid "Article title"
 msgstr ""
 
-#: .\dataadd\forms.py:26 .\dataadd\forms.py:53
+#: .\dataadd\forms.py:26 .\dataadd\forms.py:54
 msgid "Draft - Save Your post for later"
 msgstr ""
 
-#: .\dataadd\forms.py:27 .\dataadd\forms.py:54 .\dataadd\forms.py:55
+#: .\dataadd\forms.py:27 .\dataadd\forms.py:55 .\dataadd\forms.py:56
 msgid "Publish - Select date when Post will be published"
 msgstr ""
 
-#: .\dataadd\forms.py:28
-msgid "Select if you want to show your name with post"
+#: .\dataadd\forms.py:34
+msgid "Title what is about article."
 msgstr ""
 
-#: .\dataadd\forms.py:29 .\dataadd\forms.py:56
-msgid "Upload files to prove Your statements"
+#: .\dataadd\forms.py:35
+msgid "Create here new article"
 msgstr ""
 
-#: .\dataadd\forms.py:30
-msgid "Use text as article for general info"
-msgstr "gagaga"
-
-#: .\dataadd\forms.py:34 .\dataadd\forms.py:61
-msgid "Some useful help text."
-msgstr ""
-
-#: .\dataadd\forms.py:52
+#: .\dataadd\forms.py:53
 msgid "Punch  or news name"
 msgstr "test2"
 
 #: .\dataadd\forms.py:57
+msgid "Upload files to prove Your statements"
+msgstr ""
+
+#: .\dataadd\forms.py:58
 msgid "Use text as news fos site"
 msgstr ""
 
-#: .\dataadd\forms.py:81
+#: .\dataadd\forms.py:62
+msgid "Some useful help text."
+msgstr ""
+
+#: .\dataadd\forms.py:82
 msgid "CITIES"
 msgstr ""
 
-#: .\dataadd\views.py:137
-msgid "Napisite komentar1"
-msgstr "test1"
+#: .\dataadd\views.py:136
+msgid "ADD ARTICLE"
+msgstr ""
+
+#: .\dataadd\views.py:171
+msgid "Fill your profile"
+msgstr ""
+
+#~ msgid "Use text as article for general info"
+#~ msgstr "gagaga"
+
+#~ msgid "Napisite komentar1"
+#~ msgstr "test1"

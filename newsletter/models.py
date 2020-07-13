@@ -242,7 +242,11 @@ class UserDetails(models.Model):
 			if(service.servicepricediscount > 0):
 				usesdicount=True
 		return usesdicount
-	@property 
+	def social_account_urls(self):
+		instance=self
+		social_acounts=instance.userdetailssocialnetworks_set.all().first()
+		print (social_acounts.facebookurl)
+		return social_acounts
 	def comments(self):
 		instance=self
 		qs=Comment.objects.filter_by_instance(instance)

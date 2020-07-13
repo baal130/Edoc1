@@ -275,7 +275,7 @@ position: absolute;
   <div id="content" class="col-sm-12 col-md-9 content equal"> 
       {% for objects in object_list %}              
     <div style ="     display: grid;
-    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+    grid-area: 1 / 1;" class="col-sm-4 col-xs-12 col-margin-5px  ">
        
       <div  style ="     
     grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
@@ -340,7 +340,7 @@ position: absolute;
 
     </div>
      <div  style ="     
-    grid-area: 1 / 1;display: none;" value="{{forloop.counter}}" id="map{{forloop.counter}}" class="thumbnail post-background wrap-article   test 2">
+    grid-area: 1 / 1;display: none;" value="{{forloop.counter}}" id="map{{forloop.counter|safe}}" class="thumbnail post-background wrap-article   test 2">
     <div class="fa fa-times-circle text-thm2 close-icon-loc "> </div>
     
       <script>
@@ -348,7 +348,7 @@ position: absolute;
          timeFunction();
 
          function timeFunction() {
-            setTimeout(function(){ initMap({{objects.lat}},{{objects.lng}}, 
+            setTimeout(function(){ initMap({{objects.lat|safe}},{{objects.lng|safe}}, 
             "{{objects.name}}","{{objects.adress}} {{objects.city}}","{{forloop.counter}}"   ); }, 2000);
         }
 
@@ -429,7 +429,7 @@ position: absolute;
 
     {% for objects in results.businesses %}  
         <div style ="     display: grid;
-    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px col-xs-12 ">
        
       <div  style ="     
     grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
@@ -469,7 +469,7 @@ position: absolute;
       <script>
          timeFunction();
          function timeFunction() {
-            setTimeout(function(){ initMapYelp({{objects.coordinates.latitude}},{{objects.coordinates.longitude}}, 
+            setTimeout(function(){ initMapYelp({{objects.coordinates.latitude|safe}},{{objects.coordinates.longitude|safe}}, 
             "{{objects.name}}","{{objects.location.adress1}} {{objects.location.city}}","{{forloop.counter}}000" ); }, 3000);
         }
       </script>
@@ -518,7 +518,7 @@ position: absolute;
     <!-- google search  doctors START -->
     {% for objects in placesgoogle.results %}  
         <div style ="     display: grid;
-    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px  ">
+    grid-area: 1 / 1;" class="col-sm-4 col-margin-5px col-xs-12  ">
        
       <div  style ="     
     grid-area: 1 / 1;" class="thumbnail post-background wrap-article test1">
@@ -552,7 +552,7 @@ position: absolute;
       <script>
          timeFunction();
          function timeFunction() {
-            setTimeout(function(){ initMapYelp({{objects.geometry.location.lat}},{{objects.geometry.location.lng}}, 
+            setTimeout(function(){ initMapYelp({{objects.geometry.location.lat|safe}},{{objects.geometry.location.lng|safe}}, 
             "{{objects.name}}","{{objects.location.adress1}} {{objects.location.city}}","{{forloop.counter}}00000" ); }, 2000);
         }
       </script>
@@ -1133,8 +1133,8 @@ function initMapYelp(lat,lng,name,address,value){
 var locationssearch = [
     {% for biz in results.businesses %}
         {
-        lat: {{ biz.coordinates.latitude }}, 
-        lng: {{ biz.coordinates.longitude }}, 
+        lat: {{ biz.coordinates.latitude|safe }}, 
+        lng: {{ biz.coordinates.longitude|safe }}, 
         name: "{{ biz.name }}", 
         address:"{{ biz.location.display_address.0 }} {{ biz.location.display_address.1 }}"
         }, 
@@ -1144,8 +1144,8 @@ var locationssearchgoogle = [
     {% for place in placesgoogle.results %}
         
         {
-        lat: {{ place.geometry.location.lat }}, 
-        lng: {{ place.geometry.location.lng }}, 
+        lat: {{ place.geometry.location.lat|safe }}, 
+        lng: {{ place.geometry.location.lng|safe }}, 
         name: "{{ place.name }}", 
         address:"{{ place.vicinity}} "
         }, 
@@ -1166,7 +1166,7 @@ var infoWindowsearch;
     
          /*ulurusearch = {lat: {{ results.businesses.0.coordinates.latitude|safe }}, lng: {{ results.businesses.0.coordinates.longitude|safe }}}*/
     
-       var ulurusearch = {lat: {{lathtml}}, lng: {{lnghtml}} };
+       var ulurusearch = {lat: {{lathtml|safe}}, lng: {{lnghtml|safe}} };
        
     
     

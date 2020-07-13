@@ -23,7 +23,10 @@ from newsletter.views import user_detail_price,user_detail_social
 from testzs.views import about
 from bootcamp.core import views as core_views
 from dataadd.views import ProfileFollowToggle,ProfileFollowToggleList
-
+from django.utils import translation
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
+from django.urls import path
 
 from carts.views import cart_home
 from django.conf.urls.i18n import i18n_patterns
@@ -34,7 +37,11 @@ from search.views import SearchView
 # urlpatterns = [
 #     url(r'^sitemap\.xml$', sitemap, name='sitemap-xml'),
 # ]
-
+def set_language_from_url(request, user_language, url_name):
+    translation.activate(user_language)
+    request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+    print(url_name)
+    return redirect(url_name)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -69,7 +76,8 @@ urlpatterns = [
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
     url(r'^i18n/', include(('django.conf.urls.i18n','i18n'), namespace='i18n')),
     url(r'^select2/', include('django_select2.urls')),
-
+    # url(r'/set_language/(?P<user_language>\w+)/(?P<url_name>[a-zA-Z0-9_/&?]+)/$', set_language_from_url, name="set_language_from_url")
+    path('set_language/<str:user_language>/<path:url_name>', set_language_from_url, name="set_language_from_url")
    # url(r'^i18n/', include('django.conf.urls.i18n')),
     
 ]

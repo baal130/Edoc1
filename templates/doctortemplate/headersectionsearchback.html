@@ -111,12 +111,21 @@
   					<div class="welcm-ht text-right ulockd-mrgn1215">
 						<ul class="list-inline">
 							<li>
+								 {% get_current_language as LANGUAGE_CODE %}
+                              {% get_available_languages as LANGUAGES %}
+                              {% get_language_info_list for LANGUAGES as languages %}
 								<div class="dropdown lang-button text-center">
+									
 									<button class="dropbtn"><i class="fa fa-globe text-thm2"></i> Lang</button>
 									<div class="dropdown-content">
-									    <a href=""> <span><img src="" alt=""></span> Engl</a>
+										 {% for language in languages %}
+					                        <a class="" href="{% url "set_language_from_url" user_language=language.code url_name=request.get_full_path %}">
+
+					                                      {% if language.code == LANGUAGE_CODE %} --> {% endif %}
+					                                      {{ language.name_local|title }} ({{ language.code }})
+					                       </a>           
+                              {% endfor %}
 									    
-									    <a href=""> <span><img src="" alt=""></span> Span</a>
 									</div>
 								</div>
 							</li>

@@ -18,12 +18,14 @@
   					<div class="welcm-ht text-center">
   						<ul class="list-inline ulockd-mrgn1215">
   							<li>
+  								
   								<div class="dropdown lang-button text-center">
 									<button class="dropbtn"><i class="fab fa-facebook color-fb"></i></button>
 									<div class="dropdown-content dropdown-content-fb fb-link">
-									    <a href="https://www.facebook.com/sharer/sharer.php?u={{instance.get_absolute_url}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> Share</a>
+									    <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> Share</a>
 									    <!-- <a href="#"> <span><i class="fab fa-facebook-square fa-2x color-fb"></i></span> Fren</a> -->
-									    <a href="#"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> Visit</a>
+									    
+									    <a href="{{instance.social_account_urls.facebookurl}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> Visit</a>
 									   
 									</div>
 								</div>
@@ -110,12 +112,21 @@
   					<div class="welcm-ht text-right ulockd-mrgn1215">
 						<ul class="list-inline">
 							<li>
+								 {% get_current_language as LANGUAGE_CODE %}
+                              {% get_available_languages as LANGUAGES %}
+                              {% get_language_info_list for LANGUAGES as languages %}
 								<div class="dropdown lang-button text-center">
+									
 									<button class="dropbtn"><i class="fa fa-globe text-thm2"></i> Lang</button>
 									<div class="dropdown-content">
-									    <a href=""> <span><img src="" alt=""></span> Engl</a>
+										 {% for language in languages %}
+					                       <a class="" href="{% url "set_language_from_url" user_language=language.code url_name=request.get_full_path %}">
+
+					                                      {% if language.code == LANGUAGE_CODE %} --> {% endif %}
+					                                      {{ language.name_local|title }} ({{ language.code }})
+					                       </a>           
+                              {% endfor %}
 									    
-									    <a href=""> <span><img src="" alt=""></span> Span</a>
 									</div>
 								</div>
 							</li>
