@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:51+0200\n"
+"POT-Creation-Date: 2020-07-13 21:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1906,7 +1906,7 @@ msgstr ""
 
 #: .\templates\landing.html:353
 msgid "BEST DEALS FOR YOUR HEALTH"
-msgstr ""
+msgstr "Un BEste delas"
 
 #: .\templates\landing.html:355
 msgid "Search best doctors with best deals from different sources"
@@ -1926,7 +1926,7 @@ msgstr "Doctores fetures"
 
 #: .\templates\landing.html:457
 msgid "Not rated "
-msgstr ""
+msgstr "66"
 
 #: .\templates\landing.html:509
 msgid "Value your money"
