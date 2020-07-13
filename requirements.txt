@@ -109,6 +109,7 @@ pytest-django==2.9.1
 pytest-sugar==0.9.1
 python-dateutil==2.7.3
 python-decouple==3.1
+python-gettext==4.0
 python3-openid==3.1.0
 pytz==2018.4
 redis==2.10.6

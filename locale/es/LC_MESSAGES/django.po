@@ -1,4 +1,4 @@
-﻿# SOME DESCRIPTIVE TITLE.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-12 11:03+0200\n"
+"POT-Creation-Date: 2020-07-13 20:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: .\bootcamp\core\templates\core\cover.html:33
 #: .\bootcamp\core\templates\core\partial_settings_menu.html:5
 msgid "Password"
-msgstr "Contraseña"
+msgstr ""
 
 #: .\bootcamp\core\templates\core\cover.html:41
 msgid "Sign up for Bootcamp"
@@ -371,10 +371,8 @@ msgid "Detailed description of your package"
 msgstr ""
 
 #: .\newsletter\forms.py:311
-#, fuzzy
-#| msgid "Welcome to our page"
 msgid "Use image with your package"
-msgstr " test3"
+msgstr ""
 
 #: .\newsletter\forms.py:312
 msgid "Add gift for promotion"
@@ -1495,7 +1493,7 @@ msgstr ""
 msgid "Gallery"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:138
+#: .\templates\doctortemplate\headersection.html:140
 #: .\templates\doctortemplate\headersectionempty.html:140
 #: .\templates\doctortemplate\headersectionsearch.html:139
 #: .\templates\doctortemplate\headersectionsearchback.html:139
@@ -1503,9 +1501,9 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:138
 #: .\templates\landing.html:279
 msgid "Are you a doctor?"
-msgstr ""
+msgstr " Estes a doctor"
 
-#: .\templates\doctortemplate\headersection.html:147
+#: .\templates\doctortemplate\headersection.html:149
 #: .\templates\doctortemplate\headersectionempty.html:149
 #: .\templates\doctortemplate\headersectionsearch.html:148
 #: .\templates\doctortemplate\headersectionsearchback.html:148
@@ -1515,7 +1513,7 @@ msgstr ""
 msgid "My profile"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:148
+#: .\templates\doctortemplate\headersection.html:150
 #: .\templates\doctortemplate\headersectionempty.html:150
 #: .\templates\doctortemplate\headersectionsearch.html:149
 #: .\templates\doctortemplate\headersectionsearchback.html:149
@@ -1525,7 +1523,7 @@ msgstr ""
 msgid "Web page settings"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:149
+#: .\templates\doctortemplate\headersection.html:151
 #: .\templates\doctortemplate\headersectionempty.html:151
 #: .\templates\doctortemplate\headersectionsearch.html:150
 #: .\templates\doctortemplate\headersectionsearchback.html:150
@@ -1536,7 +1534,7 @@ msgstr ""
 msgid "Accepted patients"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:150
+#: .\templates\doctortemplate\headersection.html:152
 #: .\templates\doctortemplate\headersectionempty.html:152
 #: .\templates\doctortemplate\headersectionsearch.html:151
 #: .\templates\doctortemplate\headersectionsearchback.html:151
@@ -1546,7 +1544,7 @@ msgstr ""
 msgid "Package/discounts offers"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:153
+#: .\templates\doctortemplate\headersection.html:155
 #: .\templates\doctortemplate\headersectionempty.html:155
 #: .\templates\doctortemplate\headersectionsearch.html:154
 #: .\templates\doctortemplate\headersectionsearchback.html:154
@@ -1556,7 +1554,7 @@ msgstr ""
 msgid "My posts"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:157
+#: .\templates\doctortemplate\headersection.html:159
 #: .\templates\doctortemplate\headersectionempty.html:159
 #: .\templates\doctortemplate\headersectionsearch.html:158
 #: .\templates\doctortemplate\headersectionsearchback.html:158
@@ -1567,8 +1565,8 @@ msgstr ""
 msgid "New article"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:162
-#: .\templates\doctortemplate\headersection.html:192
+#: .\templates\doctortemplate\headersection.html:164
+#: .\templates\doctortemplate\headersection.html:194
 #: .\templates\doctortemplate\headersectionempty.html:164
 #: .\templates\doctortemplate\headersectionempty.html:194
 #: .\templates\doctortemplate\headersectionsearch.html:163
@@ -1583,7 +1581,7 @@ msgstr ""
 msgid "LOGOUT"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:172
+#: .\templates\doctortemplate\headersection.html:174
 #: .\templates\doctortemplate\headersectionempty.html:174
 #: .\templates\doctortemplate\headersectionsearch.html:173
 #: .\templates\doctortemplate\headersectionsearchback.html:173
@@ -1593,7 +1591,7 @@ msgstr ""
 msgid "Sign In "
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:297
+#: .\templates\doctortemplate\headersection.html:299
 #: .\templates\doctortemplate\headersectionempty.html:252
 #: .\templates\doctortemplate\headersectionsearch.html:325
 #: .\templates\doctortemplate\headersectionsearchback.html:325
@@ -1803,10 +1801,8 @@ msgid "Experts in our clinic can help you solve your problems"
 msgstr ""
 
 #: .\templates\doctortemplate\ouraboutsection.html:10
-#, fuzzy
-#| msgid "Welcome to our page"
 msgid " Welcome To"
-msgstr " test3"
+msgstr ""
 
 #: .\templates\doctortemplate\ouraboutsection.html:16
 msgid ""
@@ -1899,11 +1895,10 @@ msgstr ""
 #: .\templates\index.html:44
 msgid "Interested in who are the best doctors and dentists in Mexico"
 msgstr ""
-"Interesado en saber quiénes son los mejores médicos y dentistas en México. "
 
 #: .\templates\index.html:46
 msgid "Help other people by leaving comments and ratings!"
-msgstr "Ayuda a otras personas dejando comentarios y calificaciones"
+msgstr ""
 
 #: .\templates\landing.html:331
 msgid "Try It Now!"
@@ -1911,12 +1906,11 @@ msgstr ""
 
 #: .\templates\landing.html:353
 msgid "BEST DEALS FOR YOUR HEALTH"
-msgstr "LOS MEJORES CONTRATOS PARA LA SALUD"
+msgstr ""
 
 #: .\templates\landing.html:355
 msgid "Search best doctors with best deals from different sources"
 msgstr ""
-"Busque los mejores médicos con las mejores ofertas de diferentes fuentes"
 
 #: .\templates\landing.html:356
 msgid "Find doctors"
@@ -1928,7 +1922,7 @@ msgstr ""
 
 #: .\templates\landing.html:376
 msgid "Featured doctors"
-msgstr ""
+msgstr "Doctores fetures"
 
 #: .\templates\landing.html:457
 msgid "Not rated "
@@ -2071,10 +2065,8 @@ msgid "Web module"
 msgstr ""
 
 #: .\templates\sidebar.html:45 .\templates\sidebarPackage.html:71
-#, fuzzy
-#| msgid "Welcome to our page"
 msgid "Web home page"
-msgstr " test3"
+msgstr ""
 
 #: .\templates\sidebar.html:71 .\templates\sidebarPackage.html:97
 msgid "Working time"
@@ -2383,23 +2375,3 @@ msgstr ""
 #: .\testzs\settings\local.py:186 .\testzs\settings\production.py:188
 msgid "English"
 msgstr ""
-
-#~ msgid "translate"
-#~ msgstr "testtran"
-
-#~ msgid "Show more"
-#~ msgstr "Más resultados"
-
-#~ msgid "Submit2"
-#~ msgstr "Enviar"
-
-#~ msgid "Publish - Select date when Post will be published"
-#~ msgstr "test1"
-
-#~ msgid "Punch  or news name"
-#~ msgstr " test2"
-
-#, fuzzy
-#~| msgid "Napisite komentar"
-#~ msgid "Napisite komentar1"
-#~ msgstr "test koment"
