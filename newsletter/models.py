@@ -245,7 +245,7 @@ class UserDetails(models.Model):
 	def social_account_urls(self):
 		instance=self
 		social_acounts=instance.userdetailssocialnetworks_set.all().first()
-		print (social_acounts.facebookurl)
+		
 		return social_acounts
 	def comments(self):
 		instance=self
@@ -593,6 +593,7 @@ class UserDetailsSocialNetworks(models.Model):
 	pinteresturl			=models.URLField(blank=True)
 	youtubeurl				=models.URLField(blank=True)
 	behanceurl				=models.URLField(blank=True)
+	vkurl					=models.URLField(blank=True)
 	whatsupnumber			=models.IntegerField(blank=True,null=True,default='0')
 
 	def __unicode__(self):

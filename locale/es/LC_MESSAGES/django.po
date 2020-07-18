@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 21:09+0200\n"
+"POT-Creation-Date: 2020-07-14 16:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,7 +82,7 @@ msgstr ""
 #: .\templates\account\password_reset_from_key_done.html:7
 #: .\templates\sidebar.html:97 .\templates\sidebarPackage.html:122
 msgid "Change Password"
-msgstr ""
+msgstr "Cambia la contraseña"
 
 #: .\bootcamp\core\templates\core\password.html:43
 #: .\bootcamp\core\templates\core\settings.html:57
@@ -128,13 +128,13 @@ msgstr ""
 #: .\bootcamp\core\templates\core\profile.html:30
 #: .\templates\doctortemplate\ourarticlessection.html:8
 msgid "Articles"
-msgstr ""
+msgstr "Artículos"
 
 #: .\bootcamp\core\templates\core\profile.html:34
 #: .\templates\doctortemplate\commentssection.html:29
 #: .\templates\doctortemplate\commentssection.html:55
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #: .\bootcamp\core\templates\core\profile.html:38
 msgid "Questions"
@@ -159,89 +159,89 @@ msgstr ""
 #: .\bootcamp\messenger\models.py:26
 #: .\templates\doctortemplate\modal_appoitment.html:48
 msgid "Message"
-msgstr ""
+msgstr "Mensaje"
 
 #: .\bootcamp\messenger\models.py:27
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: .\newsletter\forms.py:81
 msgid "Your first name"
-msgstr ""
+msgstr "Su nombre"
 
 #: .\newsletter\forms.py:82
 msgid "Your second name"
-msgstr ""
+msgstr "Tu segundo nombre"
 
 #: .\newsletter\forms.py:83 .\newsletter\forms.py:84
 msgid "Adress"
-msgstr ""
+msgstr "Dirección"
 
 #: .\newsletter\forms.py:86
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #: .\newsletter\forms.py:88
 msgid "Speciality"
-msgstr ""
+msgstr "Especialidad"
 
 #: .\newsletter\forms.py:89
 msgid "Document for identification doctor"
-msgstr ""
+msgstr "Documento para identificación médico"
 
 #: .\newsletter\forms.py:90
 msgid "Profile picture 480x480"
-msgstr ""
+msgstr "Foto de perfil 480x480"
 
 #: .\newsletter\forms.py:106
 msgid "Write about yourself"
-msgstr ""
+msgstr "Escribir sobre ti mismo"
 
 #: .\newsletter\forms.py:107
 msgid "Choose Picture for first top image, size: 1920x880px"
-msgstr ""
+msgstr "Elija Imagen para la primera imagen superior, tamaño: 1920x880px"
 
 #: .\newsletter\forms.py:108 .\newsletter\forms.py:111
 #: .\newsletter\forms.py:114
 msgid "First Title"
-msgstr ""
+msgstr "Primer título"
 
 #: .\newsletter\forms.py:109 .\newsletter\forms.py:112
 #: .\newsletter\forms.py:115
 msgid "Second Title"
-msgstr ""
+msgstr "Segundo título"
 
 #: .\newsletter\forms.py:110
 msgid "Choose Picture for second top image, size: 1920x880px"
-msgstr ""
+msgstr "Elija Imagen para la segunda imagen superior, tamaño: 1920x880px"
 
 #: .\newsletter\forms.py:113
 msgid "Choose Picture for third top image, size: 1920x880px"
-msgstr ""
+msgstr "Elija imagen para la tercera imagen superior, tamaño: 1920x880px"
 
 #: .\newsletter\forms.py:119
 msgid "Enter text about you"
-msgstr ""
+msgstr "Ingrese texto sobre usted"
 
 #: .\newsletter\forms.py:136
 msgid "Choose Picture for Gallery size 480x480"
-msgstr ""
+msgstr "Elija una imagen para el tamaño de la galería 480x480"
 
 #: .\newsletter\forms.py:154
 msgid "Service description"
-msgstr ""
+msgstr "Descripción del servicio"
 
 #: .\newsletter\forms.py:155
 msgid "Service"
-msgstr ""
+msgstr "Servicio"
 
 #: .\newsletter\forms.py:158
 msgid "Enter Service name"
-msgstr ""
+msgstr "Ingrese el nombre del servicio"
 
 #: .\newsletter\forms.py:159
 msgid "Enter text about service"
-msgstr ""
+msgstr "Ingrese el texto sobre el servicio"
 
 #: .\newsletter\forms.py:160
 msgid "Enter your web page url to this service"
@@ -1493,7 +1493,25 @@ msgstr ""
 msgid "Gallery"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:140
+#: .\templates\doctortemplate\headersection.html:25
+#: .\templates\doctortemplate\headersection.html:46
+#: .\templates\doctortemplate\headersection.html:62
+#: .\templates\doctortemplate\headersection.html:75
+#: .\templates\doctortemplate\headersection.html:91
+#: .\templates\doctortemplate\headersection.html:105
+msgid "Share"
+msgstr ""
+
+#: .\templates\doctortemplate\headersection.html:28
+#: .\templates\doctortemplate\headersection.html:48
+#: .\templates\doctortemplate\headersection.html:64
+#: .\templates\doctortemplate\headersection.html:77
+#: .\templates\doctortemplate\headersection.html:93
+#: .\templates\doctortemplate\headersection.html:107
+msgid "Visit"
+msgstr ""
+
+#: .\templates\doctortemplate\headersection.html:146
 #: .\templates\doctortemplate\headersectionempty.html:140
 #: .\templates\doctortemplate\headersectionsearch.html:139
 #: .\templates\doctortemplate\headersectionsearchback.html:139
@@ -1503,7 +1521,7 @@ msgstr ""
 msgid "Are you a doctor?"
 msgstr " Estes a doctor"
 
-#: .\templates\doctortemplate\headersection.html:149
+#: .\templates\doctortemplate\headersection.html:155
 #: .\templates\doctortemplate\headersectionempty.html:149
 #: .\templates\doctortemplate\headersectionsearch.html:148
 #: .\templates\doctortemplate\headersectionsearchback.html:148
@@ -1513,7 +1531,7 @@ msgstr " Estes a doctor"
 msgid "My profile"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:150
+#: .\templates\doctortemplate\headersection.html:156
 #: .\templates\doctortemplate\headersectionempty.html:150
 #: .\templates\doctortemplate\headersectionsearch.html:149
 #: .\templates\doctortemplate\headersectionsearchback.html:149
@@ -1523,7 +1541,7 @@ msgstr ""
 msgid "Web page settings"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:151
+#: .\templates\doctortemplate\headersection.html:157
 #: .\templates\doctortemplate\headersectionempty.html:151
 #: .\templates\doctortemplate\headersectionsearch.html:150
 #: .\templates\doctortemplate\headersectionsearchback.html:150
@@ -1534,7 +1552,7 @@ msgstr ""
 msgid "Accepted patients"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:152
+#: .\templates\doctortemplate\headersection.html:158
 #: .\templates\doctortemplate\headersectionempty.html:152
 #: .\templates\doctortemplate\headersectionsearch.html:151
 #: .\templates\doctortemplate\headersectionsearchback.html:151
@@ -1544,7 +1562,7 @@ msgstr ""
 msgid "Package/discounts offers"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:155
+#: .\templates\doctortemplate\headersection.html:161
 #: .\templates\doctortemplate\headersectionempty.html:155
 #: .\templates\doctortemplate\headersectionsearch.html:154
 #: .\templates\doctortemplate\headersectionsearchback.html:154
@@ -1554,7 +1572,7 @@ msgstr ""
 msgid "My posts"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:159
+#: .\templates\doctortemplate\headersection.html:165
 #: .\templates\doctortemplate\headersectionempty.html:159
 #: .\templates\doctortemplate\headersectionsearch.html:158
 #: .\templates\doctortemplate\headersectionsearchback.html:158
@@ -1565,8 +1583,8 @@ msgstr ""
 msgid "New article"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:164
-#: .\templates\doctortemplate\headersection.html:194
+#: .\templates\doctortemplate\headersection.html:170
+#: .\templates\doctortemplate\headersection.html:200
 #: .\templates\doctortemplate\headersectionempty.html:164
 #: .\templates\doctortemplate\headersectionempty.html:194
 #: .\templates\doctortemplate\headersectionsearch.html:163
@@ -1581,7 +1599,7 @@ msgstr ""
 msgid "LOGOUT"
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:174
+#: .\templates\doctortemplate\headersection.html:180
 #: .\templates\doctortemplate\headersectionempty.html:174
 #: .\templates\doctortemplate\headersectionsearch.html:173
 #: .\templates\doctortemplate\headersectionsearchback.html:173
@@ -1591,7 +1609,7 @@ msgstr ""
 msgid "Sign In "
 msgstr ""
 
-#: .\templates\doctortemplate\headersection.html:299
+#: .\templates\doctortemplate\headersection.html:305
 #: .\templates\doctortemplate\headersectionempty.html:252
 #: .\templates\doctortemplate\headersectionsearch.html:325
 #: .\templates\doctortemplate\headersectionsearchback.html:325
