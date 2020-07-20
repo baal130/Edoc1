@@ -33,11 +33,12 @@ DEBUG = True
 ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com','127.0.0.1']
 SERVICE_LIST = []
 
-EMAIL_HOST='smtp.gmail.com'
-# EMAIL_HOST='smtp.mail.yahoo.com'
-EMAIL_HOST_USER='baal130@gmail.com'
-EMAIL_HOST_PASSWORD='Kiyokita130'
+EMAIL_HOST='mail.zoransostaric.com'
+EMAIL_HOST_USER='doctores@zoransostaric.com'
+EMAIL_HOST_PASSWORD='a1b31734485'
 EMAIL_PORT=587
+EMAIL_USE_TLS=False
+DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
 # #EMAIL_PORT=465
 # EMAIL_USE_TLS=True
 # EMAIL_HOST='smtp.webfaction.com'
