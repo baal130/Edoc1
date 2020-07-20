@@ -245,23 +245,23 @@ msgstr "Ingrese el texto sobre el servicio"
 
 #: .\newsletter\forms.py:160
 msgid "Enter your web page url to this service"
-msgstr ""
+msgstr "Ingrese la URL de su página web para este servicio"
 
 #: .\newsletter\forms.py:169
 msgid "Department description"
-msgstr ""
+msgstr "Descripción del departamento"
 
 #: .\newsletter\forms.py:170
 msgid "Department name"
-msgstr ""
+msgstr "Nombre de Departamento"
 
 #: .\newsletter\forms.py:171
 msgid "Choose Picture for Department size 605x442"
-msgstr ""
+msgstr "Elija una imagen para el tamaño del departamento 605x442"
 
 #: .\newsletter\forms.py:174
 msgid "Enter department name"
-msgstr ""
+msgstr "Ingrese el nombre del departamento"
 
 #: .\newsletter\forms.py:175
 msgid ""
@@ -269,98 +269,101 @@ msgid ""
 "affects patients lives,\" said Dr. Mathew. or Cardiology is the branch of "
 "medicine that studies and deals with heart problems."
 msgstr ""
+"Ingrese el texto sobre el departamento ex: El programa de la Clínica Dental tremendamente"
+"afecta la vida de los pacientes, dijo el Dr. Mathew. o Cardiología es la rama de "
+"medicine that studies and deals with heart problems."
 
 #: .\newsletter\forms.py:177
 msgid "Enter your web page url to this department"
-msgstr ""
+msgstr "Ingrese la URL de su página web para este departamento"
 
 #: .\newsletter\forms.py:188
 msgid "Doctor description"
-msgstr ""
+msgstr "Descripción del doctor"
 
 #: .\newsletter\forms.py:189
 msgid "Doctor name"
-msgstr ""
+msgstr "Nombre del doctor"
 
 #: .\newsletter\forms.py:190
 msgid "Choose Picture for Team member  size 450x450"
-msgstr ""
+msgstr "Elegir imagen para tamaño de miembro del equipo 450x450"
 
 #: .\newsletter\forms.py:193
 msgid "Enter Doctor member name"
-msgstr ""
+msgstr "Ingrese el nombre de miembro del doctor"
 
 #: .\newsletter\forms.py:194
 msgid "Enter text about doctor in team"
-msgstr ""
+msgstr "Ingrese el texto sobre el médico en el equipo"
 
 #: .\newsletter\forms.py:206
 msgid "Choose Insurance company accepted (hold ctrl to select more options)"
-msgstr ""
+msgstr "Elija compañía de seguros aceptada (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
 
 #: .\newsletter\forms.py:212
 msgid "Select Insurancecompany (hold ctrl to select more options)"
-msgstr ""
+msgstr "Seleccione Insurancecompany (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
 
 #: .\newsletter\forms.py:224
 msgid "Spoken language"
-msgstr ""
+msgstr "Lengua hablada"
 
 #: .\newsletter\forms.py:240
 msgid "Choose Payment method (hold ctrl to select more options)"
-msgstr ""
+msgstr "Elija el método de pago (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
 
 #: .\newsletter\forms.py:254
 msgid "Also examines children up to 12 years "
-msgstr ""
+msgstr "También examina niños de hasta 12 años."
 
 #: .\newsletter\forms.py:255
 msgid "Access for people with disabilities"
-msgstr ""
+msgstr "Acceso para personas con discapacidad"
 
 #: .\newsletter\forms.py:256
 msgid "Do you want to use discount prices with Todos doctors"
-msgstr ""
+msgstr "Do you want to use discount prices with Todos doctors"
 
 #: .\newsletter\forms.py:257
 msgid "Pacients can come with animales"
-msgstr ""
+msgstr "Las pacientes pueden venir con animales."
 
 #: .\newsletter\forms.py:258
 msgid "Do you make home visits to patients"
-msgstr ""
+msgstr "Haces visitas a domicilio a los pacientes"
 
 #: .\newsletter\forms.py:275
 msgid "Regular price of service"
-msgstr ""
+msgstr "Precio regular del servicio"
 
 #: .\newsletter\forms.py:275
 msgid "Discount  on service"
-msgstr ""
+msgstr "Descuento en servicio"
 
 #: .\newsletter\forms.py:279
 msgid "Enter regular price"
-msgstr ""
+msgstr "Ingrese precio regular"
 
 #: .\newsletter\forms.py:280
 msgid "Enter discount for regular price in %"
-msgstr ""
+msgstr "Ingrese el descuento para el precio normal en%"
 
 #: .\newsletter\forms.py:305
 msgid "Add service to package "
-msgstr ""
+msgstr "Agregar servicio al paquete"
 
 #: .\newsletter\forms.py:306
 msgid " Discount on this total price % "
-msgstr ""
+msgstr "Descuento en este precio total %"
 
 #: .\newsletter\forms.py:307
 msgid " Total regular price for services in package "
-msgstr ""
+msgstr "Precio regular total por servicios en paquete"
 
 #: .\newsletter\forms.py:308
 msgid " Package name "
-msgstr ""
+msgstr "Nombre del paquete"
 
 #: .\newsletter\forms.py:309
 msgid "Head title description"
@@ -368,62 +371,64 @@ msgstr ""
 
 #: .\newsletter\forms.py:310
 msgid "Detailed description of your package"
-msgstr ""
+msgstr "Descripción del título de la cabeza"
 
 #: .\newsletter\forms.py:311
 msgid "Use image with your package"
-msgstr ""
+msgstr "Usa la imagen con tu paquete"
 
 #: .\newsletter\forms.py:312
 msgid "Add gift for promotion"
-msgstr ""
+msgstr "Agregar regalo para promoción"
 
 #: .\newsletter\forms.py:313
 msgid "Until when offer is valid"
-msgstr ""
+msgstr "Hasta cuando la oferta es válida"
 
 #: .\newsletter\forms.py:314
 msgid "From when offer is valid"
-msgstr ""
+msgstr "Desde cuando la oferta es válida"
 
 #: .\newsletter\forms.py:317
 msgid "Enter discount percentage for services  price in %"
-msgstr ""
+msgstr "Ingrese el porcentaje de descuento para el precio de los servicios en %"
 
 #: .\newsletter\forms.py:318
 msgid "Enter total price for services  price in $"
-msgstr ""
+msgstr "Ingrese el precio total de los servicios en $"
 
 #: .\newsletter\forms.py:319
 msgid "Enter name of package"
-msgstr ""
+msgstr "Ingrese el nombre del paquete"
 
 #: .\newsletter\forms.py:320
 msgid ""
 "Add most important overview of your package.It will be visible with list of "
 "packages and on begginning"
 msgstr ""
+"Agregue la descripción general más importante de su paquete. Será visible con la lista de"
+"paquetes y al principio"
 
 #: .\newsletter\forms.py:321
 msgid "Write some interesting details about your offer"
-msgstr ""
+msgstr "Escribe algunos detalles interesantes sobre tu oferta"
 
 #: .\newsletter\forms.py:324
 msgid ""
 "Add extra gift outside sevice ex: Free smile or free apartment for 2 days"
-msgstr ""
+msgstr "Agregue un regalo adicional fuera del servicio, por ejemplo: sonrisa gratis o apartamento gratis por 2 días"
 
 #: .\newsletter\forms.py:339
 msgid "Add remarks for your package"
-msgstr ""
+msgstr "Agregue comentarios para su paquete"
 
 #: .\newsletter\forms.py:348
 msgid "Add remark which is important for use your package "
-msgstr ""
+msgstr "Agregue un comentario que es importante para usar su paquete"
 
 #: .\newsletter\forms.py:377
 msgid "Select_service"
-msgstr ""
+msgstr "Seleccionar_servicio"
 
 #: .\newsletter\forms.py:430
 msgid "Add link to your facebook page "
@@ -431,43 +436,43 @@ msgstr ""
 
 #: .\newsletter\forms.py:431
 msgid "Add link to your linkedin page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de Facebook"
 
 #: .\newsletter\forms.py:432
 msgid "Add link to your twitter page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de twitter"
 
 #: .\newsletter\forms.py:433
 msgid "Add link to your instagram page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de instagram"
 
 #: .\newsletter\forms.py:434
 msgid "Add link to your pinterest page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de pinterest"
 
 #: .\newsletter\forms.py:435
 msgid "Add link to your youtube page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de youtube"
 
 #: .\newsletter\forms.py:436
 msgid "Add link to your behance page "
-msgstr ""
+msgstr "Agrega un enlace a tu página de behance"
 
 #: .\newsletter\forms.py:437
 msgid "Add your whatsupnumber "
-msgstr ""
+msgstr "Agregue su número"
 
 #: .\newsletter\languages.py:257
 msgid "Select_state"
-msgstr ""
+msgstr "Seleccione estado"
 
 #: .\newsletter\languages.py:293
 msgid "Select_city"
-msgstr ""
+msgstr "Ciudad selecta"
 
 #: .\newsletter\languages.py:485
 msgid "Choose_Speciality"
-msgstr ""
+msgstr "Elegir_Especialidad"
 
 #: .\newsletter\languages.py:487
 msgid "Alergólogo"
@@ -850,19 +855,21 @@ msgid ""
 "Phone number must be entered in the format: '+999999999'. Up to 15 digits "
 "allowed."
 msgstr ""
+"El número de teléfono debe ingresarse en el formato: '+999999999'. Hasta 15 dígitos"
+"permitido."
 
 #: .\newsletter\views.py:593
 msgid "Featured Doctors"
-msgstr ""
+msgstr "Doctores destacados"
 
 #: .\newsletter\views.py:828
 msgid "Top Offers"
-msgstr ""
+msgstr "Ofertas principales"
 
 #: .\newsletter\views.py:1015 .\newsletter\views.py:1062
 #: .\newsletter\views.py:1375
 msgid "Your message has been send.We will send notice on your email"
-msgstr ""
+msgstr "Su mensaje ha sido enviado. Le enviaremos un aviso en su correo electrónico"
 
 #: .\newsletter\views.py:1018 .\newsletter\views.py:1065
 #: .\newsletter\views.py:1378
@@ -870,7 +877,8 @@ msgid ""
 "Sorry,it is our fault. Message has not been send. Please send us a email or "
 "give us a call"
 msgstr ""
-
+"Lo sentimos, es nuestra culpa. El mensaje no se ha enviado. Envíenos un correo electrónico o"
+"llamanos"
 #: .\templates\account\account_inactive.html:5
 #: .\templates\account\account_inactive.html:8
 msgid "Account Inactive"
@@ -887,19 +895,19 @@ msgstr ""
 
 #: .\templates\account\email.html:8
 msgid "E-mail Addresses"
-msgstr ""
+msgstr "Correos electrónicos"
 
 #: .\templates\account\email.html:10
 msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
+msgstr "Las siguientes direcciones de correo electrónico están asociadas a su cuenta:"
 
 #: .\templates\account\email.html:24
 msgid "Verified"
-msgstr ""
+msgstr "Verificado"
 
 #: .\templates\account\email.html:26
 msgid "Unverified"
-msgstr ""
+msgstr "Inconfirmado"
 
 #: .\templates\account\email.html:28
 msgid "Primary"
@@ -927,7 +935,8 @@ msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
-
+"Actualmente no tiene ninguna dirección de correo electrónico configurada. Realmente debería agregar"
+"una dirección de correo electrónico para que pueda recibir notificaciones, restablecer su contraseña, etc."
 #: .\templates\account\email.html:48
 msgid "Add E-mail Address"
 msgstr ""
@@ -972,6 +981,12 @@ msgid ""
 "It can be safely ignored if you did not request a password reset. Click the "
 "link below to reset your password."
 msgstr ""
+"Hola desde %(site_name) s!\n"
+"\n"
+"Está recibiendo este correo electrónico porque usted u otra persona ha solicitado un"
+"contraseña para su cuenta de usuario.\n"
+"Se puede ignorar con seguridad si no solicitó un restablecimiento de contraseña. Haga clic en el"
+"enlace a continuación para restablecer su contraseña."
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
@@ -1003,7 +1018,7 @@ msgstr ""
 
 #: .\templates\account\email_confirm.html:22
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: .\templates\account\email_confirm.html:29
 #, python-format
@@ -1044,11 +1059,11 @@ msgstr ""
 #: .\templates\account\logout.html:5 .\templates\account\logout.html:10
 #: .\templates\account\logout.html:19
 msgid "Sign Out"
-msgstr ""
+msgstr "Desconectar"
 
 #: .\templates\account\logout.html:12
 msgid "Are you sure you want to sign out?"
-msgstr ""
+msgstr "Estás seguro de que quieres cerrar sesión?"
 
 #: .\templates\account\messages\cannot_delete_primary_email.txt:2
 #, python-format
@@ -1058,7 +1073,7 @@ msgstr ""
 #: .\templates\account\messages\email_confirmation_sent.txt:2
 #, python-format
 msgid "Confirmation e-mail sent to %(email)s."
-msgstr ""
+msgstr "Correo electrónico de confirmación enviado a %(email)s"
 
 #: .\templates\account\messages\email_confirmed.txt:2
 #, python-format
@@ -1073,15 +1088,15 @@ msgstr ""
 #: .\templates\account\messages\logged_in.txt:4
 #, python-format
 msgid "Successfully signed in as %(name)s."
-msgstr ""
+msgstr "Accedió correctamente como %(name)s."
 
 #: .\templates\account\messages\logged_out.txt:2
 msgid "You have signed out."
-msgstr ""
+msgstr "Has cerrado sesión"
 
 #: .\templates\account\messages\password_changed.txt:2
 msgid "Password successfully changed."
-msgstr ""
+msgstr "Contraseña cambiada correctamente"
 
 #: .\templates\account\messages\password_set.txt:2
 msgid "Password successfully set."
@@ -1224,49 +1239,49 @@ msgstr ""
 
 #: .\templates\complain.html:51 .\templates\complain.html:55
 msgid "Preview"
-msgstr ""
+msgstr "Avance"
 
 #: .\templates\complain.html:62
 msgid "Create medical post"
-msgstr ""
+msgstr "Crear publicación médica"
 
 #: .\templates\detail_article.html:50
 msgid "Author "
-msgstr ""
+msgstr "Autor"
 
 #: .\templates\detail_article.html:65
 msgid " All articles"
-msgstr ""
+msgstr "Todos los artículos"
 
 #: .\templates\detail_article.html:68
 msgid " Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: .\templates\detail_article.html:69
 msgid " Edit"
-msgstr ""
+msgstr "Editar"
 
 #: .\templates\detail_article.html:75
 msgid "Other"
-msgstr ""
+msgstr "Otro"
 
 #: .\templates\detail_article.html:75
 msgid "articles"
-msgstr ""
+msgstr "artículos"
 
 #: .\templates\detail_article.html:86
 msgid " Comment"
-msgstr ""
+msgstr "Comentario"
 
 #: .\templates\detail_article.html:90
 #: .\templates\doctortemplate\ourarticlessection.html:39
 #: .\templates\landing.html:920
 msgid "Read More"
-msgstr ""
+msgstr "Lee mas"
 
 #: .\templates\detail_article.html:103
 msgid " Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #: .\templates\detail_article.html:108
 #: .\templates\doctortemplate\commentssection.html:30
@@ -1277,120 +1292,124 @@ msgid ""
 "vulgarity, threats, commercial promotion, incoherence  will be immediately "
 "deleted and sent to service of the relevant public institution"
 msgstr ""
+"Las opiniones expresadas en este sitio web son solo de los autores y lo hacen"
+"No tengo nada con punchlist.com. Cualquier comentario que contenga malas palabras"
+"La vulgaridad, las amenazas, la promoción comercial, la incoherencia serán inmediatas"
+"eliminado y enviado al servicio de la institución pública pertinente"
 
 #: .\templates\detail_article.html:118
 #: .\templates\doctortemplate\commentssection.html:46
 msgid " LOGIN TO COMMENT "
-msgstr ""
+msgstr "INICIA SESIÓN PARA COMENTAR"
 
 #: .\templates\detail_article.html:134
 #: .\templates\doctortemplate\commentssection.html:55
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: .\templates\detail_article.html:149
 #: .\templates\doctortemplate\commentssection.html:76
 msgid " LOGIN TO REPLY "
-msgstr ""
+msgstr "INICIA SESIÓN PARA RESPONDER"
 
 #: .\templates\discount_detail.html:303
 msgid "OFFER INCLUDE THIS SERVICES"
-msgstr ""
+msgstr "OFERTA INCLUYE ESTOS SERVICIOS"
 
 #: .\templates\discount_detail.html:356
 msgid "BOOK NOW"
-msgstr ""
+msgstr "RESERVAR AHORA"
 
 #: .\templates\discount_detail.html:374
 msgid " YOU CAN STILL BUY FOR"
-msgstr ""
+msgstr "TODAVÍA PUEDES COMPRAR"
 
 #: .\templates\discount_detail.html:379
 msgid "REMARKS"
-msgstr ""
+msgstr "OBSERVACIONES"
 
 #: .\templates\discount_list.html:236 .\templates\doctor_list.html:256
 msgid "Search here?"
-msgstr ""
+msgstr "Busca aquí?"
 
 #: .\templates\doctor_list.html:252
 msgid "Move map to a location for search"
-msgstr ""
+msgstr "Mover el mapa a una ubicación para buscar"
 
 #: .\templates\doctor_list.html:286 .\templates\landing.html:405
 msgid "Offer discount prices"
-msgstr ""
+msgstr "Ofrecer precios de descuento"
 
 #: .\templates\doctor_list.html:289 .\templates\landing.html:408
 msgid "Have access for people with dissabilites"
-msgstr ""
+msgstr "Tener acceso para personas con discapacidad"
 
 #: .\templates\doctor_list.html:293
 #: .\templates\doctortemplate\ouraboutsection.html:199
 #: .\templates\landing.html:412
 msgid "Pet friendly"
-msgstr ""
+msgstr "Mascota amigable"
 
 #: .\templates\doctor_list.html:296 .\templates\landing.html:415
 msgid "Make home visits"
-msgstr ""
+msgstr "Hacer visitas a domicilio"
 
 #: .\templates\doctor_list.html:364 .\templates\doctor_list.html:484
 #: .\templates\doctor_list.html:567
 msgid "Please visit doctor page for appoitment "
-msgstr ""
+msgstr "Visite la página del médico para una cita."
 
 #: .\templates\doctor_list.html:374 .\templates\doctor_list.html:494
 #: .\templates\doctor_list.html:577
 msgid "Call ordinacy of doctor dr. "
-msgstr ""
+msgstr "Llame a la ordenanza del doctor dr."
 
 #: .\templates\doctor_list.html:405 .\templates\my_complain_list.html:59
 #: .\templates\templatesshowmore\article_list.html:305
 msgid "Previous"
-msgstr ""
+msgstr "Previo"
 
 #: .\templates\doctor_list.html:421 .\templates\my_complain_list.html:67
 #: .\templates\templatesshowmore\article_list.html:321
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: .\templates\doctor_list.html:426
 msgid " Doctors outside DoctorForVacation"
-msgstr ""
+msgstr "Doctores fuera de DoctorForVacation"
 
 #: .\templates\doctortemplate\commentssection.html:12
 #: .\templates\doctortemplate\commentssection1.html:10
 msgid "Leave your opinion, because your opinion matters"
-msgstr ""
+msgstr "Deja tu opinión, porque tu opinión importa"
 
 #: .\templates\doctortemplate\commentssection.html:94
 msgid "RATE"
-msgstr ""
+msgstr "califícame"
 
 #: .\templates\doctortemplate\commentssection.html:95
 msgid "Leave a rating"
-msgstr ""
+msgstr "Deja una calificación"
 
 #: .\templates\doctortemplate\commentssection.html:119
 msgid "Helpfulness"
-msgstr ""
+msgstr "Utilidad"
 
 #: .\templates\doctortemplate\commentssection.html:142
 msgid "Kindess"
-msgstr ""
+msgstr "Amabilidad"
 
 #: .\templates\doctortemplate\commentssection.html:160
 msgid "Ethic"
-msgstr ""
+msgstr "ética"
 
 #: .\templates\doctortemplate\commentssection.html:178
 msgid "Waiting time"
-msgstr ""
+msgstr "Tiempo de espera"
 
 #: .\templates\doctortemplate\commentssection.html:196
 msgid "Staff"
-msgstr ""
+msgstr "El personal"
 
 #: .\templates\doctortemplate\contactsection.html:8
 #: .\templates\doctortemplate\departmentsection.html:8
@@ -1400,15 +1419,15 @@ msgstr ""
 #: .\templates\doctortemplate\packagesection.html:10
 #: .\templates\doctortemplate\pricingsection.html:8
 msgid "Our"
-msgstr ""
+msgstr "nuestro"
 
 #: .\templates\doctortemplate\contactsection.html:8
 msgid "Contact"
-msgstr ""
+msgstr "contacto"
 
 #: .\templates\doctortemplate\contactsection.html:9
 msgid "Don't hesitate to ask, we are here for you"
-msgstr ""
+msgstr "No dudes en preguntar, estamos aquí para ti"
 
 #: .\templates\doctortemplate\contactsection.html:90
 #: .\templates\doctortemplate\modal_appoitment.html:54
@@ -1416,82 +1435,82 @@ msgstr ""
 #: .\templates\doctortemplate\modal_detail_package.html:75
 #: .\templates\doctortemplate\modal_package.html:75
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: .\templates\doctortemplate\departmentsection.html:8
 msgid "Department"
-msgstr ""
+msgstr "Departamento"
 
 #: .\templates\doctortemplate\departmentsection.html:9
 msgid "We have it all"
-msgstr ""
+msgstr "Lo tenemos todo"
 
 #: .\templates\doctortemplate\departmentsection.html:25
 #: .\templates\doctortemplate\our_teamsection.html:28
 msgid "More Info"
-msgstr ""
+msgstr "Más información"
 
 #: .\templates\doctortemplate\divider1section.html:7
 msgid "Get"
-msgstr ""
+msgstr "Obtener"
 
 #: .\templates\doctortemplate\divider1section.html:7
 msgid "Off Our All Packages! Check It Out."
-msgstr ""
+msgstr "Fuera de todos nuestros paquetes! Echale un vistazo."
 
 #: .\templates\doctortemplate\divider1section.html:13
 #: .\templates\doctortemplate\ouraboutsection.html:40
 msgid "Explore Service"
-msgstr ""
+msgstr "Explore el servicio"
 
 #: .\templates\doctortemplate\divider1section.html:17
 msgid "All Packages"
-msgstr ""
+msgstr "Todos los paquetes"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:91
 #: .\templates\doctortemplate\email_templates\email_template_package.html:91
 msgid "Appoitment form via DoctorsForVacation"
-msgstr ""
+msgstr "Formulario de cita a través de Médicos para vacaciones"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:192
 msgid "New appoitment request"
-msgstr ""
+msgstr "Nueva solicitud de cita"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:195
 #: .\templates\doctortemplate\email_templates\email_template_package.html:204
 msgid " You have new request for appoitment from mr./ms "
-msgstr ""
+msgstr "Tiene una nueva solicitud de cita de mr./ms"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:196
 #: .\templates\doctortemplate\email_templates\email_template_package.html:205
 msgid " Message: "
-msgstr ""
+msgstr "Mensaje:"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:208
 #: .\templates\doctortemplate\email_templates\email_template_package.html:217
 msgid "Respond now"
-msgstr ""
+msgstr "Responde ahora"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:243
 #: .\templates\doctortemplate\email_templates\email_template_package.html:252
 msgid "Your client  appoitment information "
-msgstr ""
+msgstr "La información de su cita con el cliente"
 
 #: .\templates\doctortemplate\email_templates\email_template_package.html:192
 msgid "New appoitment request with discount offer"
-msgstr ""
+msgstr "Nueva solicitud de cita con oferta de descuento"
 
 #: .\templates\doctortemplate\email_templates\email_template_package.html:196
 msgid " Package  "
-msgstr ""
+msgstr "Paquete"
 
 #: .\templates\doctortemplate\email_templates\email_template_package.html:197
 msgid "  Services: "
-msgstr ""
+msgstr "Servicios:"
 
 #: .\templates\doctortemplate\gallerysection.html:8
 msgid "Gallery"
-msgstr ""
+msgstr "Galería"
 
 #: .\templates\doctortemplate\headersection.html:25
 #: .\templates\doctortemplate\headersection.html:46
@@ -1500,7 +1519,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersection.html:91
 #: .\templates\doctortemplate\headersection.html:105
 msgid "Share"
-msgstr ""
+msgstr "Compartir"
 
 #: .\templates\doctortemplate\headersection.html:28
 #: .\templates\doctortemplate\headersection.html:48
@@ -1509,7 +1528,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersection.html:93
 #: .\templates\doctortemplate\headersection.html:107
 msgid "Visit"
-msgstr ""
+msgstr "Visitar"
 
 #: .\templates\doctortemplate\headersection.html:146
 #: .\templates\doctortemplate\headersectionempty.html:140
@@ -1529,7 +1548,7 @@ msgstr " Estes a doctor"
 #: .\templates\doctortemplate\headersectionuserdetails.html:147
 #: .\templates\landing.html:296
 msgid "My profile"
-msgstr ""
+msgstr "Mi perfil"
 
 #: .\templates\doctortemplate\headersection.html:156
 #: .\templates\doctortemplate\headersectionempty.html:150
@@ -1539,7 +1558,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:148
 #: .\templates\landing.html:297
 msgid "Web page settings"
-msgstr ""
+msgstr "Configuraciones de página web"
 
 #: .\templates\doctortemplate\headersection.html:157
 #: .\templates\doctortemplate\headersectionempty.html:151
@@ -1550,7 +1569,7 @@ msgstr ""
 #: .\templates\landing.html:298 .\templates\sidebar.html:76
 #: .\templates\sidebarPackage.html:102
 msgid "Accepted patients"
-msgstr ""
+msgstr "Pacientes aceptados"
 
 #: .\templates\doctortemplate\headersection.html:158
 #: .\templates\doctortemplate\headersectionempty.html:152
@@ -1560,7 +1579,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:150
 #: .\templates\landing.html:299
 msgid "Package/discounts offers"
-msgstr ""
+msgstr "Ofertas de paquetes / descuentos"
 
 #: .\templates\doctortemplate\headersection.html:161
 #: .\templates\doctortemplate\headersectionempty.html:155
@@ -1570,7 +1589,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:153
 #: .\templates\landing.html:302
 msgid "My posts"
-msgstr ""
+msgstr "Mis publicaciones"
 
 #: .\templates\doctortemplate\headersection.html:165
 #: .\templates\doctortemplate\headersectionempty.html:159
@@ -1581,7 +1600,7 @@ msgstr ""
 #: .\templates\landing.html:306 .\templates\sidebar.html:20
 #: .\templates\sidebarPackage.html:46
 msgid "New article"
-msgstr ""
+msgstr "articulo nuevo"
 
 #: .\templates\doctortemplate\headersection.html:170
 #: .\templates\doctortemplate\headersection.html:200
@@ -1597,7 +1616,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:192
 #: .\templates\landing.html:287 .\templates\landing.html:311
 msgid "LOGOUT"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: .\templates\doctortemplate\headersection.html:180
 #: .\templates\doctortemplate\headersectionempty.html:174
@@ -1607,7 +1626,7 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionuserdetails.html:172
 #: .\templates\landing.html:324
 msgid "Sign In "
-msgstr ""
+msgstr "registrarse"
 
 #: .\templates\doctortemplate\headersection.html:305
 #: .\templates\doctortemplate\headersectionempty.html:252
@@ -1616,211 +1635,213 @@ msgstr ""
 #: .\templates\doctortemplate\headersectionsearchdiscount.html:325
 #: .\templates\doctortemplate\headersectionuserdetails.html:299
 msgid "Doctor list"
-msgstr ""
+msgstr "Lista de doctores"
 
 #: .\templates\doctortemplate\homesection.html:65
 msgid "Appointment."
-msgstr ""
+msgstr "cita"
 
 #: .\templates\doctortemplate\homesection.html:66
 msgid ""
 "Which problem you faced on your health? Call or mail us and make an "
 "appointment with our expert who can solved your problem."
 msgstr ""
+"Qué problema enfrentaste con tu salud? Llámanos o envíanos un correo electrónico y haz un"
+"cita con nuestro experto que puede resolver su problema"
 
 #: .\templates\doctortemplate\homesection.html:67
 #: .\templates\doctortemplate\homesection.html:91
 msgid "Apointment Now"
-msgstr ""
+msgstr "Cita ahora"
 
 #: .\templates\doctortemplate\homesection.html:84
 msgid "Emergency Cases."
-msgstr ""
+msgstr "Casos de emergencia."
 
 #: .\templates\doctortemplate\homesection.html:86
 msgid "Call us"
-msgstr ""
+msgstr "Llamanos"
 
 #: .\templates\doctortemplate\homesection.html:90
 msgid "You can call us for emergency &"
-msgstr ""
+msgstr "Puede llamarnos para emergencias y"
 
 #: .\templates\doctortemplate\homesection.html:90
 msgid "make an appointment out of clinic."
-msgstr ""
+msgstr "Haga una cita fuera de la clínica."
 
 #: .\templates\doctortemplate\homesection.html:97
 msgid "Opening Hour"
-msgstr ""
+msgstr "Hora de apertura"
 
 #: .\templates\doctortemplate\lastcommentssection.html:9
 msgid "Reviews"
-msgstr ""
+msgstr "comentarios"
 
 #: .\templates\doctortemplate\lastcommentssection.html:10
 msgid " Latest reviews from our patients"
-msgstr ""
+msgstr "Últimos comentarios de nuestros pacientes."
 
 #: .\templates\doctortemplate\lastcommentssection.html:49
 msgid " LEAVE COMMENT OR RATE"
-msgstr ""
+msgstr "DEJA COMENTARIO O TARIFA"
 
 #: .\templates\doctortemplate\modal_appoitment.html:7
 #: .\templates\doctortemplate\modal_appoitment_django.html:16
 msgid "Appointment Form."
-msgstr ""
+msgstr "Formulario de cita."
 
 #: .\templates\doctortemplate\modal_appoitment.html:17
 msgid "Appointment with Expert"
-msgstr ""
+msgstr "Nombramiento con experto"
 
 #: .\templates\doctortemplate\modal_appoitment.html:18
 msgid "Let's Appointment With our Exparts Who Try to Solved Your Problem."
-msgstr ""
+msgstr "Citemos con nuestros exparts que intentan resolver su problema."
 
 #: .\templates\doctortemplate\modal_appoitment.html:20
 msgid "Name"
-msgstr ""
+msgstr "nombre"
 
 #: .\templates\doctortemplate\modal_appoitment.html:27
 msgid "Email"
-msgstr ""
+msgstr "correo electrónico"
 
 #: .\templates\doctortemplate\modal_appoitment.html:34
 msgid "Date"
-msgstr ""
+msgstr "fecha"
 
 #: .\templates\doctortemplate\modal_appoitment.html:41
 msgid "Phone"
-msgstr ""
+msgstr "teléfono"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:27
 #: .\templates\doctortemplate\modal_detail_package.html:27
 #: .\templates\doctortemplate\modal_package.html:27
 msgid "Appointment with "
-msgstr ""
+msgstr "Cita con"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:28
 #: .\templates\doctortemplate\modal_detail_package.html:28
 #: .\templates\doctortemplate\modal_package.html:28
 msgid "Let's Appointment With our Experts Who Try to Solve Your Problem."
-msgstr ""
+msgstr "Citemos con nuestros expertos que intentan resolver su problema."
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:34
 #: .\templates\doctortemplate\modal_detail_package.html:34
 #: .\templates\doctortemplate\modal_package.html:34
 msgid " Name"
-msgstr ""
+msgstr "nombre"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:35
 #: .\templates\doctortemplate\modal_detail_package.html:35
 #: .\templates\doctortemplate\modal_package.html:35
 msgid " enter a name"
-msgstr ""
+msgstr "ingresa un nombre"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:35
 #: .\templates\doctortemplate\modal_detail_package.html:35
 #: .\templates\doctortemplate\modal_package.html:35
 msgid " Name is required."
-msgstr ""
+msgstr "Se requiere el nombre."
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:41
 #: .\templates\doctortemplate\modal_detail_package.html:41
 #: .\templates\doctortemplate\modal_package.html:41
 msgid " Surname"
-msgstr ""
+msgstr "apellido"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:42
 #: .\templates\doctortemplate\modal_detail_package.html:42
 #: .\templates\doctortemplate\modal_package.html:42
 msgid " enter surnmame"
-msgstr ""
+msgstr "introduzca apellido"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:42
 #: .\templates\doctortemplate\modal_detail_package.html:42
 #: .\templates\doctortemplate\modal_package.html:42
 msgid " surname is required "
-msgstr ""
+msgstr "apellido es obligatorio"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:48
 #: .\templates\doctortemplate\modal_detail_package.html:48
 #: .\templates\doctortemplate\modal_package.html:48
 msgid " Email"
-msgstr ""
+msgstr "correo electrónico"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:49
 #: .\templates\doctortemplate\modal_detail_package.html:49
 #: .\templates\doctortemplate\modal_package.html:49
 msgid " enter an email"
-msgstr ""
+msgstr "ingrese un correo electrónico"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:49
 #: .\templates\doctortemplate\modal_detail_package.html:49
 #: .\templates\doctortemplate\modal_package.html:49
 msgid " Email is required."
-msgstr ""
+msgstr "Correo electronico es requerido."
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:55
 #: .\templates\doctortemplate\modal_detail_package.html:55
 #: .\templates\doctortemplate\modal_package.html:55
 msgid " Date"
-msgstr ""
+msgstr "fecha"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:61
 #: .\templates\doctortemplate\modal_detail_package.html:61
 #: .\templates\doctortemplate\modal_package.html:61
 msgid " Phone"
-msgstr ""
+msgstr "teléfono"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:62
 #: .\templates\doctortemplate\modal_detail_package.html:62
 #: .\templates\doctortemplate\modal_package.html:62
 msgid " enter a phone"
-msgstr ""
+msgstr "ingresa un teléfono"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:62
 #: .\templates\doctortemplate\modal_detail_package.html:62
 #: .\templates\doctortemplate\modal_package.html:62
 msgid " Phone Number is required."
-msgstr ""
+msgstr "Se requiere número de teléfono."
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:68
 #: .\templates\doctortemplate\modal_detail_package.html:68
 #: .\templates\doctortemplate\modal_package.html:68
 msgid " Message"
-msgstr ""
+msgstr "mensaje"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:69
 #: .\templates\doctortemplate\modal_detail_package.html:69
 #: .\templates\doctortemplate\modal_package.html:69
 msgid " type in a message"
-msgstr ""
+msgstr "escribe un mensaje"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:69
 #: .\templates\doctortemplate\modal_detail_package.html:69
 #: .\templates\doctortemplate\modal_package.html:69
 msgid " Message is required."
-msgstr ""
+msgstr "Se requiere mensaje."
 
 #: .\templates\doctortemplate\modal_detail_package.html:16
 msgid "Book special offer."
-msgstr ""
+msgstr "Reservar oferta especial."
 
 #: .\templates\doctortemplate\modal_package.html:16
 msgid "Package Form."
-msgstr ""
+msgstr "Forma del paquete"
 
 #: .\templates\doctortemplate\our_teamsection.html:8
 msgid "Team"
-msgstr ""
+msgstr "el equipo"
 
 #: .\templates\doctortemplate\our_teamsection.html:9
 msgid "Experts in our clinic can help you solve your problems"
-msgstr ""
+msgstr "Los expertos en nuestra clínica pueden ayudarlo a resolver sus problemas."
 
 #: .\templates\doctortemplate\ouraboutsection.html:10
 msgid " Welcome To"
-msgstr ""
+msgstr "Bienvenido a"
 
 #: .\templates\doctortemplate\ouraboutsection.html:16
 msgid ""
@@ -1829,226 +1850,229 @@ msgid ""
 "journals and medical books. We offer medical services with the most advanced "
 "technology and the most up-to-date knowledge."
 msgstr ""
-
+"Somos especialistas y profesores de nuestras respectivas especialidades, certificados"
+"en los respectivos consejos de especialidades, con publicaciones en diferentes"
+"revistas y libros de medicina. Ofrecemos servicios médicos con los más avanzados"
+"tecnología y el conocimiento más actualizado"
 #: .\templates\doctortemplate\ouraboutsection.html:18
 msgid "Some of our services:"
-msgstr ""
+msgstr "Algunos de nuestros servicios:"
 
 #: .\templates\doctortemplate\ouraboutsection.html:29
 msgid "Primary Care"
-msgstr ""
+msgstr "atención primaria"
 
 #: .\templates\doctortemplate\ouraboutsection.html:30
 msgid "Lab Test"
-msgstr ""
+msgstr "prueba de laboratorio"
 
 #: .\templates\doctortemplate\ouraboutsection.html:31
 msgid "Symptom Check"
-msgstr ""
+msgstr "Comprobación de síntomas"
 
 #: .\templates\doctortemplate\ouraboutsection.html:32
 msgid "Heart Rate"
-msgstr ""
+msgstr "ritmo cardiaco"
 
 #: .\templates\doctortemplate\ouraboutsection.html:44
 msgid "Contact Us"
-msgstr ""
+msgstr "Contacta con nosotros"
 
 #: .\templates\doctortemplate\ouraboutsection.html:91
 msgid "RATE / COMMENT"
-msgstr ""
+msgstr "TARIFA / COMENTARIO"
 
 #: .\templates\doctortemplate\ouraboutsection.html:113
 msgid "Private patients (without insurance)"
-msgstr ""
+msgstr "Pacientes privados (sin seguro)"
 
 #: .\templates\doctortemplate\ouraboutsection.html:140
 msgid "Accepts children under 12"
-msgstr ""
+msgstr "Acepta niños menores de 12 años."
 
 #: .\templates\doctortemplate\ouraboutsection.html:151
 msgid "Have discounts for todos doctors"
-msgstr ""
+msgstr "Tener descuentos para todos los doctores"
 
 #: .\templates\doctortemplate\ouraboutsection.html:162
 msgid "Home visits available"
-msgstr ""
+msgstr "Visitas a domicilio disponibles"
 
 #: .\templates\doctortemplate\ouraboutsection.html:188
 msgid "Have access for people with disabilities"
-msgstr ""
+msgstr "Tener acceso para personas con discapacidad."
 
 #: .\templates\doctortemplate\ouraboutsection.html:222
 msgid "Check Special offers"
-msgstr ""
+msgstr "Consultar ofertas especiales"
 
 #: .\templates\doctortemplate\packagesection.html:10
 msgid "Packages"
-msgstr ""
+msgstr "paquetes"
 
 #: .\templates\doctortemplate\packagesection.html:11
 msgid "Check out these special offers and save money"
-msgstr ""
+msgstr "Vea estas ofertas especiales y ahorre dinero"
 
 #: .\templates\doctortemplate\pricingsection.html:8
 msgid "Pricing"
-msgstr ""
+msgstr "Precios"
 
 #: .\templates\doctortemplate\pricingsection.html:9
 msgid "Check discounts of our services only with todos doctors "
-msgstr ""
+msgstr "Consulte los descuentos de nuestros servicios solo con todos los médicos"
 
 #: .\templates\doctortemplate\pricingsection.html:18
 msgid "Old Prices"
-msgstr ""
+msgstr "Precios antiguos"
 
 #: .\templates\doctortemplate\pricingsection.html:44
 msgid " Discount prices"
-msgstr ""
+msgstr "Precios de descuento"
 
 #: .\templates\doctortemplate\pricingsection.html:70
 msgid " Standard prices"
-msgstr ""
+msgstr "Precios estándar"
 
 #: .\templates\index.html:44
 msgid "Interested in who are the best doctors and dentists in Mexico"
-msgstr ""
+msgstr "Interesado en saber quiénes son los mejores médicos y dentistas en México."
 
 #: .\templates\index.html:46
 msgid "Help other people by leaving comments and ratings!"
-msgstr ""
+msgstr "¡Ayuda a otras personas dejando comentarios y calificaciones!"
 
 #: .\templates\landing.html:331
 msgid "Try It Now!"
-msgstr ""
+msgstr "Pruebalo ahora!"
 
 #: .\templates\landing.html:353
 msgid "BEST DEALS FOR YOUR HEALTH"
-msgstr "Un BEste delas"
+msgstr "MEJORES OFERTAS PARA TU SALUD"
 
 #: .\templates\landing.html:355
 msgid "Search best doctors with best deals from different sources"
-msgstr ""
+msgstr "Busque los mejores médicos con las mejores ofertas de diferentes fuentes"
 
 #: .\templates\landing.html:356
 msgid "Find doctors"
-msgstr ""
+msgstr "Encuentra doctores"
 
 #: .\templates\landing.html:359
 msgid " CHECK OFFERS"
-msgstr ""
+msgstr "CONSULTAR OFERTAS"
 
 #: .\templates\landing.html:376
 msgid "Featured doctors"
-msgstr "Doctores fetures"
+msgstr "Doctores destacados"
 
 #: .\templates\landing.html:457
 msgid "Not rated "
-msgstr "66"
+msgstr "Not rated"
 
 #: .\templates\landing.html:509
 msgid "Value your money"
-msgstr ""
+msgstr "Valora tu dinero"
 
 #: .\templates\landing.html:516
 msgid "Check out best deals offers"
-msgstr ""
+msgstr "Mira las mejores ofertas"
 
 #: .\templates\landing.html:518
 msgid "With  great discounts"
-msgstr ""
+msgstr "Con grandes descuentos"
 
 #: .\templates\landing.html:533
 msgid "Find all "
-msgstr ""
+msgstr "encuentra todos"
 
 #: .\templates\landing.html:533
 msgid "doctors "
-msgstr ""
+msgstr "doctores"
 
 #: .\templates\landing.html:533
 msgid "by: "
-msgstr ""
+msgstr "por:"
 
 #: .\templates\landing.html:540
 msgid "speciality "
-msgstr ""
+msgstr "especialidad"
 
 #: .\templates\landing.html:542
 msgid "nearest location "
-msgstr ""
+msgstr "ubicación más cercana"
 
 #: .\templates\landing.html:545
 msgid "ratings"
-msgstr ""
+msgstr "calificaciones"
 
 #: .\templates\landing.html:548
 msgid "special possibilites"
-msgstr ""
+msgstr "posibilidades especiales"
 
 #: .\templates\landing.html:551
 msgid "and many other"
-msgstr ""
+msgstr "Y muchos otros"
 
 #: .\templates\landing.html:567
 msgid "Stay connected"
-msgstr ""
+msgstr "Mantente conectado"
 
 #: .\templates\landing.html:574
 msgid "Follow doctors for news "
-msgstr ""
+msgstr "Siga a los médicos para recibir noticias"
 
 #: .\templates\landing.html:576
 msgid "Leave rating and comment "
-msgstr ""
+msgstr "Deja calificación y comentario"
 
 #: .\templates\landing.html:579
 msgid "for help doctors and other pacients"
-msgstr ""
+msgstr "para ayuda médicos y otros pacientes"
 
 #: .\templates\landing.html:606
 msgid " FOR DOCTORS AND CLINICS"
-msgstr ""
+msgstr "PARA DOCTORES Y CLÍNICAS"
 
 #: .\templates\landing.html:610
 msgid " Personal web page"
-msgstr ""
+msgstr "Pagina web personal"
 
 #: .\templates\landing.html:611
 msgid "Improve marketing of your products"
-msgstr ""
+msgstr "Mejora la comercialización de tus productos"
 
 #: .\templates\landing.html:613
 msgid "Online support"
-msgstr ""
+msgstr "Soporte en línea"
 
 #: .\templates\landing.html:622
 msgid "Get your own web page based on your profile"
-msgstr ""
+msgstr "Obtenga su propia página web basada en su perfil"
 
 #: .\templates\landing.html:630
 msgid "Improve your marketing and make yourself visible"
-msgstr ""
+msgstr "Mejora tu marketing y hazte visible"
 
 #: .\templates\landing.html:638
 msgid "Get fast online support"
-msgstr ""
+msgstr "Obtenga soporte en línea rápido"
 
 #: .\templates\landing.html:663
 msgid "Latest offers"
-msgstr ""
+msgstr "Últimas ofertas"
 
 #: .\templates\landing.html:665
 msgid "Find packages with biggest saving"
-msgstr ""
+msgstr "Encuentra paquetes con el mayor ahorro"
 
 #: .\templates\landing.html:812
 msgid "Latest comments"
-msgstr ""
+msgstr "Últimos comentarios"
 
 #: .\templates\landing.html:890
 msgid "Latest Articles"
-msgstr ""
+msgstr "últimos artículos"
 
 #: .\templates\messenger\inbox.html:4 .\templates\messenger\inbox.html:6
 msgid "Inbox"
@@ -2064,56 +2088,56 @@ msgstr ""
 
 #: .\templates\my_complain_list.html:10
 msgid "My articles "
-msgstr ""
+msgstr "Mis articulos"
 
 #: .\templates\sidebar.html:7 .\templates\sidebarPackage.html:33
 msgid "Content"
-msgstr ""
+msgstr "Contenido"
 
 #: .\templates\sidebar.html:15 .\templates\sidebarPackage.html:41
 msgid "My articles"
-msgstr ""
+msgstr "Mis articulos"
 
 #: .\templates\sidebar.html:25 .\templates\sidebarPackage.html:51
 msgid "View my web page "
-msgstr ""
+msgstr "Ver mi página web"
 
 #: .\templates\sidebar.html:37 .\templates\sidebarPackage.html:63
 msgid "Web module"
-msgstr ""
+msgstr "Módulo web"
 
 #: .\templates\sidebar.html:45 .\templates\sidebarPackage.html:71
 msgid "Web home page"
-msgstr ""
+msgstr "Página de inicio web"
 
 #: .\templates\sidebar.html:71 .\templates\sidebarPackage.html:97
 msgid "Working time"
-msgstr ""
+msgstr "Tiempo de trabajo"
 
 #: .\templates\sidebar.html:81 .\templates\sidebarPackage.html:107
 msgid "Service price"
-msgstr ""
+msgstr "Precio del servicio"
 
 #: .\templates\sidebar.html:86 .\templates\sidebarPackage.html:112
 msgid "Package/Special deals"
-msgstr ""
+msgstr "Paquete / Ofertas especiales"
 
 #: .\templates\sidebar.html:91 .\templates\sidebarPackage.html:117
 msgid "Social networks"
-msgstr ""
+msgstr "Redes sociales"
 
 #: .\templates\sidebarPackage.html:10
 msgid "My Packages"
-msgstr ""
+msgstr "Mis paquetes"
 
 #: .\templates\sidebarPackage.html:19
 msgid "Edit Package"
-msgstr ""
+msgstr "Editar paquete"
 
 #: .\templates\socialaccount\authentication_error.html:5
 #: .\templates\socialaccount\authentication_error.html:8
 msgid "Social Network Login Failure"
-msgstr ""
+msgstr "Error de inicio de sesión en redes sociales"
 
 #: .\templates\socialaccount\authentication_error.html:10
 msgid ""
@@ -2129,7 +2153,8 @@ msgstr ""
 msgid ""
 "You can sign in to your account using any of the following third party "
 "accounts:"
-msgstr ""
+msgstr "Puede iniciar sesión en su cuenta utilizando cualquiera de los siguientes terceros "
+"cuentas:"
 
 #: .\templates\socialaccount\connections.html:43
 msgid ""
@@ -2180,135 +2205,137 @@ msgstr ""
 #: .\templates\templatesshowmore\article_list_pag.html:81
 #: .\templates\templatesshowmore\discount_package_list_pag.html:81
 msgid "VIEW"
-msgstr ""
+msgstr "VER"
 
 #: .\templates\templatesshowmore\package_list_pag.html:11
 msgid "Package"
-msgstr ""
+msgstr "paquete"
 
 #: .\templates\templatesshowmore\package_list_pag.html:14
 msgid "Only"
-msgstr ""
+msgstr "solamente"
 
 #: .\templates\templatesshowmore\package_list_pag.html:30
 msgid " Reserve Package"
-msgstr ""
+msgstr "Paquete de reserva"
 
 #: .\templates\templatesshowmore\service_list_pag.html:14
 msgid "Check out our service"
-msgstr ""
+msgstr "Mira nuestro servicio"
 
 #: .\templates\templatesshowmore\service_list_pag.html:14
 msgid "More about service..."
-msgstr ""
+msgstr "Más sobre el servicio ..."
 
 #: .\templates\user_detail.html:25
 msgid "Fill out form with your information"
-msgstr ""
+msgstr "Complete el formulario con su información"
 
 #: .\templates\user_detail.html:40
 msgid "It is important to fill your profile for best experience of patients. "
-msgstr ""
+msgstr "Es importante llenar su perfil para obtener la mejor experiencia de los pacientes."
 
 #: .\templates\user_detail.html:46
 msgid ""
 "-->NOTE:Identification is used only for administration and after user is "
 "verified profile will be public "
 msgstr ""
-
+"-> NOTA: La identificación se usa solo para la administración y después de que el usuario es"
+"el perfil verificado será público"
 #: .\templates\user_detail_extra.html:8
 msgid "Add adittional info about patients accepted"
-msgstr ""
+msgstr "Agregar información adicional sobre pacientes aceptados"
 
 #: .\templates\user_detail_extra.html:20
 msgid "Use this section to help widen your patients population. "
-msgstr ""
+msgstr "Use esta sección para ayudar a ampliar su población de pacientes."
 
 #: .\templates\user_detail_package.html:186
 msgid "Customize your packages "
-msgstr ""
+msgstr "Personaliza tus paquetes"
 
 #: .\templates\user_detail_package.html:202
 msgid "Package section"
-msgstr ""
+msgstr "Sección del paquete"
 
 #: .\templates\user_detail_package.html:203
 msgid "Use this section to make special prizes for few connected services."
-msgstr ""
+msgstr "Use esta sección para hacer premios especiales para pocos servicios conectados."
 
 #: .\templates\user_detail_package.html:203
 msgid "Patients often choose specialists with better and wide offers."
-msgstr ""
+msgstr "Los pacientes a menudo eligen especialistas con mejores y amplias ofertas."
 
 #: .\templates\user_detail_package.html:209
 msgid "+ Add service to package"
-msgstr ""
+msgstr "+ Agregar servicio al paquete"
 
 #: .\templates\user_detail_package.html:210
 msgid "Update package"
-msgstr ""
+msgstr "Paquete de actualización"
 
 #: .\templates\user_detail_package.html:218
 msgid "+ Add remark "
-msgstr ""
+msgstr "+ Agregar comentario"
 
 #: .\templates\user_detail_package.html:222
 msgid "Remarks"
-msgstr ""
+msgstr "Observaciones"
 
 #: .\templates\user_detail_package.html:223
 msgid "_Hide remarks "
-msgstr ""
+msgstr "_Ocultar Observaciones"
 
 #: .\templates\user_detail_package.html:233
 msgid "Services in this package"
-msgstr ""
+msgstr "Servicios en este paquete"
 
 #: .\templates\user_detail_package.html:239
 msgid "Delete Package"
-msgstr ""
+msgstr "Eliminar paquete"
 
 #: .\templates\user_detail_package.html:242
 msgid "New Package"
-msgstr ""
+msgstr "Nuevo paquete"
 
 #: .\templates\user_detail_price.html:11
 msgid "Add price and discount for you services"
-msgstr ""
+msgstr "Agregue precio y descuento por sus servicios"
 
 #: .\templates\user_detail_price.html:24
 msgid "Use this section to adjust prices for your services"
-msgstr ""
+msgstr "Use esta sección para ajustar los precios de sus servicios."
 
 #: .\templates\user_detail_price.html:25
 msgid "and to use dicounted prices.  "
-msgstr ""
+msgstr "y para usar precios con descuento."
 
 #: .\templates\user_detail_price.html:25
 msgid "Most of patients check prizes when searching for specialists  "
-msgstr ""
+msgstr "La mayoría de los pacientes consultan los premios cuando buscan especialistas"
 
 #: .\templates\user_detail_price.html:26
 msgid "-->Services are added in web module section  "
-msgstr ""
+msgstr "-> Los servicios se agregan en la sección del módulo web"
 
 #: .\templates\user_detail_social.html:11
 msgid "Add links to your social accounts "
-msgstr ""
+msgstr "Agregue enlaces a sus cuentas sociales"
 
 #: .\templates\user_detail_social.html:24
 msgid "Show your experience trought social networsk "
-msgstr ""
+msgstr "Muestra tu experiencia a través de las redes sociales"
 
 #: .\templates\user_detail_social.html:25
 msgid ""
 "Remember that patients seeking a specialist want to have as much information "
 "as possible to make a decision. "
 msgstr ""
-
+"Recuerde que los pacientes que buscan un especialista quieren tener tanta información"
+"como sea posible para tomar una decisión."
 #: .\templates\user_detail_web.html:121
 msgid "Customize your profile  web page"
-msgstr ""
+msgstr "Personaliza tu página web de perfil"
 
 #: .\templates\user_detail_web.html:137
 msgid "Top Home section"
@@ -2380,11 +2407,11 @@ msgstr ""
 
 #: .\templates\user_detail_worktime.html:23
 msgid "Fill working times"
-msgstr ""
+msgstr "Llenar tiempos de trabajo"
 
 #: .\templates\user_detail_worktime.html:38
 msgid "Use this section for  setup time  when patients are accepted "
-msgstr ""
+msgstr "Use esta sección para el tiempo de preparación cuando los pacientes son aceptados"
 
 #: .\testzs\settings\local.py:185 .\testzs\settings\production.py:187
 msgid "Espanol"

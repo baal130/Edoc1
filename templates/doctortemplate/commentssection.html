@@ -41,7 +41,7 @@
     <!-- form as parameter  -->
     <input class="btn btn-primary float-right" type ='submit' value =" Submit"/> 
     
-    <input>-->
+    
     {% else %}
      <a class="btn btn-primary float-right" href="{% url 'account_login' %}"> {% trans " LOGIN TO COMMENT "%} <span class=""></span> </a>
     {% endif %}
@@ -109,7 +109,7 @@
   {% if instance.image %}
   <img src='{{instance.image.url}}' class='img-responsive'>
    {% endif %} 
-  
+  {% if request.user.is_authenticated %}
   <div class="rating_wrap">  
     
 
@@ -214,7 +214,12 @@
                   {{rating_avg.rating__avg}}Rating average by {{rating_avg.rating__count}}   users 
           </p>  
 
-     </div><!-- end wrapper rating -->              
+     </div><!-- end wrapper rating --> 
+
+      
+     {% else %}
+     <a class="btn btn-primary float-right" href="{% url 'account_login' %}"> {% trans " LOGIN TO RATE "%} <span class=""></span> </a>
+     {% endif %}            
   </div>
    
     
