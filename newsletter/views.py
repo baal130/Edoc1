@@ -40,6 +40,8 @@ import ast
 from .languages import categoryYelp
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from allauth.account.models import EmailAddress
+from allauth.account.decorators import verified_email_required
 
 GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI')
 
@@ -119,7 +121,14 @@ def home2(request):
 			Q(userdetailsfeatured__rating__gte=0)
 		  ).distinct()
 	last_6 = queryset_list.order_by('-userdetailsfeatured__rating')[:6]
+	verified_user_email=False
+	try:
+		if EmailAddress.objects.filter(user=request.user, verified=True).exists():
+			verified_user_email=True
+	except :
+		pass
 	
+	print(verified_user_email)	
 	context={
 		
 		"object_list":last_6,
@@ -128,6 +137,7 @@ def home2(request):
 		"package_list_6":package_list_6,
 		"package_list_9":package_list_9,
 		"last_comments":last_comments,
+		"verified_user_email":verified_user_email,
 	}
 
 		
@@ -159,6 +169,7 @@ def contact(request):
 		"title":title,
 	}           
 	return render(request,"contact.html",context)
+@verified_email_required
 @login_required
 def user_detail(request):
 	if not request.user.is_authenticated:

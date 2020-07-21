@@ -603,6 +603,7 @@ class UserDetailsSocialNetworks(models.Model):
 def post_save_user_receiver(sender, instance, created, *args, **kwargs):
 	if created:
 		profile, is_created = UserDetails.objects.get_or_create(user=instance)
+		print(profile.user.emailaddress_set.all().first())
 		# default_user_profile =UserDetails.objects.get_or_create(user__id=1)[0] #user__username=
 		# default_user_profile.followers.add(instance)
 		#profile.followers.add(default_user_profile.user)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from allauth.account.models import EmailAddress
 # Register your models here for admin 
 #from .forms import SignUpForm 
 from .models import SignUp,UserDetails,UserDetailsRating,UserDetailsGallery,UserDetailsService

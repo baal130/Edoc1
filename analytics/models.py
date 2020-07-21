@@ -6,6 +6,7 @@ from django.conf import settings
 # from .signals import user_logged_in
 from .utils import get_client_city_data, get_client_ip
 from django.contrib.auth import user_logged_in,user_logged_out
+from allauth.account.signals import email_confirmed
 
 class UserSessionManager(models.Manager):
     def create_new(self, user, session_key=None, ip_address=None, city_data=None):
@@ -95,3 +96,7 @@ def user_logged_out_receiver(sender, request,user, *args, **kwargs):
     except:
         pass
 user_logged_out.connect(user_logged_out_receiver)
+
+def user_email_confirmed_receiver(request, email_address,*args, **kwargs):
+    print(email_address)
+email_confirmed.connect(user_email_confirmed_receiver)

@@ -10,6 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{% static 'landing/assets/images/td-trans-32x32.png'%}" type="image/x-icon">
   <meta name="description" content="">
+  <link href="{% static 'css/animate.css'%}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/animate.min.css'%}" />
+  <link rel="stylesheet" href="{% static 'css/animateSpeed.css'%}" />
   <title>Todos Doctores</title>  
   <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons2/mobirise2.css'%}">
   <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
@@ -203,6 +206,21 @@ position: absolute;
 display: -ms-flexbox!important;
     display: flex!important;
 }
+.success{
+  background: #dfd;
+  color: #333;
+  padding: 15px;
+}
+.error{
+  background: #fadcdc;
+  color: #333;
+  padding: 15px;
+}
+.info{
+  background: #dfd;
+  color: #333;
+  padding: 15px;
+}
  </style>
 
 
@@ -347,6 +365,22 @@ display: -ms-flexbox!important;
 
     <div class="container align-center">
         <div class="row justify-content-md-center">
+            {% if messages %}
+                <ul  style="list-style: none;" class="messages slideInDown animated3s">
+                  {% for message in messages %}
+                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+                  
+                    {% if message.tags == 'error' %}
+                      <span class="glyphicon glyphicon-warning-sign text-danger"></span>
+                    {% endif %}
+                    {% if message.tags == 'success' %}
+                      <span class="glyphicon glyphicon-ok text-success"></span>
+                    {% endif %}
+                  {{ message }} 
+                </li>
+                {% endfor %}
+                </ul>
+            {% endif %} 
 
             <div class="mbr-white col-md-10">
 
