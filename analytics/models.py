@@ -6,7 +6,9 @@ from django.conf import settings
 # from .signals import user_logged_in
 from .utils import get_client_city_data, get_client_ip
 from django.contrib.auth import user_logged_in,user_logged_out
-
+from django.contrib.auth.models import User
+from allauth.account.signals import email_confirmed
+from newsletter.models import UserDetails
 
 class UserSessionManager(models.Manager):
     def create_new(self, user, session_key=None, ip_address=None, city_data=None):
@@ -96,4 +98,23 @@ def user_logged_out_receiver(sender, request,user, *args, **kwargs):
     except:
         pass
 user_logged_out.connect(user_logged_out_receiver)
+
+def user_email_confirmed_receiver(request, email_address,*args, **kwargs):
+    print("email_confirmed")
+    print(email_address)
+    print(request.user)
+    try:
+            
+        user_instance=User.objects.filter(email=email_address).first()
+        user_detail_instance=UserDetails.objects.get(user=user_instance)
+        user_detail_instance.email=email_address
+        print(user_detail_instance.email)
+        user_detail_instance.save()
+    except :
+            
+        pass
+    
+    
+    
+email_confirmed.connect(user_email_confirmed_receiver)
 

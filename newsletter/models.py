@@ -24,7 +24,7 @@ import sys
 from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from allauth.account.signals import email_confirmed
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -695,12 +695,3 @@ def pre_save_discount_receiver(sender,instance, *args, **kwargs):
 
 pre_save.connect(pre_save_discount_receiver, sender=UserDetailsServicePackagePrice)
 
-def user_email_confirmed_receiver(request, email_address,*args, **kwargs):
-    print("email_confirmed")
-    print(email_address)
-    print(request.user)
-    # user_instance=request.user
-    # # user_detail=UserDetails.objects.get(user=user_instance)
-    # # user_detail.email=email_address
-    # print(user_detail.email)
-email_confirmed.connect(user_email_confirmed_receiver)

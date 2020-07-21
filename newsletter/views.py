@@ -42,6 +42,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from allauth.account.models import EmailAddress
 from allauth.account.decorators import verified_email_required
+from django.contrib.auth.models import User
 
 GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI')
 
@@ -183,14 +184,17 @@ def user_detail(request):
 		title="Your ID is under "
 		form= UserDetailsForm( request.POST or None, request.FILES or None,instance=user_detail_instance ) #instance of the form
 		verified_user_email=""
+		print(request.user)
 		try:
 			if EmailAddress.objects.filter(user=request.user, verified=True).exists():
 				verified_user_email_instance=EmailAddress.objects.filter(user=request.user, verified=True).first()
 				verified_user_email=verified_user_email_instance.email
+				user1=User.objects.filter(email=verified_user_email).first()
+				print(user1)
 		except :
+			
 			pass
-		form.email=verified_user_email
-
+		
 		
 		if form.is_valid(): 
 			user_detail_instance=form.save(commit=False)
@@ -828,7 +832,7 @@ def discount_list(request,template=None, extra_context=None):
 	if(service):
 		
 		novalist=service.split() #json dump dodaje znakove pa je sevice lista u textu i nemoze se dobro pretraziviati
-							     #pa se pretrazuje rijec po rijec
+								 #pa se pretrazuje rijec po rijec
 		
 		q_objects = Q() # Create an empty Q object to start with
 		for t in novalist:
