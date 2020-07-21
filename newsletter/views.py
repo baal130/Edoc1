@@ -183,21 +183,8 @@ def user_detail(request):
 		verificated=False
 		title="Your ID is under "
 		form= UserDetailsForm( request.POST or None, request.FILES or None,instance=user_detail_instance ) #instance of the form
-		verified_user_email=""
-		print(request.user)
-		try:
-			if EmailAddress.objects.filter(user=request.user, verified=True).exists():
-				verified_user_email_instance=EmailAddress.objects.filter(user=request.user, verified=True).first()
-				verified_user_email=verified_user_email_instance.email
-				user1=User.objects.filter(email=verified_user_email).first()
-				print(user1)
-		except :
-			
-			pass
-		print(verified_user_email)	
-		user_detail_instance.email=verified_user_email
-		print(user_detail_instance.email)
-		user_detail_instance.save(update_fields=['email'])
+		
+		
 		
 		
 		if form.is_valid(): 
@@ -1169,15 +1156,15 @@ def user_detail_package(request):
 		
 
 	
-			
-		form=UserDetailsServicePackagePriceForm( None, None, ) #instance of the form
+		
+		form=UserDetailsServicePackagePriceForm(None,None, user=user_detail_instance) #instance of the form
 		
 		if request.POST: 
 			
 				
 			
 
-			form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None )
+			form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None, user=user_detail_instance  )
 			if form.is_valid():
 				
 				newgallery=form.save(commit=False)
@@ -1262,20 +1249,24 @@ def user_detail_package_update(request,pk):
 			verificated=False
 			title="Your ID is under verification"
 						
-			form=UserDetailsServicePackagePriceForm( None, None,instance=package ) #instance of the form
+			form=UserDetailsServicePackagePriceForm(None,None,instance=package,user=user_detail_instance ) #instance of the form
 			formremark= UserDetailsServicePackagePriceRemarkForm( request.POST or None, request.FILES or None)
 			if request.POST.get('Add service'):
-				form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None,instance=package)
+				form= UserDetailsServicePackagePriceForm( request.POST or None , request.FILES or None,instance=package,user=user_detail_instance)
+				print(form)
 				if form.is_valid():
-					
+					print("df")
 					newgallery=form.save(commit=False)
 					newgallery.detail=user_detail_instance
 					packageTextList.append(newgallery.selectservice.servicename)
 					newgallery.service = json.dumps(packageTextList)
 					newgallery.save()
+				if form.errors:
+					print(form.errors)	
+
 			if request.POST.get('Update package'):		 	
 				print(request.POST)
-				form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None,instance=package)
+				form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None,instance=package,user=user_detail_instance)
 				if form.is_valid():
 				
 					newgallery=form.save(commit=False)

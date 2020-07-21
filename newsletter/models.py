@@ -509,6 +509,7 @@ class UserDetailsServicePrice(models.Model):
 	servicepricediscount    =models.IntegerField(max_length=3,blank=True,null=True,validators=[MinValueValidator(0), MaxValueValidator(100)],default=0)
 	def __str__(self):
 		return  self.service.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
+	
 	def detail_name(self):
 		return self.detail.surname	
 	 #za admin drugacije zove
@@ -612,7 +613,7 @@ class UserDetailsSocialNetworks(models.Model):
 def post_save_user_receiver(sender, instance, created, *args, **kwargs):
 	if created:
 		profile, is_created = UserDetails.objects.get_or_create(user=instance)
-		print(profile.user.emailaddress_set.all().first())
+		
 		# default_user_profile =UserDetails.objects.get_or_create(user__id=1)[0] #user__username=
 		# default_user_profile.followers.add(instance)
 		#profile.followers.add(default_user_profile.user)
@@ -662,7 +663,7 @@ def pre_save_service_receiver(sender,instance, *args, **kwargs):
 	add=True
 	for service in servicelist:
 		if instance.servicename==service.servicename:
-			add=false
+			add=False
 	if add:		
 		i=UserDetailsServiceSearch()
 		i.servicename=instance.servicename

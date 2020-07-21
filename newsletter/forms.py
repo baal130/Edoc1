@@ -92,8 +92,8 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 
 		}		  
 		widgets = {
-           
-        }
+		   
+		}
 	
 class UserWebDetailsForm(forms.ModelForm):  #koristi se form iz modela 
 	# imagehome1Text1 = forms.CharField( widget=forms.TextInput(label=_('First Title'),attrs={'placeholder': 'Enter Title'}))
@@ -294,6 +294,9 @@ class UserDetailsServicePriceForm(forms.ModelForm):
 		# else:
 		# 	return self.cleaned_data.get('service', None)	
 class UserDetailsServicePackagePriceForm(forms.ModelForm):  
+	
+
+
 	description=forms.CharField(widget=PagedownWidget())
 	description=forms.CharField(widget=SummernoteInplaceWidget())
 	class Meta:     
@@ -328,6 +331,13 @@ class UserDetailsServicePackagePriceForm(forms.ModelForm):
 			
 			
 		}
+	def __init__(self ,*args, **kwargs):
+		user= kwargs.pop('user') #ovo mora bit ako se salje novi argument
+		super(UserDetailsServicePackagePriceForm, self).__init__(*args, **kwargs)
+		# access object through self.instance...
+		print(user)
+		
+		self.fields['selectservice'].queryset = UserDetailsService.objects.filter(detail=user)
 class UserDetailsServicePackagePriceRemarkForm(forms.ModelForm): 
 	class Meta:     
 		model = UserDetailsServicePackagePriceRemark
@@ -401,23 +411,23 @@ class UserDetailsFormTime(forms.ModelForm):  #koristi se form iz modela
 			'startworkingtimeSunday','endworkingtimeSunday','sundaywork',
 				  ] 
 		widgets = {
-            
-            'startworkingtimeMonday': TimePickerInput(attrs={"class": "test"}),
-            'endworkingtimeMonday': TimePickerInput(),
-            'startworkingtimeTuesday': TimePickerInput(attrs={ }),
-            'endworkingtimeTuesday': TimePickerInput(attrs={}),
-           	'startworkingtimeWednesday': TimePickerInput(attrs={ }),
-            'endworkingtimeWednesday': TimePickerInput(attrs={}),
-            'startworkingtimeThursday': TimePickerInput(attrs={ }),
-            'endworkingtimeThursday': TimePickerInput(attrs={}),
+			
+			'startworkingtimeMonday': TimePickerInput(attrs={"class": "test"}),
+			'endworkingtimeMonday': TimePickerInput(),
+			'startworkingtimeTuesday': TimePickerInput(attrs={ }),
+			'endworkingtimeTuesday': TimePickerInput(attrs={}),
+			'startworkingtimeWednesday': TimePickerInput(attrs={ }),
+			'endworkingtimeWednesday': TimePickerInput(attrs={}),
+			'startworkingtimeThursday': TimePickerInput(attrs={ }),
+			'endworkingtimeThursday': TimePickerInput(attrs={}),
 
-            'startworkingtimeFriday': TimePickerInput(attrs={ }),
-            'endworkingtimeFriday': TimePickerInput(attrs={}),
-           	'startworkingtimeSaturday': TimePickerInput(attrs={ }),
-            'endworkingtimeSaturday': TimePickerInput(attrs={}),
-            'startworkingtimeSunday': TimePickerInput(attrs={ }),
-            'endworkingtimeSunday': TimePickerInput(attrs={}),
-        }		
+			'startworkingtimeFriday': TimePickerInput(attrs={ }),
+			'endworkingtimeFriday': TimePickerInput(attrs={}),
+			'startworkingtimeSaturday': TimePickerInput(attrs={ }),
+			'endworkingtimeSaturday': TimePickerInput(attrs={}),
+			'startworkingtimeSunday': TimePickerInput(attrs={ }),
+			'endworkingtimeSunday': TimePickerInput(attrs={}),
+		}		
 
 class UserDetailsSocialNetworksForm(forms.ModelForm):  
 	
@@ -429,12 +439,12 @@ class UserDetailsSocialNetworksForm(forms.ModelForm):
 	
 		labels = {'facebookurl': _('Add link to your facebook page '),
 				  'linkedinurl': _('Add link to your linkedin page '),  
-			      'twitterurl': _('Add link to your twitter page '),
+				  'twitterurl': _('Add link to your twitter page '),
 				  'instagramurl': _('Add link to your instagram page '),
 				  'pinteresturl': _('Add link to your pinterest page '),
 				  'youtubeurl': _('Add link to your youtube page '),  
 				  'behanceurl': _('Add link to your behance page '),
 				  'whatsupnumber': _('Add your whatsupnumber '),
 				  }	
-		            
+					
 	
