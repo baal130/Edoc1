@@ -202,10 +202,19 @@ class UserDetails(models.Model):
 	def get_absolute_url(self):
 		#return "/complain/%s/" %(self.id)
 		#return reverse("dataadd:detail", kwargs={"id":self.id}) Za dynamicno prikazivanje urla
-		return reverse("newsletter:doctor_detail", kwargs={"slug":self.slug}) # Za dynamicno prikazivanje urla
+		try:
+				
+			return reverse("newsletter:doctor_detail", kwargs={"slug":self.slug})
+		except :
+			return None
+
 	def get_absolute_url_comments(self):
-		
-		return reverse("newsletter:comments", kwargs={"slug":self.slug}) # Za dynamicno prikazivanje urla	
+		try:
+			   
+			return reverse("newsletter:comments", kwargs={"slug":self.slug})
+		except :
+			return None
+			
 	
 		
 			
