@@ -16,7 +16,7 @@
                                 {% for objects in package_list %}
                                     <tr>
                                     <td>
-                                        <a href="{%   url 'newsletter:user_detail_package_update'  pk=objects.pk  %}" class="btn button-edit button-full-width"> {% trans "Edit Package" %} {% if objects.name %}  {{objects.name }} {% else %} {{objects.id }} {%  endif %} </a>
+                                        <a href="{%   url 'newsletter:user_detail_package_update'  pk=objects.pk  %}" class="btn button-edit button-full-width"> {% trans "Edit Package" %} <br> {% if objects.name %}  {{objects.name }} {% else %} {{objects.id }} {%  endif %} </a>
                                     </td>
                                 </tr>
 
