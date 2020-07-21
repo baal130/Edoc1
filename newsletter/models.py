@@ -699,8 +699,8 @@ def user_email_confirmed_receiver(request, email_address,*args, **kwargs):
     print("email_confirmed")
     print(email_address)
     print(request.user)
-    user_instance=request.user
-    # user_detail=UserDetails.objects.get(user=user_instance)
-    # user_detail.email=email_address
-    print(user_detail.email)
+    # user_instance=request.user
+    # # user_detail=UserDetails.objects.get(user=user_instance)
+    # # user_detail.email=email_address
+    # print(user_detail.email)
 email_confirmed.connect(user_email_confirmed_receiver)
