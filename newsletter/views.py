@@ -182,8 +182,16 @@ def user_detail(request):
 		verificated=False
 		title="Your ID is under "
 		form= UserDetailsForm( request.POST or None, request.FILES or None,instance=user_detail_instance ) #instance of the form
-		
+		verified_user_email=""
+		try:
+			if EmailAddress.objects.filter(user=request.user, verified=True).exists():
+				verified_user_email_instance=EmailAddress.objects.filter(user=request.user, verified=True).first()
+				verified_user_email=verified_user_email_instance.email
+		except :
+			pass
+		form.email=verified_user_email
 
+		
 		if form.is_valid(): 
 			user_detail_instance=form.save(commit=False)
 			user_detail_instance.user=request.user
