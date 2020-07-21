@@ -21,9 +21,11 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    {% if instance.get_absolute_url %}
                                     <td>
                                         <span class="glyphicon glyphicon-file text-info"></span><a href="{{instance.get_absolute_url}}">{% trans "View my web page " %}</a>
                                     </td>
+                                    {% endif %}
                                 </tr>
                                
                             </table>
