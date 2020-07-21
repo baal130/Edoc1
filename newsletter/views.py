@@ -194,6 +194,10 @@ def user_detail(request):
 		except :
 			
 			pass
+		print(verified_user_email)	
+		user_detail_instance.email=verified_user_email
+		print(user_detail_instance.email)
+		user_detail_instance.save(update_fields=['email'])
 		
 		
 		if form.is_valid(): 

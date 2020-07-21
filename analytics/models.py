@@ -109,7 +109,9 @@ def user_email_confirmed_receiver(request, email_address,*args, **kwargs):
         user_detail_instance=UserDetails.objects.get(user=user_instance)
         user_detail_instance.email=email_address
         print(user_detail_instance.email)
-        user_detail_instance.update(email=email_address)
+
+        user_detail_instance.save(update_fields=['email'])
+        
     except :
             
         pass
