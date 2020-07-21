@@ -288,7 +288,7 @@ def myarticle(request):
 		"page_request_var":page_request_var,
 	}      
 
-	return render(request,"my_complain_list.html",context)
+	return render(request,"my_article_list.html",context)
 
 def article(request):
 	category_form=CategoryForm(request.POST or None)

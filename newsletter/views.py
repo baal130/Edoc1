@@ -115,8 +115,10 @@ def home2(request):
 	package_list_6=package_list[3:6]
 	package_list_9=package_list[6:9]
 	article_list=Idiot.objects.active().filter(article=False)[:3]
-	last_comments=Comment.objects.order_by('-id')[:4]
-		
+	userdetails_contenttype=UserDetails.objects.first().get_content_type
+
+	last_comments=Comment.objects.filter(content_type=userdetails_contenttype).order_by('-id')[:4]
+	
 	
 	queryset_list=UserDetails.objects.filter(
 			Q(userdetailsfeatured__rating__gte=0)

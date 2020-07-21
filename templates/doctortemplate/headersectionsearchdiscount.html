@@ -103,7 +103,7 @@
   							<li><div class="dropdown lang-button text-center">
 									<button class="dropbtn"><i class="fab fa-stumbleupon color-stumble "></i></button>
 									<div class="dropdown-content dropdown-content-fb stumble-link">
-									    <a href="https://www.facebook.com/sharer/sharer.php?u={{instance.get_absolute_url}}"> <span><img src="{% static 'img/iconssocial/stumble32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    <a href="http://www.stumbleupon.com/submit?url={{request.build_absolute_uri}}"> <span><img src="{% static 'img/iconssocial/stumble32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
 									    {% if instance.social_account_urls.behanceurl%}
 									    <a href="{{instance.social_account_urls.behanceurl}}"> <span><img src="{% static 'img/iconssocial/stumble32x32.png'%}" alt=""></span> {% trans "Visit"%}</a>
 									   {% endif %}

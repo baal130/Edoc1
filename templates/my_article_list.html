@@ -76,11 +76,11 @@
 {{time}}
 <br>
 {%  if request.user.is_authenticated %}
-     <a href="{% url 'dataadd:complain' %}" class=" btn button-create button-fix-width" >{% trans "Create article" } </a> <!--url with namespace dataaadin general url  and name in url of app -->
+     <a href="{% url 'dataadd:complain' %}" class=" btn button-create button-fix-width" >{% trans "Create article"%} </a> <!--url with namespace dataaadin general url  and name in url of app -->
      {% else %}
-     <a href="{% url 'registration_register'%}" class=" btn button-create button-fix-width">{% trans "REGISTER" } </a><span  class="text-default">{% trans "Register to view and create posts" }  </span><br>
+     <a href="{% url 'registration_register'%}" class=" btn button-create button-fix-width">{% trans "REGISTER" } </a><span  class="text-default">{% trans "Register to view and create posts" %}  </span><br>
 
-    <a href=" {% url  'account_signup'%}" class=" btn button-edit button-fix-width">{% trans "LOGIN" }</a>  <span  class="text-default">{% trans "Already registered, login now " } </span>
+    <a href=" {% url  'account_signup'%}" class=" btn button-edit button-fix-width">{% trans "LOGIN" }</a>  <span  class="text-default">{% trans "Already registered, login now " %} </span>
 {% endif %}
 
   </div>
