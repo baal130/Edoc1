@@ -184,6 +184,13 @@ border-bottom-left-radius: 18px;
     vertical-align: middle;
     color: #00b3ff;
 }
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+ /* top: 250px;*/
+  }
+
 </style>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -451,6 +458,54 @@ border-bottom-left-radius: 18px;
 
 
 </script>
+<script>
+  /*for sticky efect*/
+var mapsearch = document.getElementById("stickymenu");
+
+var mapsearchoffsettop=mapsearch.offsetTop;
+
+var header = document.getElementById("header");
+var offsetheader = header.offsetTop;
+var headerhight=header.offsetHeight;
+
+var sticky = offsetheader+headerhight;
+
+
+window.onscroll = function() 
+{
+  if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    locationSearchApplytop();
+    console.log("vrti")
+  }  
+  
+};
+function locationSearchApplytop() {
+  
+
+  if (window.pageYOffset > sticky) {
+    var mapsearch = document.getElementById("stickymenu");
+   
+    console.log( mapsearch.style.top)
+    mapsearch.style.top=headerhight +"px"
+    
+  } else {
+    var mapsearch = document.getElementById("stickymenu");
+      
+  }
+}  
+if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    var mapsearch = document.getElementById("stickymenu");
+    mapsearch.classList.add("sticky");
+    console.log("min")
+  } 
+
+</script>
+
+
+
+
 <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 
 
