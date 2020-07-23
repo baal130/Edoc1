@@ -205,6 +205,11 @@ border-bottom-left-radius: 18px;
     vertical-align: middle;
     color: #00b3ff;
 }
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+ /* top: 250px;*/
+  }
 </style>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -476,6 +481,48 @@ border-bottom-left-radius: 18px;
 
 
   
+</script>
+
+<script>
+  /*for sticky efect*/
+var mapsearch = document.getElementById("navbar-menu");
+
+var mapsearchoffsettop=mapsearch.offsetTop;
+
+var header = document.getElementById("header");
+var offsetheader = header.offsetTop;
+var headerhight=header.offsetHeight;
+
+var sticky = offsetheader+headerhight;
+
+
+window.onscroll = function() 
+{
+  if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    locationSearchApplytop();
+  }  
+  
+};
+function locationSearchApplytop() {
+  
+  if (window.pageYOffset > sticky) {
+    var mapsearch = document.getElementById("navbar-menu");
+   
+    
+    mapsearch.style.top=headerhight +"px"
+    
+  } else {
+    var mapsearch = document.getElementById("navbar-menu");
+      
+  }
+}  
+if (window.matchMedia('(min-width: 992px)').matches) 
+  {
+    var mapsearch = document.getElementById("navbar-menu");
+    mapsearch.classList.add("sticky");
+  } 
+
 </script>
 {% block script %}
 

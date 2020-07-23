@@ -10,13 +10,15 @@
 	</div>
 </div>
 
-{% if  not verificated %}
-<div classs ='row'>
-	<div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+<div  class='col-sm-3 navbar-collapse collapse fixed-side ' id="navbar-menu" data-in="fadeIn" > 
 	{% include 'sidebar.html' %}
 	
-    </div>
-	<div class='col-sm-6 col-sm-offset-4 form-bg' style="border-radius:8px; margin-bottom: 200px;"> 
+ </div>
+
+{% if  not verificated %}
+<div classs ='row'>
+	
+	<div class='col-sm-6 col-sm-offset-2 form-bg' style="border-radius:8px; margin-bottom: 200px;"> 
 	<p class=" label-form-user label-info">{% trans  'Use this section to help widen your patients population. ' %}</p> 
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 	  

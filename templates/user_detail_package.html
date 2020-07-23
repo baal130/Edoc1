@@ -208,15 +208,15 @@ table {
 </div>
 
 <!--  -->
-
-
-<div classs ='row'>
-		<div id="home" class='col-sm-3  '> 
+  <div id="navbar-menu" class='col-sm-3'> 
 {% include 'sidebarPackage.html' %}
-	
+  
     
 
-	</div>
+</div>
+
+<div classs ='row'>
+	
 
 	<div id="home" class='col-sm-7  form-bg' style="border-radius:8px; margin-bottom: 200px;"> 
 	<h3>{% trans  'Package section'  %} {% if package.name %}  {{package.name }} {% else %} {{package.id }} {%  endif %} </h3>

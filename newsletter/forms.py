@@ -80,8 +80,8 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 				  'speciality', 'IdentificationUser','profilepicture',] 
 		labels = {'name': _('Your first name'),
 				  'surname': _('Your second name'),
-				  'adress': _('Adress'),
-				  'city': _('Adress'),
+				  'adress': _('Address'),
+				  'city': _('City'),
 				  
 				  'state': _('State'),
 				  

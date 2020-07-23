@@ -48,14 +48,14 @@ class NewsForm(forms.ModelForm):  #koristi se form iz modela
 	class Meta:     # na koji model se form odnosi 
 		model = Idiot
 		
-		fields = [ 'company_name' , 'description','image', 'draft','name_visible','publish','cities','news'] # iz signup modela(database) varijabel
+		fields = [ 'company_name' , 'description', 'draft','name_visible','publish'] # iz signup modela(database) varijabel
 		labels = {
-			'company_name': _('Punch  or news name'),
+			'company_name': _('Article name'),
 			'draft': _('Draft - Save Your post for later'),
 			'publish': _('Publish - Select date when Post will be published'),
 			'name_visible': _('Publish - Select date when Post will be published'),
-			'image': _('Upload files to prove Your statements'),
-			'news':_('Use text as news fos site'),
+			
+			
 			
 		}
 		initials = {

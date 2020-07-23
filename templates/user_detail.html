@@ -26,17 +26,17 @@
 
 	</div>
 </div>
-
-
-
-
-<div classs ='row'>
-	<div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+	<div  class='col-sm-5 navbar-collapse collapse fixed-side ' id="navbar-menu" data-in="fadeIn" > 
 	{% include 'sidebar.html' %}
 	
     </div>
 
-	<div class='col-sm-6 col-sm-offset-4 form-bg' style="border-radius:8px; margin-bottom: 200px;">  
+
+
+<div classs ='row'>
+
+
+	<div class='col-sm-6 col-sm-offset-1 form-bg' style="border-radius:8px; margin-bottom: 200px;">  
 	<p class=" label-form-user label-info">{% trans  'It is important to fill your profile for best experience of patients. ' %}</p>	
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 
@@ -57,5 +57,10 @@
 
 </div>
 </div>
+
+{% endblock %}
+
+{%  block script %}
+
 
 {% endblock %}

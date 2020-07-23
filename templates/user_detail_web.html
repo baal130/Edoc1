@@ -124,16 +124,17 @@ border-bottom-left-radius: 18px;
 </div>
 
 <!--  -->
-
-{% if  not verificated %}
-<div classs ='row'>
-  <div  class='col-sm-3 navbar-collapse collapse fixed-side' id="navbar-menu" data-in="fadeIn" > 
+<div  class='col-sm-3 navbar-collapse collapse fixed-side ' id="navbar-menu" data-in="fadeIn" > 
   {% include 'sidebar.html' %}
   
   </div>
 
+{% if  not verificated %}
+<div classs ='row'>
+  
 
-	<div id="home" class='col-sm-6 col-sm-offset-3 form-bg'> 
+
+	<div id="home" class='col-sm-6 col-sm-offset-2 form-bg'> 
 	<h3>{% trans  'Top Home section'  %}</h3>
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 	  <!-- methoda je po defaultu get -->
