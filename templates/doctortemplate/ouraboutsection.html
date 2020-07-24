@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {%  load i18n %}
+{% load urlify%}
 
 <!-- Our About -->
 	<section id="about" class="ulockd-about">
@@ -67,7 +68,7 @@
 							<div class="icon_box_abt text-left tac-smd">
 								<div class="icon_abt pull-left fn-smd"><span class=" text-thm2"><img src="https://img.icons8.com/cute-clipart/40/000000/web.png"></span>
 								
-									<span> <a href="{{instance.web}}">{{instance.web}}</a></span>
+									<span> <a href="{{instance.web}}">{{instance.web|truncatechars:30|urlify}}</a></span>
 									
 								</div>	
 							</div>
