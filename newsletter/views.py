@@ -728,7 +728,7 @@ def doctor_list(request): #list items
 			distance=10000
 		else:
 			keywordgoogle='doctor'
-			distance=1000
+			distance=10000
 		print("coordinate")
 		print(coordinate)
 		placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)	
