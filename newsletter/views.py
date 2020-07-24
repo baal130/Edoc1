@@ -146,6 +146,17 @@ def home2(request):
 		
 	
 	return render(request,"landing.html",context) #first page
+def landingfordoctors(request):
+	
+	
+	context={
+		
+		
+	}
+
+		
+	
+	return render(request,"landingfordoctors.html",context) #first page
 def contact(request):
 	
 	title= 'Contact us'

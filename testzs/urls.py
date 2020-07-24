@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from newsletter.views import home2, contact, user_detail, user_detail_web,user_detail_extra,user_detail_package,user_detail_worktime
-from newsletter.views import user_detail_price,user_detail_social
+from newsletter.views import user_detail_price,user_detail_social,landingfordoctors
 from testzs.views import about
 from bootcamp.core import views as core_views
 from dataadd.views import ProfileFollowToggle,ProfileFollowToggleList
@@ -46,6 +46,7 @@ def set_language_from_url(request, user_language, url_name):
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home2, name='home'),# newsletter = ime appa(foldera), view= skripta, home= definirano ime reqesta u def home(request)
+    url(r'^fordoctors$', landingfordoctors, name='landingfordoctors'),
     url(r'^contact/$', contact, name='contact'),
     url(r'^about2/$', about, name='about'),
     url(r'^cart/$',cart_home, name='cart'),
