@@ -446,23 +446,32 @@ color: white;
 	 {% include 'ouraboutsection.html' %}
 
 	<!-- Our Service -->
+ {% if service_list_all  %}
 	{% include 'servicesection.html' %}
+{% endif  %}
   {% if discount_max_int > 0  %}
 	<!-- Our First Divider -->
 	     {% include 'divider1section.html' %}
   {% endif  %}
 
 	<!-- Our Department -->
+  
+   {% if department_list   %}
 	{% include 'departmentsection.html' %}
+  {% endif  %}
 
 	<!-- Our Funfact -->
 	{% include 'funfactsection.html' %}
 
 	<!-- Our Team -->
+  {% if team_list  %}
 	{% include 'our_teamsection.html' %}
-
+  {% endif  %}
 	<!-- Our Gallery -->
+  
+  {% if galery_list  %}
 	{% include 'gallerysection.html' %}
+  {% endif %} 
   {% if package_list %}
     {% include 'packagesection.html' %}
   {% endif %} 
