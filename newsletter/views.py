@@ -729,8 +729,13 @@ def doctor_list(request): #list items
 		else:
 			keywordgoogle='doctor'
 			distance=1000
+		print("coordinate")
+		print(coordinate)
+		placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)	
 		try:
 			placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)
+			
+
 		except:
 			placesgoogle={'results':[]}
 		# print(placesgoogle)

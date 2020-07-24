@@ -83,7 +83,11 @@ class GooglePlaces(object):
             
             res = requests.get(endpoint_url, params = params)
             results = json.loads(res.content)
-            # print(res.status_code)
+            print("res.status_code:")
+            print(res.status_code)
+            print("results")
+            print(results)   
+            
             # return res.json() 
             # places.extend(results['results'])
             # time.sleep(2)
