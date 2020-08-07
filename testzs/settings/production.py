@@ -88,9 +88,15 @@ INSTALLED_APPS = (
     'ckeditor',
     'datetimewidget',
     # 'friendship',
+
     'bootcamp.core',
     'bootcamp.messenger',
     'channels',
+      #my_aps_eccomerce
+    'accounts',   
+    'billing',
+    'orders',
+    'addresses',
      #my_apps
     'comments',
     'newsletter',
@@ -138,8 +144,13 @@ TEMPLATE_LOADERS = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates"),os.path.join(BASE_DIR,
-         "templates/templatesshowmore"),os.path.join(BASE_DIR, "templates/doctortemplate"),os.path.join(BASE_DIR, "templates/doctortemplate/email_templates"),],
+        'DIRS': [os.path.join(BASE_DIR, "templates"),
+           os.path.join(BASE_DIR,"templates/templatesshowmore"),
+           os.path.join(BASE_DIR, "templates/doctortemplate"),
+           os.path.join(BASE_DIR, "templates/doctortemplate/email_templates"),
+           os.path.join(BASE_DIR, "templates/ecommerce"),
+            ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
