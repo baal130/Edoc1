@@ -177,9 +177,11 @@ class ChargeManager(models.Manager):
 				outcome_type = c.outcome['type'],
 				seller_message = c.outcome.get('seller_message'),
 				risk_level = c.outcome.get('risk_level'),
-				failure_code=c.failure_code,
-				failure_message=c.failure_message,
+				# failure_code=c.failure_code,
+				# failure_message=c.failure_message,
+
 		)
+		print(c)
 		new_charge_obj.save()
 		return new_charge_obj.paid, new_charge_obj.seller_message
 
