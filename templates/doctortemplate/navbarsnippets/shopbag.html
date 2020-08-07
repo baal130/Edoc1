@@ -1,0 +1,31 @@
+   {% load staticfiles %}	
+	{% load crispy_forms_tags %}
+	{%  load i18n %}
+   {% url 'cart:home' as cart_url %}
+			                    <li class="dropdown">
+			                        <a href="{{ cart_url }}" class="dropdown-toggle" data-toggle="dropdown" >
+			                            <i class="fa fa-shopping-bag"></i>
+			                            <span class="badge navbar-cart-count">{{ request.session.cart_items }}</span>
+			                        </a>
+			                        <ul class="dropdown-menu cart-list">
+			                           <!--  <li>
+			                                <a href="#" class="photo"><img src="{% static 'medicaltemplate/images/shop/s1.jpg'%}" class="cart-thumb" alt="s1.jpg" /></a>
+			                                <h6><a href="#">Delica omtantur </a></h6>
+			                                <p>2x - <span class="price">$99.99</span></p>
+			                            </li>
+			                            <li>
+			                                <a href="#" class="photo"><img src="{% static 'medicaltemplate/images/shop/s2.jpg'%}" class="cart-thumb" alt="s2.jpg" /></a>
+			                                <h6><a href="#">Omnes ocurreret</a></h6>
+			                                <p>1x - <span class="price">$33.33</span></p>
+			                            </li>
+			                            <li>
+			                                <a href="#" class="photo"><img src="{% static 'medicaltemplate/images/shop/s3.jpg'%}" class="cart-thumb" alt="s3.jpg" /></a>
+			                                <h6><a href="#">Agam facilisis</a></h6>
+			                                <p>2x - <span class="price">$99.99</span></p>
+			                            </li> -->
+			                            <li class="total">
+			                                <!-- <span class="pull-right"><strong>Total</strong>: $0.00</span> -->
+			                                <a href="{{ cart_url }}" class="btn btn-default btn-cart">Cart</a>
+			                            </li>
+			                        </ul>
+			                    </li>

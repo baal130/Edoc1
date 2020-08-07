@@ -71,7 +71,7 @@ class SignUp(models.Model):
 	updated = models.DateTimeField(auto_now_add=False,auto_now=True)
 
 	def __unicode__(self):
-		return self.email #ono sto se vidi u databasa kad gledamo ( u adminu npr)
+		return self.email 
  
 class ProfileManager(models.Manager):
 	def toggle_follow(self, request_user, username_to_toggle):

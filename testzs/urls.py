@@ -28,9 +28,22 @@ from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.urls import path
 
+from billing.views import payment_method_view,payment_method_createview
+
 from carts.views import cart_home
 from django.conf.urls.i18n import i18n_patterns
 from search.views import SearchView
+
+from addresses.views import (
+    AddressCreateView,
+    AddressListView,
+    AddressUpdateView,
+    checkout_address_create_view, 
+    checkout_address_reuse_view
+    )
+from django.views.generic import TemplateView, RedirectView
+from carts.views import cart_detail_api_view
+from orders.views import LibraryView   
 #from django.conf.urls.i18n import i18n_patterns
 # from sitemap.views import sitemap
 
@@ -60,7 +73,20 @@ urlpatterns = [
     url(r'^userserviceprice/$', user_detail_price, name='user_detail_price' ),
     url(r'^userpackage/$', user_detail_package, name='user_detail_package' ),
     url(r'^usersocial/$', user_detail_social, name='user_detail_social' ),
-
+    # eccommerce urls
+    url(r'^api/cart/$', cart_detail_api_view, name='api-cart'),#preko ajaxa refresha cart
+    url(r'^cart/', include(("carts.urls",'carts'), namespace='cart')),
+    url(r'^billing/payment-method/$', payment_method_view, name='billing-payment-method'),
+    url(r'^billing/payment-method/create/$', payment_method_createview, name='billing-payment-method-endpoint'),
+    url(r'^library/$', LibraryView.as_view(), name='library'),
+    url(r'^orders/', include(("orders.urls",'orders'), namespace='orders')),
+    url(r'^products/', include(("products.urls",'products'), namespace='products')),
+    url(r'^address/$', RedirectView.as_view(url='/addresses')),
+    url(r'^addresses/$', AddressListView.as_view(), name='addresses'),
+    url(r'^addresses/create/$', AddressCreateView.as_view(), name='address-create'),
+    url(r'^addresses/(?P<pk>\d+)/$', AddressUpdateView.as_view(), name='address-update'),
+    url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
+    url(r'^checkout/address/reuse/$', checkout_address_reuse_view, name='checkout_address_reuse'),
     # url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^profile-follow/$', ProfileFollowToggle.as_view(), name='follow'),

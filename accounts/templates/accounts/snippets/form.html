@@ -1,0 +1,10 @@
+{% load i18n %}
+<form method='POST' action='{% if action_url %}{{ action_url }}{% else %}{% url "account_login" %}{% endif %}'> {% csrf_token %}
+    {% if next_url %}
+    <input type='hidden' name='next' value='{{ next_url }}' />
+    {% endif %}
+  {{ form }}
+  <button type='submit' class='btn btn-default'>Submit</button>
+</form>
+<p>{% blocktrans %}If you have not created an account yet, then please{% endblocktrans %}
+  <a href="{% url 'account_signup'%}">{% blocktrans %}sign up</a> first.{% endblocktrans %}</p>

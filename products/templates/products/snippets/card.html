@@ -1,0 +1,18 @@
+<div style ="     display: grid;
+    grid-area: 1 / 1;" class="thumbnail post-background wrap-article ">
+     
+        <div class="post-thumb  ">
+         {% if instance.image %}
+          <a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title}} logo"></a>
+          {% endif %}       
+
+
+        </div>
+         <h4 class="card-title">{{ instance.title }}</h4>
+          <p class="card-text">{{ instance.description|linebreaks|truncatewords:14 }}</p>
+          <p class="card-text"> Price {{ instance.price}} $MXN</p>
+       <div class='text-center'>
+        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">View</a>
+        {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
+    </div>
+</div>

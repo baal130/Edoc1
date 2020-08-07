@@ -1,22 +1,17 @@
 from django.contrib import admin
 
-# Register your models here.
-from .models import Product, ProductImage, Variation, Category
+from .models import Product
+# from .models import Product, ProductFile
+
+# class ProductFileInline(admin.TabularInline):
+#     model = ProductFile
+#     extra = 1
+
 
 class ProductAdmin(admin.ModelAdmin):
-	date_hierarchy = 'timestamp' #updated
-	search_fields = ['title', 'description']
-	list_display = ['title', 'price', 'active', 'updated']
-	list_editable = ['price', 'active']
-	list_filter = ['price', 'active']
-	readonly_fields = ['updated', 'timestamp']
-	prepopulated_fields = {"slug": ("title",)}
-	class Meta:
-		model = Product
+    list_display = ['__str__', 'slug', 'is_digital']
+    # inlines = [ProductFileInline]
+    class Meta:
+        model = Product
 
 admin.site.register(Product, ProductAdmin)
-
-
-admin.site.register(ProductImage)
-admin.site.register(Variation)
-admin.site.register(Category)
