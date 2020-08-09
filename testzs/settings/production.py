@@ -62,6 +62,10 @@ GOOGLE_CLIENT_API='AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI'
 
 YELP_CLIENT_ID = 'Wg4dJxSwZ0rf6MQ0x5IDtA' # os.environ.get('YELP_CLIENT_ID')
 YELP_CLIENT_SECRET = 'jcfJM3fnHRwvmXkxYKKnRTDY1SOwWdS8h_8I5PNZ5KQuaHIdH_sOLOKAW5yiRnBSIKby_MiAHdNO2NpiJ_YAaV7i1QkTbHN0H4JNjNQD3o7h9mxdKrFJn0YZoNaCXXYx' # os.environ.get('YELP_CLIENT_SECRET')
+
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_51HAz6mK450KPF3SvmxEbhWYxXlSeCyWqz3kgi84kq7K9wVfAmT6urWGbINpytrOmInGoaGMJB8iMarUbTv9KcOAy00vb5u6Zom")
+STRIPE_PUB_KEY = os.environ.get("STRIPE_PUB_KEY", 'pk_test_51HAz6mK450KPF3SvgemanIaOP0CitUb0SlnZU0m1KkDbfRnLduciXwJYTuJIwZXklY6p5yi90dUVlcl2NLMH4q7C009Cxq5h0Y')
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
