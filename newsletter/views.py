@@ -131,7 +131,7 @@ def home2(request):
 	except :
 		pass
 	
-	print(verified_user_email)	
+	
 	context={
 		
 		"object_list":last_6,
@@ -157,6 +157,17 @@ def landingfordoctors(request):
 		
 	
 	return render(request,"landingfordoctors.html",context) #first page
+def helpfordoctors(request):
+	
+	
+	context={
+		
+		
+	}
+
+		
+	
+	return render(request,"landinghelp.html",context) #first page
 def contact(request):
 	
 	title= 'Contact us'
@@ -205,6 +216,11 @@ def user_detail(request):
 			user_detail_instance.user=request.user
 			user_detail_instance.occupancy="Doctor"
 			user_detail_instance.save()
+			messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+			
+				
+		if form.errors:
+			messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 		
 			   
 		context={
@@ -255,7 +271,11 @@ def user_detail_worktime(request):
 			user_detail_instance.user=request.user
 			
 			user_detail_instance.save()
-		
+			messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+			
+				
+		if form.errors:
+			messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 			   
 		context={
 		"form":form,
@@ -287,7 +307,11 @@ def user_detail_extra(request):
 			user_detail_instance=form.save(commit=False)
 			user_detail_instance.user=request.user
 			user_detail_instance.save()
-		
+			messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+			
+				
+		if form.errors:
+			messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 			
 			   
 		context={
@@ -361,9 +385,11 @@ def user_detail_price(request):
 			
 			formset.save()
 			formset=PriceFormset( None,instance=user_detail_instance)
+			messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
 			
+				
 		if formset.errors:
-			print(formset.errors)	
+			messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')	
 			   
 		context={
 		
@@ -429,6 +455,10 @@ def user_detail_web(request):
 				newgallery=form2.save(commit=False)
 				newgallery.detail=user_detail_instance
 				newgallery.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 		elif request.POST.get('AddService'):
 			form3= UserDetailsServiceForm( request.POST or None, request.FILES or None )
 			if form3.is_valid():
@@ -441,7 +471,10 @@ def user_detail_web(request):
 				newpriceservice.detail=user_detail_instance
 				newpriceservice.service=newservice
 				newpriceservice.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
 				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 			if form3.errors:
 				print(form3.errors)    
 				
@@ -452,13 +485,21 @@ def user_detail_web(request):
 				newdepartment=form4.save(commit=False)
 				newdepartment.detail=user_detail_instance
 				newdepartment.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 		elif request.POST.get('Add member'):
 			form5= UserDetailsTeamForm( request.POST or None, request.FILES or None )
 			if form5.is_valid():
 				newmember=UserDetailsTeam()
 				newmember=form5.save(commit=False)
 				newmember.detail=user_detail_instance
-				newmember.save()        
+				newmember.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')        
 		elif request.POST.get('Add Insurance'):
 			# print(user_detail_instance.insurancecompany.all())
 			# print("nest")
@@ -467,10 +508,18 @@ def user_detail_web(request):
 			if form6.is_valid():
 				
 				form6.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 		elif request.POST.get('Add Payment'):
 			form7= PaymentmethodForm( request.POST or None, request.FILES or None,instance=user_detail_instance )
 			if form7.is_valid():		
 				form7.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')
 		elif request.POST.get('Add Language'):
 			form8= UserDetailsLanguageForm( request.POST or None, request.FILES or None )
 			if form8.is_valid():		
@@ -478,7 +527,11 @@ def user_detail_web(request):
 				newlang=UserDetailsLanguage()
 				newlang=form8.save(commit=False)
 				newlang.detail=user_detail_instance
-				newlang.save()			
+				newlang.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+				
+			else:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')			
 		else:
 
 			form= UserWebDetailsForm( request.POST or None, request.FILES or None,instance=user_detail_instance ) #instance of the form
@@ -488,6 +541,11 @@ def user_detail_web(request):
 				user_detail_instance.user=request.user
 				print(user_detail_instance)
 				user_detail_instance.save()
+				messages.success(request,_('Your data has been saved'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
+			if form.errors:
+				messages.error(request, _('Sorry,your data has not been saved, please try again'),extra_tags='')	
+			
+				
 				
 			
 				
@@ -612,7 +670,7 @@ def doctor_list(request): #list items
 			Q(userdetailsservice__servicename__icontains=service)
 		  ).distinct()			
 	if any((query,state,city,speciality,service,lat)):
-		title=_('')
+		title=_('Search results')
 	else:
 		queryset_list=queryset_list.filter(
 			Q(userdetailsfeatured__rating__gte=0)
@@ -854,7 +912,7 @@ def discount_list(request,template=None, extra_context=None):
 					
 		  ).distinct()			
 	if any((query,state,city,speciality,service)):
-		title=_('')
+		title=_('Search results')
 	else:
 		
 		title=_('Top Offers')
@@ -1011,7 +1069,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 			form_full_date=formdate.cleaned_data.get("date")
 			form_full_phone=formdate.cleaned_data.get("phone")
 
-			subject='Appoitment '
+			subject=_('Appoitment')
 			from_email=settings.EMAIL_HOST_USER
 			to_email= instance.email
 			
@@ -1037,13 +1095,27 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 			
 			msg = EmailMessage(subject, content, from_email, [to_email,'baal130@gmail.com'])
 			msg.content_subtype = 'html'
+			# FOR CUSTOMER 
+			templatecustomer = get_template('email_template_to_customer.html')
+			
+			contextcustomer = {
+			'subject': subject, 
+			'doctor_email': instance.email,
+			'form_full_date':form_full_date,
+			'form_full_phone':instance.telefon,
+			'form_full_name':instance.name,
+			'form_full_surname':instance.surname,
+			
+			}
+			contentcustomer = templatecustomer.render(contextcustomer)
+			
+			msgcustomer = EmailMessage(subject, contentcustomer, from_email, [customer_email])
+			msgcustomer.content_subtype = 'html'
+
 			try:
-				# send_mail(subject, 
-				# contact_message, 
-				# from_email,
-				# [to_email], 
-				# fail_silently=False )
+				
 				msg.send()
+				msgcustomer.send()
 				messages.success(request,_('Your message has been send.We will send notice on your email'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
 				
 			except:
@@ -1364,7 +1436,7 @@ def discount_detail(request, slug,template=None, extra_context=None): #retrieve
 	jsonDec = json.decoder.JSONDecoder()	
 	
 	packageTextList = jsonDec.decode(instance.service)	
-	print(packageTextList)
+	
 	formdate=AppoitmentForm(None,None)
 	if request.POST.get('appointment'): #iz name butona je add
 		formdate=AppoitmentForm(request.POST or None)

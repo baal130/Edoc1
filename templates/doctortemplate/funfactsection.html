@@ -1,3 +1,4 @@
+{%  load i18n %}
 {% load staticfiles %}
 <section class="ulockd-divider ulockd-bgthm">
 		<div class="container">
@@ -5,31 +6,37 @@
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="ulockd-ffact-one text-center">
 						<span class="flaticon-medical-11"></span>
-                        <p class="color-white">Total Doctor's</p>
-                        <div class="timer color-white">2860</div>
+                        <p class="color-white">{% trans "Total Doctor's" %}</p>
+                        <div class="timer color-white">{{instance.get_total_doctors}}</div>
 					</div>
 				</div>
+				{% if instance.awardnumber %}
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="ulockd-ffact-one text-center">
 						<span class="flaticon-medal-1"></span>
-                        <p class="color-white">Total Awards</p>
-                        <div class="timer color-white">1180</div>
+                        <p class="color-white">{% trans "Total Awards" %}</p>
+                        <div class="timer color-white">{{instance.awardnumber}}</div>
 					</div>
 				</div>
+				{% endif %}
+				{% if instance.get_total_services %}
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="ulockd-ffact-one text-center">
 						<span class="flaticon-square"></span>
-                        <p class="color-white">Clinical Services</p>
-                        <div class="timer color-white">85</div>
+                        <p class="color-white">{% trans "Clinical Services" %}</p>
+                        <div class="timer color-white">{{instance.get_total_services}}</div>
 					</div>
 				</div>
+				{% endif %}
+				{% if instance.patientnumber %}
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="ulockd-ffact-one text-center">
 						<span class="flaticon-multiple-users-silhouette"></span>
-                        <p class="color-white">Happy Patients</p>
-                        <div class="timer color-white">11750</div>
+                        <p class="color-white">{% trans "Happy Patients" %}</p>
+                        <div class="timer color-white">{{instance.patientnumber}}</div>
 					</div>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 	</section>

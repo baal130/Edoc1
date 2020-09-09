@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{%  load i18n %}
 <section class="ulockd-footer ulockd-pdng0">
 		<div class="container footer-padding">
 			<div class="row">
@@ -28,9 +29,13 @@
 			<div class="row">
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="widget-about">
-						<h3>About Us</h3>
-						<p>Regardless of whether you need to stay in your own house, are searching for help with a more established relative, looking for exhortation on paying for development, we can help you.</p>
-						<p>Doloribus, placeat, minima. Harum voluptatibus quae tempora est, cupiditate culpa, molestiae, illo beatae reiciendis, nisi sit dolores.</p>					
+						<h3>{%trans "About Us" %}</h3>
+						{% if instance.about %}
+                          <p>{{instance.about}} </p>
+                        {% else %}   
+						        <p>{% trans "We are specialists and professors of our respective specialties, certified in the respective councils of specialties, with publications in different journals and medical books. We offer medical services with the most advanced technology and the most up-to-date knowledge." %}  </p>
+						{% endif %}	
+											
 					</div>
     				<div class="ulockd-footer-newsletter">
     					<h3 class="title">News Letter</h3>
@@ -54,33 +59,34 @@
 					<div class="news-widget">
 						<h3>Latest News</h3>
 						<div class="ulockd-media-box">
+						{%  for article in article_list %}
+							{% if forloop.counter < 3 %}
 							<div class="media">
 							    <div class="media-left pull-left">
-								    <a href="#">
-								    	<img class="media-object" src="" alt="s1.jpg">
+								    <a href="{{article.get_absolute_url}}">
+								    	<!-- <img class="media-object" src="{{instance.profilepicture.url}}" alt="{{instance.profilepicture.url}}"> -->
+								    	<span><i class="fa fa-newspaper color-fb"></i></span>
 								    </a>
 							    </div>
 							    <div class="media-body">
-							    	<h4 class="media-heading">Let's Move With Blog </h4>
-									<a href="#" class="post-date">21 January, 2018</a>
-							    	<p>Lorem ipsum dolor sit amet, consectetur...</p>
+							    	<a href="{{article.get_absolute_url}}" > <h4 class="media-heading">{{article.company_name|title}} </h4>
+									<span class="post-date">{{ article.publish }}</span>
+							    	<p>{{article.get_markdown|truncatewords_html:10}}</p></a>
 							    </div>
 							</div>
-							<div class="media">
-							    <div class="media-left pull-left">
-								    <a href="#">
-								    	<img class="media-object" src="" alt="s2.jpg">
-								    </a>
-							    </div>
-							  	<div class="media-body">
-							    	<h4 class="media-heading">Let's Move With Blog </h4>
-									<a href="#" class="post-date">21 January, 2018</a>
-							    	<p>Lorem ipsum dolor sit amet, consectetur...</p>
-							  	</div>
-							</div>
+
+
+							{% endif %}
+						
+						
+						{% endfor %}
+
+									
+							
+
 						</div>
 					</div>
-					<div class="tag-widget">
+				<!-- 	<div class="tag-widget">
 						<h3>Tag Widget</h3>
 						<ul class="list-inline">
 							<li><a href="https://goo.gl/R31uT6" target="_blank">Bclinico</a></li>
@@ -93,7 +99,7 @@
 							<li><a href="https://goo.gl/jU5i9Y" target="_blank">MrFix</a></li>
 							<li><a href="https://goo.gl/mKBDsp" target="_blank">Couple Heart</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
 					<div class="link-widget">						

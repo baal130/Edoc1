@@ -91,9 +91,9 @@
 }
 .image_help_zoom_right{
 	width: 80%;
-    height: 85%;
+    height: 8%;
     position: absolute;
-    top: 3%;
+    top: 9%;
     left: 30%;
 }
 .image_help_zoom_full{
@@ -108,7 +108,16 @@ border-bottom-left-radius: 18px;
     border-bottom-style: ridge;
     margin-bottom: 4px;	
 }
-    
+
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+} 
+   
 {%  endblock style %}
 </style>
 
@@ -117,24 +126,27 @@ border-bottom-left-radius: 18px;
 
 
 <div class='row'>
-<div class='col-sm-8 border-title-curve col-sm-offset-1'>
-<h1>{% trans  'Customize your profile  web page'  %}</h1>
+  {% include 'messages_animate.html' %}
 
-</div>
+
+  <div class='col-sm-8 border-title-curve col-sm-offset-1'>
+  <h1>{% trans  'Customize your profile  web page'  %}</h1>
+
+  </div>
 </div>
 
 <!--  -->
-<div  class='col-sm-3 sticky' id="stickymenu" data-in="fadeIn" > 
+<div  class='col-sm-3 sticky sidebarleft' id="stickymenu" data-in="fadeIn" > 
   {% include 'sidebar.html' %}
   
 </div>
 
 {% if  not verificated %}
 <div classs ='row'>
-  
+  <div id="content" class='col-sm-6 content  '> 
 
 
-	<div id="home" class='col-sm-6  form-bg'> 
+	<div id="home" class='  form-bg'> 
 	<h3>{% trans  'Top Home section'  %}</h3>
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 	  <!-- methoda je po defaultu get -->
@@ -149,9 +161,13 @@ border-bottom-left-radius: 18px;
 
 
 	</div>
-</div>
 
-<div id="service" class='col-sm-6 col-sm-offset-3 form-bg'>
+
+
+
+
+
+<div id="service" class=' form-bg'>
 	<h3>{% trans  'Service section'  %}</h3>  
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 	{{form3.servicename|as_crispy_field}}
@@ -173,7 +189,7 @@ border-bottom-left-radius: 18px;
 	{% endfor %}
 </div>
 
-<div  id ="gallery" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div  id ="gallery" class=' form-bg'>
 
 	<h3>{% trans  'Our gallery'  %}</h3>  
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
@@ -186,7 +202,7 @@ border-bottom-left-radius: 18px;
 </div>
 
 
-<div id="department" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div id="department" class=' form-bg'>
 	<h3>{% trans  'Department section'  %}</h3>  
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
 	{{form4|crispy}}
@@ -197,7 +213,7 @@ border-bottom-left-radius: 18px;
 	{% endfor %}
 </div>
 
-<div id="team" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div id="team" class=' form-bg'>
 
 <h3>{% trans  'Team section'  %}</h3>  
 <form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
@@ -209,7 +225,7 @@ border-bottom-left-radius: 18px;
 {% endfor %}
 </div>
 
-<div id="insurance" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div id="insurance" class=' form-bg'>
 
 <h3>{% trans  'Insurance'  %}</h3>  
 <form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
@@ -218,7 +234,7 @@ border-bottom-left-radius: 18px;
 </form>
 </div>
 
-<div id="payment" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div id="payment" class=' form-bg'>
 
 <h3>{% trans  'Payment method'  %}</h3>  
 <form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
@@ -228,29 +244,45 @@ border-bottom-left-radius: 18px;
 
 
 </div>
-<div id="lang" class='col-sm-6 col-sm-offset-3 form-bg'>
+<div id="lang" class=' form-bg'>
 
-<h3>{% trans  'Language'  %}</h3>  
-<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
-{{form8|crispy}}
-<input class="btn btn-primary " type ='submit' value ="{% trans 'Add Language' %}" name="Add Language"/>
-</form>
-{% for objects in language_list %}
-<p><a href="{%   url 'newsletter:language_delete'  pk=objects.pk  %}"> Remove {{objects.language}} </a></p>
-{% endfor %}
+  <h3>{% trans  'Language'  %}</h3>  
+  <form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
+  {{form8|crispy}}
+  <input class="btn btn-primary " type ='submit' value ="{% trans 'Add Language' %}" name="Add Language"/>
+  </form>
+  {% for objects in language_list %}
+  <p><a href="{%   url 'newsletter:language_delete'  pk=objects.pk  %}"> Remove {{objects.language}} </a></p>
+  {% endfor %}
 </div>
-<div id="image_help1" class="col-sm-4" style=" position:fixed;right: 0;top:200px;">
+
+<!-- <div id="image_help1" class="col-sm-4" style=" position:fixed;right: 0;top:200px;">
 <img class="img-size-help " id="imgsrchelp1" src="{% static 'img/help/imagehelp2.png'%}" alt="">
 <img class=" animated5s zoomInTest1 image_help_zoom_right" style="" id="imgsrchelp2" src="{% static 'img/help/helpabout.png'%}" alt="">	
 
-</div>
+</div> -->
 
+  
 
 {% endif %}
 
+    </div><!-- column -->
+  </div><!-- row -->
+  <div  class='col-sm-3 sticky locationsearchmobile height-desktop-search' id="stickymenuright" data-in="fadeIn" > 
+    <div style ="display: block; " id="locationcollapse" class="wrap-article ">
+      <div style ="" id='mapcontent' class="thumbnail post-background wrap-article">
+          <div id="image_help1" class="" style=" ">
+          <img class="img-size-help " id="imgsrchelp1" src="{% static 'img/help/imagehelp2.png'%}" alt="">
+          <img class=" animated5s zoomInTest1 image_help_zoom_right" style="" id="imgsrchelp2" src="{% static 'img/help/helpabout.png'%}" alt=""> 
 
-</div>
-</div>
+          </div>
+      </div>               
+                    
+    </div> 
+    
+  </div>
+
+
 
 {% endblock %}
 {%  block script %}
@@ -290,7 +322,7 @@ $('#div_id_imagehome1Text2').click(function(event){
         event.preventDefault()
      
      document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle2.png'%}"; 
         
     })
 $('#div_id_imagehome2Text1').click(function(event){
@@ -306,7 +338,7 @@ $('#div_id_imagehome2Text2').click(function(event){
         event.preventDefault()
      
      document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle2.png'%}"; 
         
     })
 $('#div_id_imagehome3Text1').click(function(event){
@@ -322,31 +354,39 @@ $('#div_id_imagehome3Text2').click(function(event){
         event.preventDefault()
      
      document.getElementById("imgsrchelp1").src= "{% static 'img/help/imagehelp1.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle.png'%}"; 
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/slideshowhelptitle2.png'%}"; 
         
     })
 $('#id_servicename').click(function(event){
   	/*kada likne na neki form promijeni sliku*/
         event.preventDefault()
      
-     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/service.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelptitle.png'%}"; 
         
     })
 $('#id_servicetext').click(function(event){
   	/*kada likne na neki form promijeni sliku*/
         event.preventDefault()
      
-     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/service.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelpdescription.png'%}"; 
         
     })
 $('#id_weburl').click(function(event){
   	/*kada likne na neki form promijeni sliku*/
         event.preventDefault()
      
-     document.getElementById("imgsrchelp1").src= "{% static 'img/help/servicehelpback.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelp.png'%}"; 
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/service.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelpurl.png'%}"; 
+        
+    })
+$('.radio').click(function(event){
+    /*kada likne na neki form promijeni sliku*/
+        
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/service.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/servicehelpicon.png'%}"; 
         
     })
 $('#id_imagehomegallery').click(function(event){
@@ -394,9 +434,26 @@ $('#id_imagehometeam').click(function(event){
        
      
      document.getElementById("imgsrchelp1").src= "{% static 'img/help/teamhelp.png'%}";
-     document.getElementById("imgsrchelp2").src= "{% static 'img/help/teamhelp.png'%}"; 
+     
      
     })
+$('#id_teamname').click(function(event){
+    /*kada likne na neki form promijeni sliku*/
+       
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/teamhelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/teamhelpname.png'%}"; 
+     
+    })
+$('#id_teamtext').click(function(event){
+    /*kada likne na neki form promijeni sliku*/
+       
+     
+     document.getElementById("imgsrchelp1").src= "{% static 'img/help/teamhelp.png'%}";
+     document.getElementById("imgsrchelp2").src= "{% static 'img/help/teamhelpdescription.png'%}"; 
+     
+    })
+
 </script> 
 
 

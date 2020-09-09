@@ -139,7 +139,9 @@ class UserDetails(models.Model):
 	specialprice   	   =models.BooleanField(default=False)
 	homevisit 		   =models.BooleanField(default=False)
 	emergencycalls     =models.BooleanField(default=False) 	
-	
+	patientnumber	   =models.IntegerField(blank=True,null=True) 	
+	awardnumber 	   =models.IntegerField(blank=True,null=True) 
+
 	web				   =models.URLField(default='null')
 	email              =models.EmailField(default='null',blank=True)
 	verificated		   =models.BooleanField(default=False)
@@ -256,6 +258,16 @@ class UserDetails(models.Model):
 		social_acounts=instance.userdetailssocialnetworks_set.all().first()
 		
 		return social_acounts
+	def get_total_services(self):
+		instance=self
+		total_services=instance.userdetailsservice_set.all().count()
+		return total_services
+	def get_total_doctors(self):
+		instance=self
+		total_doctors=instance.userdetailsteam_set.all().count()
+		total_doctors=total_doctors+1
+		return total_doctors	
+		
 	def comments(self):
 		instance=self
 		qs=Comment.objects.filter_by_instance(instance)
@@ -459,6 +471,7 @@ class UserDetailsService(models.Model):
 		return self.detail.surname
 	def __str__(self):
 		return self.servicename + ' ' + self.detail.name + ' '+ self.detail.surname	
+
 class UserDetailsServiceSearch(models.Model):
 	#used for generating sevices which can be searched
 	servicename        =models.CharField(max_length=60,blank=False,null=False)

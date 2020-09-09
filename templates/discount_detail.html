@@ -204,7 +204,7 @@ position: absolute;
     font-weight: normal;
     letter-spacing: -1px;
     color: #636363;
-    float: right;
+    
     padding: 0;
     border: none;
     border-bottom: 1px solid #eee;
@@ -218,7 +218,7 @@ position: absolute;
     font-weight: bold;
 }
 .time-end{
-  font-size: 11px;
+  font-size: 15px;
     line-height: 12px;
     color: rgb(119, 119, 119);
     text-transform: uppercase;
@@ -229,7 +229,25 @@ position: absolute;
     border-color: initial;
     border-image: initial;
 }
-
+@media (max-width: 992px){
+.time-end  {
+    font-size: 10px;
+    line-height: 11px;
+    color: rgb(119, 119, 119);
+    text-transform: uppercase;
+    display: block;
+    padding: 15px 10px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+}
+ @media (max-width: 992px){
+.btn_text {
+   font-size: x-small;
+}
+}   
 .success{
   background: #dfd;
   color: #333;
@@ -296,7 +314,8 @@ position: absolute;
 
       </div>
       <div class="post-thumb col-xs-12  col-sm-7  ">
-        <h3>Package <span class="text-thm2 ">  {{ objects.name|title }} </span></h3>
+        <h3>{% trans "Package"%} <span class="text-thm2 ">  {{ objects.name|title }} </span></h3>
+
             <span class="discount-headline  ">{{objects.headdescription }}</span>
             
             <div class="pricing-content">
@@ -325,7 +344,7 @@ position: absolute;
           <div  class="price " style="
                                     margin-top: 4px;">
 
-                                   FULL PRICE <br><small style="text-decoration: line-through;" class="  strong text-dark">{{objects.totalregularprice}} $</small> &nbsp 
+                                   {% trans "FULL PRICE" %} <br><small style="text-decoration: line-through;" class="  strong text-dark">{{objects.totalregularprice}} $</small> &nbsp 
                                    
                 </div>
             </div> 
@@ -335,7 +354,7 @@ position: absolute;
           <div  class="price col-save" style="
                                     margin-top: 4px;">
 
-                                   <big>Save </big><br> <small style="" class="  text-dark strong-save ">{{objects.packagepricediscount}} %</small> &nbsp 
+                                   <big>{% trans "Save" %} </big><br> <small style="" class="  text-dark strong-save ">{{objects.packagepricediscount}} %</small> &nbsp 
                                    
                 </div>
             </div> 
@@ -344,16 +363,16 @@ position: absolute;
           <div  class="price" style="
                                     margin-top: 4px;">
 
-                                   <big>PRICE </big><br> <small style="" class="  text-dark strong ">{{objects.get_discount_price}} $</small> &nbsp 
+                                   <big>{% trans "PRICE" %} </big><br> <small style="" class="  text-dark strong ">{{objects.get_discount_price}} $</small> &nbsp 
                                    
                 </div>
             </div> 
-            <div class=" col-xs-3  col-md-2   col-md-offset-4  " style="    padding-left: 0;
+            <div class=" col-xs-3  col-md-2   col-md-offset-3  " style="   padding-left: 0;
             padding-right: 0;" > 
          
 
                                    
-                                   <a class="btn button-create button-text-width" href="#package_view " data-toggle="modal">{% trans "BOOK NOW" %} </a>
+                                   <a  style="white-space: normal;word-wrap: break-word;" class="btn button-create button-text-width btn_text" href="#package_view " data-toggle="modal">{% trans "BOOK NOW" %} </a>
 
                                    
                 
@@ -373,10 +392,9 @@ position: absolute;
           <div class="time-end">
           {% trans " YOU CAN STILL BUY FOR" %} <br>  <span class="  text-dark strong "> {{objects.get_time_left}} </span>
           </div>
-          <div  class=" " style="
-                                    ">
+          <div  class=" " style="word-wrap:break-word  ">
 
-            <h3> {%  trans "REMARKS"  %} </h3> 
+            <span class="time-end"> {%  trans "REMARKS"  %} </span> 
             <ul  style="list-style: none;" class="">
                     
                    {% for remark in remark_list %}

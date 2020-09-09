@@ -1,0 +1,122 @@
+ {% load staticfiles %}
+{%  load i18n %}
+ <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="">
+                         <img src="{% static 'landing/assets/images/td-trans-32x32.png'%}" alt="" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="">Todos doctores</a></span>
+                  
+                      
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+               <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mobi-mbri mobi-mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        </a>
+                        <div class="dropdown-menu">
+                        {% get_current_language as LANGUAGE_CODE %}
+                              {% get_available_languages as LANGUAGES %}
+                              {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <a class="text-white dropdown-item display-4" href="{% url "set_language_from_url" user_language=language.code url_name=request.get_full_path %}">
+
+                                      {% if language.code == LANGUAGE_CODE %} --> {% endif %}
+                                      {{ language.name_local|title }} ({{ language.code }})
+                                      
+                       </a>           
+                              {% endfor %}
+
+                       
+                                          
+                        </div>
+                       
+                                        
+                                        
+                        </li>  
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="{% url 'landingfordoctors' %}">
+                        
+                       {% trans "For doctors" %} </a>
+                </li>
+                {%  if request.user.is_authenticated %}
+                
+                    {%  if request.user.userdetails.occupancy != "Doctor" %}
+                        <li class="nav-item">             
+                                        <a style="background-color: #00b3ff;
+                                                    border-radius: 4px 4px 4px 4px;
+                                                    color: #f9f9f9;padding:3px!important;" 
+                                                    href="{% url 'user_details' %}">
+                                                {% trans "Are you a doctor?"%}
+                                        </a> 
+                        </li> 
+                        <li class="nav-item">
+                          <a  class="text-white dropdown-item display-4" href="{% url 'account_logout'%}"><span style=" background-color: #5564ac;
+                                                      border-radius: 5px;
+                                                      padding: 7px!important;
+                                                       margin-right: 3px;">
+                                                  {% trans "LOGOUT" %} </span>  {{user}}
+                          </a>           
+                        </li>             
+                    {% else %}
+                        <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="https://mobirise.co" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        {{user}}</a>
+                        <div class="dropdown-menu">
+                        
+                        <a class="text-white dropdown-item display-4" href="{% url 'user_details' %}">{% trans "My profile" %}</a>
+                                                <a class="text-white dropdown-item display-4" href="{% url 'user_details_web' %}">{% trans "Web page settings" %}</a>
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'user_detail_extra' %}">{% trans "Accepted patients"  %}</a>
+                                                <a class="text-white dropdown-item display-4"  href="{% url 'user_detail_package' %}">{% trans "Package/discounts offers"  %}</a>
+                                                
+                                                
+                                                <a class="text-white dropdown-item display-4" href="{% url 'dataadd:myarticle' %}">{% trans "My posts" %}</a>
+                                                
+                                                <!-- <a href="{% url 'chat:chatpage' %}">My posts</a> -->
+                                                <!-- <a href="{% url 'inbox' %}">Inbox  <span class="glyphicon glyphicon-envelope" style="display: none" id="unread-count"></span></a> -->
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'dataadd:complain' %}" class=" " > {% trans "New article"  %}</a> 
+                                                <a  class="text-white dropdown-item display-4" href="{% url 'account_logout'%}"><span style=" background-color: #5564ac;
+                                                    border-radius: 5px;
+                                                    padding: 7px!important;
+                                                     margin-right: 3px;">
+                                                {% trans "LOGOUT" %} </span>  {{user}}
+                                                </a>
+                        </div>
+                       
+                                        
+                                        
+                        </li>  
+                 {% endif %}                 
+                 {% else %}
+                               
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="{% url 'account_login' %}"><span class="mbri-key mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        {% trans "Sign In " %} </a>
+                </li>
+                {% endif %}                   
+                
+            </ul>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="{% url 'newsletter:doctor_list' %}"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    
+                  {% trans "Try It Now!" %}  
+                </a>
+
+              
+               
+              
+            </span></div>
+        </div>
+    </nav>

@@ -1,0 +1,16 @@
+{% if messages %}
+        <ul  style="list-style: none;" class="messages slideInDown animated3s">
+          {% for message in messages %}
+         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+          
+            {% if message.tags == 'error' %}
+              <span class="glyphicon glyphicon-warning-sign text-danger"></span>
+            {% endif %}
+            {% if message.tags == 'success' %}
+              <span class="glyphicon glyphicon-ok text-success"></span>
+            {% endif %}
+          {{ message }} 
+        </li>
+        {% endfor %}
+        </ul>
+  {% endif %}

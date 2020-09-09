@@ -19,20 +19,23 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from newsletter.views import home2, contact, user_detail, user_detail_web,user_detail_extra,user_detail_package,user_detail_worktime
-from newsletter.views import user_detail_price,user_detail_social,landingfordoctors
-from testzs.views import about
+from newsletter.views import user_detail_price,user_detail_social,landingfordoctors,helpfordoctors
+from testzs.views import about,privacy
 from bootcamp.core import views as core_views
 from dataadd.views import ProfileFollowToggle,ProfileFollowToggleList
 from django.utils import translation
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.urls import path
+from django.views.generic.base import TemplateView
+
 
 from billing.views import payment_method_view,payment_method_createview
 
 from carts.views import cart_home
 from django.conf.urls.i18n import i18n_patterns
 from search.views import SearchView
+
 
 from addresses.views import (
     AddressCreateView,
@@ -60,6 +63,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home2, name='home'),# newsletter = ime appa(foldera), view= skripta, home= definirano ime reqesta u def home(request)
     url(r'^fordoctors$', landingfordoctors, name='landingfordoctors'),
+    url(r'^FAQ$', helpfordoctors, name='helpfordoctors'),
     url(r'^contact/$', contact, name='contact'),
     url(r'^about2/$', about, name='about'),
     url(r'^cart/$',cart_home, name='cart'),
@@ -103,6 +107,9 @@ urlpatterns = [
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
     url(r'^i18n/', include(('django.conf.urls.i18n','i18n'), namespace='i18n')),
     url(r'^select2/', include('django_select2.urls')),
+
+    url(r'^terminos-y-condiciones$', TemplateView.as_view(template_name='termsconditions.html'), name='termsconditions'),
+    url(r'^privacidad$', TemplateView.as_view(template_name='privacy.html'), name='privacy'),
     # url(r'/set_language/(?P<user_language>\w+)/(?P<url_name>[a-zA-Z0-9_/&?]+)/$', set_language_from_url, name="set_language_from_url")
     path('set_language/<str:user_language>/<path:url_name>', set_language_from_url, name="set_language_from_url")
    # url(r'^i18n/', include('django.conf.urls.i18n')),

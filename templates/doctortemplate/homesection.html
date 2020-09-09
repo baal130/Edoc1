@@ -25,25 +25,27 @@
 					<div class="carousel-inner carousel-zoom">
 						 <div class="item active"><img class="img-responsive" {% if instance.imagehome1 %} src="{{instance.imagehome1.url}}" {% else %} src="{% static 'medicaltemplate/images/home/h11.jpg'%}" {% endif %}  alt="h2.jpg">
 							<div class="carousel-caption style2">
-								<h1 data-animation="animated zoomInLeft color-white" class="cap-txt"><span class="ulockd-bgthm">{% if instance.imagehome2Text1 %} {{ instance.imagehome2Text1}} {% else %} Good Treatment For You. {% endif %}</span></h1>
-								<h2 data-animation="animated bounceInDown"><span class="bgc-white text-thm2">{% if instance.imagehome2Text2 %} {{ instance.imagehome2Text2}} {% else %} Your Health Care Solution. {% endif %}</span></h2>
-								<button data-animation="animated fadeInLeft" class="btn btn-lg ulockd-btn-thm2">Explore Service</button>
-								<button data-animation="animated fadeInRight" class="btn btn-lg ulockd-btn-styledark">About Us</button>
+								<h1 data-animation="animated zoomInLeft color-white" class="cap-txt"><span class="ulockd-bgthm">{% if instance.imagehome1Text1 %} {{ instance.imagehome1Text1}} {% else %} Good Treatment For You. {% endif %}</span></h1>
+								<h2 data-animation="animated bounceInDown"><span class="bgc-white text-thm2">{% if instance.imagehome1Text2 %} {{ instance.imagehome1Text2}} {% else %} Your Health Care Solution. {% endif %}</span></h2>
+								<button data-animation="animated fadeInLeft" class="btn btn-lg ulockd-btn-thm2">
+								{% trans "Explore Service" %}</button>
+								<button data-animation="animated fadeInRight" class="btn btn-lg ulockd-btn-styledark"> {% trans "About Us" %}</button>
 							</div>
 						</div>
 					    <div class="item"><img class="img-responsive" {% if instance.imagehome2 %} src="{{instance.imagehome2.url}}" {% else %} src="{% static 'medicaltemplate/images/home/h22.jpg'%}" {% endif %}  alt="h2.jpg">
 							<div class="carousel-caption style2">
 								<h1 data-animation="animated zoomInLeft color-white" class="cap-txt"><span class="ulockd-bgthm">{% if instance.imagehome2Text1 %} {{ instance.imagehome2Text1}} {% else %} Good Treatment For You. {% endif %}</span></h1>
 								<h2 data-animation="animated bounceInDown"><span class="bgc-white text-thm2">{% if instance.imagehome2Text2 %} {{ instance.imagehome2Text2}} {% else %} Your Health Care Solution. {% endif %}</span></h2>
-								<button data-animation="animated fadeInLeft" class="btn btn-lg ulockd-btn-thm2">Explore Service</button>
-								<button data-animation="animated fadeInRight" class="btn btn-lg ulockd-btn-styledark">About Us</button>
+								<button data-animation="animated fadeInLeft" class="btn btn-lg ulockd-btn-thm2">{% trans "Explore Service" %}</button>
+								<button data-animation="animated fadeInRight" class="btn btn-lg ulockd-btn-styledark">{% trans "About Us" %}</button>
 							</div>
 						</div>
 						<div class="item"><img class="img-responsive" {% if instance.imagehome3 %} src="{{instance.imagehome3.url}}" {% else %} src="{% static 'medicaltemplate/images/home/h33.jpg'%}" {% endif %} alt="h3.jpg">
 							<div class="carousel-caption style3">
 								<h1 data-animation="animated zoomInLeft" class="cap-txt color-white"><span class="ulockd-bgthm">{% if instance.imagehome3Text1 %} {{ instance.imagehome3Text1}} {% else %} Be Safe Be Healty {% endif %}</span></h1>
 								<h2 data-animation="animated bounceInDown"><span class="bgc-white text-thm2">{% if instance.imagehome3Text2 %} {{ instance.imagehome3Text1}} {% else %} We Provide Best Medical Service. {% endif %}</span></h2>
-								<button data-animation="animated bounceInUp" class="btn btn-lg ulockd-btn-thm2">Get Appointment</button>
+								<button data-animation="animated bounceInUp" class="btn btn-lg ulockd-btn-thm2">
+								{% trans "Get Appointment" %}</button>
 							</div>
 						</div>
 						<!-- Carousel nav -->
@@ -121,6 +123,7 @@
 			<!-- Product Popup View Start-->
 			{% include 'modal_appoitment_django.html' %}
 			{% include 'modal_package.html' %}
+			
 			<!-- Product Popup View End-->
 		</div>
 	</section>

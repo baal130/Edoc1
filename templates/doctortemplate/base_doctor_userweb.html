@@ -60,7 +60,7 @@
     
 }  
 .wrap-article{    
-    height: 100%;
+    height: 100%!important;
     /*background: #ffffff;
     border-radius: 0 60px 60px 60px;*/
     /*width: 75%;*/
@@ -190,7 +190,32 @@ div.sticky {
   position: sticky;
  /* top: 250px;*/
   }
-
+.height-mob-search{
+  height:50vh;
+  width: 100%;
+}
+.height-desktop-search{
+  height:88vh;
+  /*width: 250px;*/
+}
+.success{
+  background: #dfd;
+  color: #333;
+  padding: 15px;
+}
+.error{
+  background: #fadcdc;
+  color: #333;
+  padding: 15px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 6px 0;
+    width: 115px!important;
+    z-index: 9999;
+}
 </style>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -460,9 +485,10 @@ div.sticky {
 </script>
 <script>
   /*for sticky efect*/
-var mapsearch = document.getElementById("stickymenu");
+var content=document.getElementById("content"); 
+var stickymenu = document.getElementById("stickymenu");
 
-var mapsearchoffsettop=mapsearch.offsetTop;
+var mapsearchoffsettop=stickymenu.offsetTop;
 
 var header = document.getElementById("header");
 var offsetheader = header.offsetTop;
@@ -476,7 +502,7 @@ window.onscroll = function()
   if (window.matchMedia('(min-width: 992px)').matches) 
   {
     locationSearchApplytop();
-    console.log("vrti")
+    
   }  
   
 };
@@ -484,22 +510,86 @@ function locationSearchApplytop() {
   
 
   if (window.pageYOffset > sticky) {
-    var mapsearch = document.getElementById("stickymenu");
+    var stickymenu = document.getElementById("stickymenu");
    
-    console.log( mapsearch.style.top)
-    mapsearch.style.top=headerhight +"px"
+    var stickymenuright = document.getElementById("stickymenuright");
+   stickymenu.style.top=headerhight +"px"
+    stickymenuright.style.top=headerhight +"px"
     
   } else {
-    var mapsearch = document.getElementById("stickymenu");
+    var stickymenu = document.getElementById("stickymenu");
       
   }
 }  
+var locationcollapse= document.getElementById("locationcollapse");
 if (window.matchMedia('(min-width: 992px)').matches) 
   {
-    var mapsearch = document.getElementById("stickymenu");
-    mapsearch.classList.add("sticky");
-    console.log("min")
+    var stickymenu = document.getElementById("stickymenu");
+    var stickymenuright = document.getElementById("stickymenuright");
+    stickymenu.classList.add("sticky");
+     
+      /*mapsearch.classList.remove("sticky");*/
+      stickymenu.classList.remove("equal");
+     /* mapsearch.classList.add("height-mob-search");
+      mapsearch.classList.remove("height-desktop-search");*/
+   
   } 
+  else
+    {
+    var stickymenuright = document.getElementById("stickymenuright");
+    stickymenu.classList.add("height-desktop-search");  
+    stickymenu.classList.remove("height-mob-search");
+    stickymenu.style.display="none" ;
+    stickymenuright.style.display="none" ;
+    stickymenu.classList.remove("sticky");
+    stickymenuright.classList.remove("sticky");
+
+   
+    if (content.style.display=="none"){
+      $(".content").fadeToggle();
+    }
+    
+    
+  } 
+$(".mobilewebhelp").click(function(event){
+             
+            event.preventDefault();
+            if (stickymenu.style.display!="none"){
+              $(".sidebarleft").fadeToggle();
+              $(".locationsearchmobile").fadeToggle();
+              
+            }
+            else
+            { 
+              $(".content").fadeToggle();
+              $(".locationsearchmobile").fadeToggle();
+            }
+
+         
+            
+            
+            
+           
+            
+})
+$(".mobilefolderbutton").click(function(event){
+             
+            event.preventDefault();
+            if (stickymenuright.style.display!="none"){
+              $(".sidebarleft").fadeToggle();
+              $(".locationsearchmobile").fadeToggle();
+              
+            }
+            else
+            { 
+              $(".content").fadeToggle();
+              $(".sidebarleft").fadeToggle();
+            }
+            
+           
+            
+})
+
 
 </script>
 

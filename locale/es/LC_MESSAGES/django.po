@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: .\newsletter\forms.py:356 .\newsletter\languages.py:485
-#: .\newsletter\views.py:588 .\newsletter\views.py:825
+#: .\newsletter\forms.py:367 .\newsletter\languages.py:485
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 16:57+0200\n"
+"POT-Creation-Date: 2020-09-07 13:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +18,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\templates\accounts\snippets\form.html:9
+msgid "If you have not created an account yet, then please"
+msgstr ""
+
+#: .\accounts\templates\accounts\snippets\form.html:10
+msgid "sign up</a> first."
+msgstr ""
 
 #: .\bootcamp\core\templates\core\cover.html:22
 #: .\bootcamp\core\templates\core\cover.html:40
@@ -56,7 +63,7 @@ msgid "Url"
 msgstr ""
 
 #: .\bootcamp\core\templates\core\partial_settings_menu.html:3
-#: .\templates\sidebar.html:66 .\templates\sidebarPackage.html:92
+#: .\templates\sidebar.html:68 .\templates\sidebarPackage.html:92
 msgid "Profile"
 msgstr ""
 
@@ -80,12 +87,13 @@ msgstr ""
 #: .\templates\account\password_reset_from_key.html:7
 #: .\templates\account\password_reset_from_key_done.html:4
 #: .\templates\account\password_reset_from_key_done.html:7
-#: .\templates\sidebar.html:97 .\templates\sidebarPackage.html:122
+#: .\templates\sidebar.html:99 .\templates\sidebarPackage.html:122
 msgid "Change Password"
 msgstr "Cambia la contraseña"
 
 #: .\bootcamp\core\templates\core\password.html:43
 #: .\bootcamp\core\templates\core\settings.html:57
+#: .\templates\discount_detail.html:357
 msgid "Save"
 msgstr ""
 
@@ -127,6 +135,7 @@ msgstr ""
 
 #: .\bootcamp\core\templates\core\profile.html:30
 #: .\templates\doctortemplate\ourarticlessection.html:8
+#: .\templates\doctortemplate\rightsidemenu.html:8
 msgid "Articles"
 msgstr "Artículos"
 
@@ -171,11 +180,17 @@ msgstr "Su nombre"
 
 #: .\newsletter\forms.py:82
 msgid "Your second name"
-msgstr "Tu segundo nombre"
+msgstr "Apellido"
 
-#: .\newsletter\forms.py:83 .\newsletter\forms.py:84
-msgid "Adress"
+#: .\newsletter\forms.py:83 .\templates\landing\landingfooter.html:21
+#, fuzzy
+#| msgid "Adress"
+msgid "Address"
 msgstr "Dirección"
+
+#: .\newsletter\forms.py:84
+msgid "City"
+msgstr "Ciudad"
 
 #: .\newsletter\forms.py:86
 msgid "State"
@@ -231,7 +246,7 @@ msgstr "Elija una imagen para el tamaño de la galería 480x480"
 msgid "Service description"
 msgstr "Descripción del servicio"
 
-#: .\newsletter\forms.py:155
+#: .\newsletter\forms.py:155 .\templates\doctortemplate\servicesection.html:8
 msgid "Service"
 msgstr "Servicio"
 
@@ -269,9 +284,10 @@ msgid ""
 "affects patients lives,\" said Dr. Mathew. or Cardiology is the branch of "
 "medicine that studies and deals with heart problems."
 msgstr ""
-"Ingrese el texto sobre el departamento ex: El programa de la Clínica Dental tremendamente"
-"afecta la vida de los pacientes, dijo el Dr. Mathew. o Cardiología es la rama de "
-"medicine that studies and deals with heart problems."
+"Ingrese el texto sobre el departamento ex: El programa de la Clínica Dental "
+"tremendamenteafecta la vida de los pacientes, dijo el Dr. Mathew. o "
+"Cardiología es la rama de medicine that studies and deals with heart "
+"problems."
 
 #: .\newsletter\forms.py:177
 msgid "Enter your web page url to this department"
@@ -299,11 +315,15 @@ msgstr "Ingrese el texto sobre el médico en el equipo"
 
 #: .\newsletter\forms.py:206
 msgid "Choose Insurance company accepted (hold ctrl to select more options)"
-msgstr "Elija compañía de seguros aceptada (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
+msgstr ""
+"Elija compañía de seguros aceptada (mantenga presionada la tecla Ctrl para "
+"seleccionar más opciones)"
 
 #: .\newsletter\forms.py:212
 msgid "Select Insurancecompany (hold ctrl to select more options)"
-msgstr "Seleccione Insurancecompany (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
+msgstr ""
+"Seleccione Insurancecompany (mantenga presionada la tecla Ctrl para "
+"seleccionar más opciones)"
 
 #: .\newsletter\forms.py:224
 msgid "Spoken language"
@@ -311,7 +331,9 @@ msgstr "Lengua hablada"
 
 #: .\newsletter\forms.py:240
 msgid "Choose Payment method (hold ctrl to select more options)"
-msgstr "Elija el método de pago (mantenga presionada la tecla Ctrl para seleccionar más opciones)"
+msgstr ""
+"Elija el método de pago (mantenga presionada la tecla Ctrl para seleccionar "
+"más opciones)"
 
 #: .\newsletter\forms.py:254
 msgid "Also examines children up to 12 years "
@@ -333,132 +355,143 @@ msgstr "Las pacientes pueden venir con animales."
 msgid "Do you make home visits to patients"
 msgstr "Haces visitas a domicilio a los pacientes"
 
-#: .\newsletter\forms.py:275
+#: .\newsletter\forms.py:259
+msgid "Enter how much patients approximately you have"
+msgstr "Ingrese cuántos pacientes tiene aproximadamente"
+
+#: .\newsletter\forms.py:260
+msgid "If you have any awards enter how much "
+msgstr "Si tiene algún premio, indique cuánto"
+
+#: .\newsletter\forms.py:276
 msgid "Regular price of service"
 msgstr "Precio regular del servicio"
 
-#: .\newsletter\forms.py:275
+#: .\newsletter\forms.py:276
 msgid "Discount  on service"
 msgstr "Descuento en servicio"
 
-#: .\newsletter\forms.py:279
+#: .\newsletter\forms.py:280
 msgid "Enter regular price"
 msgstr "Ingrese precio regular"
 
-#: .\newsletter\forms.py:280
+#: .\newsletter\forms.py:281
 msgid "Enter discount for regular price in %"
 msgstr "Ingrese el descuento para el precio normal en%"
 
-#: .\newsletter\forms.py:305
+#: .\newsletter\forms.py:309
 msgid "Add service to package "
 msgstr "Agregar servicio al paquete"
 
-#: .\newsletter\forms.py:306
+#: .\newsletter\forms.py:310
 msgid " Discount on this total price % "
 msgstr "Descuento en este precio total %"
 
-#: .\newsletter\forms.py:307
+#: .\newsletter\forms.py:311
 msgid " Total regular price for services in package "
 msgstr "Precio regular total por servicios en paquete"
 
-#: .\newsletter\forms.py:308
+#: .\newsletter\forms.py:312
 msgid " Package name "
 msgstr "Nombre del paquete"
 
-#: .\newsletter\forms.py:309
+#: .\newsletter\forms.py:313
 msgid "Head title description"
 msgstr ""
 
-#: .\newsletter\forms.py:310
+#: .\newsletter\forms.py:314
 msgid "Detailed description of your package"
 msgstr "Descripción del título de la cabeza"
 
-#: .\newsletter\forms.py:311
+#: .\newsletter\forms.py:315
 msgid "Use image with your package"
 msgstr "Usa la imagen con tu paquete"
 
-#: .\newsletter\forms.py:312
+#: .\newsletter\forms.py:316
 msgid "Add gift for promotion"
 msgstr "Agregar regalo para promoción"
 
-#: .\newsletter\forms.py:313
+#: .\newsletter\forms.py:317
 msgid "Until when offer is valid"
 msgstr "Hasta cuando la oferta es válida"
 
-#: .\newsletter\forms.py:314
+#: .\newsletter\forms.py:318
 msgid "From when offer is valid"
 msgstr "Desde cuando la oferta es válida"
 
-#: .\newsletter\forms.py:317
+#: .\newsletter\forms.py:321
 msgid "Enter discount percentage for services  price in %"
-msgstr "Ingrese el porcentaje de descuento para el precio de los servicios en %"
+msgstr ""
+"Ingrese el porcentaje de descuento para el precio de los servicios en %"
 
-#: .\newsletter\forms.py:318
+#: .\newsletter\forms.py:322
 msgid "Enter total price for services  price in $"
 msgstr "Ingrese el precio total de los servicios en $"
 
-#: .\newsletter\forms.py:319
+#: .\newsletter\forms.py:323
 msgid "Enter name of package"
 msgstr "Ingrese el nombre del paquete"
 
-#: .\newsletter\forms.py:320
+#: .\newsletter\forms.py:324
 msgid ""
 "Add most important overview of your package.It will be visible with list of "
 "packages and on begginning"
 msgstr ""
-"Agregue la descripción general más importante de su paquete. Será visible con la lista de"
-"paquetes y al principio"
+"Agregue la descripción general más importante de su paquete. Será visible "
+"con la lista depaquetes y al principio"
 
-#: .\newsletter\forms.py:321
+#: .\newsletter\forms.py:325
 msgid "Write some interesting details about your offer"
 msgstr "Escribe algunos detalles interesantes sobre tu oferta"
 
-#: .\newsletter\forms.py:324
+#: .\newsletter\forms.py:328
 msgid ""
 "Add extra gift outside sevice ex: Free smile or free apartment for 2 days"
-msgstr "Agregue un regalo adicional fuera del servicio, por ejemplo: sonrisa gratis o apartamento gratis por 2 días"
+msgstr ""
+"Agregue un regalo adicional fuera del servicio, por ejemplo: sonrisa gratis "
+"o apartamento gratis por 2 días"
 
-#: .\newsletter\forms.py:339
+#: .\newsletter\forms.py:350
 msgid "Add remarks for your package"
 msgstr "Agregue comentarios para su paquete"
 
-#: .\newsletter\forms.py:348
+#: .\newsletter\forms.py:359
 msgid "Add remark which is important for use your package "
 msgstr "Agregue un comentario que es importante para usar su paquete"
 
-#: .\newsletter\forms.py:377
+#: .\newsletter\forms.py:388
 msgid "Select_service"
 msgstr "Seleccionar_servicio"
 
-#: .\newsletter\forms.py:430
+#: .\newsletter\forms.py:441
 msgid "Add link to your facebook page "
 msgstr ""
 
-#: .\newsletter\forms.py:431
+#: .\newsletter\forms.py:442
 msgid "Add link to your linkedin page "
 msgstr "Agrega un enlace a tu página de Facebook"
 
-#: .\newsletter\forms.py:432
+#: .\newsletter\forms.py:443
 msgid "Add link to your twitter page "
 msgstr "Agrega un enlace a tu página de twitter"
 
-#: .\newsletter\forms.py:433
+#: .\newsletter\forms.py:444
 msgid "Add link to your instagram page "
 msgstr "Agrega un enlace a tu página de instagram"
 
-#: .\newsletter\forms.py:434
+#: .\newsletter\forms.py:445
 msgid "Add link to your pinterest page "
 msgstr "Agrega un enlace a tu página de pinterest"
 
-#: .\newsletter\forms.py:435
+#: .\newsletter\forms.py:446
 msgid "Add link to your youtube page "
 msgstr "Agrega un enlace a tu página de youtube"
 
-#: .\newsletter\forms.py:436
+#: .\newsletter\forms.py:447
 msgid "Add link to your behance page "
 msgstr "Agrega un enlace a tu página de behance"
 
-#: .\newsletter\forms.py:437
+#: .\newsletter\forms.py:448
 msgid "Add your whatsupnumber "
 msgstr "Agregue su número"
 
@@ -855,30 +888,62 @@ msgid ""
 "Phone number must be entered in the format: '+999999999'. Up to 15 digits "
 "allowed."
 msgstr ""
-"El número de teléfono debe ingresarse en el formato: '+999999999'. Hasta 15 dígitos"
-"permitido."
+"El número de teléfono debe ingresarse en el formato: '+999999999'. Hasta 15 "
+"dígitospermitido."
 
-#: .\newsletter\views.py:593
+#: .\newsletter\views.py:219 .\newsletter\views.py:274
+#: .\newsletter\views.py:310 .\newsletter\views.py:388
+#: .\newsletter\views.py:458 .\newsletter\views.py:474
+#: .\newsletter\views.py:488 .\newsletter\views.py:499
+#: .\newsletter\views.py:511 .\newsletter\views.py:519
+#: .\newsletter\views.py:531 .\newsletter\views.py:544
+msgid "Your data has been saved"
+msgstr "Tus datos han sido guardados"
+
+#: .\newsletter\views.py:223 .\newsletter\views.py:278
+#: .\newsletter\views.py:314 .\newsletter\views.py:392
+#: .\newsletter\views.py:461 .\newsletter\views.py:477
+#: .\newsletter\views.py:491 .\newsletter\views.py:502
+#: .\newsletter\views.py:514 .\newsletter\views.py:522
+#: .\newsletter\views.py:534 .\newsletter\views.py:546
+msgid "Sorry,your data has not been saved, please try again"
+msgstr "Lo sentimos, sus datos no se han guardado. Vuelva a intentarlo."
+
+#: .\newsletter\views.py:673 .\newsletter\views.py:915
+#, fuzzy
+#| msgid "Search here?"
+msgid "Search results"
+msgstr "Busca aquí?"
+
+#: .\newsletter\views.py:678
 msgid "Featured Doctors"
 msgstr "Doctores destacados"
 
-#: .\newsletter\views.py:828
+#: .\newsletter\views.py:918
 msgid "Top Offers"
 msgstr "Ofertas principales"
 
-#: .\newsletter\views.py:1015 .\newsletter\views.py:1062
-#: .\newsletter\views.py:1375
-msgid "Your message has been send.We will send notice on your email"
-msgstr "Su mensaje ha sido enviado. Le enviaremos un aviso en su correo electrónico"
+#: .\newsletter\views.py:1072
+#, fuzzy
+#| msgid "Appointment."
+msgid "Appoitment"
+msgstr "cita"
 
-#: .\newsletter\views.py:1018 .\newsletter\views.py:1065
-#: .\newsletter\views.py:1378
+#: .\newsletter\views.py:1119 .\newsletter\views.py:1166
+#: .\newsletter\views.py:1483
+msgid "Your message has been send.We will send notice on your email"
+msgstr ""
+"Su mensaje ha sido enviado. Le enviaremos un aviso en su correo electrónico"
+
+#: .\newsletter\views.py:1122 .\newsletter\views.py:1169
+#: .\newsletter\views.py:1486
 msgid ""
 "Sorry,it is our fault. Message has not been send. Please send us a email or "
 "give us a call"
 msgstr ""
-"Lo sentimos, es nuestra culpa. El mensaje no se ha enviado. Envíenos un correo electrónico o"
-"llamanos"
+"Lo sentimos, es nuestra culpa. El mensaje no se ha enviado. Envíenos un "
+"correo electrónico ollamanos"
+
 #: .\templates\account\account_inactive.html:5
 #: .\templates\account\account_inactive.html:8
 msgid "Account Inactive"
@@ -888,7 +953,7 @@ msgstr ""
 msgid "This account is inactive."
 msgstr ""
 
-#: .\templates\account\email.html:5 .\templates\sidebar.html:57
+#: .\templates\account\email.html:5 .\templates\sidebar.html:59
 #: .\templates\sidebarPackage.html:83
 msgid "Account"
 msgstr ""
@@ -899,7 +964,8 @@ msgstr "Correos electrónicos"
 
 #: .\templates\account\email.html:10
 msgid "The following e-mail addresses are associated with your account:"
-msgstr "Las siguientes direcciones de correo electrónico están asociadas a su cuenta:"
+msgstr ""
+"Las siguientes direcciones de correo electrónico están asociadas a su cuenta:"
 
 #: .\templates\account\email.html:24
 msgid "Verified"
@@ -919,7 +985,7 @@ msgstr ""
 
 #: .\templates\account\email.html:35
 msgid "Re-send Verification"
-msgstr ""
+msgstr "Reenviar verificación"
 
 #: .\templates\account\email.html:36
 #: .\templates\socialaccount\connections.html:35
@@ -935,8 +1001,10 @@ msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
-"Actualmente no tiene ninguna dirección de correo electrónico configurada. Realmente debería agregar"
-"una dirección de correo electrónico para que pueda recibir notificaciones, restablecer su contraseña, etc."
+"Actualmente no tiene ninguna dirección de correo electrónico configurada. "
+"Realmente debería agregaruna dirección de correo electrónico para que pueda "
+"recibir notificaciones, restablecer su contraseña, etc."
+
 #: .\templates\account\email.html:48
 msgid "Add E-mail Address"
 msgstr ""
@@ -983,10 +1051,11 @@ msgid ""
 msgstr ""
 "Hola desde %(site_name) s!\n"
 "\n"
-"Está recibiendo este correo electrónico porque usted u otra persona ha solicitado un"
-"contraseña para su cuenta de usuario.\n"
-"Se puede ignorar con seguridad si no solicitó un restablecimiento de contraseña. Haga clic en el"
-"enlace a continuación para restablecer su contraseña."
+"Está recibiendo este correo electrónico porque usted u otra persona ha "
+"solicitado uncontraseña para su cuenta de usuario.\n"
+"Se puede ignorar con seguridad si no solicitó un restablecimiento de "
+"contraseña. Haga clic en elenlace a continuación para restablecer su "
+"contraseña."
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
@@ -1043,7 +1112,7 @@ msgstr ""
 
 #: .\templates\account\login.html:40
 msgid "or"
-msgstr ""
+msgstr "o"
 
 #: .\templates\account\login.html:47
 #, python-format
@@ -1136,6 +1205,8 @@ msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"Le hemos enviado un correo electrónico. Por favor contáctenos si no lo recibe "
+"dentro de unos minutos."
 
 #: .\templates\account\password_reset_from_key.html:7
 msgid "Bad Token"
@@ -1180,7 +1251,7 @@ msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 msgstr ""
 
-#: .\templates\account\signup.html:33
+#: .\templates\account\signup.html:34
 msgid "OR Use"
 msgstr ""
 
@@ -1275,7 +1346,7 @@ msgstr "Comentario"
 
 #: .\templates\detail_article.html:90
 #: .\templates\doctortemplate\ourarticlessection.html:39
-#: .\templates\landing.html:920
+#: .\templates\landing\landing.html:821
 msgid "Read More"
 msgstr "Lee mas"
 
@@ -1292,10 +1363,11 @@ msgid ""
 "vulgarity, threats, commercial promotion, incoherence  will be immediately "
 "deleted and sent to service of the relevant public institution"
 msgstr ""
-"Las opiniones expresadas en este sitio web son solo de los autores y lo hacen"
-"No tengo nada con punchlist.com. Cualquier comentario que contenga malas palabras"
-"La vulgaridad, las amenazas, la promoción comercial, la incoherencia serán inmediatas"
-"eliminado y enviado al servicio de la institución pública pertinente"
+"Las opiniones expresadas en este sitio web son solo de los autores y lo "
+"hacenNo tengo nada con punchlist.com. Cualquier comentario que contenga "
+"malas palabrasLa vulgaridad, las amenazas, la promoción comercial, la "
+"incoherencia serán inmediataseliminado y enviado al servicio de la "
+"institución pública pertinente"
 
 #: .\templates\detail_article.html:118
 #: .\templates\doctortemplate\commentssection.html:46
@@ -1312,23 +1384,36 @@ msgstr "Eliminar"
 msgid " LOGIN TO REPLY "
 msgstr "INICIA SESIÓN PARA RESPONDER"
 
-#: .\templates\discount_detail.html:303
+#: .\templates\discount_detail.html:317
+#: .\templates\templatesshowmore\package_list_pag.html:11
+msgid "Package"
+msgstr "paquete"
+
+#: .\templates\discount_detail.html:322
 msgid "OFFER INCLUDE THIS SERVICES"
 msgstr "OFERTA INCLUYE ESTOS SERVICIOS"
 
-#: .\templates\discount_detail.html:356
+#: .\templates\discount_detail.html:347
+msgid "FULL PRICE"
+msgstr "PRECIO FINAL"
+
+#: .\templates\discount_detail.html:366
+msgid "PRICE"
+msgstr "PRECIO"
+
+#: .\templates\discount_detail.html:375
 msgid "BOOK NOW"
 msgstr "RESERVAR AHORA"
 
-#: .\templates\discount_detail.html:374
+#: .\templates\discount_detail.html:393
 msgid " YOU CAN STILL BUY FOR"
 msgstr "TODAVÍA PUEDES COMPRAR"
 
-#: .\templates\discount_detail.html:379
+#: .\templates\discount_detail.html:397
 msgid "REMARKS"
 msgstr "OBSERVACIONES"
 
-#: .\templates\discount_list.html:236 .\templates\doctor_list.html:256
+#: .\templates\discount_list.html:231 .\templates\doctor_list.html:256
 msgid "Search here?"
 msgstr "Busca aquí?"
 
@@ -1336,45 +1421,45 @@ msgstr "Busca aquí?"
 msgid "Move map to a location for search"
 msgstr "Mover el mapa a una ubicación para buscar"
 
-#: .\templates\doctor_list.html:286 .\templates\landing.html:405
+#: .\templates\doctor_list.html:294 .\templates\landing\landing.html:306
 msgid "Offer discount prices"
 msgstr "Ofrecer precios de descuento"
 
-#: .\templates\doctor_list.html:289 .\templates\landing.html:408
+#: .\templates\doctor_list.html:297 .\templates\landing\landing.html:309
 msgid "Have access for people with dissabilites"
 msgstr "Tener acceso para personas con discapacidad"
 
-#: .\templates\doctor_list.html:293
-#: .\templates\doctortemplate\ouraboutsection.html:199
-#: .\templates\landing.html:412
+#: .\templates\doctor_list.html:301
+#: .\templates\doctortemplate\ouraboutsection.html:200
+#: .\templates\landing\landing.html:313
 msgid "Pet friendly"
 msgstr "Mascota amigable"
 
-#: .\templates\doctor_list.html:296 .\templates\landing.html:415
+#: .\templates\doctor_list.html:304 .\templates\landing\landing.html:316
 msgid "Make home visits"
 msgstr "Hacer visitas a domicilio"
 
-#: .\templates\doctor_list.html:364 .\templates\doctor_list.html:484
-#: .\templates\doctor_list.html:567
+#: .\templates\doctor_list.html:372 .\templates\doctor_list.html:492
+#: .\templates\doctor_list.html:575
 msgid "Please visit doctor page for appoitment "
 msgstr "Visite la página del médico para una cita."
 
-#: .\templates\doctor_list.html:374 .\templates\doctor_list.html:494
-#: .\templates\doctor_list.html:577
+#: .\templates\doctor_list.html:382 .\templates\doctor_list.html:502
+#: .\templates\doctor_list.html:585
 msgid "Call ordinacy of doctor dr. "
 msgstr "Llame a la ordenanza del doctor dr."
 
-#: .\templates\doctor_list.html:405 .\templates\my_complain_list.html:59
+#: .\templates\doctor_list.html:413 .\templates\my_article_list.html:59
 #: .\templates\templatesshowmore\article_list.html:305
 msgid "Previous"
 msgstr "Previo"
 
-#: .\templates\doctor_list.html:421 .\templates\my_complain_list.html:67
+#: .\templates\doctor_list.html:429 .\templates\my_article_list.html:67
 #: .\templates\templatesshowmore\article_list.html:321
 msgid "Next"
 msgstr "Próximo"
 
-#: .\templates\doctor_list.html:426
+#: .\templates\doctor_list.html:434
 msgid " Doctors outside DoctorForVacation"
 msgstr "Doctores fuera de DoctorForVacation"
 
@@ -1411,6 +1496,12 @@ msgstr "Tiempo de espera"
 msgid "Staff"
 msgstr "El personal"
 
+#: .\templates\doctortemplate\commentssection.html:221
+#, fuzzy
+#| msgid " LOGIN TO REPLY "
+msgid " LOGIN TO RATE "
+msgstr "INICIA SESIÓN PARA RESPONDER"
+
 #: .\templates\doctortemplate\contactsection.html:8
 #: .\templates\doctortemplate\departmentsection.html:8
 #: .\templates\doctortemplate\gallerysection.html:8
@@ -1418,6 +1509,7 @@ msgstr "El personal"
 #: .\templates\doctortemplate\ourarticlessection.html:8
 #: .\templates\doctortemplate\packagesection.html:10
 #: .\templates\doctortemplate\pricingsection.html:8
+#: .\templates\doctortemplate\servicesection.html:8
 msgid "Our"
 msgstr "nuestro"
 
@@ -1432,7 +1524,7 @@ msgstr "No dudes en preguntar, estamos aquí para ti"
 #: .\templates\doctortemplate\contactsection.html:90
 #: .\templates\doctortemplate\modal_appoitment.html:54
 #: .\templates\doctortemplate\modal_appoitment_django.html:75
-#: .\templates\doctortemplate\modal_detail_package.html:75
+#: .\templates\doctortemplate\modal_detail_package.html:76
 #: .\templates\doctortemplate\modal_package.html:75
 msgid "Send"
 msgstr "Enviar"
@@ -1459,7 +1551,9 @@ msgid "Off Our All Packages! Check It Out."
 msgstr "Fuera de todos nuestros paquetes! Echale un vistazo."
 
 #: .\templates\doctortemplate\divider1section.html:13
-#: .\templates\doctortemplate\ouraboutsection.html:40
+#: .\templates\doctortemplate\homesection.html:31
+#: .\templates\doctortemplate\homesection.html:39
+#: .\templates\doctortemplate\ouraboutsection.html:41
 msgid "Explore Service"
 msgstr "Explore el servicio"
 
@@ -1467,210 +1561,155 @@ msgstr "Explore el servicio"
 msgid "All Packages"
 msgstr "Todos los paquetes"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:91
-#: .\templates\doctortemplate\email_templates\email_template_package.html:91
+#: .\templates\doctortemplate\email_templates\email_template.html:94
+#: .\templates\doctortemplate\email_templates\email_template_package.html:94
+#: .\templates\doctortemplate\email_templates\email_template_to_customer.html:94
 msgid "Appoitment form via DoctorsForVacation"
 msgstr "Formulario de cita a través de Médicos para vacaciones"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:192
+#: .\templates\doctortemplate\email_templates\email_template.html:198
 msgid "New appoitment request"
 msgstr "Nueva solicitud de cita"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:195
-#: .\templates\doctortemplate\email_templates\email_template_package.html:204
+#: .\templates\doctortemplate\email_templates\email_template.html:201
+#: .\templates\doctortemplate\email_templates\email_template_package.html:207
 msgid " You have new request for appoitment from mr./ms "
 msgstr "Tiene una nueva solicitud de cita de mr./ms"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:196
-#: .\templates\doctortemplate\email_templates\email_template_package.html:205
+#: .\templates\doctortemplate\email_templates\email_template.html:202
+#: .\templates\doctortemplate\email_templates\email_template_package.html:208
 msgid " Message: "
 msgstr "Mensaje:"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:208
-#: .\templates\doctortemplate\email_templates\email_template_package.html:217
+#: .\templates\doctortemplate\email_templates\email_template.html:214
+#: .\templates\doctortemplate\email_templates\email_template_package.html:220
 msgid "Respond now"
 msgstr "Responde ahora"
 
-#: .\templates\doctortemplate\email_templates\email_template.html:243
-#: .\templates\doctortemplate\email_templates\email_template_package.html:252
+#: .\templates\doctortemplate\email_templates\email_template.html:249
+#: .\templates\doctortemplate\email_templates\email_template_package.html:255
 msgid "Your client  appoitment information "
 msgstr "La información de su cita con el cliente"
 
-#: .\templates\doctortemplate\email_templates\email_template_package.html:192
+#: .\templates\doctortemplate\email_templates\email_template_package.html:195
 msgid "New appoitment request with discount offer"
 msgstr "Nueva solicitud de cita con oferta de descuento"
 
-#: .\templates\doctortemplate\email_templates\email_template_package.html:196
+#: .\templates\doctortemplate\email_templates\email_template_package.html:199
 msgid " Package  "
 msgstr "Paquete"
 
-#: .\templates\doctortemplate\email_templates\email_template_package.html:197
+#: .\templates\doctortemplate\email_templates\email_template_package.html:200
 msgid "  Services: "
 msgstr "Servicios:"
+
+#: .\templates\doctortemplate\email_templates\email_template_to_customer.html:198
+#, fuzzy
+#| msgid " You have new request for appoitment from mr./ms "
+msgid "You have send request for appoitment "
+msgstr "Tiene una nueva solicitud de cita de mr./ms"
+
+#: .\templates\doctortemplate\email_templates\email_template_to_customer.html:201
+#, fuzzy
+#| msgid " You have new request for appoitment from mr./ms "
+msgid " You have sent request for appoitment to dr. "
+msgstr "Tiene una nueva solicitud de cita de mr./ms"
+
+#: .\templates\doctortemplate\email_templates\email_template_to_customer.html:202
+msgid ""
+"You will receive message from doctor {{form_full_surname|title}} , for "
+"appoitment in short time  "
+msgstr ""
+
+#: .\templates\doctortemplate\email_templates\email_template_to_customer.html:250
+#, fuzzy
+#| msgid "Your client  appoitment information "
+msgid "Your   appoitment information "
+msgstr "La información de su cita con el cliente"
+
+#: .\templates\doctortemplate\footersection.html:32
+#: .\templates\doctortemplate\homesection.html:32
+#: .\templates\doctortemplate\homesection.html:40
+msgid "About Us"
+msgstr ""
+
+#: .\templates\doctortemplate\footersection.html:36
+#: .\templates\doctortemplate\ouraboutsection.html:17
+msgid ""
+"We are specialists and professors of our respective specialties, certified "
+"in the respective councils of specialties, with publications in different "
+"journals and medical books. We offer medical services with the most advanced "
+"technology and the most up-to-date knowledge."
+msgstr ""
+"Somos especialistas y profesores de nuestras respectivas especialidades, "
+"certificadosen los respectivos consejos de especialidades, con publicaciones "
+"en diferentesrevistas y libros de medicina. Ofrecemos servicios médicos con "
+"los más avanzadostecnología y el conocimiento más actualizado"
+
+#: .\templates\doctortemplate\funfactsection.html:9
+#, fuzzy
+#| msgid "Featured Doctors"
+msgid "Total Doctor's"
+msgstr "Doctores destacados"
+
+#: .\templates\doctortemplate\funfactsection.html:17
+msgid "Total Awards"
+msgstr "Premios totales"
+
+#: .\templates\doctortemplate\funfactsection.html:26
+#, fuzzy
+#| msgid "  Services: "
+msgid "Clinical Services"
+msgstr "Servicios:"
+
+#: .\templates\doctortemplate\funfactsection.html:35
+msgid "Happy Patients"
+msgstr ""
 
 #: .\templates\doctortemplate\gallerysection.html:8
 msgid "Gallery"
 msgstr "Galería"
 
-#: .\templates\doctortemplate\headersection.html:25
-#: .\templates\doctortemplate\headersection.html:46
-#: .\templates\doctortemplate\headersection.html:62
-#: .\templates\doctortemplate\headersection.html:75
-#: .\templates\doctortemplate\headersection.html:91
-#: .\templates\doctortemplate\headersection.html:105
-msgid "Share"
-msgstr "Compartir"
+#: .\templates\doctortemplate\homesection.html:48
+#, fuzzy
+#| msgid "Appointment."
+msgid "Get Appointment"
+msgstr "cita"
 
-#: .\templates\doctortemplate\headersection.html:28
-#: .\templates\doctortemplate\headersection.html:48
-#: .\templates\doctortemplate\headersection.html:64
-#: .\templates\doctortemplate\headersection.html:77
-#: .\templates\doctortemplate\headersection.html:93
-#: .\templates\doctortemplate\headersection.html:107
-msgid "Visit"
-msgstr "Visitar"
-
-#: .\templates\doctortemplate\headersection.html:146
-#: .\templates\doctortemplate\headersectionempty.html:140
-#: .\templates\doctortemplate\headersectionsearch.html:139
-#: .\templates\doctortemplate\headersectionsearchback.html:139
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:139
-#: .\templates\doctortemplate\headersectionuserdetails.html:138
-#: .\templates\landing.html:279
-msgid "Are you a doctor?"
-msgstr " Estes a doctor"
-
-#: .\templates\doctortemplate\headersection.html:155
-#: .\templates\doctortemplate\headersectionempty.html:149
-#: .\templates\doctortemplate\headersectionsearch.html:148
-#: .\templates\doctortemplate\headersectionsearchback.html:148
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:148
-#: .\templates\doctortemplate\headersectionuserdetails.html:147
-#: .\templates\landing.html:296
-msgid "My profile"
-msgstr "Mi perfil"
-
-#: .\templates\doctortemplate\headersection.html:156
-#: .\templates\doctortemplate\headersectionempty.html:150
-#: .\templates\doctortemplate\headersectionsearch.html:149
-#: .\templates\doctortemplate\headersectionsearchback.html:149
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:149
-#: .\templates\doctortemplate\headersectionuserdetails.html:148
-#: .\templates\landing.html:297
-msgid "Web page settings"
-msgstr "Configuraciones de página web"
-
-#: .\templates\doctortemplate\headersection.html:157
-#: .\templates\doctortemplate\headersectionempty.html:151
-#: .\templates\doctortemplate\headersectionsearch.html:150
-#: .\templates\doctortemplate\headersectionsearchback.html:150
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:150
-#: .\templates\doctortemplate\headersectionuserdetails.html:149
-#: .\templates\landing.html:298 .\templates\sidebar.html:76
-#: .\templates\sidebarPackage.html:102
-msgid "Accepted patients"
-msgstr "Pacientes aceptados"
-
-#: .\templates\doctortemplate\headersection.html:158
-#: .\templates\doctortemplate\headersectionempty.html:152
-#: .\templates\doctortemplate\headersectionsearch.html:151
-#: .\templates\doctortemplate\headersectionsearchback.html:151
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:151
-#: .\templates\doctortemplate\headersectionuserdetails.html:150
-#: .\templates\landing.html:299
-msgid "Package/discounts offers"
-msgstr "Ofertas de paquetes / descuentos"
-
-#: .\templates\doctortemplate\headersection.html:161
-#: .\templates\doctortemplate\headersectionempty.html:155
-#: .\templates\doctortemplate\headersectionsearch.html:154
-#: .\templates\doctortemplate\headersectionsearchback.html:154
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:154
-#: .\templates\doctortemplate\headersectionuserdetails.html:153
-#: .\templates\landing.html:302
-msgid "My posts"
-msgstr "Mis publicaciones"
-
-#: .\templates\doctortemplate\headersection.html:165
-#: .\templates\doctortemplate\headersectionempty.html:159
-#: .\templates\doctortemplate\headersectionsearch.html:158
-#: .\templates\doctortemplate\headersectionsearchback.html:158
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:158
-#: .\templates\doctortemplate\headersectionuserdetails.html:157
-#: .\templates\landing.html:306 .\templates\sidebar.html:20
-#: .\templates\sidebarPackage.html:46
-msgid "New article"
-msgstr "articulo nuevo"
-
-#: .\templates\doctortemplate\headersection.html:170
-#: .\templates\doctortemplate\headersection.html:200
-#: .\templates\doctortemplate\headersectionempty.html:164
-#: .\templates\doctortemplate\headersectionempty.html:194
-#: .\templates\doctortemplate\headersectionsearch.html:163
-#: .\templates\doctortemplate\headersectionsearch.html:193
-#: .\templates\doctortemplate\headersectionsearchback.html:163
-#: .\templates\doctortemplate\headersectionsearchback.html:193
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:163
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:193
-#: .\templates\doctortemplate\headersectionuserdetails.html:162
-#: .\templates\doctortemplate\headersectionuserdetails.html:192
-#: .\templates\landing.html:287 .\templates\landing.html:311
-msgid "LOGOUT"
-msgstr "Cerrar sesión"
-
-#: .\templates\doctortemplate\headersection.html:180
-#: .\templates\doctortemplate\headersectionempty.html:174
-#: .\templates\doctortemplate\headersectionsearch.html:173
-#: .\templates\doctortemplate\headersectionsearchback.html:173
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:173
-#: .\templates\doctortemplate\headersectionuserdetails.html:172
-#: .\templates\landing.html:324
-msgid "Sign In "
-msgstr "registrarse"
-
-#: .\templates\doctortemplate\headersection.html:305
-#: .\templates\doctortemplate\headersectionempty.html:252
-#: .\templates\doctortemplate\headersectionsearch.html:325
-#: .\templates\doctortemplate\headersectionsearchback.html:325
-#: .\templates\doctortemplate\headersectionsearchdiscount.html:325
-#: .\templates\doctortemplate\headersectionuserdetails.html:299
-msgid "Doctor list"
-msgstr "Lista de doctores"
-
-#: .\templates\doctortemplate\homesection.html:65
+#: .\templates\doctortemplate\homesection.html:67
 msgid "Appointment."
 msgstr "cita"
 
-#: .\templates\doctortemplate\homesection.html:66
+#: .\templates\doctortemplate\homesection.html:68
 msgid ""
 "Which problem you faced on your health? Call or mail us and make an "
 "appointment with our expert who can solved your problem."
 msgstr ""
-"Qué problema enfrentaste con tu salud? Llámanos o envíanos un correo electrónico y haz un"
-"cita con nuestro experto que puede resolver su problema"
+"Qué problema enfrentaste con tu salud? Llámanos o envíanos un correo "
+"electrónico y haz uncita con nuestro experto que puede resolver su problema"
 
-#: .\templates\doctortemplate\homesection.html:67
-#: .\templates\doctortemplate\homesection.html:91
+#: .\templates\doctortemplate\homesection.html:69
+#: .\templates\doctortemplate\homesection.html:93
 msgid "Apointment Now"
 msgstr "Cita ahora"
 
-#: .\templates\doctortemplate\homesection.html:84
+#: .\templates\doctortemplate\homesection.html:86
 msgid "Emergency Cases."
 msgstr "Casos de emergencia."
 
-#: .\templates\doctortemplate\homesection.html:86
+#: .\templates\doctortemplate\homesection.html:88
 msgid "Call us"
 msgstr "Llamanos"
 
-#: .\templates\doctortemplate\homesection.html:90
+#: .\templates\doctortemplate\homesection.html:92
 msgid "You can call us for emergency &"
 msgstr "Puede llamarnos para emergencias y"
 
-#: .\templates\doctortemplate\homesection.html:90
+#: .\templates\doctortemplate\homesection.html:92
 msgid "make an appointment out of clinic."
 msgstr "Haga una cita fuera de la clínica."
 
-#: .\templates\doctortemplate\homesection.html:97
+#: .\templates\doctortemplate\homesection.html:99
 msgid "Opening Hour"
 msgstr "Hora de apertura"
 
@@ -1704,6 +1743,7 @@ msgid "Name"
 msgstr "nombre"
 
 #: .\templates\doctortemplate\modal_appoitment.html:27
+#: .\templates\landing\landingfooter.html:35
 msgid "Email"
 msgstr "correo electrónico"
 
@@ -1831,78 +1871,148 @@ msgstr "Reservar oferta especial."
 msgid "Package Form."
 msgstr "Forma del paquete"
 
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:34
+#: .\templates\landing\landingfordoctors.html:118
+#: .\templates\landing\landingnavbar.html:62 .\templates\landingnavbar.html:62
+msgid "Are you a doctor?"
+msgstr " Estes a doctor"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:43
+#: .\templates\landing\landingfordoctors.html:135
+#: .\templates\landing\landinghelp.html:192
+#: .\templates\landing\landingnavbar.html:79 .\templates\landingnavbar.html:79
+msgid "My profile"
+msgstr "Mi perfil"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:44
+#: .\templates\landing\landingfordoctors.html:136
+#: .\templates\landing\landingnavbar.html:80 .\templates\landingnavbar.html:80
+msgid "Web page settings"
+msgstr "Configuraciones de página web"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:45
+#: .\templates\landing\landingfordoctors.html:137
+#: .\templates\landing\landingnavbar.html:81 .\templates\landingnavbar.html:81
+#: .\templates\sidebar.html:78 .\templates\sidebarPackage.html:102
+msgid "Accepted patients"
+msgstr "Pacientes aceptados"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:46
+#: .\templates\landing\landingfordoctors.html:138
+#: .\templates\landing\landingnavbar.html:82 .\templates\landingnavbar.html:82
+msgid "Package/discounts offers"
+msgstr "Ofertas de paquetes / descuentos"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:49
+#: .\templates\landing\landingfordoctors.html:141
+#: .\templates\landing\landingnavbar.html:85 .\templates\landingnavbar.html:85
+msgid "My posts"
+msgstr "Mis publicaciones"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:53
+#: .\templates\landing\landingfordoctors.html:145
+#: .\templates\landing\landingnavbar.html:89 .\templates\landingnavbar.html:89
+#: .\templates\sidebar.html:20 .\templates\sidebarPackage.html:46
+msgid "New article"
+msgstr "articulo nuevo"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:58
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:88
+#: .\templates\landing\landingfordoctors.html:126
+#: .\templates\landing\landingfordoctors.html:150
+#: .\templates\landing\landingnavbar.html:70
+#: .\templates\landing\landingnavbar.html:94 .\templates\landingnavbar.html:70
+#: .\templates\landingnavbar.html:94
+msgid "LOGOUT"
+msgstr "Cerrar sesión"
+
+#: .\templates\doctortemplate\navbarsnippets\logintopright.html:68
+#: .\templates\landing\landingfordoctors.html:163
+#: .\templates\landing\landingnavbar.html:107
+#: .\templates\landingnavbar.html:107
+msgid "Sign In "
+msgstr "registrarse"
+
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:14
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:35
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:51
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:64
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:80
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:94
+msgid "Share"
+msgstr "Compartir"
+
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:17
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:37
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:53
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:66
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:82
+#: .\templates\doctortemplate\navbarsnippets\socialdoctor.html:96
+msgid "Visit"
+msgstr "Visitar"
+
 #: .\templates\doctortemplate\our_teamsection.html:8
 msgid "Team"
 msgstr "el equipo"
 
 #: .\templates\doctortemplate\our_teamsection.html:9
 msgid "Experts in our clinic can help you solve your problems"
-msgstr "Los expertos en nuestra clínica pueden ayudarlo a resolver sus problemas."
+msgstr ""
+"Los expertos en nuestra clínica pueden ayudarlo a resolver sus problemas."
 
-#: .\templates\doctortemplate\ouraboutsection.html:10
+#: .\templates\doctortemplate\ouraboutsection.html:11
 msgid " Welcome To"
 msgstr "Bienvenido a"
 
-#: .\templates\doctortemplate\ouraboutsection.html:16
-msgid ""
-"We are specialists and professors of our respective specialties, certified "
-"in the respective councils of specialties, with publications in different "
-"journals and medical books. We offer medical services with the most advanced "
-"technology and the most up-to-date knowledge."
-msgstr ""
-"Somos especialistas y profesores de nuestras respectivas especialidades, certificados"
-"en los respectivos consejos de especialidades, con publicaciones en diferentes"
-"revistas y libros de medicina. Ofrecemos servicios médicos con los más avanzados"
-"tecnología y el conocimiento más actualizado"
-#: .\templates\doctortemplate\ouraboutsection.html:18
+#: .\templates\doctortemplate\ouraboutsection.html:19
 msgid "Some of our services:"
 msgstr "Algunos de nuestros servicios:"
 
-#: .\templates\doctortemplate\ouraboutsection.html:29
+#: .\templates\doctortemplate\ouraboutsection.html:30
 msgid "Primary Care"
 msgstr "atención primaria"
 
-#: .\templates\doctortemplate\ouraboutsection.html:30
+#: .\templates\doctortemplate\ouraboutsection.html:31
 msgid "Lab Test"
 msgstr "prueba de laboratorio"
 
-#: .\templates\doctortemplate\ouraboutsection.html:31
+#: .\templates\doctortemplate\ouraboutsection.html:32
 msgid "Symptom Check"
 msgstr "Comprobación de síntomas"
 
-#: .\templates\doctortemplate\ouraboutsection.html:32
+#: .\templates\doctortemplate\ouraboutsection.html:33
 msgid "Heart Rate"
 msgstr "ritmo cardiaco"
 
-#: .\templates\doctortemplate\ouraboutsection.html:44
+#: .\templates\doctortemplate\ouraboutsection.html:45
 msgid "Contact Us"
 msgstr "Contacta con nosotros"
 
-#: .\templates\doctortemplate\ouraboutsection.html:91
+#: .\templates\doctortemplate\ouraboutsection.html:92
 msgid "RATE / COMMENT"
 msgstr "TARIFA / COMENTARIO"
 
-#: .\templates\doctortemplate\ouraboutsection.html:113
+#: .\templates\doctortemplate\ouraboutsection.html:114
 msgid "Private patients (without insurance)"
 msgstr "Pacientes privados (sin seguro)"
 
-#: .\templates\doctortemplate\ouraboutsection.html:140
+#: .\templates\doctortemplate\ouraboutsection.html:141
 msgid "Accepts children under 12"
 msgstr "Acepta niños menores de 12 años."
 
-#: .\templates\doctortemplate\ouraboutsection.html:151
+#: .\templates\doctortemplate\ouraboutsection.html:152
 msgid "Have discounts for todos doctors"
 msgstr "Tener descuentos para todos los doctores"
 
-#: .\templates\doctortemplate\ouraboutsection.html:162
+#: .\templates\doctortemplate\ouraboutsection.html:163
 msgid "Home visits available"
 msgstr "Visitas a domicilio disponibles"
 
-#: .\templates\doctortemplate\ouraboutsection.html:188
+#: .\templates\doctortemplate\ouraboutsection.html:189
 msgid "Have access for people with disabilities"
 msgstr "Tener acceso para personas con discapacidad."
 
-#: .\templates\doctortemplate\ouraboutsection.html:222
+#: .\templates\doctortemplate\ouraboutsection.html:223
 msgid "Check Special offers"
 msgstr "Consultar ofertas especiales"
 
@@ -1920,7 +2030,8 @@ msgstr "Precios"
 
 #: .\templates\doctortemplate\pricingsection.html:9
 msgid "Check discounts of our services only with todos doctors "
-msgstr "Consulte los descuentos de nuestros servicios solo con todos los médicos"
+msgstr ""
+"Consulte los descuentos de nuestros servicios solo con todos los médicos"
 
 #: .\templates\doctortemplate\pricingsection.html:18
 msgid "Old Prices"
@@ -1934,145 +2045,1402 @@ msgstr "Precios de descuento"
 msgid " Standard prices"
 msgstr "Precios estándar"
 
+#: .\templates\doctortemplate\rightsidemenu.html:9
+#, fuzzy
+#| msgid "Package/discounts offers"
+msgid "Package/Discount list"
+msgstr "Ofertas de paquetes / descuentos"
+
+#: .\templates\doctortemplate\rightsidemenu.html:10
+msgid "Doctor list"
+msgstr "Lista de doctores"
+
+#: .\templates\doctortemplate\rightsidemenu.html:19
+msgid "Products"
+msgstr "Productos"
+
+#: .\templates\doctortemplate\servicesection.html:9
+#, fuzzy
+#| msgid "Check out our service"
+msgid "Check out our services"
+msgstr "Mira nuestro servicio"
+
+#: .\templates\ecommerce\registration\password_reset_email.html:2
+#: .\templates\ecommerce\registration\password_reset_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"Hello, \n"
+"\n"
+"Reset your password on %(domain)s for %(user)s:\n"
+msgstr ""
+
 #: .\templates\index.html:44
 msgid "Interested in who are the best doctors and dentists in Mexico"
-msgstr "Interesado en saber quiénes son los mejores médicos y dentistas en México."
+msgstr ""
+"Interesado en saber quiénes son los mejores médicos y dentistas en México."
 
 #: .\templates\index.html:46
 msgid "Help other people by leaving comments and ratings!"
 msgstr "¡Ayuda a otras personas dejando comentarios y calificaciones!"
 
-#: .\templates\landing.html:331
-msgid "Try It Now!"
-msgstr "Pruebalo ahora!"
-
-#: .\templates\landing.html:353
+#: .\templates\landing\landing.html:254
 msgid "BEST DEALS FOR YOUR HEALTH"
 msgstr "MEJORES OFERTAS PARA TU SALUD"
 
-#: .\templates\landing.html:355
+#: .\templates\landing\landing.html:256
 msgid "Search best doctors with best deals from different sources"
-msgstr "Busque los mejores médicos con las mejores ofertas de diferentes fuentes"
+msgstr ""
+"Busque los mejores médicos con las mejores ofertas de diferentes fuentes"
 
-#: .\templates\landing.html:356
+#: .\templates\landing\landing.html:257
 msgid "Find doctors"
 msgstr "Encuentra doctores"
 
-#: .\templates\landing.html:359
+#: .\templates\landing\landing.html:260
 msgid " CHECK OFFERS"
 msgstr "CONSULTAR OFERTAS"
 
-#: .\templates\landing.html:376
+#: .\templates\landing\landing.html:277
 msgid "Featured doctors"
 msgstr "Doctores destacados"
 
-#: .\templates\landing.html:457
+#: .\templates\landing\landing.html:358
 msgid "Not rated "
 msgstr "Not rated"
 
-#: .\templates\landing.html:509
+#: .\templates\landing\landing.html:410
 msgid "Value your money"
 msgstr "Valora tu dinero"
 
-#: .\templates\landing.html:516
+#: .\templates\landing\landing.html:417
 msgid "Check out best deals offers"
 msgstr "Mira las mejores ofertas"
 
-#: .\templates\landing.html:518
+#: .\templates\landing\landing.html:419
 msgid "With  great discounts"
 msgstr "Con grandes descuentos"
 
-#: .\templates\landing.html:533
+#: .\templates\landing\landing.html:434
 msgid "Find all "
 msgstr "encuentra todos"
 
-#: .\templates\landing.html:533
+#: .\templates\landing\landing.html:434
 msgid "doctors "
 msgstr "doctores"
 
-#: .\templates\landing.html:533
+#: .\templates\landing\landing.html:434
 msgid "by: "
 msgstr "por:"
 
-#: .\templates\landing.html:540
+#: .\templates\landing\landing.html:441
 msgid "speciality "
 msgstr "especialidad"
 
-#: .\templates\landing.html:542
+#: .\templates\landing\landing.html:443
 msgid "nearest location "
 msgstr "ubicación más cercana"
 
-#: .\templates\landing.html:545
+#: .\templates\landing\landing.html:446
 msgid "ratings"
 msgstr "calificaciones"
 
-#: .\templates\landing.html:548
+#: .\templates\landing\landing.html:449
 msgid "special possibilites"
 msgstr "posibilidades especiales"
 
-#: .\templates\landing.html:551
+#: .\templates\landing\landing.html:452
 msgid "and many other"
 msgstr "Y muchos otros"
 
-#: .\templates\landing.html:567
+#: .\templates\landing\landing.html:468
 msgid "Stay connected"
 msgstr "Mantente conectado"
 
-#: .\templates\landing.html:574
+#: .\templates\landing\landing.html:475
 msgid "Follow doctors for news "
 msgstr "Siga a los médicos para recibir noticias"
 
-#: .\templates\landing.html:576
+#: .\templates\landing\landing.html:477
 msgid "Leave rating and comment "
 msgstr "Deja calificación y comentario"
 
-#: .\templates\landing.html:579
+#: .\templates\landing\landing.html:480
 msgid "for help doctors and other pacients"
 msgstr "para ayuda médicos y otros pacientes"
 
-#: .\templates\landing.html:606
+#: .\templates\landing\landing.html:507
 msgid " FOR DOCTORS AND CLINICS"
 msgstr "PARA DOCTORES Y CLÍNICAS"
 
-#: .\templates\landing.html:610
+#: .\templates\landing\landing.html:511
 msgid " Personal web page"
 msgstr "Pagina web personal"
 
-#: .\templates\landing.html:611
+#: .\templates\landing\landing.html:512
 msgid "Improve marketing of your products"
 msgstr "Mejora la comercialización de tus productos"
 
-#: .\templates\landing.html:613
+#: .\templates\landing\landing.html:514
 msgid "Online support"
 msgstr "Soporte en línea"
 
-#: .\templates\landing.html:622
+#: .\templates\landing\landing.html:523
 msgid "Get your own web page based on your profile"
 msgstr "Obtenga su propia página web basada en su perfil"
 
-#: .\templates\landing.html:630
+#: .\templates\landing\landing.html:531
 msgid "Improve your marketing and make yourself visible"
 msgstr "Mejora tu marketing y hazte visible"
 
-#: .\templates\landing.html:638
+#: .\templates\landing\landing.html:539
 msgid "Get fast online support"
 msgstr "Obtenga soporte en línea rápido"
 
-#: .\templates\landing.html:663
+#: .\templates\landing\landing.html:564
 msgid "Latest offers"
 msgstr "Últimas ofertas"
 
-#: .\templates\landing.html:665
+#: .\templates\landing\landing.html:566
 msgid "Find packages with biggest saving"
 msgstr "Encuentra paquetes con el mayor ahorro"
 
-#: .\templates\landing.html:812
+#: .\templates\landing\landing.html:713
 msgid "Latest comments"
 msgstr "Últimos comentarios"
 
-#: .\templates\landing.html:890
+#: .\templates\landing\landing.html:791
 msgid "Latest Articles"
 msgstr "últimos artículos"
+
+#: .\templates\landing\landingfooter.html:31
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacts"
+msgstr "contacto"
+
+#: .\templates\landing\landingfooter.html:42
+msgid "Links"
+msgstr "Enlaces"
+
+#: .\templates\landing\landingfooter.html:45
+#, fuzzy
+#| msgid "Featured Doctors"
+msgid "For Doctors"
+msgstr "Doctores destacados"
+
+#: .\templates\landing\landingfooter.html:47
+msgid "Terms&Conditions"
+msgstr "terminos-y-condiciones"
+
+#: .\templates\landing\landingfooter.html:48
+msgid "Privacy policy"
+msgstr "Privacidad"
+
+#: .\templates\landing\landingfordoctors.html:170
+#: .\templates\landing\landingnavbar.html:114
+#: .\templates\landingnavbar.html:114
+msgid "Try It Now!"
+msgstr "Pruebalo ahora!"
+
+#: .\templates\landing\landinghelp.html:68
+msgid "FREQUENTLY ASKED QUESTIONS"
+msgstr "PREGUNTAS FRECUENTES"
+
+#: .\templates\landing\landinghelp.html:70
+msgid "MY ACCOUNT"
+msgstr "MI CUENTA"
+
+#: .\templates\landing\landinghelp.html:81
+msgid "How can I unsubscribe from Traveldoctors?"
+msgstr "Cómo puedo darme de baja de Traveldoctors?"
+
+#: .\templates\landing\landinghelp.html:87
+#: .\templates\landing\landinghelp.html:103
+#: .\templates\landing\landinghelp.html:165
+#, fuzzy
+#| msgid "Get fast online support"
+msgid "Please contact support"
+msgstr "Obtenga soporte en línea rápido"
+
+#: .\templates\landing\landinghelp.html:96
+msgid "How can I stop receiving emails from Traveldoctors"
+msgstr "Cómo puedo dejar de recibir correos electrónicos de Traveldoctors?"
+
+#: .\templates\landing\landinghelp.html:112
+msgid "How can I recover my password?"
+msgstr "Cómo puedo recuperar mi contraseña?"
+
+#: .\templates\landing\landinghelp.html:117
+msgid "To recover your password, follow these steps:"
+msgstr "Para recuperar su contraseña, siga estos pasos:"
+
+#: .\templates\landing\landinghelp.html:119
+msgid ""
+"1.  On the TravelDoctors home page, in the upper right corner, click Login . "
+"2. Choose the option -I have forgotten my password- and indicate the email "
+"in which you want to receive your new password. 3. You will receive an email "
+"with the new password. "
+msgstr "1. En la página de inicio de TravelDoctors, en la esquina superior derecha, haga clic en Iniciar sesión. "
+"2. Elija la opción -He olvidado mi contraseña- e indique el correo electrónico"
+"en el que quieres recibir tu nueva contraseña. 3. Recibirás un correo electrónico"
+"con la nueva contraseña."
+
+#: .\templates\landing\landinghelp.html:120
+msgid ""
+"If you do not receive any mail, you can contact us through our support "
+"department"
+msgstr "Si no recibe ningún correo, puede contactarnos a través de nuestro soporte "
+"Departamento"
+
+#: .\templates\landing\landinghelp.html:129
+msgid "How is the authenticity of a specialist verified?"
+msgstr "Cómo se verifica la autenticidad de un especialista?"
+
+#: .\templates\landing\landinghelp.html:134
+msgid ""
+"First step in this process is to  confirm that the professional is "
+"registered , verifying that his or her registration number coincides with "
+"the one registered in the corresponding professional association or in the "
+"professional medical organization.User can upload attachment in account my "
+"profile, under Document for identification doctor.<br>If data is not "
+"provided, and after contact to new profesional can't be acquired, data is "
+"deleted."
+msgstr "El primer paso de este proceso es confirmar que el profesional "
+"registrado, comprobando que su número de registro coincide con"
+"el registrado en el colegio profesional correspondiente o en el"
+"organización médica profesional. El usuario puede cargar archivos adjuntos en la cuenta"
+"perfil, en Documento de identificación del médico. <br> Si los datos no son"
+"siempre y cuando no se pueda adquirir el contacto con un nuevo profesional, los datos son"
+"eliminado."
+
+#: .\templates\landing\landinghelp.html:144
+msgid "Who can register in Traveldoctors?"
+msgstr "Quién puede registrarse en Traveldoctors?"
+
+#: .\templates\landing\landinghelp.html:150
+msgid ""
+"Any health proffesional can register with TravelDoctors for proffesional "
+"account. Other users have to register for appoitments and comments."
+msgstr "Cualquier profesional de la salud puede registrarse en TravelDoctors para profesional "
+"Cuenta. Otros usuarios tienen que registrarse para citas y comentarios."
+
+#: .\templates\landing\landinghelp.html:159
+msgid "How can I change my registration email?"
+msgstr "Cómo puedo cambiar mi correo electrónico de registro?"
+
+#: .\templates\landing\landinghelp.html:174
+msgid "A modular approach"
+msgstr "Un enfoque modular"
+
+#: .\templates\landing\landinghelp.html:177
+msgid ""
+"Make your own website in a few clicks! Traveldoctors helps you cut down "
+"development time by providing you a website created with your profile. "
+"<em>It</em>creates responsive, retina and mobile friendly websites in a few "
+"clicks. With Traveldoctors promote your services and get new patients."
+msgstr ""
+"Crea tu propio sitio web en unos pocos clics! Traveldoctors le ayuda a reducir "
+"tiempo de desarrollo al proporcionarle un sitio web creado con su perfil"
+"<em> Esto </em> crea sitios web adaptables, retina y optimizados para dispositivos móviles en unos pocos"
+"Clics. Con Traveldoctors promocione sus servicios y consiga nuevos pacientes."
+
+#: .\templates\landing\landinghelp.html:207
+msgid "How does my profile picture have to be?"
+msgstr "Cómo tiene que ser mi foto de perfil?"
+
+#: .\templates\landing\landinghelp.html:215
+msgid "Best is if can be 480x480px, in a valid formats jpg or png"
+msgstr "Lo mejor es si puede ser de 480x480px, en un formato válido jpg o png"
+
+#: .\templates\landing\landinghelp.html:225
+msgid "I want to change my address"
+msgstr "Quiero cambiar mi direccion"
+
+#: .\templates\landing\landinghelp.html:235
+msgid "You can change in -myprofile section"
+msgstr "Puede cambiar en la sección -mi perfil"
+
+#: .\templates\landing\landinghelp.html:245
+msgid "Add or modify profile data"
+msgstr "Agregar o modificar datos de perfil"
+
+#: .\templates\landing\landinghelp.html:255
+msgid ""
+"All profile data can be found when click in top right corner at user name "
+"when loged in"
+msgstr "Todos los datos del perfil se pueden encontrar al hacer clic en la esquina superior derecha en el nombre de usuario "
+"cuando está conectado"
+
+#: .\templates\landing\landinghelp.html:265
+msgid "Why are my profile changes not reflected on Google?"
+msgstr "Por qué los cambios de mi perfil no se reflejan en Google?"
+
+#: .\templates\landing\landinghelp.html:274
+msgid ""
+"Any change in your profile, will appear immediately in TravelDoctors, but it "
+"take some times to be visible in Goodle search.<br>This happens because "
+"Google updates the data it collects from the websites that it shows in its "
+"results only from time to time to give a quick response to the searches that "
+"users perform."
+msgstr "Cualquier cambio en su perfil, aparecerá inmediatamente en TravelDoctors, pero "
+"tardan algunos minutos en aparecer en la búsqueda de Goodle. <br> Esto sucede porque"
+"Google actualiza los datos que recopila de los sitios web que muestra en su"
+"resultados solo de vez en cuando para dar una respuesta rápida a las búsquedas que"
+"los usuarios realizan."
+
+#: .\templates\landing\landinghelp.html:284
+msgid "How can I change the name of my profile?"
+msgstr "Cómo puedo cambiar el nombre de mi perfil?"
+
+#: .\templates\landing\landinghelp.html:294
+msgid "In myprofile section"
+msgstr "En mi sección de perfil"
+
+#: .\templates\landing\landinghelp.html:304
+msgid "How to include videos in my profile?"
+msgstr "Cómo incluir videos en mi perfil?"
+
+#: .\templates\landing\landinghelp.html:314
+#, fuzzy
+#| msgid "Home visits available"
+msgid "For now not available"
+msgstr "Por ahora no disponible"
+
+#: .\templates\landing\landinghelp.html:334
+msgid "My Web Page"
+msgstr "Mi pagina web"
+
+#: .\templates\landing\landinghelp.html:342
+msgid "Will patients be able to book an appointment through my website?"
+msgstr "Los pacientes podrán reservar una cita a través de mi sitio web?"
+
+#: .\templates\landing\landinghelp.html:350
+msgid ""
+"Yes patients can book appoitment, and they send mail with preffered date. "
+"After you have to agree with them by email or phone, which they have to "
+"leave, for agreement of suitable time."
+msgstr "Sí, los pacientes pueden reservar una cita y enviar un correo con la fecha preferida. "
+"Después tienes que estar de acuerdo con ellos por correo electrónico o por teléfono, lo cual tienen que hacer"
+"dejar, por acuerdo de tiempo adecuado."
+
+#: .\templates\landing\landinghelp.html:358
+msgid "How does it work?"
+msgstr "Como funciona?"
+
+#: .\templates\landing\landinghelp.html:366
+msgid ""
+"After your profile is complete, you have already part of your page ready."
+"<br>After is another section in account -&gt; web page settings where most "
+"of things are setup."
+msgstr ""
+"Una vez que su perfil esté completo, ya tendrá parte de su página lista ."
+"<br> Después es otra sección de la cuenta: & gt; configuración de la página web donde la mayoría"
+"de las cosas están configuradas."
+
+#: .\templates\landing\landinghelp.html:374
+msgid "How can I activate it?"
+msgstr "Cómo puedo activarlo?"
+
+#: .\templates\landing\landinghelp.html:382
+msgid ""
+"With register on page and completing your profile you will have your web "
+"page ready."
+msgstr "Con registrarte en la página y completando tu perfil tendrás tu web "
+"página lista."
+
+#: .\templates\landing\landinghelp.html:390
+msgid "Will my page be optimized for Google?"
+msgstr "Mi página estará optimizada para Google?"
+
+#: .\templates\landing\landinghelp.html:398
+msgid ""
+"We use best SEO practises to make optimization for Google. Also by marketing "
+"on different sites, and social media this is further improved."
+msgstr "Usamos las mejores prácticas de SEO para realizar la optimización para Google. También por marketing "
+"en diferentes sitios y redes sociales, esto se mejora aún más."
+
+#: .\templates\landing\landinghelp.html:406
+msgid "Will my professional website look good on mobile phones and tablets?"
+msgstr "Mi sitio web profesional se verá bien en teléfonos móviles y tabletas?"
+
+#: .\templates\landing\landinghelp.html:414
+msgid "All is optimized to look good on any device, tablet or phone"
+msgstr "Todo está optimizado para verse bien en cualquier dispositivo, tableta o teléfono"
+
+#: .\templates\landing\landinghelp.html:422
+msgid "Technical assistance in case of doubts"
+msgstr "Asistencia técnica en caso de dudas"
+
+#: .\templates\landing\landinghelp.html:430
+msgid "You can alway contact support"
+msgstr "Siempre puedes contactar con el soporte"
+
+#: .\templates\landing\landinghelp.html:453
+msgid "TAKE ADVANTAGE OF TRAVELDOCTORS"
+msgstr "APROVECHE LOS TRAVELDOCTORS"
+
+#: .\templates\landing\landinghelp.html:464
+msgid "Recommendations for About you"
+msgstr "Recomendaciones para Acerca de ti"
+
+#: .\templates\landing\landinghelp.html:469
+msgid ""
+" -About you-  is a section of your profile that will better show you work "
+"and strenghts , and is displayes on begining of your page . We recommend "
+"that you write about the following topics:"
+msgstr ""
+"-Acerca de ti- es una sección de tu perfil que te mostrará mejor tu trabajo"
+"y fortalezas, y se muestra al principio de su página. Recomendamos"
+"que escribe sobre los siguientes temas:"
+
+#: .\templates\landing\landinghelp.html:471
+msgid ""
+"• Your education: use your titles and awards to show your proffesional "
+"education"
+msgstr "• Su educación: use sus títulos y premios para mostrar su profesionalidad "
+"educación"
+
+#: .\templates\landing\landinghelp.html:472
+msgid ""
+"• Your work :  explain how you differ and how you stand out from other "
+"professionals, notable experience or relevant studies."
+msgstr "• Su trabajo: explique en qué se diferencia y en qué se destaca de los demás "
+"Profesionales, experiencia destacada o estudios relevantes."
+
+#: .\templates\landing\landinghelp.html:483
+msgid "Recommendations for photos in packages"
+msgstr "Recomendaciones para fotos en paquetes"
+
+#: .\templates\landing\landinghelp.html:489
+msgid ""
+"Photos for promotion should be something reflecting your product and which "
+"can be used in marketing purposes."
+msgstr "Las fotos de promoción deben reflejar su producto y que "
+"se puede utilizar con fines de marketing."
+
+#: .\templates\landing\landinghelp.html:498
+msgid "Why is it important to complete the profile?"
+msgstr "Por qué es importante completar el perfil?"
+
+#: .\templates\landing\landinghelp.html:504
+msgid ""
+"By completing profile you get your web page, and patients will know more "
+"about your bussines and be more attracted to check your profile."
+msgstr "Al completar el perfil obtienes tu página web, y los pacientes sabrán más "
+"sobre su negocio y se sentirá más atraído por comprobar su perfil."
+
+#: .\templates\landing\landinghelp.html:513
+msgid "Why to create a package?"
+msgstr "Por qué crear un paquete?"
+
+#: .\templates\landing\landinghelp.html:518
+msgid ""
+"Idea is that by special promotions with discounts is attracted more people "
+"to your bussines. Also special offers like this are more likely to get "
+"shared, because other pople will have to share to improve their chance to "
+"pass the offer."
+msgstr "La idea es que mediante promociones especiales con descuentos se atrae a más gente "
+"a su negocio. Además, es más probable que se obtengan ofertas especiales como esta"
+"compartido, porque otras personas tendrán que compartir para mejorar sus posibilidades de"
+"pasa la oferta."
+
+#: .\templates\landing\landinghelp.html:527
+msgid "How to create a package?"
+msgstr "Cómo crear un paquete?"
+
+#: .\templates\landing\landinghelp.html:533
+msgid ""
+"In account-&gt;package/special deals is section with packages.<br>There you "
+"insert all information needed. You can add your services created in web page "
+"settings, or add some special offer. Is important to add remarks/rules for "
+"make use of package."
+msgstr ""
+"In la cuenta paquete / ofertas especiales está la sección con paquetes."
+"inserta toda la información necesaria. Puedes agregar tus servicios creados en la página web"
+"o agregar alguna oferta especial. Es importante agregar comentarios / reglas para"
+"hacer uso del paquete."
+
+#: .\templates\landing\landinghelp.html:542
+#, fuzzy
+#| msgid "With  great discounts"
+msgid "Using discounts"
+msgstr "Con grandes descuentos"
+
+#: .\templates\landing\landinghelp.html:548
+msgid ""
+"Discounts you can enter in service section, or can you packages for selling "
+"more services"
+msgstr "Descuentos que puede ingresar en la sección de servicios, o paquetes para vender "
+"más servicios"
+
+#: .\templates\landing\landinghelp.html:557
+#, fuzzy
+#| msgid " Discount prices"
+msgid "Discount promotions"
+msgstr "Precios de descuento"
+
+#: .\templates\landing\landinghelp.html:559
+msgid ""
+"Make your own special offers, which can be good way to advertise and promote "
+"your bussines. &Traveldoctors uses the power of group shopping to add "
+"hundreds of new customers to you. On our website, TravelDoctors publishes "
+"attractive offers every day that reach a large number of users. You create "
+"your offer, and we do everything else. We are publishing the new offer on "
+"our website, and we are sending tens of thousands of registered users via "
+"daily emails. The offer on the site and via email is greeted by users in the "
+"morning when they sit down at the computer."
+msgstr "Haga sus propias ofertas especiales, que pueden ser una buena forma de publicitar y promocionar "
+"su negocio. & Traveldoctors utiliza el poder de las compras grupales para agregar"
+"cientos de nuevos clientes para usted. En nuestro sitio web, TravelDoctors publica"
+"ofertas atractivas todos los días que llegan a un gran número de usuarios. Tú creas"
+"su oferta, y nosotros hacemos todo lo demás. Publicaremos la nueva oferta el"
+"nuestro sitio web, y estamos enviando a decenas de miles de usuarios registrados a través de"
+"correos electrónicos diarios. La oferta en el sitio y por correo electrónico es recibida por los usuarios en el"
+"Por la mañana cuando se sientan frente a la computadora."
+
+#: .\templates\landing\privacy.html:53
+msgid "Privacy notice"
+msgstr "Privacidad"
+
+#: .\templates\landing\privacy.html:54
+msgid ""
+"In compliance with the Federal Law on Protection of Personal Data Held by "
+"Individuals (hereinafter, the -Law-) and its Regulations, the Comprehensive "
+"Privacy Notice (hereinafter, the -Notice-) is presented which is addressed "
+"to ( to the) User (s) (hereinafter, the -Owner-) of the services provided by "
+"TravelDoctor.mx, SA de CV (hereinafter, indistinctly -TravelDoctor- or -"
+"Responsible-) through a digital platform (the -Platform-), accessible by "
+"mobile devices through computer applications, by desktop computers and "
+"through Internet browsers (hereinafter, the 'Service'), as well as to people "
+"who access and provide information through the Internet domain https://www."
+"traveldoctor.mx/ in the United Mexican States ('Mexico')."
+msgstr ""
+"En cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión"
+"Particulares (en adelante, la -Ley-) y su Reglamento, el Integral"
+"Se presenta Aviso de Privacidad (en adelante, el -Aviso-) al que se dirige"
+"a (al) Usuario (s) (en adelante, el -Propietario-) de los servicios prestados por"
+"TravelDoctor.mx, SA de CV (en adelante, indistintamente -TravelDoctor- o -"
+"Responsable-) a través de una plataforma digital (la -Plataforma-), accesible por"
+"dispositivos móviles a través de aplicaciones informáticas, computadoras de escritorio y"
+"a través de navegadores de Internet (en adelante, el 'Servicio'), así como a las personas"
+"quienes acceden y brindan información a través del dominio de Internet https: // www."
+"traveldoctor.mx/ en los Estados Unidos Mexicanos ('México')."
+
+#: .\templates\landing\privacy.html:56
+msgid ""
+"The information collected (hereinafter, the -Personal Data-) may be "
+"collected at the time that the -Owner- expressly consents to this -Notice-."
+msgstr ""
+"La información recopilada (en adelante, los -Datos Personales-) puede ser"
+"recogido en el momento en que el -Propietario- consienta expresamente a este -Aviso-."
+
+#: .\templates\landing\privacy.html:58
+msgid ""
+"Likewise, the -Owner- is informed that all -Personal Data- will be managed "
+"in accordance with the principles of legality, consent, information, "
+"quality, purpose, loyalty, proportionality and responsibility contained in "
+"the Federal Law on Protection of Personal Data in Possession of Individuals."
+msgstr ""
+"Asimismo, se informa al -Propietario- que todos los -Datos Personales- serán gestionados "
+"de acuerdo con los principios de legalidad, consentimiento, información,"
+"calidad, finalidad, lealtad, proporcionalidad y responsabilidad contenidas en"
+"la Ley Federal de Protección de Datos Personales en Posesión de Particulares."
+#: .\templates\landing\privacy.html:60
+msgid ""
+
+"In that sense, the -Owner- will at all times be responsible for the -"
+"Personal Data- provided to the Platform."
+msgstr ""
+"En ese sentido, el -Propietario- será en todo momento responsable de la -"
+"Datos personales proporcionados a la Plataforma."
+#: .\templates\landing\privacy.html:65
+msgid "Definitions."
+msgstr "Definiciones"
+
+#: .\templates\landing\privacy.html:67
+msgid ""
+"In addition to the terms defined throughout this -Notice-, the terms that "
+"appear with the first letter in capital letters, within this Notice, will "
+"have the meanings assigned to them below: "
+msgstr ""
+"Además de los términos definidos a lo largo de este -Aviso-, los términos que "
+"aparecerán con la primera letra en mayúsculas, dentro de este Aviso,"
+"tienen los significados que se les asignan a continuación:"
+
+#: .\templates\landing\privacy.html:68
+msgid ""
+"-Notice- .- It refers to this Comprehensive Privacy Notice, whether issued "
+"in a physical, electronic document or in any other format generated by the "
+"Responsible Party that is made available to the Owner, prior to the "
+"processing of their personal data in order to comply with the information "
+"principle. "
+msgstr ""
+"-Aviso- .- Se refiere a este Aviso Integral de Privacidad, ya sea que se emita "
+"en un documento físico, electrónico o en cualquier otro formato generado por el"
+"Responsable que se pone a disposición del Titular, antes del"
+"tratamiento de sus datos personales con el fin de cumplir con la información"
+"principio."
+
+#: .\templates\landing\privacy.html:69
+msgid ""
+"-Database- .- It is the ordered set of personal data referring to an "
+"identified or identifiable person."
+msgstr ""
+"-Base de datos- .- Es el conjunto ordenado de datos personales referentes a un "
+"Persona identificada o identificable."
+
+#: .\templates\landing\privacy.html:71
+msgid ""
+"-Medical Centers- .- Corresponds to the type of user that is a hospital, "
+"clinic or health center where the specialist diagnoses and treats people "
+"with health problems. In general, any place where activities are carried out "
+"in the field of health, medical or paramedical services. "
+msgstr ""
+"-Centros médicos- .- Corresponde al tipo de usuario que es un hospital,"
+"Clínica o centro de salud donde el especialista diagnostica y trata a las personas"
+"con problemas de salud. En general, cualquier lugar donde se realicen actividades"
+"en el ámbito de los servicios sanitarios, médicos o paramédicos."
+
+#: .\templates\landing\privacy.html:73
+msgid ""
+"-Computing in the Cloud- .- Model of external provision of computing "
+"services on demand, which implies the supply of infrastructure, platform or "
+"software, which are distributed in a flexible way, through virtualization "
+"procedures, in dynamically shared resources. "
+msgstr ""
+"-Computación en la Nube- .- Modelo de provisión externa de computación"
+"servicios bajo demanda, lo que implica el suministro de infraestructura, plataforma o"
+"software, que se distribuye de forma flexible, mediante virtualización"
+"procedimientos, en recursos compartidos dinámicamente."
+
+#: .\templates\landing\privacy.html:75
+msgid ""
+"-Cookies- .- Data file that is stored on the hard drive of the computer "
+"equipment or electronic communications device of a user when browsing a "
+"specific internet site, which allows the exchange of status information "
+"between said site and the browser of the user. The status information can "
+"reveal means of session identification, authentication or user preferences, "
+"as well as any data stored by the browser regarding the website. "
+msgstr ""
+"-Cookies- .- Archivo de datos que se almacena en el disco duro de la computadora"
+"equipo o dispositivo de comunicaciones electrónicas de un usuario cuando navega por un"
+"sitio de Internet específico, que permite el intercambio de información de estado"
+"entre dicho sitio y el navegador del usuario. La información de estado puede"
+"revelar medios de identificación de sesión, autenticación o preferencias del usuario,"
+"así como cualquier dato almacenado por el navegador con respecto al sitio web."
+
+#: .\templates\landing\privacy.html:77
+msgid ""
+"-Personal Data- .- Any information concerning an identified or identifiable "
+"natural person. "
+msgstr ""
+"-Datos Personales- .- Cualquier información concerniente a un identificado o identificable"
+"persona natural. "
+
+#: .\templates\landing\privacy.html:78
+msgid ""
+"-Sensitive Personal Data- .- Those -Personal Data- that affect the most "
+"intimate sphere of its -Owner-, or whose misuse may give rise to "
+"discrimination or entail a serious risk for it. In particular, those that "
+"may reveal aspects such as racial or ethnic origin, present and future "
+"health status, genetic information, religious, philosophical and moral "
+"beliefs, union affiliation, political opinions or sexual preference are "
+"considered sensitive. "
+msgstr ""
+"-Datos Personales Sensibles- .- Aquellos -Datos Personales- que más afecten"
+"ámbito íntimo de su -Propietario-, o cuyo mal uso pueda dar lugar a"
+"discriminación o entrañe un grave riesgo para ella. En particular, aquellos que"
+"puede revelar aspectos como el origen racial o étnico, presente y futuro"
+"estado de salud, información genética, religiosa, filosófica y moral"
+"creencias, afiliación sindical, opiniones políticas o preferencia sexual son"
+"considerado sensible."
+
+#: .\templates\landing\privacy.html:80
+msgid ""
+"-ARCO- Rights .- The rights that the -Owner- has against the -Responsible-, "
+"in relation to their -Personal Data-, which include the following: the right "
+"to access their -Personal Data- and the details of the treatment of the "
+"same, as well as to rectify them if they are inaccurate or cancel them when "
+"it considers that they turn out to be excessive or unnecessary for the "
+"purposes that justified their obtaining or to oppose the -Treatment- of them "
+"for specific purposes. In this regard, section XI of this -Notice- will be "
+"expanded upon. "
+msgstr ""
+"-Derechos ARCO.- Los derechos que el -Propietario- tiene frente al -Responsable-,"
+"en relación con sus -Datos Personales-, que incluyen lo siguiente: el derecho"
+"para acceder a sus -Datos Personales- y los detalles del tratamiento de los"
+"mismos, así como subsanarlos si son inexactos o cancelarlos cuando"
+"Considera que resultan excesivos o innecesarios para el"
+"fines que justificaron su obtención o para oponerse al -Tratamiento- de los mismos"
+"para fines específicos. En este sentido, el apartado XI de este -Aviso- será"
+"ampliado."
+
+#: .\templates\landing\privacy.html:82
+msgid ""
+"-Dissociation- .- It is the procedure by which the -Personal Data- cannot be "
+"associated with the -Owner- or allow, due to its structure, content or "
+"degree of disaggregation, the identification of the same."
+msgstr ""
+"-Dosociación- .- Es el procedimiento por el cual los -Datos Personales- no pueden ser"
+"asociado al -Propietario- o permitir, por su estructura, contenido o"
+"grado de desagregación, la identificación de los mismos."
+
+#: .\templates\landing\privacy.html:84
+msgid ""
+"-Responsible- .- The individual or legal entity that alone or jointly with "
+"others treats -Personal Data- on behalf of the -Responsible-. "
+msgstr ""
+"-Responsable- .- La persona física o jurídica que sola o conjuntamente con "
+"otros tratan -Datos Personales- en nombre del -Responsable-."
+
+#: .\templates\landing\privacy.html:86
+msgid ""
+"-Health Specialists- .- Corresponds to the type of user who is a "
+"professional who uses the -Website-, who is a doctor, dentist, psychologist, "
+"physiotherapist, nurse, nutritionist, therapist or other person not "
+"mentioned above, who performs activities in the field of health services and "
+"provides health, medical or paramedical services. "
+msgstr ""
+"-Especialistas en salud- .- Corresponde al tipo de usuario que es un"
+"profesional que utiliza el -sitio web-, que es médico, dentista, psicólogo,"
+"fisioterapeuta, enfermera, nutricionista, terapeuta u otra persona no"
+"mencionado anteriormente, que realiza actividades en el ámbito de los servicios de salud y"
+"brinda servicios de salud, médicos o paramédicos."
+
+#: .\templates\landing\privacy.html:88
+msgid ""
+"-Guidelines- .- Guidelines of the Privacy Notice published in the Official "
+"Gazette of the Federation on January 17, 2013. "
+msgstr ""
+"-Directrices- .- Lineamientos del Aviso de Privacidad publicado en el Oficial"
+"Gaceta de la Federación el 17 de enero de 2013."
+
+#: .\templates\landing\privacy.html:90
+msgid ""
+"-Patient- .- Corresponds to the type of user who accesses the -TravelDoctor- "
+"platform to schedule appointments with -Health Specialists- or ask "
+"questions. "
+msgstr ""
+"-Paciente- .- Corresponde al tipo de usuario que accede al -TravelDoctor-"
+"Plataforma para programar citas con -Especialistas en Salud- o preguntar"
+"preguntas."
+
+
+#: .\templates\landing\privacy.html:92
+msgid ""
+"-Regulation- .- The Regulation of the Federal Law on Protection of Personal "
+"Data Held by Private Parties."
+msgstr ""
+"-Reglamento- .- El Reglamento de la Ley Federal de Protección de Personas"
+"Datos en posesión de particulares."
+
+#: .\templates\landing\privacy.html:94
+msgid ""
+"-Responsible- .- Individual or legal entity of a private nature that carries "
+"out the processing of -Personal Data-, namely -TravelDoctor-. "
+msgstr ""
+
+#: .\templates\landing\privacy.html:96
+msgid ""
+"-Third- .- The natural or legal person, national or foreign, other than the "
+"owner or the -Responsible- of the -Personal Data-. "
+msgstr ""
+"-Tercero-.- La persona natural o jurídica, nacional o extranjera, distinta de la"
+"Propietario o -Responsable- de los -Datos Personales-."
+
+#: .\templates\landing\privacy.html:98
+msgid "-Owner-.- The natural person to whom the -Personal Data- correspond. "
+msgstr "-Propietario -.- La persona física a la que corresponden los -Datos Personales-."
+
+#: .\templates\landing\privacy.html:100
+msgid ""
+"-Treatment- .- The obtaining, use, disclosure or storage of -Personal Data-, "
+"by any means. The use covers any action of access, handling, use, transfer "
+"or disposition of the -Personal Data-."
+msgstr ""
+"-Tratamiento- .- La obtención, uso, divulgación o almacenamiento de -Datos Personales-,"
+"por cualquier medio. El uso comprende cualquier acción de acceso, manipulación, uso, transferencia"
+"o disposición de los -Datos Personales-."
+
+#: .\templates\landing\privacy.html:103
+#, fuzzy
+#| msgid "Fill out form with your information"
+msgid "Responsible for the Information"
+msgstr "Responsable de la información"
+
+#: .\templates\landing\privacy.html:104
+msgid ""
+"For the purposes of the -Notice-, as well as for all legal purposes that may "
+"arise, the -Responsible- will be TravelDoctor México, SA de CV, with address "
+"at Ignacio Allende 408,Reserva Territorial Atlixcáyotl, Concepción Guadalupe "
+"72820 Puebla, who will carry out the -Treatment- of the -Personal Data-."
+msgstr ""
+"A los efectos del -Aviso-, así como para todos los efectos legales que puedan"
+"surja, el -Responsable- será TravelDoctor México, SA de CV, con domicilio"
+"en Ignacio Allende 408, Reserva Territorial Atlixcáyotl, Concepción Guadalupe"
+"72820 Puebla, quien realizará el -Tratamiento- de los -Datos Personales-."
+
+#: .\templates\landing\privacy.html:106
+msgid ""
+"The -Responsible- may be assisted by one or more -Managers-, who will act in "
+"the name and on behalf of the -Responsible-, to provide a more efficient -"
+"Treatment- to the -Personal Data-. The -Managers- will be informed of the "
+"proper treatment that they must provide to the -Personal Data-."
+msgstr ""
+"El -Responsable- podrá ser asistido por uno o más -Gerentes-, quienes actuarán en"
+"el nombre y en representación del -Responsable-, para brindar un servicio más eficiente -"
+"Tratamiento- a los -Datos Personales-. Los -Gerentes- serán informados del"
+"El tratamiento adecuado que deben brindar a los -Datos Personales-."
+
+#: .\templates\landing\privacy.html:108
+msgid ""
+"The -Responsible- may also carry out the -Treatment- of the -Personal Data- "
+"using the -Cloud Computing- system, so the provider of such services will be "
+"obliged to sign the -Notice- and comply with the mechanisms of protection "
+"and security measures designed to protect the information contained in the -"
+"Personal Data-, in accordance with the -Law-, the -Regulation- and other "
+"applicable legal provisions."
+msgstr ""
+"El -Responsable- también podrá realizar el -Tratamiento- de los -Datos Personales-"
+"utilizando el sistema -Cloud Computing-, por lo que el proveedor de dichos servicios será"
+"Obligado a firmar el -Aviso- y cumplir con los mecanismos de protección"
+"y medidas de seguridad diseñadas para proteger la información contenida en el -"
+"Datos Personales-, de acuerdo con la -Ley-, el -Reglamento- y otros"
+"disposiciones legales aplicables."
+
+#: .\templates\landing\privacy.html:111
+msgid "Information that will be collected when signing the Notice."
+msgstr "Información que se recopilará al firmar el Aviso."
+
+#: .\templates\landing\privacy.html:112
+msgid ""
+"This -Notice- will be made available to the -Owner- at the time the -User- "
+"registers in the -Platform- of -TravelDoctor-. The -Owner- will provide this "
+"information, which is considered essential to be able to provide the "
+"service, at the time of creating your account and expressly signing this -"
+"Notice-, as well as at the time of modifying the information contained in "
+"your account The -Personal Data- collected for the three categories of Users "
+"are:"
+msgstr ""
+"Este -Aviso- estará disponible para el -Propietario- en el momento que el -Usuario-"
+"se registra en la -Plataforma- de -TravelDoctor-. El -Propietario- proporcionará esto"
+"información, que se considera imprescindible para poder proporcionar la"
+"servicio, al momento de crear su cuenta y firmar expresamente este -"
+"Aviso-, así como en el momento de modificar la información contenida en"
+"Su cuenta Los -Datos personales- recopilados para las tres categorías de Usuarios"
+"son:"
+
+#: .\templates\landing\privacy.html:114 .\templates\landing\privacy.html:157
+msgid "In the case of -Patients-"
+msgstr "En el caso de -Pacientes-"
+
+#: .\templates\landing\privacy.html:114
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "-Email address."
+msgstr "Correos electrónicos"
+
+#: .\templates\landing\privacy.html:115
+msgid "In the case of -Health Specialists- :"
+msgstr "En el caso de -Especialistas en Salud-:"
+
+#: .\templates\landing\privacy.html:116
+msgid "Name with surnames;"
+msgstr "Nombre con apellidos;"
+
+#: .\templates\landing\privacy.html:117
+#, fuzzy
+#| msgid "special possibilites"
+msgid "Specialty or specialties;"
+msgstr "Posibilidades especiales"
+
+#: .\templates\landing\privacy.html:118
+msgid "Specialty fields; and"
+msgstr "Campos de especialidad; y"
+
+#: .\templates\landing\privacy.html:119
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "Email address."
+msgstr "Correos electrónicos"
+
+#: .\templates\landing\privacy.html:121 .\templates\landing\privacy.html:159
+msgid "In the case of -Health Specialists-"
+msgstr "En el caso de -Especialistas en Salud-:"
+
+#: .\templates\landing\privacy.html:123
+msgid "Profile photography;"
+msgstr "Fotografía de perfil;"
+
+#: .\templates\landing\privacy.html:124
+msgid "Profile background photography;"
+msgstr "Fotografía de fondo de perfil;"
+
+#: .\templates\landing\privacy.html:125
+msgid "Photos of equipment and the venue;"
+msgstr "Fotos del equipo y el lugar;"
+
+#: .\templates\landing\privacy.html:126
+msgid "Videos of the facilities;"
+msgstr "Vídeos de las instalaciones;"
+
+#: .\templates\landing\privacy.html:127
+#, fuzzy
+#| msgid "Department"
+msgid "Treatment;"
+msgstr "Departamento"
+
+#: .\templates\landing\privacy.html:128 .\templates\landing\privacy.html:165
+msgid "Graduate;"
+msgstr "Graduado;"
+
+#: .\templates\landing\privacy.html:130 .\templates\landing\privacy.html:165
+msgid "Professional license;"
+msgstr "Licencia profesional;"
+
+#: .\templates\landing\privacy.html:131
+msgid "Academic training;"
+msgstr "Entrenamiento académico;"
+
+#: .\templates\landing\privacy.html:132
+msgid "Certificates;"
+msgstr "Certificados;"
+
+#: .\templates\landing\privacy.html:133
+msgid "Experience and achievements;"
+msgstr "Experiencia y logros;"
+
+#: .\templates\landing\privacy.html:134
+msgid "Publications;"
+msgstr "Publicaciones;"
+
+#: .\templates\landing\privacy.html:135 .\templates\landing\privacy.html:170
+msgid "Awards and distinctions;"
+msgstr "Premios y distinciones;"
+
+#: .\templates\landing\privacy.html:142
+#, fuzzy
+#| msgid "Add remarks for your package"
+msgid "Address of your office;"
+msgstr "Agregue comentarios para su paquete"
+
+#: .\templates\landing\privacy.html:143
+msgid "Treated Diseases;"
+msgstr "Enfermedades tratadas;"
+
+#: .\templates\landing\privacy.html:144
+msgid "Languages; and"
+msgstr "Idiomas; y"
+
+#: .\templates\landing\privacy.html:145
+msgid ""
+"By virtue of the fact that numbers 1, 12 and 15 are considered as -Sensitive "
+"Personal Data- they will receive the treatment indicated in section IV. -"
+"Sensitive Personal Data-."
+msgstr ""
+"En virtud del hecho de que los números 1, 12 y 15 se consideran sensibles"
+"Datos Personales- recibirán el tratamiento indicado en el apartado IV. -"
+"Datos personales sensibles-."
+#: .\templates\landing\privacy.html:148
+msgid "Sensitive Personal Data."
+msgstr "Datos personales sensibles."
+
+#: .\templates\landing\privacy.html:149
+msgid ""
+"-Sensitive Personal Data- are considered those -Personal Data- that affect "
+"the"
+msgstr ""
+"-Datos Personales Sensibles- se consideran aquellos -Datos Personales- que afectan"
+"el"
+
+#: .\templates\landing\privacy.html:151
+msgid ""
+"the most intimate sphere of its -Owner-, or whose misuse may give rise to "
+"discrimination or entail a serious risk for it. In particular, they are "
+"considered sensitive"
+msgstr ""
+"el ámbito más íntimo de su -Propietario-, o cuyo mal uso pueda dar lugar a"
+"discriminación o conllevan un riesgo grave para ello. En particular, son"
+"considerado sensible"
+
+#: .\templates\landing\privacy.html:153
+msgid ""
+"those that may reveal aspects such as racial or ethnic origin, present and "
+"future health status, genetic information, religious, philosophical and "
+"moral beliefs, union affiliation, political opinions, sexual preference."
+msgstr ""
+"aquellos que puedan revelar aspectos como el origen racial o étnico, presente y"
+"futuro estado de salud, información genética, religiosa, filosófica y"
+"creencias morales, afiliación sindical, opiniones políticas, preferencia sexual."
+
+#: .\templates\landing\privacy.html:155
+msgid ""
+"By virtue of the foregoing, the -Owner- may, but will not have the "
+"obligation to indicate the following sensitive data:"
+msgstr ""
+"En virtud de lo anterior, el -Propietario- podrá, pero no tendrá el"
+"obligación de indicar los siguientes datos sensibles:"
+
+#: .\templates\landing\privacy.html:159
+#, fuzzy
+#| msgid "Email"
+msgid "email"
+msgstr "correo electrónico"
+
+#: .\templates\landing\privacy.html:161
+msgid "Profile background photography; "
+msgstr "Fotografía de fondo de perfil;"
+
+#: .\templates\landing\privacy.html:162
+msgid "Photos of equipment and the venue; "
+msgstr "Fotos del equipo y el lugar;"
+
+#: .\templates\landing\privacy.html:163
+msgid "Videos of the facilities; "
+msgstr "Vídeos de las instalaciones;"
+
+#: .\templates\landing\privacy.html:164
+#, fuzzy
+#| msgid "Department"
+msgid "Treatment; "
+msgstr "Departamento"
+
+#: .\templates\landing\privacy.html:166
+msgid "Academic training; "
+msgstr "Entrenamiento académico;"
+
+#: .\templates\landing\privacy.html:167
+msgid "Certificates; "
+msgstr "Certificados;"
+
+#: .\templates\landing\privacy.html:168
+msgid "Experience and achievements; "
+msgstr "Experiencia y logros;"
+
+#: .\templates\landing\privacy.html:169
+msgid "Publications; "
+msgstr "Publicaciones;"
+
+#: .\templates\landing\privacy.html:175
+#, fuzzy
+#| msgid "Add remarks for your package"
+msgid "Address of your office; "
+msgstr "Agregue comentarios para su paquete"
+
+#: .\templates\landing\privacy.html:176
+msgid "Treated Diseases; "
+msgstr "Enfermedades tratadas;"
+
+#: .\templates\landing\privacy.html:177
+msgid "Languages"
+msgstr "Idiomas"
+
+#: .\templates\landing\privacy.html:180
+msgid "Cookies policy."
+msgstr "Política de cookies."
+
+#: .\templates\landing\privacy.html:181
+msgid ""
+"-TravelDoctor- uses various technologies to improve the efficiency of its "
+"website, including your browsing experience. These technologies include the "
+"use of third-party cookies. Cookies are small amounts of information that "
+"are stored in the browser used by each user so that the server remembers "
+"certain information that it can later use."
+msgstr ""
+"-TravelDoctor- utiliza diversas tecnologías para mejorar la eficiencia de su"
+", incluida su experiencia de navegación. Estas tecnologías incluyen el"
+"uso de cookies de terceros. Las cookies son pequeñas cantidades de información que"
+"se almacenan en el navegador utilizado por cada usuario para que el servidor recuerde"
+"cierta información que puede utilizar posteriormente."
+
+#: .\templates\landing\privacy.html:184
+msgid ""
+"This information allows us to identify you and save your personal "
+"preferences to provide you with a better browsing experience. We remind you "
+"that you can disable or adjust the use of cookies by following the "
+"procedures of the Internet browser you use."
+msgstr ""
+"Esta información nos permite identificarlo y guardar su información personal"
+"preferencias para brindarle una mejor experiencia de navegación. Le recordamos"
+"que puede deshabilitar o ajustar el uso de cookies siguiendo el"
+"procedimientos del navegador de Internet que utiliza."
+
+#: .\templates\landing\termsconditions.html:52
+msgid ""
+"By entering TravelDoctor.mx you are subject to the following Terms of "
+"Service and Conditions of Use:"
+msgstr ""
+"Al ingresar a TravelDoctor.mx estás sujeto a los siguientes Términos de"
+"Servicio y condiciones de uso:"
+
+#: .\templates\landing\termsconditions.html:53
+msgid ""
+"The TravelDoctor.mx website is a useful electronic means, which offers you "
+"information related to promotions, offers, discounts and contests for "
+"health, so when accessing said website, you are subject to these Terms of "
+"Service and Conditions of Use, as they appear at the time of access, which "
+"at any time are subject to changes and modifications without prior notice."
+msgstr ""
+
+"El sitio web TravelDoctor.mx es un medio electrónico útil, que te ofrece"
+"información relacionada con promociones, ofertas, descuentos y concursos para"
+"salud, por lo que al acceder a dicho sitio web, está sujeto a estos Términos de"
+"Servicio y Condiciones de Uso, tal y como aparecen en el momento del acceso, que"
+"en cualquier momento están sujetos a cambios y modificaciones sin previo aviso."
+
+
+#: .\templates\landing\termsconditions.html:55
+msgid ""
+"The main purpose of TravelDoctor.mx is to publicize information about "
+"promotions, offers, discounts and contests in healthcare. Also offers "
+"ability to search doctors and health proffesionals which are registered on "
+"this page, and which are registered in Google and Yelp services. Also the "
+"purpose of page is to put Patients in contact with Health Specialists and, "
+"where appropriate, with Medical Centers. To carry out this objective, we "
+"generate a platform that allows users, on the one hand, to publish questions "
+"related to the purposes of the website; and on the other, that interaction "
+"can be generated between them, in order to specify information, as well as "
+"generate opinions and replies. With the precision that at no time "
+"TravelDoctor.mx intends to apply or make valid the promotions and offers "
+"published here, which are the responsibility of its own suppliers or "
+"organizers."
+msgstr ""
+"El objetivo principal de TravelDoctor.mx es dar a conocer información sobre"
+"promociones, ofertas, descuentos y concursos en salud. También ofertas"
+"capacidad para buscar médicos y profesionales de la salud registrados en"
+"esta página, y que están registradas en los servicios de Google y Yelp. También el"
+"El propósito de la página es poner a los pacientes en contacto con especialistas en salud y"
+"en su caso, con Centros Médicos. Para llevar a cabo este objetivo, nosotros"
+"generar una plataforma que permita a los usuarios, por un lado, publicar preguntas"
+"relacionado con los propósitos del sitio web; y por otro lado, esa interacción"
+"se puede generar entre ellos, con el fin de especificar información, así como"
+"generar opiniones y respuestas. Con la precisión que en ningún momento"
+"TravelDoctor.mx pretende aplicar o hacer válidas las promociones y ofertas"
+"publicado aquí, que son responsabilidad de sus propios proveedores o"
+"organizadores."
+
+#: .\templates\landing\termsconditions.html:57
+msgid ""
+"In that sense, the use of this website is under the responsibility of "
+"registered users or not. The foregoing, by virtue of the fact that "
+"TravelDoctor.mx contains information, data, text and other content collected "
+"from a variety of information sources, either by ourselves or by registered "
+"users. In such a way that, it is only intended to inform the general public "
+"and consumers about topics related to promotions, offers, discounts and "
+"contests on brands, products and services in general."
+msgstr ""
+"En ese sentido, el uso de este sitio web es responsabilidad de "
+"usuarios registrados o no. Lo anterior, en virtud de que"
+"TravelDoctor.mx contiene información, datos, texto y otro contenido recopilado"
+"de una variedad de fuentes de información, ya sea por nosotros mismos o por registrados"
+"usuarios. De tal forma que, solo se pretende informar al público en general"
+"y consumidores sobre temas relacionados con promociones, ofertas, descuentos y"
+"Concursos sobre marcas, productos y servicios en general."
+
+#: .\templates\landing\termsconditions.html:59
+msgid ""
+"Now, without limiting the foregoing, all the information contained in "
+"TravelDoctor.mx is provided to you "
+msgstr ""
+"Ahora, sin limitar lo anterior, toda la información contenida en"
+"TravelDoctor.mx se le proporciona"
+
+#: .\templates\landing\termsconditions.html:61
+msgid ""
+"In the same way, the TravelDoctor.mx website, as well as the users "
+"registered in it, provide links to other websites that offer useful "
+"information and details about promotions, offers, discounts and contests "
+"published there. However, the inclusion of any link to such web sites does "
+"not imply endorsement or control by TravelDoctor.mx of third party web "
+"sites. The TravelDoctor.mx website is not responsible for the terms of "
+"service or the privacy policies or any content of third-party websites "
+"unrelated to TravelDoctor.mx."
+msgstr ""
+"De igual manera, el sitio web TravelDoctor.mx, así como los usuarios"
+"registrado en él, proporcionar enlaces a otros sitios web que ofrecen útiles"
+"información y detalles sobre promociones, ofertas, descuentos y concursos"
+"publicado allí. Sin embargo, la inclusión de cualquier enlace a dichos sitios web sí"
+"no implica aval o control por parte de TravelDoctor.mx de web de terceros"
+". El sitio web TravelDoctor.mx no es responsable de los términos de"
+"servicio o las políticas de privacidad o cualquier contenido de sitios web de terceros"
+"no relacionado con TravelDoctor.mx."
+
+#: .\templates\landing\termsconditions.html:63
+msgid ""
+"That is why you agree that TravelDoctor.mx is released from any type of "
+"responsibility, for any decision or action taken by you or any other person, "
+"based on the information contained in TravelDoctor.mx"
+msgstr ""
+"Por eso acepta que TravelDoctor.mx se libera de cualquier tipo de"
+"responsabilidad, por cualquier decisión o acción tomada por usted o cualquier otra persona,"
+"basado en la información contenida en TravelDoctor.mx"
+
+#: .\templates\landing\termsconditions.html:65
+msgid ""
+"On the other hand, TravelDoctor.mx does not endorse, nor guarantee, nor is "
+"it part of, nor supervises any transaction between users and the providers "
+"or organizers of the published promotions, offers, discounts and contests."
+msgstr ""
+"Por otro lado, TravelDoctor.mx no respalda, ni garantiza, ni es "
+"forma parte ni supervisa ninguna transacción entre usuarios y proveedores"
+"u organizadores de las promociones, ofertas, descuentos y concursos publicados."
+
+#: .\templates\landing\termsconditions.html:67
+msgid ""
+"Likewise, it recognizes that any validity or guarantee that is provided in "
+"relation to any promotion, offer, discount or contest that may be described "
+"or published in TravelDoctor.mx is provided only by the provider or "
+"organizer, owner or advertiser and not by TravelDoctor.mx."
+msgstr ""
+"Asimismo, reconoce que cualquier validez o garantía que se brinde en"
+"relación con cualquier promoción, oferta, descuento o concurso que pueda describirse"
+"o publicado en TravelDoctor.mx es proporcionado únicamente por el proveedor o"
+"organizador, propietario o anunciante y no por TravelDoctor.mx."
+
+#: .\templates\landing\termsconditions.html:69
+msgid ""
+"For this reason, special mention is made that it is the responsibility of "
+"the user of the website to evaluate the accuracy, completeness or usefulness "
+"of any information or other content available through TravelDoctor.mx."
+msgstr ""
+"Por este motivo, se hace especial mención que es responsabilidad de "
+"el usuario del sitio web para evaluar la exactitud, integridad o utilidad"
+"de cualquier información u otro contenido disponible a través de TravelDoctor.mx."
+
+#: .\templates\landing\termsconditions.html:71
+msgid ""
+"In this sense, although TravelDoctor.mx tries to ensure the integrity and "
+"veracity of all the information published by us or by registered users, "
+"there is the possibility that it could include inaccuracies or errors, or "
+"unauthorized information, erasures and alterations made through from third "
+"parties."
+msgstr ""
+"En este sentido, aunque TravelDoctor.mx intenta velar por la integridad y "
+"veracidad de toda la información publicada por nosotros o por usuarios registrados,"
+"existe la posibilidad de que pueda incluir inexactitudes o errores, o"
+"información no autorizada, borrados y alteraciones realizadas desde terceros"
+"fiestas."
+
+#: .\templates\landing\termsconditions.html:73
+msgid ""
+"For the above, the web site TravelDoctor.mx does not give any guarantee that "
+"it will be free of errors, delays, interruptions or losses, or that all "
+"errors will be corrected. In the event that if there is any inaccuracy in "
+"TravelDoctor.mx, we beg you to report it immediately to the following email "
+"address contact (at) TravelDoctor.mx."
+msgstr ""
+"Por lo anterior, el sitio web TravelDoctor.mx no da ninguna garantía de que"
+"estará libre de errores, retrasos, interrupciones o pérdidas, o que todo"
+"Los errores serán corregidos. En caso de que exista alguna inexactitud en"
+"TravelDoctor.mx, le rogamos que lo reporte de inmediato al siguiente correo electrónico"
+"Dirección de contacto (arroba) TravelDoctor.mx."
+
+#: .\templates\landing\termsconditions.html:75
+msgid ""
+"In this way, it is that TravelDoctor.mx has the right, but not the "
+"responsibility, to supervise the content of its own website and give any "
+"information to third parties. In addition to reserving the right to refuse "
+"to post or remove any information or content, in whole or in part, because: "
+"it is not in accordance with company policies; that is unacceptable, "
+"offensive or in violation of this agreement; or, is requested by whoever has "
+"the legitimate right to certain content."
+msgstr ""
+"De esta forma, es que TravelDoctor.mx tiene el derecho, pero no el"
+"responsabilidad, de supervisar el contenido de su propio sitio web y dar cualquier"
+"información a terceros. Además de reservarse el derecho a rechazar"
+"publicar o eliminar cualquier información o contenido, total o parcialmente, porque:"
+"no está de acuerdo con las políticas de la empresa; eso es inaceptable,"
+"ofensivo o en violación de este acuerdo; o sea solicitado por quien lo haya"
+"el derecho legítimo a cierto contenido."
+
+#: .\templates\landing\termsconditions.html:77
+msgid ""
+"In another aspect, due to the nature of its services, TravelDoctor.mx may "
+"spread by itself or through registered users, works protected by copyright "
+"or protected distinctive signs, a situation that does not authorize the rest "
+"of the users the use, mention or sample of the same in any form or medium, "
+"unless it has the written authorization of the respective owner."
+msgstr ""
+"En otro aspecto, por la naturaleza de sus servicios, TravelDoctor.mx puede"
+"difundido por sí mismo oa través de usuarios registrados, obras protegidas por derechos de autor"
+"o signos distintivos protegidos, situación que no autoriza al resto"
+"de los usuarios el uso, mención o muestra de los mismos en cualquier forma o medio,"
+"A menos que cuente con la autorización escrita del respectivo propietario."
+
+#: .\templates\landing\termsconditions.html:79
+msgid ""
+"In this way, TravelDoctor.mx is released from any type of responsibility "
+"against the owners of works protected by copyright or distinctive signs "
+"protected, for the improper use that registered users or not, may make of "
+"them ; with the understanding that this website serves only as a "
+"communication channel aimed at disseminating promotions, offers, discounts "
+"and contests for the benefit of consumers in general."
+msgstr ""
+"De esta forma, TravelDoctor.mx se libera de cualquier tipo de responsabilidad "
+"contra los propietarios de obras protegidas por derechos de autor o signos distintivos"
+"protegido, por el uso indebido que los usuarios registrados o no, puedan hacer de"
+"ellos; en el entendido de que este sitio web solo sirve como"
+"Canal de comunicación orientado a difundir promociones, ofertas, descuentos"
+"y concursos en beneficio de los consumidores en general "
+
+#: .\templates\landing\termsconditions.html:81
+msgid ""
+"Now, if you consider that your work protected by copyright or its "
+"distinctive signs protected by industrial property, have been used in "
+"TravelDoctor.mx in any way that you consider contrary to your legitimate "
+"interests, we beg you to send a notification to the following contact email "
+"(at) TravelDoctor.mx. With the precision that these notifications can only "
+"be sent by the owner of the aforementioned rights or by a person authorized "
+"to act on their behalf; For this reason, the website TravelDoctor.mx "
+"reserves the right to request that the representation with which the "
+"applicant holds any type of information be accredited."
+msgstr ""
+"Ahora, si considera que su trabajo está protegido por derechos de autor o su"
+"signos distintivos protegidos por la propiedad industrial, se han utilizado en"
+"TravelDoctor.mx de cualquier forma que considere contraria a su legítima"
+"intereses, le rogamos que envíe una notificación al siguiente correo electrónico de contacto"
+"(at) TravelDoctor.mx. Con la precisión que estas notificaciones solo pueden"
+"ser enviado por el titular de los derechos antes mencionados o por una persona autorizada"
+"para actuar en su nombre; por tal motivo, el sitio web TravelDoctor.mx"
+"se reserva el derecho a solicitar que la representación con la que el"
+"El solicitante posee cualquier tipo de información acreditada."
+
+#: .\templates\landing\termsconditions.html:83
+msgid ""
+"Finally, it should be noted that TravelDoctor.mx, in the same way, it works "
+"as an open forum to any user who accesses the website. This with the purpose "
+"that comments can be made on the publications and links contained therein, "
+"so that in turn the people who published a question can exercise their right "
+"of reply."
+msgstr ""
+"Finalmente, cabe destacar que TravelDoctor.mx, de la misma forma, funciona"
+"como un foro abierto a cualquier usuario que acceda al sitio web. Esto con la finalidad"
+"que se puedan hacer comentarios sobre las publicaciones y enlaces que contienen,"
+"para que a su vez las personas que publicaron una pregunta puedan ejercer su derecho"
+"de respuesta."
+
+#: .\templates\landing\termsconditions.html:85
+msgid ""
+"For this reason, users of this website authorize TravelDoctor.mx, who is the "
+"owner of the website TravelDoctor.mx, the ability to reproduce and make "
+"available the content that each user uploads to said electronic page. And "
+"for its part, TravelDoctor.mx, is released from all kinds of responsibility "
+"generated by the comments and content that any user of the website, in "
+"exercise of their human right to freedom of expression, publishes there."
+msgstr ""
+"Por tal motivo, los usuarios de este sitio web autorizan a TravelDoctor.mx, quien es el"
+"propietario del sitio web TravelDoctor.mx, la capacidad de reproducir y realizar"
+"disponible el contenido que cada usuario sube a dicha página electrónica. Y"
+"Por su parte, TravelDoctor.mx, se libera de todo tipo de responsabilidad"
+"generado por los comentarios y contenidos que cualquier usuario del sitio web, en"
+"El ejercicio de su derecho humano a la libertad de expresión, allí publica."
+
+#: .\templates\landingnavbar.html:52
+#, fuzzy
+#| msgid "Find doctors"
+msgid "For doctors"
+msgstr "Encuentra doctores"
 
 #: .\templates\messenger\inbox.html:4 .\templates\messenger\inbox.html:6
 msgid "Inbox"
@@ -2086,9 +3454,23 @@ msgstr ""
 msgid "Let's get started now!"
 msgstr ""
 
-#: .\templates\my_complain_list.html:10
+#: .\templates\my_article_list.html:10
 msgid "My articles "
 msgstr "Mis articulos"
+
+#: .\templates\my_article_list.html:79
+#, fuzzy
+#| msgid "New article"
+msgid "Create article"
+msgstr "articulo nuevo"
+
+#: .\templates\my_article_list.html:81
+msgid "REGISTER"
+msgstr "REGISTRARSE"
+
+#: .\templates\my_article_list.html:83
+msgid "LOGIN"
+msgstr "INICIAR SESIÓN"
 
 #: .\templates\sidebar.html:7 .\templates\sidebarPackage.html:33
 msgid "Content"
@@ -2098,31 +3480,31 @@ msgstr "Contenido"
 msgid "My articles"
 msgstr "Mis articulos"
 
-#: .\templates\sidebar.html:25 .\templates\sidebarPackage.html:51
+#: .\templates\sidebar.html:26 .\templates\sidebarPackage.html:51
 msgid "View my web page "
 msgstr "Ver mi página web"
 
-#: .\templates\sidebar.html:37 .\templates\sidebarPackage.html:63
+#: .\templates\sidebar.html:39 .\templates\sidebarPackage.html:63
 msgid "Web module"
 msgstr "Módulo web"
 
-#: .\templates\sidebar.html:45 .\templates\sidebarPackage.html:71
+#: .\templates\sidebar.html:47 .\templates\sidebarPackage.html:71
 msgid "Web home page"
 msgstr "Página de inicio web"
 
-#: .\templates\sidebar.html:71 .\templates\sidebarPackage.html:97
+#: .\templates\sidebar.html:73 .\templates\sidebarPackage.html:97
 msgid "Working time"
 msgstr "Tiempo de trabajo"
 
-#: .\templates\sidebar.html:81 .\templates\sidebarPackage.html:107
+#: .\templates\sidebar.html:83 .\templates\sidebarPackage.html:107
 msgid "Service price"
 msgstr "Precio del servicio"
 
-#: .\templates\sidebar.html:86 .\templates\sidebarPackage.html:112
+#: .\templates\sidebar.html:88 .\templates\sidebarPackage.html:112
 msgid "Package/Special deals"
 msgstr "Paquete / Ofertas especiales"
 
-#: .\templates\sidebar.html:91 .\templates\sidebarPackage.html:117
+#: .\templates\sidebar.html:93 .\templates\sidebarPackage.html:117
 msgid "Social networks"
 msgstr "Redes sociales"
 
@@ -2153,8 +3535,9 @@ msgstr ""
 msgid ""
 "You can sign in to your account using any of the following third party "
 "accounts:"
-msgstr "Puede iniciar sesión en su cuenta utilizando cualquiera de los siguientes terceros "
-"cuentas:"
+msgstr ""
+"Puede iniciar sesión en su cuenta utilizando cualquiera de los siguientes "
+"terceros cuentas:"
 
 #: .\templates\socialaccount\connections.html:43
 msgid ""
@@ -2207,17 +3590,15 @@ msgstr ""
 msgid "VIEW"
 msgstr "VER"
 
-#: .\templates\templatesshowmore\package_list_pag.html:11
-msgid "Package"
-msgstr "paquete"
-
 #: .\templates\templatesshowmore\package_list_pag.html:14
 msgid "Only"
 msgstr "solamente"
 
 #: .\templates\templatesshowmore\package_list_pag.html:30
-msgid " Reserve Package"
-msgstr "Paquete de reserva"
+#, fuzzy
+#| msgid "New Package"
+msgid " View Package"
+msgstr "Nuevo paquete"
 
 #: .\templates\templatesshowmore\service_list_pag.html:14
 msgid "Check out our service"
@@ -2227,196 +3608,209 @@ msgstr "Mira nuestro servicio"
 msgid "More about service..."
 msgstr "Más sobre el servicio ..."
 
-#: .\templates\user_detail.html:25
+#: .\templates\user_detail.html:26
 msgid "Fill out form with your information"
 msgstr "Complete el formulario con su información"
 
-#: .\templates\user_detail.html:40
+#: .\templates\user_detail.html:41
 msgid "It is important to fill your profile for best experience of patients. "
-msgstr "Es importante llenar su perfil para obtener la mejor experiencia de los pacientes."
+msgstr ""
+"Es importante llenar su perfil para obtener la mejor experiencia de los "
+"pacientes."
 
-#: .\templates\user_detail.html:46
+#: .\templates\user_detail.html:47
 msgid ""
 "-->NOTE:Identification is used only for administration and after user is "
 "verified profile will be public "
 msgstr ""
-"-> NOTA: La identificación se usa solo para la administración y después de que el usuario es"
-"el perfil verificado será público"
-#: .\templates\user_detail_extra.html:8
+"-> NOTA: La identificación se usa solo para la administración y después de "
+"que el usuario esel perfil verificado será público"
+
+#: .\templates\user_detail_extra.html:9
 msgid "Add adittional info about patients accepted"
 msgstr "Agregar información adicional sobre pacientes aceptados"
 
-#: .\templates\user_detail_extra.html:20
+#: .\templates\user_detail_extra.html:23
 msgid "Use this section to help widen your patients population. "
 msgstr "Use esta sección para ayudar a ampliar su población de pacientes."
 
-#: .\templates\user_detail_package.html:186
+#: .\templates\user_detail_package.html:207
 msgid "Customize your packages "
 msgstr "Personaliza tus paquetes"
 
-#: .\templates\user_detail_package.html:202
+#: .\templates\user_detail_package.html:223
 msgid "Package section"
 msgstr "Sección del paquete"
 
-#: .\templates\user_detail_package.html:203
+#: .\templates\user_detail_package.html:224
 msgid "Use this section to make special prizes for few connected services."
-msgstr "Use esta sección para hacer premios especiales para pocos servicios conectados."
+msgstr ""
+"Use esta sección para hacer premios especiales para pocos servicios "
+"conectados."
 
-#: .\templates\user_detail_package.html:203
+#: .\templates\user_detail_package.html:224
 msgid "Patients often choose specialists with better and wide offers."
-msgstr "Los pacientes a menudo eligen especialistas con mejores y amplias ofertas."
+msgstr ""
+"Los pacientes a menudo eligen especialistas con mejores y amplias ofertas."
 
-#: .\templates\user_detail_package.html:209
+#: .\templates\user_detail_package.html:230
 msgid "+ Add service to package"
 msgstr "+ Agregar servicio al paquete"
 
-#: .\templates\user_detail_package.html:210
+#: .\templates\user_detail_package.html:231
 msgid "Update package"
 msgstr "Paquete de actualización"
 
-#: .\templates\user_detail_package.html:218
+#: .\templates\user_detail_package.html:239
 msgid "+ Add remark "
 msgstr "+ Agregar comentario"
 
-#: .\templates\user_detail_package.html:222
+#: .\templates\user_detail_package.html:243
 msgid "Remarks"
 msgstr "Observaciones"
 
-#: .\templates\user_detail_package.html:223
+#: .\templates\user_detail_package.html:244
 msgid "_Hide remarks "
 msgstr "_Ocultar Observaciones"
 
-#: .\templates\user_detail_package.html:233
+#: .\templates\user_detail_package.html:254
 msgid "Services in this package"
 msgstr "Servicios en este paquete"
 
-#: .\templates\user_detail_package.html:239
+#: .\templates\user_detail_package.html:260
 msgid "Delete Package"
 msgstr "Eliminar paquete"
 
-#: .\templates\user_detail_package.html:242
+#: .\templates\user_detail_package.html:263
 msgid "New Package"
 msgstr "Nuevo paquete"
 
-#: .\templates\user_detail_price.html:11
+#: .\templates\user_detail_price.html:12
 msgid "Add price and discount for you services"
 msgstr "Agregue precio y descuento por sus servicios"
 
-#: .\templates\user_detail_price.html:24
+#: .\templates\user_detail_price.html:25
 msgid "Use this section to adjust prices for your services"
 msgstr "Use esta sección para ajustar los precios de sus servicios."
 
-#: .\templates\user_detail_price.html:25
+#: .\templates\user_detail_price.html:26
 msgid "and to use dicounted prices.  "
 msgstr "y para usar precios con descuento."
 
-#: .\templates\user_detail_price.html:25
-msgid "Most of patients check prizes when searching for specialists  "
-msgstr "La mayoría de los pacientes consultan los premios cuando buscan especialistas"
-
 #: .\templates\user_detail_price.html:26
+msgid "Most of patients check prizes when searching for specialists  "
+msgstr ""
+"La mayoría de los pacientes consultan los premios cuando buscan especialistas"
+
+#: .\templates\user_detail_price.html:27
 msgid "-->Services are added in web module section  "
 msgstr "-> Los servicios se agregan en la sección del módulo web"
 
-#: .\templates\user_detail_social.html:11
+#: .\templates\user_detail_social.html:12
 msgid "Add links to your social accounts "
 msgstr "Agregue enlaces a sus cuentas sociales"
 
-#: .\templates\user_detail_social.html:24
+#: .\templates\user_detail_social.html:25
 msgid "Show your experience trought social networsk "
 msgstr "Muestra tu experiencia a través de las redes sociales"
 
-#: .\templates\user_detail_social.html:25
+#: .\templates\user_detail_social.html:26
 msgid ""
 "Remember that patients seeking a specialist want to have as much information "
 "as possible to make a decision. "
 msgstr ""
-"Recuerde que los pacientes que buscan un especialista quieren tener tanta información"
-"como sea posible para tomar una decisión."
-#: .\templates\user_detail_web.html:121
+"Recuerde que los pacientes que buscan un especialista quieren tener tanta "
+"informacióncomo sea posible para tomar una decisión."
+
+#: .\templates\user_detail_web.html:133
 msgid "Customize your profile  web page"
 msgstr "Personaliza tu página web de perfil"
 
-#: .\templates\user_detail_web.html:137
+#: .\templates\user_detail_web.html:150
 msgid "Top Home section"
-msgstr ""
+msgstr "Sección de inicio superior"
 
-#: .\templates\user_detail_web.html:143
+#: .\templates\user_detail_web.html:156
 msgid "Submit Home Section"
-msgstr ""
+msgstr "Enviar sección de inicio"
 
-#: .\templates\user_detail_web.html:154
+#: .\templates\user_detail_web.html:171
 msgid "Service section"
-msgstr ""
+msgstr "Sección de servicio"
 
-#: .\templates\user_detail_web.html:159
+#: .\templates\user_detail_web.html:176
 msgid "Choose icon with your service"
-msgstr ""
+msgstr "Elija icono con su servicio"
 
-#: .\templates\user_detail_web.html:168
+#: .\templates\user_detail_web.html:185
 msgid "Submit new service"
-msgstr ""
+msgstr "Enviar nuevo servicio"
 
-#: .\templates\user_detail_web.html:177
+#: .\templates\user_detail_web.html:194
 msgid "Our gallery"
-msgstr ""
+msgstr "Nuestra galeria"
 
-#: .\templates\user_detail_web.html:180
+#: .\templates\user_detail_web.html:197
 msgid "Add picture to gallery"
-msgstr ""
+msgstr "Agregar imagen a la galería"
 
-#: .\templates\user_detail_web.html:189
+#: .\templates\user_detail_web.html:206
 msgid "Department section"
-msgstr ""
+msgstr "Sección del Departamento"
 
-#: .\templates\user_detail_web.html:192
+#: .\templates\user_detail_web.html:209
 msgid "Add new department"
-msgstr ""
+msgstr "Agregar nuevo departamento"
 
-#: .\templates\user_detail_web.html:201
+#: .\templates\user_detail_web.html:218
 msgid "Team section"
-msgstr ""
+msgstr "Sección de equipo"
 
-#: .\templates\user_detail_web.html:204
+#: .\templates\user_detail_web.html:221
 msgid "Add Team member"
-msgstr ""
+msgstr "Agregar miembro del equipo"
 
-#: .\templates\user_detail_web.html:213
+#: .\templates\user_detail_web.html:230
 msgid "Insurance"
-msgstr ""
+msgstr "Seguro"
 
-#: .\templates\user_detail_web.html:216
+#: .\templates\user_detail_web.html:233
 msgid "Add insurance"
-msgstr ""
+msgstr "Agregar seguro"
 
-#: .\templates\user_detail_web.html:222
+#: .\templates\user_detail_web.html:239
 msgid "Payment method"
-msgstr ""
+msgstr "Método de pago"
 
-#: .\templates\user_detail_web.html:225
+#: .\templates\user_detail_web.html:242
 msgid "Add payment"
-msgstr ""
+msgstr "Agregar pago"
 
-#: .\templates\user_detail_web.html:232
+#: .\templates\user_detail_web.html:249
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
-#: .\templates\user_detail_web.html:235
+#: .\templates\user_detail_web.html:252
 msgid "Add Language"
-msgstr ""
+msgstr "Agregar Idioma"
 
-#: .\templates\user_detail_worktime.html:23
+#: .\templates\user_detail_worktime.html:24
 msgid "Fill working times"
 msgstr "Llenar tiempos de trabajo"
 
-#: .\templates\user_detail_worktime.html:38
+#: .\templates\user_detail_worktime.html:39
 msgid "Use this section for  setup time  when patients are accepted "
-msgstr "Use esta sección para el tiempo de preparación cuando los pacientes son aceptados"
+msgstr ""
+"Use esta sección para el tiempo de preparación cuando los pacientes son "
+"aceptados"
 
-#: .\testzs\settings\local.py:185 .\testzs\settings\production.py:187
+#: .\testzs\settings\local.py:204 .\testzs\settings\production.py:204
 msgid "Espanol"
 msgstr ""
 
-#: .\testzs\settings\local.py:186 .\testzs\settings\production.py:188
+#: .\testzs\settings\local.py:205 .\testzs\settings\production.py:205
 msgid "English"
 msgstr ""
+
+#~ msgid " Reserve Package"
+#~ msgstr "Paquete de reserva"

@@ -1,0 +1,621 @@
+{% load staticfiles %}
+{%  load i18n %}
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="todosdoctores, todosdoctores.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'landing/assets/images/td-trans-32x32.png'%}" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  
+   <link href="{% static 'css/animate.css'%}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/animate.min.css'%}" />
+  <link rel="stylesheet" href="{% static 'css/animateSpeed.css'%}" />
+  <title>Todos Doctores</title>  
+  <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons2/mobirise2.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap-grid.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/bootstrap/css/bootstrap-reboot.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/tether/tether.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/socicon/css/styles.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/dropdown/css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/theme/css/style.css'%}">
+  
+  <link rel="preload" as="style" href="{% static 'landing/assets/mobirise/css/mbr-additional.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/mobirise/css/mbr-additional.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'landing/assets/animatecss/animate.min.css'%}">
+
+  <link rel="stylesheet" href="{% static 'landing/assets/formstyler/jquery.formstyler.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/formstyler/jquery.formstyler.theme.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/datepicker/jquery.datetimepicker.min.css'%}">
+  <link rel="stylesheet" href="{% static 'landing/assets/recaptcha.css'%}">
+  
+
+  
+  
+  
+ 
+  
+  
+  
+
+</head>
+<body>
+ <section class="menu cid-s0Kd5hW5Yy" once="menu" id="menu1-1i">
+
+    
+
+   {% include "landingnavbar.html"%}
+</section>
+
+<section class="engine"></section><section class="extAccordion cid-s9k9F4zWot mbr-parallax-background" id="extAccordion10-1n">
+
+    
+
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(234, 239, 249);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style mbr-bold display-2">
+                     {% trans "FREQUENTLY ASKED QUESTIONS" %}
+                </h2>
+                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">{% trans "MY ACCOUNT" %}</h3>
+            </div>
+        </div>
+        <div class="media-container-row pt-5">
+            <div class="col-md-6 content-block">
+            <div class="accordion-content">
+                <div id="bootstrap-accordion_0" class="panel-group accordionStyles accordion " role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_0" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How can I unsubscribe from Traveldoctors?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse1_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "Please contact support" %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse2_0" aria-expanded="false" aria-controls="collapse2">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How can I stop receiving emails from Traveldoctors" %}</h4>
+                                </a>
+                                
+                            </div>
+                            <div id="collapse2_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "Please contact support" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse3_0" aria-expanded="false" aria-controls="collapse3">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How can I recover my password?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse3_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">{% trans "To recover your password, follow these steps:" %}
+                          <br>
+                          <br>{% trans "1.  On the TravelDoctors home page, in the upper right corner, click Login . 2. Choose the option -I have forgotten my password- and indicate the email in which you want to receive your new password. 3. You will receive an email with the new password. " %}
+                          <br><br>{% trans "If you do not receive any mail, you can contact us through our support department" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse4_0" aria-expanded="false" aria-controls="collapse4">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How is the authenticity of a specialist verified?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse4_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">{% trans "First step in this process is to  confirm that the professional is registered , verifying that his or her registration number coincides with the one registered in the corresponding professional association or in the professional medical organization.User can upload attachment in account my profile, under Document for identification doctor.<br>If data is not provided, and after contact to new profesional can't be acquired, data is deleted." %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFive">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse5_0" aria-expanded="false" aria-controls="collapse5">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Who can register in Traveldoctors?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse5_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "Any health proffesional can register with TravelDoctors for proffesional account. Other users have to register for appoitments and comments." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSix">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse6_0" aria-expanded="false" aria-controls="collapse6">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How can I change my registration email?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse6_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#bootstrap-accordion_0">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "Please contact support" %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6 content-block">
+                <h5 class="text-section-title pb-3 align-left mbr-fonts-style display-5">
+                    {% trans "A modular approach" %}  
+                </h5>
+                <p class="text-section-text align-left mbr-fonts-style display-7">
+                    {% trans "Make your own website in a few clicks! Traveldoctors helps you cut down development time by providing you a website created with your profile. <em>It</em>creates responsive, retina and mobile friendly websites in a few clicks. With Traveldoctors promote your services and get new patients." %}</p>
+        </div>
+    </div>
+    </div>         
+</section>
+
+<section class="extAccordion cid-s9l5V5LSgX" id="extAccordion4-1u">
+
+    
+
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h2 class="mbr-section-title align-center mbr-fonts-style mbr-bold display-5">{% trans "My profile" %}</h2>
+                
+            </div>
+        </div>
+        <div class="row pt-3 justify-content-center">
+            <div class="col-md-10 accordion-section">
+                <div class="accordion-content">
+
+                    <div id="bootstrap-accordion_1" class="panel-group accordionStyles accordion " role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "How does my profile picture have to be?" %}</h4>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse1_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-4">
+                                        {% trans "Best is if can be 480x480px, ina valid formats jpg or png" %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse2_1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "I want to change my address" %}</h4>
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse2_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+
+                                    <p class="mbr-fonts-style panel-text display-4">
+                                       {% trans "You can change in -myprofile section" %}  &nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse3_1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "Add or modify profile data" %}</h4>
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse3_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+
+                                    <p class="mbr-fonts-style panel-text display-4">
+                                        {% trans "All profile data can be found when click in top right corner at user name when loged in" %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse4_1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "Why are my profile changes not reflected on Google?" %}</h4>
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse4_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+
+                                    <p class="mbr-fonts-style panel-text display-4">{% trans "Any change in your profile, will appear immediately in TravelDoctors, but it take some times to be visible in Goodle search.<br>This happens because Google updates the data it collects from the websites that it shows in its results only from time to time to give a quick response to the searches that users perform." %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFive">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse5_1" aria-expanded="false" aria-controls="collapse5">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "How can I change the name of my profile?" %}</h4>
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse5_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+
+                                    <p class="mbr-fonts-style panel-text display-4">
+                                        {% trans "In myprofile section" %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSix">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse6_1" aria-expanded="false" aria-controls="collapse6">
+                                    <span class="sign mbr-iconfont icon mbri-arrow-next inactive"></span>
+                                    <div class="wrap">
+                                        <h4 class="mbr-fonts-style header-text mbr-bold display-7">{% trans "How to include videos in my profile?" %}</h4>
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div id="collapse6_1" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#bootstrap-accordion_1">
+                                <div class="panel-body p-4">
+
+                                    <p class="mbr-fonts-style panel-text display-4">
+                                        {% trans "For now not available" %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="extAccordion cid-s9k7ZYwK31 mbr-parallax-background" id="extAccordion2-1j">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(16, 70, 88);">
+    </div>
+    <div class="container">
+        
+        <h3 class="mbr-fonts-style mbr-section-subtitle align-center display-5">{% trans "My Web Page" %}</h3>
+        <div class="row justify-content-center pt-4">
+            <div class="col-md-10 col-lg-8 content-block">
+            <div class="accordion-content">
+                <div id="bootstrap-accordion_3" class="panel-group accordionStyles accordion " role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_3" aria-expanded="false" aria-controls="collapse1">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "Will patients be able to book an appointment through my website?" %}</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+
+                                </a>
+                            </div>
+                            <div id="collapse1_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_3">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                       {% trans "Yes patients can book appoitment, and they send mail with preffered date. After you have to agree with them by email or phone, which they have to leave, for agreement of suitable time." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse2_3" aria-expanded="false" aria-controls="collapse2">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "How does it work?" %}</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                </a>
+                                
+                            </div>
+                            <div id="collapse2_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_3">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                       {% trans "After your profile is complete, you have already part of your page ready.<br>After is another section in account -&gt; web page settings where most of things are setup." %}<br><br></p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse3_3" aria-expanded="false" aria-controls="collapse3">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "How can I activate it?" %}</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+
+                                </a>
+                            </div>
+                            <div id="collapse3_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_3">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                       {% trans "With register on page and completing your profile you will have your web page ready." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse4_3" aria-expanded="false" aria-controls="collapse4">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "Will my page be optimized for Google?" %} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+
+                                </a>
+                            </div>
+                            <div id="collapse4_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_3">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                       {% trans "We use best SEO practises to make optimization for Google. Also by marketing on different sites, and social media this is further improved." %}&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFive">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse5_3" aria-expanded="false" aria-controls="collapse5">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "Will my professional website look good on mobile phones and tablets?" %} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+
+                                </a>
+                            </div>
+                            <div id="collapse5_3" class="panel-collapse noScroll collapse" data-parent="#bootstrap-accordion_3" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                       {% trans "All is optimized to look good on any device, tablet or phone" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSix">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse6_3" aria-expanded="false" aria-controls="collapse6">
+                                    <h4 class="mbr-fonts-style header-text display-5">{% trans "Technical assistance in case of doubts" %}</h4>
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+
+                                </a>
+                            </div>
+                            <div id="collapse6_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#bootstrap-accordion_3">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text mbr-text display-7">
+                                      {% trans "You can alway contact support" %} </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    </div>         
+</section>
+
+<section class="extAccordion cid-s9l8Vpy7sj" id="extAccordion10-1v">
+
+    
+
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(234, 239, 249);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                
+                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-7">
+                    {% trans "TAKE ADVANTAGE OF TRAVELDOCTORS" %}&nbsp;</h3>
+            </div>
+        </div>
+        <div class="media-container-row pt-5">
+            <div class="col-md-6 content-block">
+            <div class="accordion-content">
+                <div id="bootstrap-accordion_4" class="panel-group accordionStyles accordion " role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_4" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Recommendations for About you" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse1_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">{% trans " -About you-  is a section of your profile that will better show you work and strenghts , and is displayes on begining of your page . We recommend that you write about the following topics:" %}
+<br>
+<br>{% trans "• Your education: use your titles and awards to show your proffesional education" %}<br>
+<br>{% trans "• Your work :  explain how you differ and how you stand out from other professionals, notable experience or relevant studies." %}
+<br>
+<br><br></p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse2_4" aria-expanded="false" aria-controls="collapse2">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Recommendations for photos in packages" %}</h4>
+                                </a>
+                                
+                            </div>
+                            <div id="collapse2_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">{% trans "Photos for promotion should be something reflecting your product and which can be used in marketing purposes." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse3_4" aria-expanded="false" aria-controls="collapse3">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Why is it important to complete the profile?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse3_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "By completing profile you get your web page, and patients will know more about your bussines and be more attracted to check your profile." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse4_4" aria-expanded="false" aria-controls="collapse4">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Why to create a package?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse4_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">{% trans "Idea is that by special promotions with discounts is attracted more people to your bussines. Also special offers like this are more likely to get shared, because other pople will have to share to improve their chance to pass the offer." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFive">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse5_4" aria-expanded="false" aria-controls="collapse5">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "How to create a package?" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse5_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "In account-&gt;package/special deals is section with packages.<br>There you insert all information needed. You can add your services created in web page settings, or add some special offer. Is important to add remarks/rules for make use of package." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSix">
+                                <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse6_4" aria-expanded="false" aria-controls="collapse6">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
+                                    <h4 class="mbr-fonts-style header-text display-7">{% trans "Using discounts" %}</h4>
+                                </a>
+                            </div>
+                            <div id="collapse6_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#bootstrap-accordion_4">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {% trans "Discounts you can enter in service section, or can you packages for selling more services" %}.</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6 content-block">
+                <h5 class="text-section-title pb-3 align-left mbr-fonts-style display-5">
+                    {% trans "Discount promotions" %}</h5>
+                <p class="text-section-text align-left mbr-fonts-style display-7">
+                    {% trans "Make your own special offers, which can be good way to advertise and promote your bussines. &Traveldoctors uses the power of group shopping to add hundreds of new customers to you. On our website, TravelDoctors publishes attractive offers every day that reach a large number of users. You create your offer, and we do everything else. We are publishing the new offer on our website, and we are sending tens of thousands of registered users via daily emails. The offer on the site and via email is greeted by users in the morning when they sit down at the computer." %}</p>
+        </div>
+    </div>
+    </div>         
+</section>
+
+
+ 
+  
+ 
+ 
+  
+
+
+
+<script src="{% static 'landing/assets/web/assets/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'landing/assets/popper/popper.min.js'%}"></script>
+  <script src="{% static 'landing/assets/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'landing/assets/smoothscroll/smooth-scroll.js'%}"></script>
+  <script src="{% static 'landing/assets/tether/tether.min.js'%}"></script>
+  
+  
+ 
+  <script src="{% static 'landing/assets/dropdown/js/nav-dropdown.js'%}"></script>
+  <script src="{% static 'landing/assets/dropdown/js/navbar-dropdown.js'%}"></script>
+  <script src="{% static 'landing/assets/theme/js/script.js'%}"></script>
+
+  
+ 
+  
+  
+  <script src="{% static 'landing/assets/viewportchecker/jquery.viewportchecker.js'%}"></script>
+
+  
+  
+ 
+  
+  
+  <script src="{% static 'landing/assets/touchswipe/jquery.touch-swipe.min.js'%}"></script>
+  <script src="{% static 'landing/assets/formstyler/jquery.formstyler.js'%}"></script>
+  <script src="{% static 'landing/assets/formstyler/jquery.formstyler.min.js'%}"></script>
+  <script src="{% static 'landing/assets/datepicker/jquery.datetimepicker.full.js'%}"></script>
+  
+  
+  <script src="{% static 'landing/assets/formoid.min.js'%}"></script>
+  
+  
+  <input name="animation" type="hidden">
+
+
+  
+  <script src="{% static 'landing/assets/mbr-switch-arrow/mbr-switch-arrow.js'%}"></script>
+ 
+  
+ 
+  <script src="{% static 'landing/assets/parallax/jarallax.min.js'%}"></script>
+  <script src="{% static 'landing/assets/theme/js/script.js'%}"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>

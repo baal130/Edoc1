@@ -1,0 +1,105 @@
+{% load staticfiles %}	
+{%  load i18n %}
+{% load urlify%}
+
+
+<div class="col-md-4">
+  					<div class="welcm-ht text-center">
+  						<ul class="list-inline ulockd-mrgn1215">
+  							<li>
+  								
+  								<div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-facebook color-fb"></i></button>
+									<div class="dropdown-content dropdown-content-fb fb-link">
+									    <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    <!-- <a href="#"> <span><i class="fab fa-facebook-square fa-2x color-fb"></i></span> Fren</a> -->
+                                       {% if instance.social_account_urls.facebookurl %}
+									    <a href="{{instance.social_account_urls.facebookurl}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span>{% trans "Visit"%} </a>
+									   {% endif %}
+									</div>
+								</div>
+                 		</li>
+                 			
+             			 
+
+  							</li>
+  							<li>
+  								<div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-linkedin color-lnkdn"></i></button>
+									<div class="dropdown-content dropdown-content-fb li-link">
+									    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_uri}}&title=dr.%20{{instance.name}}%20{{instance.surname}}&summary={{instance.adress|urlify}}&source=LinkedIn"> 
+
+
+									    
+
+									    	<span><img src="{% static 'img/iconssocial/linkedin32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    {% if instance.social_account_urls.linkedinurl %}
+									    <a href="{{instance.social_account_urls.linkedinurl}}"> <span><img src="{% static 'img/iconssocial/linkedin32x32.png'%}" alt=""></span>{% trans "Visit"%}</a>
+									     {% endif %}
+									</div>
+								</div>
+  							</li>
+  							<li>
+  								<div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-twitter color-twtr"></i></button>
+									<div class="dropdown-content dropdown-content-fb tw-link">
+									    <a href="https://twitter.com/intent/tweet?url={{request.build_absolute_uri}}&text={{sharestring}}">
+									    	
+
+									     
+
+									    	<span><img src="{% static 'img/iconssocial/twitter32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    {% if instance.social_account_urls.twitterurl  %}
+									    <a href="{{instance.social_account_urls.twitterurl }}"> <span><img src="{% static 'img/iconssocial/twitter32x32.png'%}" alt=""></span>{% trans "Visit"%}</a>
+									    {% endif %}
+									</div>
+								</div>	
+
+  							</li>
+
+  							<li>
+  								<div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-pinterest color-pint"></i></button>
+									<div class="dropdown-content dropdown-content-fb pin-link">
+									    <a href="//pinterest.com/pin/create/link/?url={{request.build_absolute_uri}}&media={% if instance.imagehome2 %}http://127.0.0.1:8000{{instance.imagehome2.url}}{% else %}{% static 'medicaltemplate/images/home/h22.jpg'%}{% endif %}&description={{sharestring}}"> <span><img src="{% static 'img/iconssocial/pinterest32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    {% if instance.social_account_urls.pinteresturl  %}
+									    <a href="{{instance.social_account_urls.pinteresturl}}"> <span><img src="{% static 'img/iconssocial/pinterest32x32.png'%}" alt=""></span> {% trans "Visit"%}</a>
+									    {% endif %}
+									</div>
+								</div>
+  							</li>
+  							{% if instance.social_account_urls.instagramurl %}
+  							<li><a href="{{instance.social_account_urls.instagramurl}}"><i class="fab fa-instagram color-inst"></i></a>
+
+  							</li>
+  							{% endif %}
+  							<li>
+  								<div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-vk color-green"></i></button>
+									<div class="dropdown-content dropdown-content-fb fb-link">
+									    <a href="http://vk.com/share.php?url={{request.build_absolute_uri}}"> <span><img src="{% static 'img/iconssocial/vk32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    {% if instance.social_account_urls.vk %}
+									    <a href="{{instance.social_account_urls.vk}}"> <span><img src="{% static 'img/iconssocial/vk32x32.png'%}" alt=""></span> {% trans "Visit"%}</a>
+									   {% endif %}
+									</div>
+								</div>
+  							</li>
+  							{% if instance.social_account_urls.youtubeurl %}
+  							<li><a href="{{instance.social_account_urls.youtubeurl}}"><i class="fab fa-youtube color-utube"></i></a></li>
+  							{% endif %}
+  							
+  							<li><div class="dropdown lang-button text-center">
+									<button class="dropbtn"><i class="fab fa-stumbleupon color-stumble "></i></button>
+									<div class="dropdown-content dropdown-content-fb stumble-link">
+									    <a href="https://www.facebook.com/sharer/sharer.php?u={{instance.get_absolute_url}}"> <span><img src="{% static 'img/iconssocial/stumble32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    {% if instance.social_account_urls.behanceurl%}
+									    <a href="{{instance.social_account_urls.behanceurl}}"> <span><img src="{% static 'img/iconssocial/stumble32x32.png'%}" alt=""></span> {% trans "Visit"%}</a>
+									   {% endif %}
+									</div>
+								</div></li>
+							{% if instance.social_account_urls.whatsupnumber%}	
+  							<li><a href="https://wa.me/{{instance.social_account_urls.whatsupnumber}}"><i class="fab fa-whatsapp color-green"></i></a></li>
+  							{% endif %}
+  						</ul>
+  					</div>
+  				</div>

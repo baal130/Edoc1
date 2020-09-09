@@ -248,7 +248,7 @@ class UserDetailsExtraForm(forms.ModelForm):
 	
 	class Meta:     
 		model = UserDetails
-		fields = [ 'acceptchildren','invalidsaccess', 'specialprice', 'acceptanimales', 'homevisit', 
+		fields = [ 'acceptchildren','invalidsaccess', 'specialprice', 'acceptanimales', 'homevisit','patientnumber','awardnumber',
 				 ] 
 	
 		labels = {'acceptchildren': _('Also examines children up to 12 years '),
@@ -256,7 +256,8 @@ class UserDetailsExtraForm(forms.ModelForm):
 			'specialprice': _('Do you want to use discount prices with Todos doctors'),
 			'acceptanimales': _('Pacients can come with animales'),
 			'homevisit': _('Do you make home visits to patients'),
-				
+			'patientnumber': _('Enter how much patients approximately you have'),	
+			'awardnumber': _('If you have any awards enter how much '),		
 
 		}
 		widgets = {

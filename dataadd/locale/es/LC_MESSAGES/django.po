@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 16:57+0200\n"
+"POT-Creation-Date: 2020-09-07 13:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,15 +39,7 @@ msgid "Create here new article"
 msgstr ""
 
 #: .\dataadd\forms.py:53
-msgid "Punch  or news name"
-msgstr "test2"
-
-#: .\dataadd\forms.py:57
-msgid "Upload files to prove Your statements"
-msgstr ""
-
-#: .\dataadd\forms.py:58
-msgid "Use text as news fos site"
+msgid "Article name"
 msgstr ""
 
 #: .\dataadd\forms.py:62
@@ -65,6 +57,9 @@ msgstr ""
 #: .\dataadd\views.py:171
 msgid "Fill your profile"
 msgstr ""
+
+#~ msgid "Punch  or news name"
+#~ msgstr "test2"
 
 #~ msgid "Use text as article for general info"
 #~ msgstr "gagaga"
