@@ -30,7 +30,7 @@ SECRET_KEY = '_9sfr9be0ogbt7jz!5k9euc19af0gzt_0^bp$!xgcyzcv6&ws+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com','127.0.0.1','www.traveldoctor.mx','traveldoctor.mx']
+ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com','127.0.0.1','www.traveldoctor.mx','traveldoctor.mx', 'mx.traveldoctor.mx']
 SERVICE_LIST = []
 
 EMAIL_HOST='mail.zoransostaric.com'
