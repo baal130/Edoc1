@@ -49,7 +49,7 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_HOST_USER='traveldoctor@traveldoctor.mx'
 EMAIL_HOST_PASSWORD='a1b31734485'
 EMAIL_PORT=587
-EMAIL_USE_TLS=False
+EMAIL_USE_TLS=True
 DEFAULT_FROM_EMAIL = 'traveldoctor@traveldoctor.mx'
 
 
