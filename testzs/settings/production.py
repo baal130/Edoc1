@@ -33,25 +33,19 @@ DEBUG = True
 ALLOWED_HOSTS = ['testzs.herokuapp.com','mx.zoransostaric.com','127.0.0.1','www.traveldoctor.mx','traveldoctor.mx', 'mx.traveldoctor.mx']
 SERVICE_LIST = []
 
+# EMAIL_HOST='mail.zoransostaric.com'
+# EMAIL_HOST_USER='doctores@zoransostaric.com'
+# EMAIL_HOST_PASSWORD='a1b31734485'
+# EMAIL_PORT=587
+# EMAIL_USE_TLS=False
+# DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
 EMAIL_HOST='mail.zoransostaric.com'
 EMAIL_HOST_USER='doctores@zoransostaric.com'
 EMAIL_HOST_PASSWORD='a1b31734485'
 EMAIL_PORT=587
 EMAIL_USE_TLS=False
 DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
-# #EMAIL_PORT=465
-# EMAIL_USE_TLS=True
-# EMAIL_HOST='smtp.webfaction.com'
-# EMAIL_HOST_USER='baal130@baal130.webfactional.com'
-# EMAIL_HOST_PASSWORD='098173'
-# EMAIL_PORT=587
-# EMAIL_USE_TLS=True
-# EMAIL_HOST='mail.khorvatiya-online.ru'
-# EMAIL_HOST_USER='tetjana@khorvatiya-online.ru'
-# EMAIL_HOST_PASSWORD='a1b31734485'
-# EMAIL_PORT=587
-# EMAIL_USE_TLS=False
-# DEFAULT_FROM_EMAIL = 'tetjana@khorvatiya-online.ru'
+
 
 # Application definition
 
@@ -121,6 +115,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE = (
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,13 +124,15 @@ MIDDLEWARE = (
     # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 
 
 
 )
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
 
 ROOT_URLCONF = 'testzs.urls'
 
