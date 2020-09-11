@@ -39,12 +39,18 @@ SERVICE_LIST = []
 # EMAIL_PORT=587
 # EMAIL_USE_TLS=False
 # DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
-EMAIL_HOST='mail.zoransostaric.com'
-EMAIL_HOST_USER='doctores@zoransostaric.com'
+# EMAIL_HOST='mail.zoransostaric.com'
+# EMAIL_HOST_USER='doctores@zoransostaric.com'
+# EMAIL_HOST_PASSWORD='a1b31734485'
+# EMAIL_PORT=587
+# EMAIL_USE_TLS=False
+# DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='traveldoctor@traveldoctor.mx'
 EMAIL_HOST_PASSWORD='a1b31734485'
 EMAIL_PORT=587
 EMAIL_USE_TLS=False
-DEFAULT_FROM_EMAIL = 'doctores@zoransostaric.com'
+DEFAULT_FROM_EMAIL = 'traveldoctor@traveldoctor.mx'
 
 
 # Application definition
