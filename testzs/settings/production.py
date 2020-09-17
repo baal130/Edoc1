@@ -54,7 +54,7 @@ SERVICE_LIST = []
 # DEFAULT_FROM_EMAIL = 'traveldoctor@traveldoctor.mx'
 
 EMAIL_HOST='smtp.sendgrid.net'
-EMAIL_HOST_USER='apikey'
+EMAIL_HOST_USER='traveldoctor'
 EMAIL_HOST_PASSWORD='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'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
