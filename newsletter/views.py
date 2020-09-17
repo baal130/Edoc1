@@ -1070,7 +1070,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 			form_full_phone=formdate.cleaned_data.get("phone")
 
 			subject=_('Appoitment')
-			from_email=settings.EMAIL_HOST_USER
+			from_email=settings.DEFAULT_FROM_EMAIL
 			to_email= instance.email
 			
 			customer_email=form_email
