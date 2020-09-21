@@ -17,6 +17,7 @@ import dj_database_url
 from decouple import Csv, config
 from unipath import Path
 from django.utils.translation import ugettext_lazy as _
+from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
   # BASE_DIR =     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,7 +56,7 @@ SERVICE_LIST = []
 
 EMAIL_HOST='smtp.sendgrid.net'
 EMAIL_HOST_USER='apikey'
-EMAIL_HOST_PASSWORD='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'
+EMAIL_HOST_PASSWORD=os.environ.get("EMAIL_HOST_PASSWORD",'none')
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 DEFAULT_FROM_EMAIL = 'traveldoctor@traveldoctor.mx'
