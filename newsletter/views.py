@@ -1061,7 +1061,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 		formdate=AppoitmentForm(request.POST or None)
 		
 		if formdate.is_valid():
-			
+			print("fa")
 			form_email=formdate.cleaned_data.get("email")
 			form_message=formdate.cleaned_data.get("message")
 			form_full_name=formdate.cleaned_data.get("name")
@@ -1112,14 +1112,14 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 			msgcustomer = EmailMessage(subject, contentcustomer, from_email, [customer_email])
 			msgcustomer.content_subtype = 'html'
 
-			try:
+			# try:
+			
+			msg.send()
+			msgcustomer.send()
+			messages.success(request,_('Your message has been send.We will send notice on your email'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
 				
-				msg.send()
-				msgcustomer.send()
-				messages.success(request,_('Your message has been send.We will send notice on your email'),extra_tags='')#message.tag salje sve tagove(npr sucess + extra tag) i loppa kao charachter stringa
-				
-			except:
-				messages.error(request, _('Sorry,it is our fault. Message has not been send. Please send us a email or give us a call'),extra_tags='')
+			# except:
+			# 	messages.error(request, _('Sorry,it is our fault. Message has not been send. Please send us a email or give us a call'),extra_tags='')
 			
 			
 			
@@ -1132,7 +1132,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 		formcontact=ContactDoctorForm(request.POST or None)
 		
 		if formcontact.is_valid():
-			
+			print("fa3")
 			form_email=formcontact.cleaned_data.get("email")
 			form_message=formcontact.cleaned_data.get("message")
 			form_full_name=formcontact.cleaned_data.get("name")
