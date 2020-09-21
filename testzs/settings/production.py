@@ -17,7 +17,7 @@ import dj_database_url
 from decouple import Csv, config
 from unipath import Path
 from django.utils.translation import ugettext_lazy as _
-from dotenv import load_dotenv
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
   # BASE_DIR =     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
