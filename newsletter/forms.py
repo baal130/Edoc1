@@ -13,6 +13,7 @@ from .languages import Language_CHOICES,Favicon_CHOICES,STATE_CHOICES,CITY_CHOIC
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePickerInput
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from pagedown.widgets import PagedownWidget
+from django.core.validators import RegexValidator
 
 class ContactForm(forms.Form): # koristi se fform odavde
 	full_name=forms.CharField( required=False)
@@ -73,7 +74,7 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 	speciality=forms.ChoiceField(
 					choices=Specialty_CHOICES)  
 	
-
+	telefon = forms.CharField(min_length=7, validators=[RegexValidator(r'^\+\d{8,15}$', message=_("Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."))])
 	class Meta:     
 		model = UserDetails
 		fields = [ 'name' , 'surname','adress','city','colony','state', 'telefon','web','email',
@@ -97,6 +98,7 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 	
 class UserWebDetailsForm(forms.ModelForm):  #koristi se form iz modela 
 	# imagehome1Text1 = forms.CharField( widget=forms.TextInput(label=_('First Title'),attrs={'placeholder': 'Enter Title'}))
+	
 	class Meta:     
 		model = UserDetails
 		fields = [ 'about' , 'imagehome1','imagehome1Text1','imagehome1Text2','imagehome2','imagehome2Text1','imagehome2Text2',
