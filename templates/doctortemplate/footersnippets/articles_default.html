@@ -1,0 +1,24 @@
+
+{% load newsletter_tags %}				
+{% get_article_list 2 as article_list %} 
+
+	{% if article_list %}
+	
+	  {% for article in article_list %}
+	  <div class="media">
+							    <div class="media-left pull-left">
+								    <a href="{{article.get_absolute_url}}">
+								    	<!-- <img class="media-object" src="{{instance.profilepicture.url}}" alt="{{instance.profilepicture.url}}"> -->
+								    	<span><i class="fa fa-newspaper color-fb"></i></span>
+								    </a>
+							    </div>
+							    <div class="media-body">
+							    	<a href="{{article.get_absolute_url}}" > <h4 class="media-heading">{{article.company_name|title}} </h4>
+									<span class="post-date">{{ article.publish }}</span>
+							    	<p>{{article.get_markdown|truncatewords_html:10}}</p></a>
+							    </div>
+	  </div>
+	  {% endfor %}
+			
+{% endif %}
+

@@ -48,7 +48,13 @@ from django.views.generic import TemplateView, RedirectView
 from carts.views import cart_detail_api_view
 from orders.views import LibraryView   
 #from django.conf.urls.i18n import i18n_patterns
-# from sitemap.views import sitemap
+from django.contrib.sitemaps.views import sitemap
+from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap
+
+sitemaps={ 
+    'doctors':UserDetailsSitemap,
+    'fordoctors':StaticViewSitemap,
+    }
 
 # urlpatterns = [
 #     url(r'^sitemap\.xml$', sitemap, name='sitemap-xml'),
@@ -61,6 +67,7 @@ def set_language_from_url(request, user_language, url_name):
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    path('sitemap.xml',sitemap,{'sitemaps':sitemaps}),
     url(r'^$', home2, name='home'),# newsletter = ime appa(foldera), view= skripta, home= definirano ime reqesta u def home(request)
     url(r'^fordoctors$', landingfordoctors, name='landingfordoctors'),
     url(r'^FAQ$', helpfordoctors, name='helpfordoctors'),
@@ -107,7 +114,7 @@ urlpatterns = [
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
     url(r'^i18n/', include(('django.conf.urls.i18n','i18n'), namespace='i18n')),
     url(r'^select2/', include('django_select2.urls')),
-
+   # static web pages
     url(r'^terminos-y-condiciones$', TemplateView.as_view(template_name='termsconditions.html'), name='termsconditions'),
     url(r'^privacidad$', TemplateView.as_view(template_name='privacy.html'), name='privacy'),
     # url(r'/set_language/(?P<user_language>\w+)/(?P<url_name>[a-zA-Z0-9_/&?]+)/$', set_language_from_url, name="set_language_from_url")

@@ -186,6 +186,13 @@ TEMPLATES = [
 
                 
             ],
+
+
+            'libraries':
+            {
+            'newsletter_tags': 'newsletter.templatetags.newsletter_tag',
+
+            }
         },
     },
 ]
