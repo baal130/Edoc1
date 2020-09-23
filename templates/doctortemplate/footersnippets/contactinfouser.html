@@ -1,0 +1,25 @@
+{%  load i18n %}
+<div class="row">
+				<div class="col-xxs-12 col-xs-4 col-sm-4 col-md-4">
+					<div class="mail-widget text-center">
+						<span class="icon fa fa-envelope"></span>
+						<h3>{%trans "Mail us"%}</h3>
+						<p>{{instance.email}}</p>
+					</div>
+				</div>
+				<div class="col-xxs-12 col-xs-4 col-sm-4 col-md-4">
+					<div class="call-widget text-center">
+						<span class="icon fa fa-phone"></span>
+						<h3>{% trans "Call us"%}</h3>
+						<p>{{instance.telefon}}</p>
+					</div>
+				</div>
+				<div class="col-xxs-12 col-xs-4 col-sm-4 col-md-4">
+					<div class="location-widget text-center">
+						<span class="icon fa fa-map-signs"></span>
+						<h3>{% trans "Find us" %}</h3>
+						<p>{{instance.adress}},{{instance.colony}}
+                    <br>{{instance.city}}, {{instance.colony}}</p>
+					</div>
+				</div>
+			</div>

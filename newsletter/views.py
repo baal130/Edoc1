@@ -13,6 +13,7 @@ from django.forms import modelformset_factory,inlineformset_factory
 from urllib.parse import quote
 from comments.models import Comment
 from newsletter.models import SignUp,UserDetails,UserDetailsServicePackagePrice #za query import 
+from newsletter.models import NewsletterMail
 from dataadd.models import Idiot
 from newsletter.models import UserDetailsRating,UserDetailsGallery,UserDetailsService,UserDetailsTeam,UserDetailsDepartment,UserDetailsServicePrice
 from newsletter.models import UserDetailsLanguage,UserDetailsSocialNetworks,UserDetailsFeatured,UserDetailsServicePackagePriceRemark
@@ -103,8 +104,28 @@ class DetailRatingAjaxView(AjaxRequiredMixin, View):
 		}
 		return JsonResponse(data)
 
+def newsletter(request):
+	#javascript u js/newsletter.js
+	newsletteremail = request.POST.get('EMAIL')
+	
+		
+	if request.is_ajax(): # Asynchronous JavaScript And XML / JSON
+		newslettercheck=NewsletterMail.objects.all().filter(email=newsletteremail)
+		if not newslettercheck:
+			new_newsletter=NewsletterMail();
+			new_newsletter.email=newsletteremail;
+			new_newsletter.save()
 
 
+		json_data = {
+			"added": True,
+			
+		}
+
+		return JsonResponse(json_data, status=200) # HttpResponse
+	else:
+		return HttpResponseRedirect('/doctor/')
+		
 
 
 # Create your views here.

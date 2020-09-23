@@ -4,7 +4,7 @@ from allauth.account.models import EmailAddress
 #from .forms import SignUpForm 
 from .models import SignUp,UserDetails,UserDetailsRating,UserDetailsGallery,UserDetailsService
 from .models import UserDetailsDepartment,UserDetailsTeam,Insurancecompany,Paymentmethod,UserDetailsServicePrice,UserDetailsServicePackagePrice
-from .models import UserDetailsSocialNetworks,UserDetailsFeatured,UserDetailsServicePackagePriceRemark
+from .models import UserDetailsSocialNetworks,UserDetailsFeatured,UserDetailsServicePackagePriceRemark,NewsletterMail
 class SignUpAdmin(admin.ModelAdmin):
 	list_display= ["__unicode__","timestamp","updated"]
 	#form= SignUpForm
@@ -39,3 +39,4 @@ admin.site.register(UserDetailsServicePackagePrice)
 admin.site.register(UserDetailsSocialNetworks)
 admin.site.register(UserDetailsFeatured)
 admin.site.register(UserDetailsServicePackagePriceRemark)
+admin.site.register(NewsletterMail)

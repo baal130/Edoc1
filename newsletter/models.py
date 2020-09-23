@@ -718,3 +718,9 @@ def pre_save_discount_receiver(sender,instance, *args, **kwargs):
 
 pre_save.connect(pre_save_discount_receiver, sender=UserDetailsServicePackagePrice)
 
+class NewsletterMail(models.Model):
+	email              =models.EmailField(default='null',blank=True)
+	def __unicode__(self):
+		return self.email
+	def __str__(self):
+		return self.email
