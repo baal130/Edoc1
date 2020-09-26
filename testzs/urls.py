@@ -49,10 +49,11 @@ from carts.views import cart_detail_api_view
 from orders.views import LibraryView   
 #from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
-from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap
+from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap,UserDetailsServicePackagePriceSitemap
 
 sitemaps={ 
     'doctors':UserDetailsSitemap,
+    'packages':UserDetailsServicePackagePriceSitemap,
     'fordoctors':StaticViewSitemap,
     }
 
@@ -118,7 +119,12 @@ urlpatterns = [
     url(r'^terminos-y-condiciones$', TemplateView.as_view(template_name='termsconditions.html'), name='termsconditions'),
     url(r'^privacidad$', TemplateView.as_view(template_name='privacy.html'), name='privacy'),
     # url(r'/set_language/(?P<user_language>\w+)/(?P<url_name>[a-zA-Z0-9_/&?]+)/$', set_language_from_url, name="set_language_from_url")
-    path('set_language/<str:user_language>/<path:url_name>', set_language_from_url, name="set_language_from_url")
+    path('set_language/<str:user_language>/<path:url_name>', set_language_from_url, name="set_language_from_url"),
+    # path(
+    #     "robots.txt",
+    #     TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+    # ),
+    url(r'^robots\.txt', include('robots.urls')),
    # url(r'^i18n/', include('django.conf.urls.i18n')),
     
 ]

@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'robots',
     # 'django.contrib.gis',
     'bootstrap_datepicker_plus',
     'bootstrap3',
@@ -148,6 +149,7 @@ MIDDLEWARE = (
 
 
 )
+ROBOTS_USE_SCHEME_IN_HOST = True
 # for HTTPS AND REDIRECTS TO HTTPS://www.
 CORS_REPLACE_HTTPS_REFERER      = True
 SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')

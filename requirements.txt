@@ -49,7 +49,9 @@ django-messages==0.5.3
 django-model-utils==3.0.0
 django-pagedown==2.1.2
 django-registration-redux==2.4
+django-robots==4.0
 django-select2==7.1.1
+django-seo==0.3.5
 django-storages==1.9.1
 django-summernote==0.8.11.6
 django-taggit==0.22.2
@@ -109,6 +111,7 @@ pytest-django==2.9.1
 pytest-sugar==0.9.1
 python-dateutil==2.7.3
 python-decouple==3.1
+python-dotenv==0.14.0
 python-gettext==4.0
 python3-openid==3.1.0
 pytz==2018.4

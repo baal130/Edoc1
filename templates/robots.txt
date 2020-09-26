@@ -1,0 +1,28 @@
+User-agent: MJ12bot
+Disallow: /  
+User-agent: dotbot
+Disallow:/ 
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: SemrushBot-SA
+Disallow: /
+User-agent: SearchmetricsBot
+Disallow: /
+User-agent: sp_auditbot
+Disallow: /
+User-agent: HTTrack
+Disallow: / 
+User-agent: rogerbot
+Disallow:/ 
+User-agent: Alexibot
+Disallow: /
+User-agent: SurveyBot
+Disallow: /
+User-agent: Xenu?s
+Disallow: /
+User-agent: Xenu?s Link Sleuth 1.1c
+Disallow: /
+User-agent: Mozilla/5.0 (compatible; Ezooms/1.0; ezooms.bot@gmail.com)
+Disallow: /

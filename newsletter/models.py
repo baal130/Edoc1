@@ -538,6 +538,10 @@ class UserDetailsLanguage(models.Model):
 		detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 		language        		=models.CharField(max_length=20,blank=True,null=True)
 
+class UserDetailsServicePackageManager(models.Manager): 
+	def active(self, *args, **kwargs):
+		return super(UserDetailsServicePackageManager,self).filter(offerends__gte=timezone.now())
+
 class UserDetailsServicePackagePrice(models.Model):
 	detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	selectservice 		   	=models.ForeignKey(UserDetailsService,on_delete=models.CASCADE)
@@ -552,6 +556,9 @@ class UserDetailsServicePackagePrice(models.Model):
 	offerends               =models.DateTimeField(null=True,blank=True)
 	offerstarts             =models.DateTimeField(null=True,blank=True)
 	slug               		=models.SlugField(unique=False)
+	
+	objects=UserDetailsServicePackageManager()
+
 	def __str__(self):
 		return  self.selectservice.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
 	def get_service_list(self):
