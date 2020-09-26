@@ -286,7 +286,7 @@ BOOTSTRAP3 = {
 #DJANGO REGISTRATION REDUX SETTINGS
 # ACCOUNT_ACTIVATION_DAYS=7
 # REGISTRATION_AUTO_LOGIN=True
-SITE_ID=2
+SITE_ID=3
 #LOGIN_REDIRECT_URL ='/profile/'
 # LOGIN_REDIRECT_URL ='/'
 #Specifies the login method to use – whether the user logs in
