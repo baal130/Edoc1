@@ -49,12 +49,14 @@ from carts.views import cart_detail_api_view
 from orders.views import LibraryView   
 #from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
-from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap,UserDetailsServicePackagePriceSitemap
-
+from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap,UserDetailsServicePackagePriceSitemap,ArticlesSitemap
+from testzs.sitemaps import ProductsSitemap
 sitemaps={ 
     'doctors':UserDetailsSitemap,
     'packages':UserDetailsServicePackagePriceSitemap,
     'fordoctors':StaticViewSitemap,
+    'articles':ArticlesSitemap,
+    'products':ProductsSitemap,
     }
 
 # urlpatterns = [
