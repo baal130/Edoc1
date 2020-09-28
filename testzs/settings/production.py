@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'robots',
+    'meta',
     # 'django.contrib.gis',
     'bootstrap_datepicker_plus',
     'bootstrap3',
@@ -403,3 +404,10 @@ SUMMERNOTE_CONFIG = {
 
 # 'attachment_upload_to': MEDIA_URL,
 }
+
+
+META_SITE_DOMAIN='www.traveldoctor.mx'
+META_SITE_PROTOCOL='https'
+META_SITE_NAME='TravelDoctor'
+META_USE_SITES=True
+META_USE_OG_PROPERTIES=True

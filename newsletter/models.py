@@ -25,6 +25,8 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
+from meta.models import ModelMeta
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -95,7 +97,7 @@ def uplodad_location(instance, filename):
 def uplodad_location_package(instance, filename):
 	
 	return "%s/%s" %(instance.name,filename)
-class UserDetails(models.Model):
+class UserDetails(ModelMeta,models.Model):
 	#user=models.ForeignKey(settings.AUTH_USER_MODEL,default=1)
 	user               =models.OneToOneField(User, on_delete=models.CASCADE) #user.userdetails
 	name 			   =models.CharField(max_length=60,blank=False,null=False)
@@ -172,6 +174,17 @@ class UserDetails(models.Model):
 	imagehome3Text2    =models.CharField(max_length=60,blank=True,null=True)
 	profilepicture     =models.ImageField(upload_to=uplodad_location, null=True,blank=True)
 
+	_metadata = {
+		'title': 'name',
+		"og_title": 'name',
+		'description': 'about',
+		'image': 'get_meta_image',
+		"image_object": "get_image_object",
+		"keywords": "get_keywords",
+		 "url": 'get_full_url',
+		
+	}
+	
 
 	objects = ProfileManager()
 
@@ -181,6 +194,25 @@ class UserDetails(models.Model):
 		return self.user.username + ' Name:'+ self.name + ' ' +self.surname
 	def __unicode__(self):
 		return self.user.username + ' Name: '+ self.name + ' '+ self.surname
+	def get_full_url(self):
+		return self.build_absolute_uri(self.get_absolute_url())
+			
+	def get_image_object(self):
+		if self.profilepicture:
+			print(self.build_absolute_uri(self.profilepicture.url))
+			print(self.name)
+			return {
+				"url": 'https://todosdoctores1.s3.amazonaws.com/media/Garcia/Profile_480x480.jpg',
+				
+			}	
+	def get_keywords(self):
+		# return self.meta_keywords.strip().split(",")
+		return self.about.strip().split(",")
+	def get_meta_image(self):
+		
+		if self.profilepicture:
+			return self.profilepicture.url
+
 	def save(self, *args, **kwargs):
 		if has_changed(self, 'imagehome1'):
 			self.imagehome1= self.compressImage(self.imagehome1)

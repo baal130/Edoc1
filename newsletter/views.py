@@ -1229,6 +1229,7 @@ def entry_list(request, slug,template=None, extra_context=None): #retrieve
 		"formcontact":formcontact,
 		
 	}
+	context['meta'] = instance.as_meta()
 	if extra_context is not None:
 		context.update(extra_context)
 	#return HttpResponse ("<h1> helo3  </h1>")

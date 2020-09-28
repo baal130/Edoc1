@@ -2,6 +2,7 @@
 {% load el_pagination_tags %}
 {% load l10n %}
 {% load crispy_forms_tags %}
+{% load meta %}
 
 <!-- for detail of doctor/comments  -->
 <!DOCTYPE html>
@@ -18,6 +19,9 @@
 <link rel="stylesheet" href="{% static 'medicaltemplate/css/responsive.css'%}">
 <!-- Title -->
 <title>Dr. {{instance.name|title }} {{instance.surname|title }}</title>
+<head {% meta_namespaces %}>
+    {% include "meta/meta.html" %}
+</head>
 <!-- animation -->
 <link href="{% static 'css/animate.css'%}" rel="stylesheet"/>
 <link rel="stylesheet" href="{% static 'css/animate.min.css'%}" />

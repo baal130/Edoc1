@@ -46,6 +46,7 @@ django-localflavor==1.0
 django-markdown-deux==1.0.5
 django-markdownx==2.0.21
 django-messages==0.5.3
+django-meta==1.7.0
 django-model-utils==3.0.0
 django-pagedown==2.1.2
 django-registration-redux==2.4
