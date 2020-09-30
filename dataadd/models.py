@@ -8,11 +8,15 @@ from datetime import date
 from django.utils import timezone
 from markdown_deux import markdown
 from ckeditor.fields import RichTextField
+from django.utils.text import Truncator
 
 from comments.models import Comment 
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 from .utils import get_read_time
+
+from meta.models import ModelMeta
+from django.utils.html import strip_tags
 
 
 class PostManager(models.Manager):  # Mijenjanje dafultnih modela npr Idiot.objects.all()
@@ -80,7 +84,7 @@ class FriendsRequests(models.Model):
 		)
 		friendreq.usersRequestsSent.remove(new_friend)
 		friendotherreq.usersRequests.remove(current_user)
-class Idiot(models.Model): 
+class Idiot(ModelMeta,models.Model): 
 	# punch list articels 
 	user=models.ForeignKey(settings.AUTH_USER_MODEL,default=1,on_delete=models.CASCADE)
 	company_name = models.CharField(max_length=120,blank=False,null=False) #blank=false kada je potrebno unijeti polje
@@ -108,12 +112,52 @@ class Idiot(models.Model):
 	news=models.BooleanField(default=False) # true if used for news(only for admin)
 	cities = models.CharField(max_length=60,choices=CITY_CHOICES,
 				 default='null',blank=True)
-
+	_metadata = {
+		'title': 'company_name',
+		"og_title": 'company_name',
+		'description': 'get_truncated_description',
+		'image': 'get_meta_image',
+		"image_object": "get_image_object",
+		"keywords": "get_keywords",
+		 "url": 'get_full_url',
+		 "published_time": "publish",
+		"author":"get_user_surname",
+	}
  
 	objects=PostManager()
 
 	def __unicode__(self):
 		return self.company_name #ono sto se vidi u databasa kad gledamo ( u adminu npr)
+
+	def get_full_url(self):
+		return self.build_absolute_uri(self.get_absolute_url())
+			
+	def get_image_object(self):
+		if self.profilepicture:
+			return {
+				"url": self.build_absolute_uri(self.main_image.url),
+				
+			}	
+	def get_truncated_description(self):
+		n=15
+		
+		my_string = strip_tags(self.get_markdown())
+
+		truncated_text = Truncator(my_string).words(n)
+		return truncated_text
+	def get_keywords(self):
+		n=5
+		my_string = strip_tags(self.get_markdown())
+		truncated_text_3 = Truncator(my_string).words(n)
+
+		string_total=self.company_name + ' ' + truncated_text_3
+		
+		return string_total.strip().split(",")
+		# return self.about.strip().split(",")
+	def get_meta_image(self):
+		
+		if self.image:
+			return self.image.url	
 	def get_absolute_url(self):
 		#return "/complain/%s/" %(self.id)
 		#return reverse("dataadd:detail", kwargs={"id":self.id}) Za dynamicno prikazivanje urla

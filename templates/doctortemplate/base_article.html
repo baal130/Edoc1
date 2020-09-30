@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load meta %}
 
 <!-- emtpy base  -->
 <!DOCTYPE html>
@@ -7,6 +8,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head {% meta_namespaces %}>
+    {% include "meta/meta.html" %}
+</head>
 <!-- css file -->
  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
      <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">

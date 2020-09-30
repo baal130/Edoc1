@@ -28,6 +28,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from meta.models import ModelMeta
 
 
+
 User = settings.AUTH_USER_MODEL
 
 Occupancy_CHOICES = (
@@ -144,7 +145,7 @@ class UserDetails(ModelMeta,models.Model):
 	patientnumber	   =models.IntegerField(blank=True,null=True) 	
 	awardnumber 	   =models.IntegerField(blank=True,null=True) 
 
-	web				   =models.URLField(default='null')
+	web				   =models.URLField(default='null',blank=True)
 	email              =models.EmailField(default='null',blank=True)
 	verificated		   =models.BooleanField(default=False)
 	IdentificationUser =models.FileField(null=False,blank=False)
@@ -173,6 +174,7 @@ class UserDetails(ModelMeta,models.Model):
 	imagehome3Text1    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome3Text2    =models.CharField(max_length=60,blank=True,null=True)
 	profilepicture     =models.ImageField(upload_to=uplodad_location, null=True,blank=True)
+	meta_keywords	   =models.TextField(verbose_name=_("Post meta keywords"), blank=True, default="")
 
 	_metadata = {
 		'title': 'name',
@@ -199,15 +201,21 @@ class UserDetails(ModelMeta,models.Model):
 			
 	def get_image_object(self):
 		if self.profilepicture:
-			print(self.build_absolute_uri(self.profilepicture.url))
-			print(self.name)
 			return {
-				"url": 'https://todosdoctores1.s3.amazonaws.com/media/Garcia/Profile_480x480.jpg',
+				"url": self.build_absolute_uri(self.main_image.url),
 				
 			}	
 	def get_keywords(self):
-		# return self.meta_keywords.strip().split(",")
-		return self.about.strip().split(",")
+		string_total=self.name + ' ' + self.surname + ',' + self.speciality
+		string_adress=self.city
+		services=self.userdetailsservice_set.all()
+		print(services)
+		service_string=''
+		for service in services:
+			service_string+=','+ service.servicename
+		string_total+=service_string+',',string_adress
+		return string_total.strip().split(",")
+		# return self.about.strip().split(",")
 	def get_meta_image(self):
 		
 		if self.profilepicture:
@@ -574,7 +582,7 @@ class UserDetailsServicePackageManager(models.Manager):
 	def active(self, *args, **kwargs):
 		return super(UserDetailsServicePackageManager,self).filter(offerends__gte=timezone.now())
 
-class UserDetailsServicePackagePrice(models.Model):
+class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 	detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	selectservice 		   	=models.ForeignKey(UserDetailsService,on_delete=models.CASCADE)
 	service 		   		=models.TextField(null=True,blank=True)
@@ -589,10 +597,47 @@ class UserDetailsServicePackagePrice(models.Model):
 	offerstarts             =models.DateTimeField(null=True,blank=True)
 	slug               		=models.SlugField(unique=False)
 	
+	_metadata = {
+		'title': 'name',
+		"og_title": 'name',
+		'description': 'headdescription',
+		'image': 'get_meta_image',
+		"image_object": "get_image_object",
+		"keywords": "get_keywords",
+		 "url": 'get_full_url',
+		
+	}
+
 	objects=UserDetailsServicePackageManager()
 
 	def __str__(self):
 		return  self.selectservice.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
+	
+	def get_full_url(self):
+		return self.build_absolute_uri(self.get_absolute_url())
+			
+	def get_image_object(self):
+		if self.profilepicture:
+			return {
+				"url": self.build_absolute_uri(self.main_image.url),
+				
+			}	
+	def get_keywords(self):
+		string_total=self.name + ' ' + self.extragift + ',' + self.headdescription
+		services=self.get_service_list()
+		string_service=''
+		for service in services:
+			string_service+=','+ service
+
+		string_total+= string_service
+
+		return string_total.strip().split(",")
+		# return self.about.strip().split(",")
+	def get_meta_image(self):
+		
+		if self.packageimage:
+			return self.packageimage.url
+				
 	def get_service_list(self):
 		instance=self
 		jsonDec = json.decoder.JSONDecoder()

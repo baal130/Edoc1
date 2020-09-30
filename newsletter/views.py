@@ -1512,7 +1512,8 @@ def discount_detail(request, slug,template=None, extra_context=None): #retrieve
 			return HttpResponseRedirect('/doctor/packages/'+slug+'/')
 
 		if formdate.errors:
-			print(formdate.errors)	
+			print(formdate.errors)
+
 	context={  
 		"formdate":formdate,
 		"objects":instance,
@@ -1521,6 +1522,7 @@ def discount_detail(request, slug,template=None, extra_context=None): #retrieve
 		
 		
 	}
+	context['meta'] = instance.as_meta()
 	if extra_context is not None:
 		context.update(extra_context)
 	

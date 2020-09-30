@@ -109,6 +109,7 @@ def doctor_article_detail(request, slug): #retrieve
 		"slug":slug,
 		"otherarticles":otherarticles,
 	}
+	context['meta'] = instance.as_meta()
 	
 	return render(request,"detail_article.html",context)
 def doctor_article_create(request):

@@ -411,3 +411,5 @@ META_SITE_PROTOCOL='https'
 META_SITE_NAME='TravelDoctor'
 META_USE_SITES=True
 META_USE_OG_PROPERTIES=True
+META_USE_TWITTER_PROPERTIES=True
+META_INCLUDE_KEYWORDS='Mexico doctors','Search nearby doctors/dentists in Mexico','consultorios medicos','Pharmacy Doctor', 'Pharmacy Online' 
