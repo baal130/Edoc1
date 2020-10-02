@@ -1,3 +1,5 @@
+{%  load i18n %}
+
 <div style ="     display: grid;
     grid-area: 1 / 1;" class="thumbnail post-background wrap-article ">
      
@@ -9,10 +11,23 @@
 
         </div>
          <h4 class="card-title">{{ instance.title }}</h4>
-          <p class="card-text">{{ instance.description|linebreaks|truncatewords:14 }}</p>
-          <p class="card-text"> Price {{ instance.price}} $MXN</p>
+          <ul>
+                
+                       
+                <li>  <span class="glyphicon glyphicon-ok text-success"></span>   {%trans "0-24 Monday-Sunday" %}</li> 
+                    <li><span class="glyphicon glyphicon-ok text-success"></span> {%trans "Consultation" %}</li>
+                    <li><span class="glyphicon glyphicon-ok text-success"></span> {%trans "Recommend best doctor" %}</li>
+                    <li><span class="glyphicon glyphicon-ok text-success"></span> {%trans "Prescriptions" %}</li>
+                
+                
+                </ul>
+
+          <p class="card-text">{{ instance.description|linebreaks|truncatewords:30}}</p>
+          <p class="card-text"> {% trans "Price"%} {{ instance.price}} $MXN</p>
        <div class='text-center'>
-        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">View</a>
+        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">{% trans "View"%}</a>
         {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
     </div>
 </div>
+
+

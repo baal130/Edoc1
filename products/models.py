@@ -100,7 +100,15 @@ class Product(models.Model):
         
         
         return True
-
+class ProductRemark(models.Model):
+    
+    product =models.ForeignKey(Product,on_delete=models.CASCADE)
+    descriptionremark             =models.CharField(null=True,blank=True, max_length=100)
+    
+    def __str__(self):
+        
+        # return "%s/%s" %(self.product.title,self.userdetailsservicepackageprice.detail.name)
+        return "%s" %(self.product.title)
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)

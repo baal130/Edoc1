@@ -122,7 +122,7 @@ $(document).ready(function(){
           console.log(data.owner)
           if (data.owner){
             isOwner = true
-            submitSpan.html("<a class='btn btn-warning' href='/library/'>In Library</a>")
+            submitSpan.html("<a class='btn btn-warning' href='/library/'>Bought Items</a>")
           } else {
             isOwner = false
           }

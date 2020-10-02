@@ -1448,8 +1448,8 @@ def user_detail_package_update(request,pk):
 	
 def discount_detail(request, slug,template=None, extra_context=None): #retrieve
 	
-	instance=get_object_or_404(UserDetailsServicePackagePrice,slug=slug) 
-	remark_instance=UserDetailsServicePackagePrice.objects.filter(slug=slug)
+	instance=get_object_or_404(UserDetailsServicePackagePrice,slug=slug) #Objecet
+	remark_instance=UserDetailsServicePackagePrice.objects.filter(slug=slug) #QS
 	
 	try:
 		remark_list=UserDetailsServicePackagePriceRemark.objects.filter(userdetailsservicepackageprice__in=remark_instance)
