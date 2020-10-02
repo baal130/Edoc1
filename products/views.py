@@ -82,7 +82,7 @@ class ProductDetailSlugView(ObjectViewedMixin, DetailView):
 		context = super(ProductDetailSlugView, self).get_context_data(*args, **kwargs)
 		cart_obj, new_obj = Cart.objects.new_or_get(self.request)
 		context['cart'] = cart_obj
-		
+		context["meta"] = self.get_object().as_meta()
 		slug=self.kwargs.get('slug')
 		qs = Product.objects.filter(slug=slug, active=True)
 		# product.productpurchase_set

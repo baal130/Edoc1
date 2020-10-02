@@ -7,6 +7,9 @@ from django.db import models
 from django.db.models import Q
 from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
+from meta.models import ModelMeta
+from django.utils.text import Truncator
+from django.utils.html import strip_tags
 
 # from ecommerce.aws.download.utils import AWSDownload
 # from ecommerce.aws.utils import ProtectedS3Storage
@@ -65,7 +68,7 @@ class ProductManager(models.Manager):
         return self.get_queryset().active().search(query)
 
 
-class Product(models.Model):
+class Product(ModelMeta,models.Model):
     title           = models.CharField(max_length=120)
     slug            = models.SlugField(blank=True, unique=True)
     description     = models.TextField()
@@ -75,6 +78,16 @@ class Product(models.Model):
     active          = models.BooleanField(default=True)
     timestamp       = models.DateTimeField(auto_now_add=True)
     is_digital      = models.BooleanField(default=False) # User Library
+    _metadata = {
+        'title': 'title',
+        "og_title": 'title',
+        'description': 'get_truncated_description',
+        'image': 'get_meta_image',
+        "image_object": "get_image_object",
+        "keywords": "get_keywords",
+         "url": 'get_full_url',
+        
+    }
 
     objects = ProductManager()
 
@@ -87,7 +100,36 @@ class Product(models.Model):
 
     def __unicode__(self):
         return self.title
+    def get_truncated_description(self):
+        n=15
+        
+        
 
+        truncated_text = Truncator(self.description).words(n)
+        return truncated_text
+    def get_keywords(self):
+        n=5
+        my_string = strip_tags(self.description)
+        truncated_text_3 = Truncator(my_string).words(n)
+
+        string_total=self.company_name + ' ' + truncated_text_3+ 'Telephone Medical Advice' + 'Asesoria Medica Telefonica'
+        
+        return string_total.strip().split(",")    
+    def get_full_url(self):
+        return self.build_absolute_uri(self.get_absolute_url())
+            
+    def get_image_object(self):
+        if self.image:
+            return {
+                "url": self.build_absolute_uri(self.image.url),
+                
+            }   
+   
+    def get_meta_image(self):
+        
+        if self.image:
+            return self.image.url
+                
     @property
     def name(self):
         return self.title

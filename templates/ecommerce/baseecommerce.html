@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% load l10n %}
-
+{% load meta %}
 <!-- emtpy base  -->
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -8,6 +8,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<head {% meta_namespaces %}>
+    {% include "meta/meta.html" %}
+</head>
 {% include 'base/css.html' %}
 <!-- css file -->
 <link rel="stylesheet" href=" {% static 'medicaltemplate/css/bootstrap.min.css'%}"> 
