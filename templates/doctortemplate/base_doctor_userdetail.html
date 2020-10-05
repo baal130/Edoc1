@@ -503,8 +503,13 @@ div.sticky {
 </script>
 
 <script>
+
+
+
   /*for sticky efect*/
 var mapsearch = document.getElementById("navbar-menu");
+
+
 
 var mapsearchoffsettop=mapsearch.offsetTop;
 
@@ -535,13 +540,29 @@ function locationSearchApplytop() {
     var mapsearch = document.getElementById("navbar-menu");
       
   }
-}  
+}
+
+
 if (window.matchMedia('(min-width: 992px)').matches) 
   {
     var mapsearch = document.getElementById("navbar-menu");
     mapsearch.classList.add("sticky");
-  } 
-
+  }
+else
+  { 
+    mapsearch.style.display="none";
+  }   
+$(".mobilefolderbutton").click(function(event){
+             //nalazi se u headersection empty button 
+              event.preventDefault();
+              
+              $(".content").fadeToggle();
+              $(".sidebarleft").fadeToggle();
+            
+            
+           
+            
+})
 </script>
 
 

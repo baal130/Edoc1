@@ -77,6 +77,7 @@ STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_51HAz6mK450KPF3
 STRIPE_PUB_KEY = os.environ.get("STRIPE_PUB_KEY", 'pk_test_51HAz6mK450KPF3SvgemanIaOP0CitUb0SlnZU0m1KkDbfRnLduciXwJYTuJIwZXklY6p5yi90dUVlcl2NLMH4q7C009Cxq5h0Y')
 
 INSTALLED_APPS = (
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -87,6 +88,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'robots',
     'meta',
+
     # 'django.contrib.gis',
     'bootstrap_datepicker_plus',
     'bootstrap3',
@@ -412,4 +414,5 @@ META_SITE_NAME='TravelDoctor'
 META_USE_SITES=True
 META_USE_OG_PROPERTIES=True
 META_USE_TWITTER_PROPERTIES=True
+META_USE_SCHEMAORG_PROPERTIES=True
 META_INCLUDE_KEYWORDS='Mexico doctors','Search nearby doctors/dentists in Mexico','consultorios medicos','Pharmacy Doctor', 'Pharmacy Online' 

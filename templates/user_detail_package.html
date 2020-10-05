@@ -194,6 +194,14 @@ table {
 .button-text-width {
     width: auto;
 }
+.note-toolbar {
+    width: 100%!important;
+    position:relative !important;
+
+}
+
+
+
 {%  endblock style %}
 </style>
 
@@ -205,21 +213,22 @@ table {
  {% include 'messages_animate.html' %}
   <div class='col-sm-8 col-sm-offset-3 border-title-curve'>
   <h1>{% trans  'Customize your packages '  %}</h1>
+
   </div>
 </div>
 
 <!--  -->
-  <div id="navbar-menu" class='col-sm-3'> 
+  <div id="navbar-menu" class='col-sm-3 sidebarleft'> 
 {% include 'sidebarPackage.html' %}
   
     
 
 </div>
 
-<div classs ='row'>
-	
+<div classs ='row '>
 
-	<div id="home" class='col-sm-7  form-bg' style="border-radius:8px; margin-bottom: 200px;"> 
+
+	<div id="home" class='col-sm-7  form-bg  content ' style="border-radius:8px; margin-bottom: 200px;"> 
 	<h3>{% trans  'Package section'  %} {% if package.name %}  {{package.name }} {% else %} {{package.id }} {%  endif %} </h3>
   <p class=" label-form-user label-info">{% trans  'Use this section to make special prizes for few connected services.'  %} {% trans  'Patients often choose specialists with better and wide offers.'  %}</p>
 	<form method='POST' action=''  enctype='multipart/form-data'>{% csrf_token %}
@@ -290,6 +299,7 @@ $(document).ready(function(){
             setTimeout(function(){  $('.note-editor').css({'max-width' :'100%'});}, 400);
            
   }
+ 
   var  remarkcontent =$(".hide-remarks")
   var remarkhidebutton=$(".hidebutton")
   remarkhidebutton.click(function(event){
