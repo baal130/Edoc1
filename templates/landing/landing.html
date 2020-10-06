@@ -222,7 +222,25 @@ display: -ms-flexbox!important;
   color: #333;
   padding: 15px;
 }
+
+.percent{
+  z-index: 11;
+  position: relative;
+  font-size: 1.9em;
+ right: -20px;
+ color: #ffffff;
+}
+@media (min-width: 768px){
+.percent{
+   z-index: 11;
+  position: relative;
+  font-size: 1.7em;
+  right: -8px;
+  color: #ffffff;
+}
+}
  </style>
+
 
 
 
@@ -410,7 +428,7 @@ display: -ms-flexbox!important;
                     <h4 class="card-title py-3 mbr-fonts-style display-5">
                        {% trans "Value your money"  %} </h4>
                     <p class="mbr-text mbr-fonts-style display-7">
-                        <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                        <ul  style="padding-left : 20%; " class="icons-list list-inline ">
                                 
                                 
                                 
@@ -434,7 +452,7 @@ display: -ms-flexbox!important;
                 <div class="card-box">
                     <h4 class="card-title py-3 mbr-fonts-style display-5">{% trans "Find all " %} &nbsp;{% trans "doctors " %} <br> {% trans "by: " %} </h4>
                     <p class="mbr-text mbr-fonts-style display-7">
-                         <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                         <ul  style="padding-left : 20%; " class="icons-list list-inline ">
                                 
                                 
                                 
@@ -468,7 +486,7 @@ display: -ms-flexbox!important;
                     <h4 class="card-title py-3 mbr-fonts-style display-5">
                        {% trans "Stay connected" %}  </h4>
                     <p class="mbr-text mbr-fonts-style display-7">
-                         <ul  style="padding-left : 20%; " class="icons-list list-inline align-left">
+                         <ul  style="padding-left : 20%; " class="icons-list list-inline ">
                                 
                                 
                                 
@@ -583,10 +601,8 @@ display: -ms-flexbox!important;
                             <div class="service-icon">
 
                                 <div class="service-icon-wrapper">
-                                    <span style="z-index: 10;position: relative;font-size: 1.2em;
-                                      right: -6px;
-                                      color: #ff3366;">
-                                    {{entry.packagepricediscount}}%</span>
+                                    <div style="" class="percent">
+                                    {{entry.packagepricediscount}}%</div>
                                     <span class="front mbr-iconfont mbri-sale mdi-image-blur-on">
 
                                     </span>
