@@ -14,7 +14,7 @@ from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePi
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from pagedown.widgets import PagedownWidget
 from django.core.validators import RegexValidator
-from tinymce.widgets import TinyMCE
+
 class ContactForm(forms.Form): # koristi se fform odavde
 	full_name=forms.CharField( required=False)
 	email=forms.EmailField()

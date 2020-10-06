@@ -110,7 +110,7 @@ urlpatterns = [
     url(r'^markdownx/', include('markdownx.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
-    url(r'^tinymce/', include('tinymce.urls')),
+    
     #url(r'^friendship/', include('friendship.urls')),
     url(r'^messages/', include('bootcamp.messenger.urls')),
     url(r'^chat/', include('chat.urls', namespace="chat") ),
