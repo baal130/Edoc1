@@ -14,7 +14,7 @@ from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePi
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from pagedown.widgets import PagedownWidget
 from django.core.validators import RegexValidator
-
+from tinymce.widgets import TinyMCE
 class ContactForm(forms.Form): # koristi se fform odavde
 	full_name=forms.CharField( required=False)
 	email=forms.EmailField()
@@ -296,19 +296,22 @@ class UserDetailsServicePriceForm(forms.ModelForm):
 		return instance.service
 		# else:
 		# 	return self.cleaned_data.get('service', None)	
+
 class UserDetailsServicePackagePriceForm(forms.ModelForm):  
 	
 
 
 	description=forms.CharField(widget=PagedownWidget())
-	description=forms.CharField(widget=SummernoteInplaceWidget())
+	description=forms.CharField(widget=SummernoteInplaceWidget(),required=False)
+	
+	
 	class Meta:     
 		model = UserDetailsServicePackagePrice
 		fields = [ 'name','packagepricediscount','totalregularprice','headdescription','description','packageimage',
 					'extragift','offerstarts', 'offerends','selectservice',
 				 ] 
 	
-		labels = {'selectservice': _('Add service to package '),
+		labels = {'selectservice': _('Add service to package, hold ctrl for adding service '),
 				  'packagepricediscount': _(' Discount on this total price % '),
 				  'totalregularprice': _(' Total regular price for services in package '),
 				  'name': _(' Package name '),
@@ -338,8 +341,12 @@ class UserDetailsServicePackagePriceForm(forms.ModelForm):
 		user= kwargs.pop('user') #ovo mora bit ako se salje novi argument
 		super(UserDetailsServicePackagePriceForm, self).__init__(*args, **kwargs)
 		# access object through self.instance...
-		print(user)
-		
+		# print(user)
+		# selectservice= forms.ModelMultipleChoiceField(
+		# 			required=False,
+		# 			widget=Select2MultipleWidget,
+		# 			queryset=UserDetailsService.objects.filter(detail=user),
+		# 			label = _('Choose Payment method (hold ctrl to select more options)'),		    )
 		self.fields['selectservice'].queryset = UserDetailsService.objects.filter(detail=user)
 class UserDetailsServicePackagePriceRemarkForm(forms.ModelForm): 
 	class Meta:     

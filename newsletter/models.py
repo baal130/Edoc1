@@ -584,7 +584,7 @@ class UserDetailsServicePackageManager(models.Manager):
 
 class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 	detail            	 	=models.ForeignKey(UserDetails,on_delete=models.CASCADE)
-	selectservice 		   	=models.ForeignKey(UserDetailsService,on_delete=models.CASCADE)
+	selectservice 		   	=models.ManyToManyField(UserDetailsService)
 	service 		   		=models.TextField(null=True,blank=True)
 	totalregularprice		=models.IntegerField(max_length=10,blank=True,null=True)
 	packagepricediscount    =models.IntegerField(max_length=10,blank=True,null=True,validators=[MinValueValidator(0), MaxValueValidator(100)])
@@ -611,7 +611,7 @@ class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 	objects=UserDetailsServicePackageManager()
 
 	def __str__(self):
-		return  self.selectservice.servicename + ' ' + self.detail.name + ' ' + self.detail.surname
+		return   self.detail.name + ' ' + self.detail.surname
 	
 	def get_full_url(self):
 		return self.build_absolute_uri(self.get_absolute_url())
@@ -640,9 +640,11 @@ class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 				
 	def get_service_list(self):
 		instance=self
-		jsonDec = json.decoder.JSONDecoder()
-		# ["name1", "name2"] service je text field lista
-		packageTextList = jsonDec.decode(instance.service)	
+		# jsonDec = json.decoder.JSONDecoder()
+		# # ["name1", "name2"] service je text field lista
+		# packageTextList = jsonDec.decode(instance.service)	
+		print(instance.selectservice.all() )
+		packageTextList=instance.selectservice.all() 
 		return packageTextList
 	def get_discount_price(self):
 		instance=self

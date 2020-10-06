@@ -993,7 +993,7 @@ def delete_department(request,pk):
 def package_delete(request,pk):
 	to_delete=UserDetailsServicePackagePrice.objects.get(pk=pk) 
 	to_delete.delete()  
-	return redirect('/userwebsetup/')	  
+	return redirect('/userpackage/')	  
 @login_required
 def language_delete(request,pk):
 	to_delete=UserDetailsLanguage.objects.get(pk=pk) 
@@ -1248,19 +1248,9 @@ def user_detail_package(request):
 	
 	myPythonList =[]
 
-	if user_detail_instance.exists():    # means alreday filled once this table  
+	if user_detail_instance.exists():    
 		user_detail_instance=UserDetails.objects.get(user=request.user)
-		# if user_detail_instance.verificated is  True:        #IF already verificated doesn't need to change anything more
-		# 	#print(user_detail_instance.name)
-		# 	title="ID verificated"
-		# 	verificated=True
-			
-		# 	context={
-		# 	"title":title,
-			
-		# 	"verificated":verificated,
-		# 	}   
-		# else:
+	
 		verificated=False
 		title="Your ID is under verification"
 		
@@ -1275,23 +1265,26 @@ def user_detail_package(request):
 			
 				
 			
-
+			
 			form= UserDetailsServicePackagePriceForm( request.POST or None, request.FILES or None, user=user_detail_instance  )
 			if form.is_valid():
 				
 				newgallery=form.save(commit=False)
 				newgallery.detail=user_detail_instance
-				myPythonList.append(newgallery.selectservice.servicename)
-				newgallery.service = json.dumps(myPythonList)
+				# myPythonList.append(newgallery.selectservice.servicename)
+				# newgallery.service = json.dumps(myPythonList)
 				# make list as array in text
+				print("uslo")
 				newgallery.save()
+				form.save_m2m()
 				package=UserDetailsServicePackagePrice.objects.get(pk=newgallery.pk)
-				print(newgallery.pk)
-				print(package.pk)	
+				# print(newgallery.pk)
+				# print(package.pk)	
 				
 				return redirect("newsletter:user_detail_package_update", pk=package.pk)
 				  
-		
+			if form.errors:
+				print(form.errors)
 		else:
 
 			context={
@@ -1341,9 +1334,11 @@ def user_detail_package_update(request,pk):
 		remark_list=None
 	
 		#tu treba uzet iz instance koja je za taj package
-	packageTextList = jsonDec.decode(package.service)
-	
-
+	# packageTextList = jsonDec.decode(package.service)
+	packageTextList=package.selectservice.all()
+	# print("fd")
+	# print(packageTextList)
+	# print("fd")
 	if user_detail_instance.exists():    # means alreday filled once this table  
 		user_detail_instance=UserDetails.objects.get(user=request.user)
 		# if user_detail_instance.verificated is  True:        #IF already verificated doesn't need to change anything more
@@ -1361,17 +1356,17 @@ def user_detail_package_update(request,pk):
 			verificated=False
 			title="Your ID is under verification"
 						
-			form=UserDetailsServicePackagePriceForm(None,None,instance=package,user=user_detail_instance ) #instance of the form
+			form=UserDetailsServicePackagePriceForm(None,None,instance=package,user=user_detail_instance) #instance of the form
 			formremark= UserDetailsServicePackagePriceRemarkForm( request.POST or None, request.FILES or None)
 			if request.POST.get('Add service'):
 				form= UserDetailsServicePackagePriceForm( request.POST or None , request.FILES or None,instance=package,user=user_detail_instance)
-				print(form)
+				
 				if form.is_valid():
-					print("df")
+					
 					newgallery=form.save(commit=False)
 					newgallery.detail=user_detail_instance
-					packageTextList.append(newgallery.selectservice.servicename)
-					newgallery.service = json.dumps(packageTextList)
+					# packageTextList.append(newgallery.selectservice.servicename)
+					# newgallery.service = json.dumps(packageTextList)
 					newgallery.save()
 				if form.errors:
 					print(form.errors)	
@@ -1385,6 +1380,7 @@ def user_detail_package_update(request,pk):
 					newgallery.detail=user_detail_instance
 					
 					newgallery.save()
+					form.save_m2m()
 			if request.POST.get('Add package remark'):
 						
 				formremark= UserDetailsServicePackagePriceRemarkForm( request.POST or None, request.FILES or None)
@@ -1420,7 +1416,7 @@ def user_detail_package_update(request,pk):
 			"remarklist":remark_list,		
 			"verificated":verificated,
 			"title":title,
-			"packageTextList":packageTextList,
+			 "packageTextList":packageTextList,
 			"package":package,
 			} 
 	else:
@@ -1430,12 +1426,11 @@ def user_detail_package_update(request,pk):
 		if form.is_valid(): 
 			user_detail_instance=form.save(commit=False)
 			user_detail_instance.user=request.user
-			print("nesto")
-			print(user_detail_instance.user)
+			
 			user_detail_instance.save()
 
-		if form2.errors:
-			print(form2.errors)
+		if form.errors:
+			print(form.errors)
 
 		 
 		context={
