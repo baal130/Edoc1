@@ -244,11 +244,15 @@ position: absolute;
 
 
 
+<button onclick="getLocation()">Try It</button>
 
+<p id="demo"></p>
 
 <div class='row'>
 <div class='col-sm-12'>
 {% if title %}<h3 class="text-left ">{{title}} </h3>{% endif %}
+<a href='/doctor/?q={{ request.GET.q }}&state={{ request.GET.state }}{% if request.GET.city %}&city={{ request.GET.city }}{% endif %}&speciality={{ request.GET.speciality }}{% if request.GET.service %}&service={{ request.GET.service }}{% endif %}'  class="text-thm2" id='search-nearby'>{% trans "Search nearby?" %}</a>
+
 <h3 class="text-right ">{% trans "Move map to a location for search" %} <small>
   
 
@@ -1196,6 +1200,34 @@ var infoWindowsearch;
         }, 300)
        
     })
+    
+    $('#search-nearby').click(function(event){
+        event.preventDefault()
+        getLocation()
+
+    })
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  var searchLinkNearby = $('#search-nearby')
+  var defaultSearchLinkNearby = searchLinkNearby.attr("href")
+  console.log(defaultSearchLinkNearby)
+  var mLat=position.coords.latitude
+  var mLng=position.coords.longitude
+
+  var link =searchLinkNearby.attr('href', defaultSearchLinkNearby + "&lat=" + mLat +"&lng=" + mLng )
+
+  console.log(link.attr('href'))
+  window.location = link.attr('href');
+}  
+  
+
 
   // iz koordinata nadji ime
     function getLocalName(lat, lng){
@@ -1380,6 +1412,7 @@ timeFunction1();
         }
 
 </script>
+
 
 {% localize off %}
  

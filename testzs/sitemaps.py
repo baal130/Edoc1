@@ -21,6 +21,6 @@ class ProductsSitemap(Sitemap):
 
 class StaticViewSitemap(Sitemap):
 	def items(self):
-		return ['termsconditions','privacy','ProductsSitemap']
+		return ['termsconditions','privacy',]
 	def location (self,item):
 		return reverse(item)
