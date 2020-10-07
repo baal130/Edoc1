@@ -44,6 +44,7 @@ from django.contrib.auth.decorators import login_required
 from allauth.account.models import EmailAddress
 from allauth.account.decorators import verified_email_required
 from django.contrib.auth.models import User
+from django.views.decorators.cache import cache_page
 
 GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI')
 
@@ -129,6 +130,7 @@ def newsletter(request):
 
 
 # Create your views here.
+
 def home2(request):
 	
 	package_list=UserDetailsServicePackagePrice.objects.order_by('-packagepricediscount')

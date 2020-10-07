@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {%  load i18n %}
+{% load cache %}
 <!DOCTYPE html>
 <html  >
 <head>
@@ -256,7 +257,7 @@ display: -ms-flexbox!important;
 
    {% include "landingnavbar.html"%}
 </section>
- 
+ {% cache 5000 landing %}  
   <section class="cid-qTkA127IK8 mbr-fullscreen mbr-parallax-background" id="header2-1">
  
     
@@ -307,7 +308,7 @@ display: -ms-flexbox!important;
                 
                 
                 
-                
+           
            {% for objects in object_list %}      
             <div class="carousel-item ">
                   <div class="media-container-row">
@@ -389,7 +390,7 @@ display: -ms-flexbox!important;
 
                 </div> <!-- end item -->
                 {% endfor %}
-
+                
                
                 
         </div><!-- end carousel inner -->
@@ -847,6 +848,7 @@ display: -ms-flexbox!important;
 </section>
 
 {% include "landingfooter.html" %}
+{% endcache %}
 <script src="{% static 'landing/assets/web/assets/jquery/jquery.min.js'%}"></script>
   <script src="{% static 'landing/assets/popper/popper.min.js'%}"></script>
   <script src="{% static 'landing/assets/bootstrap/js/bootstrap.min.js'%}"></script>

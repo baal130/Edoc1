@@ -224,6 +224,31 @@ DATABASES = {
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+#for caching (memchache heroku)
+
+servers = os.environ.get("MEMCACHIER_SERVERS",'none')
+username = os.environ.get("MEMCACHIER_USERNAME",'none')
+password = os.environ.get("MEMCACHIER_PASSWORD",'none')
+
+CACHES = {
+    'default': {
+        # Use django-bmemcached
+        'BACKEND': 'django_bmemcached.memcached.BMemcached',
+
+        # TIMEOUT is not the connection timeout! It's the default expiration
+        # timeout that should be applied to keys! Setting it to `None`
+        # disables expiration.
+        'TIMEOUT': None,
+
+        'LOCATION': servers,
+
+        'OPTIONS': {
+            'username': username,
+            'password': password,
+        }
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

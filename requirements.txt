@@ -28,6 +28,7 @@ Django==2.2.6
 django-allauth==0.41.0
 django-appconf==1.0.3
 django-autoslug==1.9.3
+django-bmemcached==0.3.0
 django-bootstrap-datepicker-plus==3.0.5
 django-bootstrap-datetimepicker==1.5
 django-bootstrap-modal-forms==1.5.0
@@ -42,14 +43,16 @@ django-datetime-widget==0.9.3
 django-debug-toolbar==1.9.1
 django-el-pagination==3.2.4
 django-friendship==1.5.0
+django-fs-trumbowyg==0.1.4
 django-localflavor==1.0
 django-markdown-deux==1.0.5
-django-markdownx==2.0.21
+django-markdownx==3.0.1
 django-messages==0.5.3
 django-meta==1.7.0
 django-model-utils==3.0.0
 django-modeltranslation==0.15.2
 django-pagedown==2.1.2
+django-quilljs==0.0.2
 django-registration-redux==2.4
 django-robots==4.0
 django-select2==7.1.1
@@ -111,6 +114,7 @@ pytest==3.6.0
 pytest-cov==2.5.1
 pytest-django==2.9.1
 pytest-sugar==0.9.1
+python-binary-memcached==0.30.0
 python-dateutil==2.7.3
 python-decouple==3.1
 python-dotenv==0.14.0
@@ -135,6 +139,7 @@ tqdm==4.11.2
 traitlets==4.3.2
 Twisted==19.7.0
 txaio==2.10.0
+uhashring==1.2
 Unipath==1.1
 urllib3==1.25.3
 virtualenv==15.2.0

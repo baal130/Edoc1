@@ -51,6 +51,7 @@ from orders.views import LibraryView
 from django.contrib.sitemaps.views import sitemap
 from testzs.sitemaps import UserDetailsSitemap, StaticViewSitemap,UserDetailsServicePackagePriceSitemap,ArticlesSitemap
 from testzs.sitemaps import ProductsSitemap
+from django.views.decorators.cache import cache_page
 sitemaps={ 
     'doctors':UserDetailsSitemap,
     'packages':UserDetailsServicePackagePriceSitemap,
