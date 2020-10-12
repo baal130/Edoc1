@@ -324,7 +324,7 @@ ROBOTS_SITEMAP_URLS = [
  #by entering their username, e-mail address, 
 #or either one of both. Setting this to “email” requires ACCOUNT_EMAIL_REQUIRED=True
 ##FOR ALLAUTH
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+
 ACCOUNT_AUTHENTICATION_METHOD ="username_email"
 ACCOUNT_EMAIL_REQUIRED= True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
@@ -335,7 +335,8 @@ LOGIN_REDIRECT_URL ='/'
 SOCIALACCOUNT_AUTO_SIGNUP =True
 SOCIALACCOUNT_EMAIL_VERIFICATION="none"
 SOCIALACCOUNT_STORE_TOKENS =True
-
+DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 # REDIS setup
 REDIS_URL = config('REDIS_URL', default=('localhost', 6379))
 # # Channels configuration
