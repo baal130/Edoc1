@@ -9,7 +9,7 @@ from django_select2.forms import Select2MultipleWidget
 from django.forms.widgets import  NumberInput,HiddenInput,TextInput,Select,TimeInput
 from datetimewidget.widgets import DateTimeWidget
 from datetime import date
-from .languages import Language_CHOICES,Favicon_CHOICES,STATE_CHOICES,CITY_CHOICES,Specialty_CHOICES
+from .languages import Language_CHOICES,Favicon_CHOICES,STATE_CHOICES,CITY_CHOICES,Specialty_CHOICES,EXTRA_CHOICES
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePickerInput
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from pagedown.widgets import PagedownWidget
@@ -405,6 +405,15 @@ class UserDetailsSearchServiceForm(forms.Form):
 	def __init__(self, *args, **kwargs):
 		super(UserDetailsSearchServiceForm, self).__init__(*args, **kwargs)
 		self.fields['service'].required = False
+class UserDetailsSearchExtraForm(forms.Form):  
+	# search_nearby=forms.BooleanField()
+	# pet_friendly=forms.BooleanField()
+	search_nearby=forms.MultipleChoiceField(choices=EXTRA_CHOICES,widget=forms.CheckboxSelectMultiple)
+
+	def __init__(self, *args, **kwargs):
+		super(UserDetailsSearchExtraForm, self).__init__(*args, **kwargs)
+		self.fields['search_nearby'].required = False
+		# self.fields['pet_friendly'].required = False
 
 class UserDetailsFormTime(forms.ModelForm):  #koristi se form iz modela 
 	

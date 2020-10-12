@@ -676,6 +676,12 @@ categoryYelp={ 'Alergólogo': 'allergist',
 
 
 
+EXTRA_CHOICES = (
+	('',_('More Filter')),
+	('Nearby_search', 'Nearby_search'),
+	('Pet','Pet'),
+
+)
 
 
 

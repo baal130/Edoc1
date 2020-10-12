@@ -233,6 +233,9 @@ position: absolute;
     top: 1%;
     left: 56%;
 }
+.position-unset{
+  position: unset!important;
+}
 {%  endblock style %}
 </style>
 
@@ -244,7 +247,7 @@ position: absolute;
 
 
 
-<button onclick="getLocation()">Try It</button>
+<!-- <button class="btn-load" onclick="getLocation()">Try It</button> -->
 
 <p id="demo"></p>
 
@@ -1206,14 +1209,69 @@ var infoWindowsearch;
         getLocation()
 
     })
+
+    $('.btn-load').click(function(event){
+        
+        LoadingButton()
+
+    })
   function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    var btnLoad = $(".btn-load")
+      btnLoad.blur()
+      
+      var btnLoadDefaultHtml = btnLoad.html()
+      var btnLoadDefaultClasses = btnLoad.attr("class")
+      var loadTime = 1500
+      var currentTimeout;
+      var errorHtml = "<i class='fa fa-warning'></i> An error occured"
+      var errorClasses = "btn btn-danger disabled my-3"
+      var loadingHtml = "<i class='fa fa-spin fa-spinner'></i> Loading..."
+      var loadingClasses = "btn btn-success disabled my-3"
+      navigator.geolocation.getCurrentPosition(showPosition);
+      currentTimeout = displayBtnStatus(
+                            btnLoad, 
+                            loadingHtml, 
+                            loadingClasses, 
+                            10000, 
+                            currentTimeout
+                        )
+
+
+
+    
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
+
   }
 }
+function LoadingButton() {
+ 
+    var btnLoad = $(".btn-load")
+      btnLoad.blur()
+      
+      var btnLoadDefaultHtml = btnLoad.html()
+      var btnLoadDefaultClasses = btnLoad.attr("class")
+      var loadTime = 1500
+      var currentTimeout;
+      var errorHtml = "<i class='fa fa-warning'></i> An error occured"
+      var errorClasses = "btn btn-danger disabled my-3"
+      var loadingHtml = "<i class='fa fa-spin fa-spinner'></i> Loading..."
+      var loadingClasses = "btn btn-success disabled my-3"
+      navigator.geolocation.getCurrentPosition(showPosition);
+      currentTimeout = displayBtnStatus(
+                            btnLoad, 
+                            loadingHtml, 
+                            loadingClasses, 
+                            10000, 
+                            currentTimeout
+                        )
 
+
+
+    
+ 
+}
 function showPosition(position) {
   var searchLinkNearby = $('#search-nearby')
   var defaultSearchLinkNearby = searchLinkNearby.attr("href")
@@ -1225,7 +1283,30 @@ function showPosition(position) {
 
   console.log(link.attr('href'))
   window.location = link.attr('href');
-}  
+
+} 
+
+
+
+
+function displayBtnStatus(element, newHtml, newClasses, loadTime, timeout){
+    // if (timeout){
+    //   clearTimeout(timeout)
+    // }
+    if (!loadTime){
+      loadTime = 1500
+    }
+    //var defaultHtml = element.html()
+    //var defaultClasses = element.attr("class")
+    element.html(newHtml)
+    element.removeClass(btnLoadDefaultClasses)
+    element.addClass(newClasses)
+    return setTimeout(function(){
+        element.html(btnLoadDefaultHtml)
+        element.removeClass(newClasses)
+        element.addClass(btnLoadDefaultClasses)
+    }, loadTime)
+}
   
 
 

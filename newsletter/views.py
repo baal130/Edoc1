@@ -22,6 +22,7 @@ from newsletter.forms import  UserDetailsDepartmentForm,UserDetailsTeamForm,User
 from newsletter.forms import	UserDetailsServicePackagePriceForm,UserDetailsLanguageForm,UserDetailsSearchCitiesForm,UserDetailsSearchStateForm
 from newsletter.forms import UserDetailsSearchSpecialityForm,UserDetailsSearchServiceForm,UserDetailsFormTime,UserDetailsSocialNetworksForm
 from newsletter.forms import AppoitmentForm,ContactDoctorForm,ContactDoctorInListForm,UserDetailsServicePackagePriceRemarkForm
+from newsletter.forms import UserDetailsSearchExtraForm
 from comments.forms import CommentForm
 from django.contrib.contenttypes.models import ContentType
 from django.contrib import messages
@@ -34,7 +35,7 @@ from django.views.generic import View
 from django.utils.translation import ugettext_lazy as _
 from django.forms.widgets import  NumberInput,HiddenInput,TextInput,Select
 import json
-import googlemaps
+import googlemaps # https://github.com/googlemaps/google-maps-services-python
 from search.utils import yelp_search,GooglePlaces
 from analytics.models import UserSession
 import ast
@@ -46,7 +47,7 @@ from allauth.account.decorators import verified_email_required
 from django.contrib.auth.models import User
 from django.views.decorators.cache import cache_page
 
-GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'AIzaSyCP-MHkDU5D09akZaDdZF_sCM75KoPpPrI')
+GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'None')
 
 
 class DetailRatingAjaxView(AjaxRequiredMixin, View):
@@ -130,7 +131,7 @@ def newsletter(request):
 
 
 # Create your views here.
-
+@cache_page(None)
 def home2(request):
 	
 	package_list=UserDetailsServicePackagePrice.objects.order_by('-packagepricediscount')
@@ -618,14 +619,17 @@ def user_detail_web(request):
 
 def doctor_list(request): #list items
 	#queryset_list=Idiot.objects.filter(draft=False).filter(publish__lte=timezone.now())#all()  #lte means l then or equal pusblish is model field ovo se koristi normalno
+	
 	title=''
 	city_form=UserDetailsSearchCitiesForm(request.GET or None)
 	state_form=UserDetailsSearchStateForm(request.GET or None)
 	speciality_form=UserDetailsSearchSpecialityForm(request.GET or None)
 	service_form=UserDetailsSearchServiceForm(request.GET or None)
 	contact_form=ContactDoctorInListForm(request.GET or None)
+	search_nearby_form=UserDetailsSearchExtraForm((request.GET or None))
+
 	# queryset_list=UserDetails.objects.active().filter(article=False)   #filter je napravljen u modelima i instaciran 
-	queryset_list=UserDetails.objects.all()
+	queryset_list=queryset_list_all=UserDetails.objects.all()
 	test=UserDetails.objects.all()
 	
 	# print(test)
@@ -641,11 +645,22 @@ def doctor_list(request): #list items
 	service=request.GET.get("service")
 	lat=latgetexist=request.GET.get('lat')
 	lng=request.GET.get('lng')
+	search_nearby=request.GET.get('search_nearby')
 
 	#############################################################
-	## If search trough "search here feature " query from todos doctors will try to find trough clicked state
+	## If search trough "search here feature " query from todos doctors will try to find trough clicked state in mexico
+	## Search by distance to implement in future
+	if search_nearby:
+		gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
+		getloc_result = gmaps.geolocate()#find your location 
+		current_location_lat=getloc_result['location']['lat']
+		current_location_lng=getloc_result['location']['lng']
+		lat=current_location_lat
+		lng=current_location_lng
+		print(lat)
+
 	if lat and not state:	
-		gmaps = googlemaps.Client(key='AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw')
+		gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
 		LatLng=lat, lng	
 		geocode_result = gmaps.reverse_geocode(LatLng)
 		
@@ -657,20 +672,23 @@ def doctor_list(request): #list items
 					state=comp['long_name']
 ############################### query ################################
 	if query:
-		
+		print(queryset_list)
 		queryset_list=queryset_list.filter(
 			Q(name__icontains=query)|
-			Q(surname__icontains=query)
-			 
+			Q(surname__icontains=query)|
+			Q(state__icontains=state)|
+			Q(city__icontains=city)|
+			Q(speciality__icontains=speciality)|
+			Q(userdetailsservice__servicename__icontains=service)
 			#Q(user__last_name__icontains=query)
 				).distinct()
 	if(state):
-		
+		print(queryset_list)
 		queryset_list=queryset_list.filter(
 			Q(state__icontains=state)
 		  ).distinct()
 	if(city):
-		
+		print(queryset_list)
 		queryset_list=queryset_list.filter(
 			Q(city__icontains=city)
 		  ).distinct()
@@ -682,25 +700,29 @@ def doctor_list(request): #list items
 	# 	  ).distinct()
 
 	if(speciality):
-		
+		print(queryset_list)
 		queryset_list=queryset_list.filter(
 			Q(speciality__icontains=speciality)
 		  ).distinct()      	
 	if(service):
 		
-		
+		print(queryset_list)
 		queryset_list=queryset_list.filter(
 			Q(userdetailsservice__servicename__icontains=service)
 		  ).distinct()			
-	if any((query,state,city,speciality,service,lat)):
+	if any((query,state,city,speciality,service)) and queryset_list:
 		title=_('Search results')
 	else:
-		queryset_list=queryset_list.filter(
+		print(queryset_list_all)
+		queryset_list=queryset_list_all.filter(
 			Q(userdetailsfeatured__rating__gte=0)
 		  ).distinct()
 		title=_('Featured Doctors')
+		if(lat):
+			print("lat")
+			messages.success(request,_('Specific doctors not found  at TravelDoctor.Check below more results'),extra_tags='')
 	# print(queryset_list.first().profilepicture.url)
-	paginator = Paginator(queryset_list, 4) # Show 25 contacts per page
+	paginator = Paginator(queryset_list, 2) # Show 25 contacts per page
 	page_request_var = "page"
 	page = request.GET.get(page_request_var)
 	try:
@@ -746,18 +768,19 @@ def doctor_list(request): #list items
 
 	else:   
 		pass
+
 	if city:
 		# napraviti tablicu za meksicke gradove da se ne koristi preko google maps
-		# ako je odabran city u yelo i google funkcije idu koordinate od grada
+		# ako je odabran city u yelp i google funkcije idu koordinate od grada
 		try:
-			gmaps = googlemaps.Client(key='AIzaSyAqOazqPcP8E-_s-Vp7MRbP3UMUgS2xfQw')	
+			gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)	
 			geocode_result = gmaps.geocode(city)
 		
 			lat=geocode_result[0]['geometry']['location']['lat']
 			lng=geocode_result[0]['geometry']['location']['lng']
 		except:
 			pass
-
+	#medico 
 	key='doctor'
 	if not loc:
 		location = request.session.get('CITY', 'Newport Beach')
@@ -774,7 +797,7 @@ def doctor_list(request): #list items
 		categories='doctor'
 		
 	items={'businesses':[]}	
-	if any((query,state,city,speciality,service,latgetexist)):
+	if any((query,state,city,speciality,service,latgetexist,search_nearby)):
 		
 		try:
 			items = yelp_search(keyword=key, location=location,lat=lat,lng=lng,categories=categories)
@@ -799,9 +822,10 @@ def doctor_list(request): #list items
 	api = GooglePlaces(GOOGLE_CLIENT_API)
 	coordinate=19.040034,-98.2630055
 	coordinate="{0},{1}".format(lat,lng)
-
+	
+	
 	placesgoogle={'results':[]}
-	if any((query,state,city,speciality,service,latgetexist)):
+	if any((query,state,city,speciality,service,latgetexist,search_nearby)):
 		
 		#make search in google only when result is filtered
 		if speciality:
@@ -809,13 +833,14 @@ def doctor_list(request): #list items
 			distance=10000
 		else:
 			keywordgoogle='doctor'
-			distance=10000
-		print("coordinate")
-		print(coordinate)
-		placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)	
+			distance=1000
+		
+			
 		try:
 			placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)
-			
+			if 	not (placesgoogle['results']):#if not found try to find with bigger distance
+				distance+=2000
+				placesgoogle = api.search_places_by_coordinate(coordinate, distance, "doctor",keywordgoogle)
 
 		except:
 			placesgoogle={'results':[]}
@@ -855,6 +880,7 @@ def doctor_list(request): #list items
 		"speciality_form":speciality_form,
 		"service_form":service_form,
 		"contact_form":contact_form,
+		"search_nearby_form":search_nearby_form,
 		"results":items,
 		"placesgoogle":placesgoogle,
 		"lathtml":lathtml,
