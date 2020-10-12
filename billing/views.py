@@ -32,6 +32,8 @@ def payment_method_view(request):
 
 
 def payment_method_createview(request):
+    print("tu")
+    print(request.method)
     if request.method == "POST" and request.is_ajax():
         billing_profile, billing_profile_created = BillingProfile.objects.new_or_get(request)
         if not billing_profile:
