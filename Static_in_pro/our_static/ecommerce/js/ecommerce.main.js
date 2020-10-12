@@ -172,6 +172,7 @@ function redirectToNext(nextPath, timeoffset) {
     if (nextPath){
     setTimeout(function(){
                 window.location.href = nextPath
+                print(window.location.href)
             }, timeoffset)
     }
 }
