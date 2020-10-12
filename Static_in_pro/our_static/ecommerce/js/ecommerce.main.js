@@ -118,6 +118,7 @@ form.on('submit', function(event) {
   stripe.createToken(card).then(function(result) {
     if (result.error) {
       // Inform the user if there was an error
+      console.log(result.error)
       var errorElement = $('#card-errors');
       errorElement.textContent = result.error.message;
       currentTimeout = displayBtnStatus(
@@ -202,7 +203,7 @@ function stripeTokenHandler(nextUrl, token){
             
         },
         error: function(error){
-            // console.log(error)
+            console.log(error)
             $.alert({title: "An error occured", content:"Please try adding your card again."})
             btnLoad.html(btnLoadDefaultHtml)
             btnLoad.attr('class', btnLoadDefaultClasses)

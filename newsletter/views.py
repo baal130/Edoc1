@@ -131,7 +131,7 @@ def newsletter(request):
 
 
 # Create your views here.
-@cache_page(None)
+
 def home2(request):
 	
 	package_list=UserDetailsServicePackagePrice.objects.order_by('-packagepricediscount')
@@ -720,7 +720,7 @@ def doctor_list(request): #list items
 		title=_('Featured Doctors')
 		if(lat):
 			print("lat")
-			messages.success(request,_('Specific doctors not found  at TravelDoctor.Check below more results'),extra_tags='')
+			messages.success(request,_('Specific doctors not found  at TravelDoctor.Check below for more results'),extra_tags='')
 	# print(queryset_list.first().profilepicture.url)
 	paginator = Paginator(queryset_list, 2) # Show 25 contacts per page
 	page_request_var = "page"
@@ -871,6 +871,9 @@ def doctor_list(request): #list items
 		otherresults=False
 	else:
 		otherresults=True	
+
+	# if(search_nearby):
+			#dodat da prikazuje lathtml nejgovu lokaciju
 	context={
 		"object_list":queryset,
 		"title":title,
