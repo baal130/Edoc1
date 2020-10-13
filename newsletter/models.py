@@ -172,19 +172,19 @@ class UserDetails(ModelMeta,models.Model):
 	about    		   =models.TextField( blank=True)
 	imagehome1 		   =ConstrainedImageField(
 						upload_to=uplodad_location, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 
 	imagehome2 		   =ConstrainedImageField(
 						upload_to=uplodad_location, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 
 	imagehome3 		   =ConstrainedImageField(
 						upload_to=uplodad_location, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 	imagehome1Text1    =models.CharField(max_length=60,blank=True,null=True)
@@ -195,7 +195,7 @@ class UserDetails(ModelMeta,models.Model):
 	imagehome3Text2    =models.CharField(max_length=60,blank=True,null=True)
 	profilepicture     =ConstrainedImageField(
 						upload_to=uplodad_location, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 	meta_keywords	   =models.TextField(verbose_name=_("Post meta keywords"), blank=True, default="")
@@ -504,7 +504,7 @@ class UserDetailsGallery(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	imagehomegallery   =ConstrainedImageField(
 						upload_to=uplodad_location_gal, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 
@@ -554,7 +554,7 @@ class UserDetailsDepartment(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	imagehomedep 	   =ConstrainedImageField(
 						upload_to=uplodad_location_gal, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 
@@ -569,7 +569,7 @@ class UserDetailsTeam(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
 	imagehometeam 	   =ConstrainedImageField(
 						upload_to=uplodad_location_gal, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 
@@ -633,7 +633,7 @@ class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 	description             =models.TextField(null=True,blank=True)
 	packageimage 		    =ConstrainedImageField(
 							upload_to=uplodad_location_package, null=True,blank=True,
-                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            content_types=[],
                             max_upload_size=2621440,#2.5 MB
                             js_checker=True,)
 	extragift				=models.TextField(null=True,blank=True)
