@@ -88,7 +88,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'robots',
     'meta',
-
+    'constrainedfilefield',
     # 'django.contrib.gis',
     'bootstrap_datepicker_plus',
     'bootstrap3',
