@@ -14,6 +14,16 @@ from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput,DateTimePi
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from pagedown.widgets import PagedownWidget
 from django.core.validators import RegexValidator
+from django.forms.utils import ErrorList
+
+
+from django.core.exceptions import ValidationError
+
+def file_size(value): # add this to some file where you can import it from
+	limit = 2 * 1024 * 1024
+	if value.size > limit:
+		raise ValidationError('File too large. Size should not exceed 2 MiB.')
+
 
 class ContactForm(forms.Form): # koristi se fform odavde
 	full_name=forms.CharField( required=False)
@@ -75,6 +85,8 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 					choices=Specialty_CHOICES)  
 	
 	telefon = forms.CharField(min_length=7, validators=[RegexValidator(r'^\+\d{8,15}$', message=_("Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."))])
+	# profilepicture=forms.ImageField(validators=[file_size]) ovaj cemo koristit
+
 	class Meta:     
 		model = UserDetails
 		fields = [ 'name' , 'surname','adress','city','colony','state', 'telefon','web','email',
@@ -87,15 +99,22 @@ class UserDetailsForm(forms.ModelForm):  #koristi se form iz modela
 				  'state': _('State'),
 				  
 				  'speciality': _('Speciality'),
-				  'IdentificationUser': _('Document for identification doctor'),
-				  'profilepicture': _('Profile picture 480x480'),
+				  'IdentificationUser': _('Document for identification doctor, maximum size 2.5Mb'),
+				  'profilepicture': _('Profile picture best use 480x480px, maximum size 2.5Mb'),
 				
 
 		}		  
 		widgets = {
 		   
 		}
-	
+	def clean_profilepicture(self):
+		profilepicture = self.cleaned_data.get('profilepicture')
+		
+		if profilepicture.size > 5242880:  	          
+			# self._errors["profilepicture"] = ErrorList([u"Image too heavy."])
+			raise ValidationError(_('The file is too big'))
+			
+		return profilepicture
 class UserWebDetailsForm(forms.ModelForm):  #koristi se form iz modela 
 	# imagehome1Text1 = forms.CharField( widget=forms.TextInput(label=_('First Title'),attrs={'placeholder': 'Enter Title'}))
 	
@@ -106,13 +125,13 @@ class UserWebDetailsForm(forms.ModelForm):  #koristi se form iz modela
 				 ] 
 		
 		labels = {'about': _('Write about yourself'),
-			'imagehome1': _('Choose Picture for first top image, size: 1920x880px'),
+			'imagehome1': _('Choose Picture for first top image, size: 1920x880px, maximum size 2.5Mb'),
 			'imagehome1Text1': _('First Title'),
 			'imagehome1Text2': _('Second Title'),
-			'imagehome2': _('Choose Picture for second top image, size: 1920x880px'),
+			'imagehome2': _('Choose Picture for second top image, size: 1920x880px, maximum size 2.5Mb'),
 			'imagehome2Text1': _('First Title'),
 			'imagehome2Text2': _('Second Title'),
-			'imagehome3': _('Choose Picture for third top image, size: 1920x880px'),
+			'imagehome3': _('Choose Picture for third top image, size: 1920x880px, maximum size 2.5Mb'),
 			'imagehome3Text1': _('First Title'),
 			'imagehome3Text2': _('Second Title'),	
 
@@ -135,7 +154,7 @@ class UserDetailsGalleryForm(forms.ModelForm):  #koristi se form iz modela
 		fields = ['imagehomegallery'] 
 
 		labels = {
-			'imagehomegallery': _('Choose Picture for Gallery size 480x480'),
+			'imagehomegallery': _('Choose Picture for Gallery size 480x480px, maximum size 2.5Mb'),
 				
 		}
 
@@ -170,7 +189,7 @@ class UserDetailsDepartmentForm(forms.ModelForm):
 		
 		labels = {'departmenttext': _('Department description'),
 				   'departmentname': _('Department name'),
-				   'imagehomedep': _('Choose Picture for Department size 605x442'),
+				   'imagehomedep': _('Choose Picture for Department best size 605x442px, maximum size 2.5Mb'),
 		}
 		widgets = {
 			'departmentname': forms.TextInput(attrs={'placeholder': _('Enter department name')}),
@@ -189,7 +208,7 @@ class UserDetailsTeamForm(forms.ModelForm):
 		
 		labels = {'teamtext': _('Doctor description'),
 				   'teamname': _('Doctor name'),
-				   'imagehometeam': _('Choose Picture for Team member  size 450x450'),
+				   'imagehometeam': _('Choose Picture for Team member  size 450x450px, maximum size 2.5Mb'),
 		}
 		widgets = {
 			'teamname': forms.TextInput(attrs={'placeholder': _('Enter Doctor member name')}),

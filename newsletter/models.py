@@ -26,7 +26,7 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
 from meta.models import ModelMeta
-
+from constrainedfilefield.fields import ConstrainedFileField,ConstrainedImageField
 
 
 User = settings.AUTH_USER_MODEL
@@ -148,7 +148,13 @@ class UserDetails(ModelMeta,models.Model):
 	web				   =models.URLField(default='null',blank=True)
 	email              =models.EmailField(default='null',blank=True)
 	verificated		   =models.BooleanField(default=False)
-	IdentificationUser =models.FileField(null=False,blank=False)
+	IdentificationUser =ConstrainedFileField(
+						null=False,blank=False,
+						upload_to=uplodad_location,
+                            content_types=[],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+	
 	followers          =models.ManyToManyField(User, related_name='is_following', blank=True) # user.is_following.all()
 	occupancy 		   =models.CharField(max_length=40,choices=Occupancy_CHOICES,
 						default='Pacient',blank=True)
@@ -164,16 +170,34 @@ class UserDetails(ModelMeta,models.Model):
 	lng  		       =models.FloatField( blank=True, max_length=100,default=1.0)
 
 	about    		   =models.TextField( blank=True)
-	imagehome1 		   =models.ImageField(upload_to=uplodad_location,null=True,blank=True)
-	imagehome2 		   =models.ImageField(upload_to=uplodad_location, null=True,blank=True)
-	imagehome3 		   =models.ImageField(upload_to=uplodad_location, null=True,blank=True)
+	imagehome1 		   =ConstrainedImageField(
+						upload_to=uplodad_location, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+
+	imagehome2 		   =ConstrainedImageField(
+						upload_to=uplodad_location, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+
+	imagehome3 		   =ConstrainedImageField(
+						upload_to=uplodad_location, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
 	imagehome1Text1    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome1Text2    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome2Text1    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome2Text2    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome3Text1    =models.CharField(max_length=60,blank=True,null=True)
 	imagehome3Text2    =models.CharField(max_length=60,blank=True,null=True)
-	profilepicture     =models.ImageField(upload_to=uplodad_location, null=True,blank=True)
+	profilepicture     =ConstrainedImageField(
+						upload_to=uplodad_location, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
 	meta_keywords	   =models.TextField(verbose_name=_("Post meta keywords"), blank=True, default="")
 
 	_metadata = {
@@ -478,7 +502,12 @@ class UserDetailsFeatured(models.Model):
 
 class UserDetailsGallery(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
-	imagehomegallery   =models.ImageField(upload_to=uplodad_location_gal, null=True,blank=True)
+	imagehomegallery   =ConstrainedImageField(
+						upload_to=uplodad_location_gal, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+
 
 	def __unicode__(self):
 		return self.detail.surname +' '+ self.detail.name	
@@ -523,7 +552,12 @@ class UserDetailsServiceSearch(models.Model):
 		return self.servicename
 class UserDetailsDepartment(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
-	imagehomedep 		   =models.ImageField(upload_to=uplodad_location_gal, null=True,blank=True)
+	imagehomedep 	   =ConstrainedImageField(
+						upload_to=uplodad_location_gal, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+
 	weburl             =models.URLField(blank=True)
 	departmentname     =models.CharField(max_length=60,blank=True,null=True)
 	departmenttext     =models.TextField(max_length=120,blank=True)
@@ -533,7 +567,13 @@ class UserDetailsDepartment(models.Model):
 		return self.detail.surname + ' ' + self.detail.name
 class UserDetailsTeam(models.Model):
 	detail             =models.ForeignKey(UserDetails,on_delete=models.CASCADE)
-	imagehometeam 	   =models.ImageField(upload_to=uplodad_location_gal, null=True,blank=True)
+	imagehometeam 	   =ConstrainedImageField(
+						upload_to=uplodad_location_gal, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
+
+
 	weburl             =models.URLField(blank=True)
 	teamname     	   =models.CharField(max_length=60,blank=True,null=True)
 	teamtext           =models.TextField(max_length=120,blank=True)
@@ -591,7 +631,11 @@ class UserDetailsServicePackagePrice(ModelMeta,models.Model):
 	name                    =models.CharField(max_length=60,blank=True,null=True)
 	headdescription         =models.TextField(null=True,blank=True)
 	description             =models.TextField(null=True,blank=True)
-	packageimage 		    =models.ImageField(upload_to=uplodad_location_package, null=True,blank=True)
+	packageimage 		    =ConstrainedImageField(
+							upload_to=uplodad_location_package, null=True,blank=True,
+                            content_types=['image/jpeg','image/jpg','image/jpg'],
+                            max_upload_size=2621440,#2.5 MB
+                            js_checker=True,)
 	extragift				=models.TextField(null=True,blank=True)
 	offerends               =models.DateTimeField(null=True,blank=True)
 	offerstarts             =models.DateTimeField(null=True,blank=True)
