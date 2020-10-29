@@ -76,11 +76,11 @@ class BillingProfile(models.Model):
 
 def billing_profile_created_receiver(sender, instance, *args, **kwargs):
 	if not instance.customer_id and instance.email:
-		print("ACTUAL API REQUEST Send to stripe/braintree")
+		# print("ACTUAL API REQUEST Send to stripe/braintree")
 		customer = stripe.Customer.create(
 				email = instance.email
 			)
-		print(customer)
+		
 		instance.customer_id = customer.id
 
 pre_save.connect(billing_profile_created_receiver, sender=BillingProfile)
@@ -99,9 +99,9 @@ class CardManager(models.Manager):
 
 	def add_new(self, billing_profile, token):
 		if token:
-			print(token)
+			
 			customer = stripe.Customer.retrieve(billing_profile.customer_id)
-			print(customer)
+			
 			#https://stripe.com/docs/api/cards/create?lang=python
 			# stripe_card_response = customer.sources.create(source=token)
 			stripe_card_response = stripe.Customer.create_source(billing_profile.customer_id,source=token)
@@ -185,10 +185,10 @@ class ChargeManager(models.Manager):
 				# failure_message=c.failure_message,
 
 		)
-		print(c)
+		
 		new_charge_obj.save()
-		return new_charge_obj.paid, new_charge_obj.seller_message
-
+		return new_charge_obj.paid, new_charge_obj.seller_message,new_charge_obj
+		# called in views charge 
 
 class Charge(models.Model):
 	billing_profile         = models.ForeignKey(BillingProfile,on_delete=models.CASCADE)

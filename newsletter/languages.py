@@ -677,9 +677,13 @@ categoryYelp={ 'Alergólogo': 'allergist',
 
 
 EXTRA_CHOICES = (
-	('',_('More Filter')),
-	('Nearby_search', 'Nearby_search'),
-	('Pet','Pet'),
+	('search_nearby', _('Nearby search')),
+	('acceptanimales', _('Pet friendly')),
+	('invalidsaccess', _('Access for people with disability')),
+	('acceptchildren', _('Accept children')),
+	('specialprice', _('Have discounts')),
+	('haveparking', _('Free parking')),
+
 
 )
 

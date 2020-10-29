@@ -1,10 +1,11 @@
 {% extends 'baseecommerce.html' %}
+{%  load i18n %}
 
 
 {% block content %}
 
 <div class='col-10 col-md-6 mx-auto'>
-    <h1>Add Payment Method</h1>
+    <h1>{% trans "Add Payment Method"%}</h1>
     <div class='stripe-payment-form' data-token='{{ publish_key }}' data-next-url='{% if next_url %}{{ next_url }}{% endif %}' data-btn-title='Add New Card'></div>
 </div>
 <!-- JSrendered called in ecommerce.main.js  -->

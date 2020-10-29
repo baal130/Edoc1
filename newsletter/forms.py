@@ -427,11 +427,11 @@ class UserDetailsSearchServiceForm(forms.Form):
 class UserDetailsSearchExtraForm(forms.Form):  
 	# search_nearby=forms.BooleanField()
 	# pet_friendly=forms.BooleanField()
-	search_nearby=forms.MultipleChoiceField(choices=EXTRA_CHOICES,widget=forms.CheckboxSelectMultiple)
+	extra_filter=forms.MultipleChoiceField(choices=EXTRA_CHOICES,widget=forms.CheckboxSelectMultiple,label = _('More Filter'))
 
 	def __init__(self, *args, **kwargs):
 		super(UserDetailsSearchExtraForm, self).__init__(*args, **kwargs)
-		self.fields['search_nearby'].required = False
+		self.fields['extra_filter'].required = False
 		# self.fields['pet_friendly'].required = False
 
 class UserDetailsFormTime(forms.ModelForm):  #koristi se form iz modela 

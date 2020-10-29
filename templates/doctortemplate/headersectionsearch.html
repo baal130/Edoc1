@@ -73,41 +73,45 @@
 			             
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class=" navbar-collapse collapse navbar-doctor pointer-auto" id="navbar-menu">
-			                <ul class="nav navbar-nav navbar-left" data-in="fadeIn">
+			               <ul   class="nav navbar-nav navbar-left list-inline" data-in="fadeIn">
 								
-								<li class="">
+								<li  style="display: inline;" class="">
 								<form  class="form-inline" method='GET' action=''>
-							    <input  class="select form-control" type='text' name='q' placeholder='Search doctors' value='{{request.GET.q }}'/>
+							    <input  class="select form-control" type='text' name='q' placeholder='{%trans "Search doctors"%}' value='{{request.GET.q }}'/>
 							    
 							    {{state_form|crispy}} <!-- // category je vec objekt s td, option tagovima  -->
     							{{city_form|crispy}}
     							{{speciality_form|crispy}}
     							{{service_form|crispy}}
-    							  
     							
-							   
-							    </select></td>
+    							<button style="padding: 5px 8px;margin-top: -5px;" type="button" class="btn btn-light"> <a href="#package_view" data-toggle="modal"  style="    color: #88939e;padding: 2px;margin: 2px;" class=""><span class="fa fa-filter"></span>{% trans "Filter more" %} </a></button>
+							   	
+							    
 
-							    <input  class="btn-load" style="vertical-align: middle;margin-top: 1px;" type='submit' value='Filter' />
+							   <!--  <span class="dropdown position-unset">
+								    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+								    <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+							             <form  class="" method='GET' action=''>
+												    
+												    
+												   {{search_nearby_form|crispy}}
+										</form>
+									 </ul>
+					  			</span> -->
+
+					  			<input  class="" style="vertical-align: middle;margin-top: -5px;" type='submit' value='{%trans "Filter"%}'  />
 							    </form>
+							    
+					  			
 								</li>
 								
 			                </ul>
-					        <div class="dropdown position-unset">
-							    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-							    <span class="caret"></span></button>
-								<ul class="dropdown-menu">
-					             <form  class="form-inline" method='GET' action=''>
-										    
-										    
-										   {{search_nearby_form|crispy}}
-								</form>
-								    </ul>
-					  		</div>
-
+					        
+					  		
 			            </div><!-- /.navbar-collapse -->
 			        </div>
-			      
+			      	
 			        
 			        <!-- Start Side Menu -->
 			         {% include 'rightsidemenu.html' %}

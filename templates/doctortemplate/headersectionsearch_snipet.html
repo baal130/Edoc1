@@ -1,0 +1,40 @@
+<ul   class="nav navbar-nav navbar-left list-inline" data-in="fadeIn">
+								
+								<li  style="display: inline;" class="">
+								<form  class="form-inline" method='GET' action=''>
+							    <input  class="select form-control" type='text' name='q' placeholder='Search doctors' value='{{request.GET.q }}'/>
+							    
+							    {{state_form|crispy}} <!-- // category je vec objekt s td, option tagovima  -->
+    							{{city_form|crispy}}
+    							{{speciality_form|crispy}}
+    							{{service_form|crispy}}
+    							<span  class="dropdown "> <button class="dropbtn"><i class="fab fa-facebook color-fb"></i></button> <div class="dropdown-content dropdown-content-fb fb-link">
+									    <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span> {% trans "Share"%}</a>
+									    <!-- <a href="#"> <span><i class="fab fa-facebook-square fa-2x color-fb"></i></span> Fren</a> -->
+                                       {% if instance.social_account_urls.facebookurl %}
+									    <a href="{{instance.social_account_urls.facebookurl}}"> <span><img src="{% static 'img/iconssocial/fb32x32.png'%}" alt=""></span>{% trans "Visit"%} </a>
+									   {% endif %}
+									</div></span> 
+    							
+							   	
+							    
+
+							   <!--  <span class="dropdown position-unset">
+								    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+								    <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+							             <form  class="" method='GET' action=''>
+												    
+												    
+												   {{search_nearby_form|crispy}}
+										</form>
+									 </ul>
+					  			</span> -->
+
+					  			<input  class="btn-load" style="vertical-align: middle;margin-top: 1px;" type='submit' value='Filter' />
+							    </form>
+							    
+					  			
+								</li>
+								<form  class="form-inline" method='GET' action=''></li>
+			                </ul>

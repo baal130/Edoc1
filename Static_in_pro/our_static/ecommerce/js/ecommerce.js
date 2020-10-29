@@ -122,7 +122,11 @@ $(document).ready(function(){
           console.log(data.owner)
           if (data.owner){
             isOwner = true
+            var language = productForm.attr("language")
             submitSpan.html("<a class='btn btn-warning' href='/library/'>Bought Items</a>")
+            if(language="es"){
+              submitSpan.html("<a class='btn btn-warning' href='/library/'>Mis compras</a>")
+            }
           } else {
             isOwner = false
           }
@@ -165,10 +169,19 @@ $(document).ready(function(){
         data: formData,
         success: function(data){
           var submitSpan = thisForm.find(".submit-span")
+          var language = thisForm.attr("language")
+          console.log(language)
           if (data.added){
             submitSpan.html("<div class='btn-group'> <a class='btn btn-link' href='/cart/'>In cart</a> <button type='submit' class='btn btn-link'>Remove?</button></div>")
+            if(language=="es"){
+              submitSpan.html("<div class='btn-group'> <a class='btn btn-link' href='/cart/'>En el carrito</a> <button type='submit' class='btn btn-link'>Eliminar?</button></div>")  
+            }
           } else {
             submitSpan.html("<button type='submit'  class='btn btn-success'>Add to cart</button>")
+            if(language=="es"){
+              submitSpan.html("<button type='submit'  class='btn btn-success'>Añadir al carrito</button>")
+            }
+
            }
           var navbarCount = $(".navbar-cart-count")
           navbarCount.text(data.cartItemCount)

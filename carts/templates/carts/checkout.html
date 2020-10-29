@@ -1,11 +1,11 @@
 {% extends "baseecommerce.html" %}
-
+{% load i18n %}
 
 {% block content %}
 {% if not billing_profile %}
     <div class='row text-center'>
     <div class='col-12 col-md-6'>
-        <p class='lead'>Login</p>
+        <p class='lead'>{% trans "Login"%}</p>
         <!-- za allauth trebamo relativni path pa koristimo get_full_path umjesto build_absolute_uri -->
         {% include 'accounts/snippets/form.html' with form=login_form next_url=request.get_full_path %}
     </div>
@@ -69,17 +69,22 @@
                 <div class='stripe-payment-form' data-token='{{ publish_key }}' data-next-url='{{ request.build_absolute_uri }}' data-btn-title='Add Payment Method'></div>
 
             {% else %}
-                <h1>Finalize Checkout</h1>
-                <p>Cart Items: {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-                <p>Shipping Address: {{ object.shipping_address_final }}</p>
-                <p>Billing Address: {{ object.billing_address_final }}</p>
-                <p>Payment Method: {{ billing_profile.default_card }} (<a href="{{ billing_profile.get_payment_method_url }}?next={{ request.build_absolute_uri }}">Change</a>)</p>
-                <p>Cart Total: {{ object.cart.total }}</p>
-                <p>Shipping Total: {{ object.shipping_total }}</p>
-                <p>Order Total: {{ object.total }}</p>
+                <h1>{%trans "Finalize Checkout"%}</h1>
+                <p>{%trans "Cart Items: "%} {% for product in object.cart.products.all %}<b>{{ product }} </b>{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                {% if shipping_address_required %}
+                <p>{%trans "Shipping Address:"%} {{ object.shipping_address_final }}</p>
+                <p>{%trans "Billing Address:"%} {{ object.billing_address_final }}</p>
+                {% endif %}
+                <p>{%trans "Payment Method: "%}{{ billing_profile.default_card }} (<a href="{{ billing_profile.get_payment_method_url }}?next={{ request.build_absolute_uri }}">
+                {% trans "Change: "%}</a>)</p>
+                <p>{%trans "Cart Total:"%}{{ object.cart.total }} $MXN</p>
+                 {% if shipping_address_required %}
+                <p>{%trans "Shipping Total:"%} {{ object.shipping_total }} $MXN </p>
+                {% endif %}
+                <p>{%trans "Order Total:"%}<b> {{ object.total }}</b>  $MXN </p>
 
-                <form class='form' method='POST' action="">{% csrf_token %}
-                    <button type='submit' class='btn btn-success'>Checkout</button>
+                <form  style="margin-bottom: 30px;" class='form' method='POST' action="">{% csrf_token %}
+                    <button type='submit' class='btn btn-success'>{% trans "Checkout"%}</button>
                 </form>
             {% endif %}
         {% endif %}

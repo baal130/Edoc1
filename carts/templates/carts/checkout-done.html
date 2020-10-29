@@ -1,11 +1,11 @@
 {% extends "baseecommerce.html" %}
-
+{% load i18n %}
 
 {% block content %}
 <div class='col-6 mx-auto py-5 text-center'>
-  <h1 class='display-1'>Thank you for your order!!!</h1>
+  <h1 class='display-1'>{%trans "Thank you for your order!!!"%}</h1>
 
-  <h3 class='display-1'><a href="{% url 'library' %}">Check out your subscriptions</a>
+  <h3 class='display-1 ' style=" margin-bottom: 30px;"><a style="color: dodgerblue;" href="{% url 'library' %}"> {% trans "Check out your bought product page here"%} </a>
     </h3>
 </div>
 

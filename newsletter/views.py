@@ -626,7 +626,7 @@ def doctor_list(request): #list items
 	speciality_form=UserDetailsSearchSpecialityForm(request.GET or None)
 	service_form=UserDetailsSearchServiceForm(request.GET or None)
 	contact_form=ContactDoctorInListForm(request.GET or None)
-	search_nearby_form=UserDetailsSearchExtraForm((request.GET or None))
+	search_nearby_form=UserDetailsSearchExtraForm(request.GET or None)
 
 	# queryset_list=UserDetails.objects.active().filter(article=False)   #filter je napravljen u modelima i instaciran 
 	queryset_list=queryset_list_all=UserDetails.objects.all()
@@ -646,18 +646,34 @@ def doctor_list(request): #list items
 	lat=latgetexist=request.GET.get('lat')
 	lng=request.GET.get('lng')
 	search_nearby=request.GET.get('search_nearby')
+	
+	extra_filter=request.GET.getlist('extra_filter')
+	
 
+	
+	
 	#############################################################
 	## If search trough "search here feature " query from todos doctors will try to find trough clicked state in mexico
 	## Search by distance to implement in future
-	if search_nearby:
-		gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
-		getloc_result = gmaps.geolocate()#find your location 
-		current_location_lat=getloc_result['location']['lat']
-		current_location_lng=getloc_result['location']['lng']
-		lat=current_location_lat
-		lng=current_location_lng
-		print(lat)
+	if extra_filter:
+		for x in extra_filter:
+			if x=="search_nearby":
+				gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
+				getloc_result = gmaps.geolocate()#find your location 
+				current_location_lat=getloc_result['location']['lat']
+				current_location_lng=getloc_result['location']['lng']
+				lat=current_location_lat
+				lng=current_location_lng
+			if x =="acceptanimales":
+				queryset_list=queryset_list.filter(Q(acceptanimales=True)).distinct()
+			if x =="invalidsaccess":
+				queryset_list=queryset_list.filter(Q(invalidsaccess=True)).distinct()
+			if x =="acceptchildren":
+				queryset_list=queryset_list.filter(Q(acceptchildren=True)).distinct()
+			if x =="specialprice":
+				queryset_list=queryset_list.filter(Q(specialprice=True)).distinct()	
+				
+		
 
 	if lat and not state:	
 		gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
@@ -682,6 +698,8 @@ def doctor_list(request): #list items
 			Q(userdetailsservice__servicename__icontains=service)
 			#Q(user__last_name__icontains=query)
 				).distinct()
+	
+
 	if(state):
 		print(queryset_list)
 		queryset_list=queryset_list.filter(
@@ -710,7 +728,7 @@ def doctor_list(request): #list items
 		queryset_list=queryset_list.filter(
 			Q(userdetailsservice__servicename__icontains=service)
 		  ).distinct()			
-	if any((query,state,city,speciality,service)) and queryset_list:
+	if any((query,state,city,speciality,service,extra_filter)) and queryset_list:
 		title=_('Search results')
 	else:
 		print(queryset_list_all)
@@ -797,7 +815,7 @@ def doctor_list(request): #list items
 		categories='doctor'
 		
 	items={'businesses':[]}	
-	if any((query,state,city,speciality,service,latgetexist,search_nearby)):
+	if any((query,state,city,speciality,service,latgetexist,extra_filter)):
 		
 		try:
 			items = yelp_search(keyword=key, location=location,lat=lat,lng=lng,categories=categories)
@@ -825,7 +843,7 @@ def doctor_list(request): #list items
 	
 	
 	placesgoogle={'results':[]}
-	if any((query,state,city,speciality,service,latgetexist,search_nearby)):
+	if any((query,state,city,speciality,service,latgetexist,extra_filter)):
 		
 		#make search in google only when result is filtered
 		if speciality:
@@ -913,7 +931,6 @@ def discount_list(request,template=None, extra_context=None):
 	city=request.GET.get("city")
 	speciality=request.GET.get("speciality")
 	service=request.GET.get("service")
-	
 	
 	
 	if query:

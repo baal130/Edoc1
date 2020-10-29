@@ -1,16 +1,16 @@
 {% extends "baseecommerce.html" %}
-
+{% load i18n %}
 
 {% block content %}
-<h1>Cart</h1>
+<h1>{% trans "Cart"%}</h1>
 
 {% if cart.products.exists %}
 <table class="table cart-table">
   <thead>
     <tr>
       <th>#</th>
-      <th>Product Name</th>
-      <th>Product Price</th>
+      <th>{% trans "Product Name"%}</th>
+      <th>{% trans "Product Price"%}</th>
     </tr>
   </thead>
   <tbody class='cart-body'>
@@ -25,15 +25,15 @@
     {% endfor %}
     <tr>
       <td colspan="2"></td>
-      <td><b>Subtotal</b> $<span class='cart-subtotal'>{{ cart.subtotal }}</span></td>
+      <td><b>{% trans "Subtotal"%}</b> $MXN<span class='cart-subtotal'>{{ cart.subtotal }}</span></td>
     </tr>
     <tr>
       <td colspan="2"></td>
-      <td><b>Total</b> $<span class='cart-total'>{{ cart.total }}</span></td>
+      <td><b>{% trans "Total"%}</b> $MXN<span class='cart-total'>{{ cart.total }}</span></td>
     </tr>
     <tr>
       <td colspan="2"></td>
-      <td><a class='btn btn-lg btn-success' href='{% url "cart:checkout" %}'>Checkout</a></td>
+      <td><a class='btn btn-lg btn-success' href='{% url "cart:checkout" %}'>{% trans "Checkout"%}</a></td>
     </tr>
 
   </tbody>
@@ -45,7 +45,7 @@
   </div>
 
 {% else %}
-<p class='lead'>Cart is empty</p>
+<p class='lead'>{% trans "Cart is empty"%}</p>
 {% endif %}
 
 

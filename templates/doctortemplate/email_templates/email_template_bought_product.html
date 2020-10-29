@@ -67,7 +67,7 @@ td .es-button-border-2:hover {
 	background:#293298!important;
 }
 </style> 
-{%  load i18n %}
+
  </head> 
  <body style="width:100%;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0;"> 
   <div class="es-wrapper-color" style="background-color:#F6F6F6;"> 
@@ -91,7 +91,7 @@ td .es-button-border-2:hover {
                   <td width="280" align="left" style="padding:0;Margin:0;"> 
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                      <tr style="border-collapse:collapse;"> 
-                      <td class="es-infoblock es-m-txt-c" align="left" style="padding:0;Margin:0;line-height:14px;font-size:12px;color:#CCCCCC;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:14px;color:#CCCCCC;">{% trans "Appoitment form via TravelDoctor" %}</p></td> 
+                      <td class="es-infoblock es-m-txt-c" align="left" style="padding:0;Margin:0;line-height:14px;font-size:12px;color:#CCCCCC;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:14px;color:#CCCCCC;">{% trans "Product purchased via TravelDoctor" %}</p></td> 
                      </tr> 
                    </table></td> 
                  </tr> 
@@ -139,7 +139,7 @@ td .es-button-border-2:hover {
                        <table cellpadding="0" cellspacing="0" width="100%" class="es-menu" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                          <tr class="links" style="border-collapse:collapse;"> 
                           <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:21px;padding-bottom:21px;border:0;"><a target="_blank" href="www.traveldoctor.mx/fordoctors" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;display:block;color:#84A5CA;font-weight:normal;">ABOUT</a></td> 
-                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:21px;padding-bottom:21px;border:0;"><a target="_blank" href="www.traveldoctor.mx/fordoctors" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;display:block;color:#84A5CA;font-weight:normal;">SERVICES</a></td> 
+                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:21px;padding-bottom:21px;border:0;"><a target="_blank" href="{www.traveldoctor.mx/fordoctors" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;display:block;color:#84A5CA;font-weight:normal;">SERVICES</a></td> 
                           <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:21px;padding-bottom:21px;border:0;"><a target="_blank" href="www.traveldoctor.mx/fordoctors" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;display:block;color:#84A5CA;font-weight:normal;">CONTACT</a></td> 
                          </tr> 
                        </table></td> 
@@ -160,7 +160,7 @@ td .es-button-border-2:hover {
 		<center style='color:#ffffff;font-family:roboto, "helvetica neue", helvetica, arial, sans-serif;font-size:14px;font-weight:700;'>GET A QUOTE</center>
 	</v:roundrect></a>
 <![endif]--> 
-                       <!--[if !mso]><!-- --><span class="es-button-border msohide" style="border-style:solid;border-color:#002240;background:#002240;border-width:0px;display:inline-block;border-radius:5px;width:auto;mso-hide:all;"><a href="www.traveldoctor.mx/fordoctors" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;color:#FFFFFF;border-style:solid;border-color:#002240;border-width:10px 15px;display:inline-block;background:#002240;border-radius:5px;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center;">GET A QUOTE </a></span> 
+                       <!--[if !mso]><!-- --><span class="es-button-border msohide" style="border-style:solid;border-color:#002240;background:#002240;border-width:0px;display:inline-block;border-radius:5px;width:auto;mso-hide:all;"><a href="{% url 'landingfordoctors' %}" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;color:#FFFFFF;border-style:solid;border-color:#002240;border-width:10px 15px;display:inline-block;background:#002240;border-radius:5px;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center;">GET A QUOTE </a></span> 
                        <!--<![endif]--></td> 
                      </tr> 
                    </table></td> 
@@ -195,26 +195,20 @@ td .es-button-border-2:hover {
                   <td width="560" align="center" valign="top" style="padding:0;Margin:0;"> 
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:15px;"><h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#002240;">{% trans "You have send request for appoitment "%}</h2></td> 
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:15px;"><h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#002240;">{% trans "Bought products:"%}</h2></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:10px;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{% trans " You have sent request for appoitment to dr. "%} {{form_full_name|title}} {{form_full_surname|title}}  </p>
-                      	<p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{% trans "You will receive message from doctor "%} {{form_full_surname|title}}{% trans ",for appoitment in short time "%}   </p>
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:10px;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#59A3FE;">
+                       <br>
+                        {% for product in products %}
+                         <li> {{product.title}}</li> 
+
+                       {% endfor %}
+                      	<p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{% trans " Message:" %} {{form_message}} </p>
+                      
                       </td> 
                      </tr> 
-                     <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:10px;Margin:0;"> 
-                       <!--[if mso]><a href="" target="_blank">
-	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" stripoVmlButton href="" 
-                style="height:46px;v-text-anchor:middle;width:133px;" arcsize="11%" stroke="f" fillcolor="#002240">
-		<w:anchorlock></w:anchorlock>
-		<center style='color:#ffffff;font-family:roboto, "helvetica neue", helvetica, arial, sans-serif;font-size:18px;font-weight:400;'>SHOP NOW</center>
-	</v:roundrect></a>
-<![endif]--> 
-                      <!--  <!--[if !mso]><!-- -->
-                        
-                      </td> 
-                     </tr> 
+                   
                    </table></td> 
                  </tr> 
                </table></td> 
@@ -247,14 +241,24 @@ td .es-button-border-2:hover {
                   <td width="520" align="center" valign="top" style="padding:0;Margin:0;"> 
                    <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#FFFFFF;border-radius:0px 0px 12px 12px;" role="presentation"> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:5px;padding-top:10px;"><h2 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#002240;">{% trans "Your   appoitment information "%}</h2></td> 
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:5px;padding-top:10px;"><h2 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#002240;">{% trans "Product information "%}</h2></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{{doctor_email}}</p>
-                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{{form_full_phone}}</p></td> 
+                      <td align="center" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">{% trans "Use order number or mail when contacting doctor" %}</p>
+                      <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#333333;">
+                        {% trans "Product links:"%}
+                        <br>
+                        {% for product in products %}
+                         <li><a href="{{product.get_full_url}}"> {{product.title}}</a></li> 
+
+                       {% endfor %}
+
+
+                      </p></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;"><h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#009200;">{{form_full_date}}</h2></td> 
+
+                      <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;"><h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#009200;">{{order_id}}</h2></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
                       <td align="center" style="Margin:0;padding-top:10px;padding-left:10px;padding-right:10px;padding-bottom:20px;"> 
@@ -265,7 +269,7 @@ td .es-button-border-2:hover {
 		<center style='color:#ffffff;font-family:roboto, "helvetica neue", helvetica, arial, sans-serif;font-size:18px;font-weight:400;'>Shop now</center>
 	</v:roundrect></a>
 <![endif]--> 
-                       <!--[if !mso]><! -->
+                       <!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#002240;background:#002240;border-width:0px;display:inline-block;border-radius:5px;width:auto;mso-hide:all;"><a href="www.traveldoctor.mx/library/" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:18px;color:#FFFFFF;border-style:solid;border-color:#002240;border-width:10px 20px;display:inline-block;background:#002240;border-radius:5px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;">{% trans "Bought Items page" %}</a></span> 
                        <!--<![endif]--></td> 
                      </tr> 
                    </table></td> 
@@ -299,10 +303,10 @@ td .es-button-border-2:hover {
                   <td width="149" align="left" class="es-m-p20b" style="padding:0;Margin:0;"> 
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#002240;"><strong><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;color:#002240;" href="tel:123456789">123456789</a></strong></p></td> 
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#002240;"><strong><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;color:#002240;" href="tel:+52 2225050740">+52 2225050740</a></strong></p></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">Monday-Friday. 8am-7pm</p></td> 
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">{% trans "Monday-Friday"%}. 8am-7pm</p></td> 
                      </tr> 
                    </table></td> 
                   <td class="es-hidden" width="5" style="padding:0;Margin:0;"></td> 
@@ -329,7 +333,7 @@ td .es-button-border-2:hover {
                       <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#002240;"><strong><a target="_blank" href="mailto:traveldoctor@traveldoctor.mx" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;color:#002240;">traveldoctor@traveldoctor.mx</a></strong></p></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">Monday-Friday. 8am-7pm</p></td> 
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">{% trans "Monday-Friday"%}. 8am-7pm</p></td> 
                      </tr> 
                    </table></td> 
                   <td class="es-hidden" width="5" style="padding:0;Margin:0;"></td> 
@@ -352,10 +356,10 @@ td .es-button-border-2:hover {
                   <td width="148" align="left" style="padding:0;Margin:0;"> 
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#002240;"><strong>Request a quote</strong></p></td> 
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#002240;"><strong>{% trans "Request a quote"%}</strong></p></td> 
                      </tr> 
                      <tr style="border-collapse:collapse;"> 
-                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">Get all the information</p></td> 
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:12px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;color:#002240;">{% trans "Get all the information"%}</p></td> 
                      </tr> 
                    </table></td> 
                  </tr> 
@@ -390,10 +394,10 @@ td .es-button-border-2:hover {
                       <td align="center" bgcolor="transparent" style="padding:0;Margin:0;padding-bottom:10px;font-size:0;background-color:transparent;"> 
                        <table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                          <tr style="border-collapse:collapse;"> 
-                           <td valign="top" align="center" style="padding:0;Margin:0;padding-right:15px;">
+                          <td valign="top" align="center" style="padding:0;Margin:0;padding-right:15px;">
                             <a target="_blank" href="www.facebook.com/Traveldoctor-113462803833513" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;display:block;color:#84A5CA;font-weight:normal;"><img title="Facebook" src="https://fqwadn.stripocdn.email/content/assets/img/social-icons/logo-black/facebook-logo-black.png" alt="Fb" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a>
                           </td> 
-                          <a href="twitter.com/TraveldoctorM"><td valign="top" align="center" style="padding:0;Margin:0;padding-right:15px;"><img title="Twitter" src="https://fqwadn.stripocdn.email/content/assets/img/social-icons/logo-black/twitter-logo-black.png" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></td> </a> 
+                          <a href="twitter.com/TraveldoctorM"><td valign="top" align="center" style="padding:0;Margin:0;padding-right:15px;"><img title="Twitter" src="https://fqwadn.stripocdn.email/content/assets/img/social-icons/logo-black/twitter-logo-black.png" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></td> </a>
                           <td valign="top" align="center" style="padding:0;Margin:0;padding-right:15px;"><img title="Youtube" src="https://fqwadn.stripocdn.email/content/assets/img/social-icons/logo-black/youtube-logo-black.png" alt="Yt" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></td> 
                           <td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px;"><img title="Pinterest" src="https://fqwadn.stripocdn.email/content/assets/img/social-icons/logo-black/pinterest-logo-black.png" alt="P" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></td> 
                          </tr> 

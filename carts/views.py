@@ -13,7 +13,7 @@ from billing.models import BillingProfile
 from orders.models import Order
 from products.models import Product
 from .models import Cart
-
+from .utils import send_mail_customer,send_mail_product_owner
 
 import stripe
 STRIPE_SECRET_KEY = getattr(settings, "STRIPE_SECRET_KEY", "sk_test_cu1lQmcg1OLffhLvYrSCp5XE")
@@ -58,7 +58,7 @@ def cart_update(request):
         request.session['cart_items'] = cart_obj.products.count()
         # return redirect(product_obj.get_absolute_url())
         if request.is_ajax(): # Asynchronous JavaScript And XML / JSON
-            print("Ajax request")
+            
             json_data = {
                 "added": added,
                 "removed": not added,
@@ -82,8 +82,7 @@ def checkout_home(request):
     billing_address_id = request.session.get("billing_address_id", None)
 
     shipping_address_required = not cart_obj.is_digital
-    print("shipping_address_required ")
-    print(shipping_address_required )
+    
 
     shipping_address_id = request.session.get("shipping_address_id", None)
 
@@ -108,11 +107,19 @@ def checkout_home(request):
         "check that order is done"
         is_prepared = order_obj.check_done()
         if is_prepared:
-            did_charge, crg_msg = billing_profile.charge(order_obj)
+            did_charge, crg_msg, charge_object= billing_profile.charge(order_obj)
             if did_charge:
                 order_obj.mark_paid() # sort a signal for us
                 request.session['cart_items'] = 0
                 del request.session['cart_id']
+                products_bought=order_obj.cart.products.all()
+                product_owner_email=products_bought.first().owner_email
+                
+                send_mail_customer(customer_email=billing_profile.email,products=products_bought,order_id=charge_object.stripe_id)
+                send_mail_product_owner(product_email=product_owner_email,customer_email=billing_profile.email,products=products_bought,order_id=charge_object.stripe_id)
+             
+
+
                 if not billing_profile.user:
                     '''
                     is this the best spot?
@@ -120,7 +127,7 @@ def checkout_home(request):
                     billing_profile.set_cards_inactive()
                 return redirect("cart:success")
             else:
-                print(crg_msg)
+                # print(crg_msg)
                 return redirect("cart:checkout")
     context = {
         "object": order_obj,
@@ -142,6 +149,7 @@ def checkout_home(request):
 
 
 def checkout_done_view(request):
+
     return render(request, "carts/checkout-done.html", {})
 
 
