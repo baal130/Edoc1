@@ -273,7 +273,9 @@ class UserDetails(ModelMeta,models.Model):
 			return reverse("newsletter:doctor_detail", kwargs={"slug":self.slug})
 		except :
 			return None
-
+	def get_user_name_string(self):
+		name=self.user		
+		return "%s" %(name)
 	def get_absolute_url_comments(self):
 		try:
 			   

@@ -90,6 +90,12 @@
 							</h3>
 							<p class="lead"><span class="{% if instance.emergencycalls %} flaticon-delivery{% endif %} color-white"></span> {{ instance.telefon}}</p>
 							<p>{% if instance.emergencycalls %} {% trans "You can call us for emergency &" %}   {% endif %}  {% trans "make an appointment out of clinic." %}</p>
+							
+							{% if instance.get_user_name_string == "Eduardo" %}
+
+							<a  style="margin-bottom: 5px;" href="https://www.traveldoctor.mx/products/consultation-eduardo/" data-toggle="modal" class="btn btn-md ulockd-btn-blue"><span class="fa fa-shopping-bag"></span> {% trans "Consultation offer" %}</a>
+							<p>
+								{% endif %} 
 							<a href="#appointment_view" data-toggle="modal" class="btn btn-md ulockd-btn-white"><span class="flaticon-hospital-call"></span> {% trans "Apointment Now" %}</a>
 						</div>
 					</div>

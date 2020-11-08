@@ -8,6 +8,7 @@ $(document).ready(function(){
     
     function displaySubmitting(submitBtn, defaultText, doSubmit){
       if (doSubmit){
+        console.log("ggg")
         submitBtn.addClass("disabled")
         submitBtn.html("<i class='fa fa-spin fa-spinner'></i> Sending...")
       } else {

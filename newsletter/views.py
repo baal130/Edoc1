@@ -109,8 +109,9 @@ class DetailRatingAjaxView(AjaxRequiredMixin, View):
 def newsletter(request):
 	#javascript u js/newsletter.js
 	newsletteremail = request.POST.get('EMAIL')
-	
-		
+	print(newsletteremail)
+	print("fdanknkkfd")
+	print(request)
 	if request.is_ajax(): # Asynchronous JavaScript And XML / JSON
 		newslettercheck=NewsletterMail.objects.all().filter(email=newsletteremail)
 		if not newslettercheck:
@@ -126,7 +127,7 @@ def newsletter(request):
 
 		return JsonResponse(json_data, status=200) # HttpResponse
 	else:
-		return HttpResponseRedirect('/doctor/')
+		return HttpResponseRedirect('/fordoctors')
 		
 
 
@@ -194,30 +195,63 @@ def helpfordoctors(request):
 	return render(request,"landinghelp.html",context) #first page
 def contact(request):
 	
-	title= 'Contact us'
-	form=ContactForm(request.POST or None)
-	if form.is_valid():
-		form_email=form.cleaned_data.get("email")
-		form_message=form.cleaned_data.get("message")
-		form_full_name=form.cleaned_data.get("full_name")
-		
-		subject='Site contact form '
-		from_email=settings.EMAIL_HOST_USER
-		to_email=from_email
-		contact_message="%s: %s via %s " %(form_full_name, form_message, form_email)
-		send_mail(subject, 
-		contact_message, 
-			from_email,
-			[to_email], 
-			fail_silently=False )
-		messages.success(request,"Your message has been send",extra_tags='some-tag')#
-		return HttpResponseRedirect('/contact')
+	#javascript u js/newsletter.js
+	contactemail = request.POST.get('email')
+	contactname = request.POST.get('nameFirst')
+	contactsurname = request.POST.get('nameLast')
+	contactphone = request.POST.get('phone')
+	subject = request.POST.get('subject')
+	contactmessage = request.POST.get('message')
 	
-	context={
-		"form":form,
-		"title":title,
-	}           
-	return render(request,"contact.html",context)
+
+	print(contactemail)
+	print(contactname)
+	print(contactsurname)
+	print(contactphone)
+	print(subject)
+	print(contactmessage)
+
+	
+	if request.is_ajax(): # Asynchronous JavaScript And XML / JSON
+		from_email=settings.DEFAULT_FROM_EMAIL
+		to_email= settings.DEFAULT_FROM_EMAIL
+		customer_email=contactemail
+		template = get_template('email_template_contact.html')
+		
+		context = {
+		'subject': subject, 
+		'customer_email': customer_email,
+		'form_full_phone':contactphone,
+		'form_full_name':contactname,
+		'form_full_surname':contactsurname,
+		'form_message' :contactmessage, 
+		}
+		content = template.render(context)
+		
+		msg = EmailMessage(subject, content, from_email, [to_email])
+		msg.content_subtype = 'html'	
+		try:
+			
+			msg.send()
+			
+			json_data = {
+				"added": True,
+				"message":_('all is good ')
+			}	
+				
+		except:
+				
+
+			json_data = {
+				"added": False,
+				
+			}
+
+		return JsonResponse(json_data, status=200) # HttpResponse
+	else:
+		return HttpResponseRedirect('/fordoctors')
+
+
 @verified_email_required
 @login_required
 def user_detail(request):
@@ -660,8 +694,12 @@ def doctor_list(request): #list items
 			if x=="search_nearby":
 				gmaps = googlemaps.Client(key=GOOGLE_CLIENT_API)
 				getloc_result = gmaps.geolocate()#find your location 
+				#https://developers.google.com/maps/documentation/geolocation/overview
 				current_location_lat=getloc_result['location']['lat']
 				current_location_lng=getloc_result['location']['lng']
+				print("location nearby")
+				print(current_location_lat)
+				print(current_location_lng)
 				lat=current_location_lat
 				lng=current_location_lng
 			if x =="acceptanimales":
@@ -688,18 +726,17 @@ def doctor_list(request): #list items
 					state=comp['long_name']
 ############################### query ################################
 	if query:
-		print(queryset_list)
+		
 		queryset_list=queryset_list.filter(
 			Q(name__icontains=query)|
 			Q(surname__icontains=query)|
-			Q(state__icontains=state)|
-			Q(city__icontains=city)|
-			Q(speciality__icontains=speciality)|
-			Q(userdetailsservice__servicename__icontains=service)
+			Q(state__icontains=query)|
+			Q(city__icontains=query)|
+			Q(speciality__icontains=query)|
+			Q(userdetailsservice__servicename__icontains=query)
 			#Q(user__last_name__icontains=query)
 				).distinct()
-	
-
+		
 	if(state):
 		print(queryset_list)
 		queryset_list=queryset_list.filter(

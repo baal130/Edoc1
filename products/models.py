@@ -79,6 +79,7 @@ class Product(ModelMeta,models.Model):
     timestamp       = models.DateTimeField(auto_now_add=True)
     is_digital      = models.BooleanField(default=False) # User Library
     owner_email     = models.EmailField()
+    
     _metadata = {
         'title': 'title',
         "og_title": 'title',

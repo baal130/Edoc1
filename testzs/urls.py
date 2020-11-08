@@ -66,7 +66,7 @@ sitemaps={
 def set_language_from_url(request, user_language, url_name):
     translation.activate(user_language)
     request.session[translation.LANGUAGE_SESSION_KEY] = user_language
-    print(url_name)
+    # print(url_name)
     return redirect(url_name)
 
 urlpatterns = [

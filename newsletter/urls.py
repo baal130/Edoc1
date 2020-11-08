@@ -15,6 +15,7 @@ from .views import (
 	package_delete,
 	language_delete,
 	newsletter,
+	contact,
 	
 )
 
@@ -25,6 +26,7 @@ urlpatterns =[
 	# 	                       {'template': 'index-singlepage.html'}, 
  #        						name='doctor_detail'),
  	url(r'newsletter/$',newsletter,name='newsletter'),
+ 	url(r'contact/$',contact,name='contact'),
 	url(r'packagedelete/(?P<pk>\d+)/$',package_delete,name='package_delete'),
 	url(r'delete/(?P<pk>\d+)/$',delete_galery,name='delete_galery'),
 	url(r'deleteservice/(?P<pk>\d+)/$',delete_service,name='delete_service'),

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-27 17:21+0100\n"
+"POT-Creation-Date: 2020-11-08 19:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1069,46 +1069,50 @@ msgstr ""
 msgid "Post meta keywords"
 msgstr ""
 
-#: .\newsletter\views.py:243 .\newsletter\views.py:298
-#: .\newsletter\views.py:334 .\newsletter\views.py:412
-#: .\newsletter\views.py:482 .\newsletter\views.py:498
-#: .\newsletter\views.py:512 .\newsletter\views.py:523
-#: .\newsletter\views.py:535 .\newsletter\views.py:543
-#: .\newsletter\views.py:555 .\newsletter\views.py:568
+#: .\newsletter\views.py:239
+msgid "all is good "
+msgstr ""
+
+#: .\newsletter\views.py:277 .\newsletter\views.py:332
+#: .\newsletter\views.py:368 .\newsletter\views.py:446
+#: .\newsletter\views.py:516 .\newsletter\views.py:532
+#: .\newsletter\views.py:546 .\newsletter\views.py:557
+#: .\newsletter\views.py:569 .\newsletter\views.py:577
+#: .\newsletter\views.py:589 .\newsletter\views.py:602
 msgid "Your data has been saved"
 msgstr "Tus datos han sido guardados"
 
-#: .\newsletter\views.py:247 .\newsletter\views.py:302
-#: .\newsletter\views.py:338 .\newsletter\views.py:416
-#: .\newsletter\views.py:485 .\newsletter\views.py:501
-#: .\newsletter\views.py:515 .\newsletter\views.py:526
-#: .\newsletter\views.py:538 .\newsletter\views.py:546
-#: .\newsletter\views.py:558 .\newsletter\views.py:570
+#: .\newsletter\views.py:281 .\newsletter\views.py:336
+#: .\newsletter\views.py:372 .\newsletter\views.py:450
+#: .\newsletter\views.py:519 .\newsletter\views.py:535
+#: .\newsletter\views.py:549 .\newsletter\views.py:560
+#: .\newsletter\views.py:572 .\newsletter\views.py:580
+#: .\newsletter\views.py:592 .\newsletter\views.py:604
 msgid "Sorry,your data has not been saved, please try again"
 msgstr "Lo sentimos, sus datos no se han guardado. Vuelva a intentarlo."
 
-#: .\newsletter\views.py:732 .\newsletter\views.py:984
+#: .\newsletter\views.py:769 .\newsletter\views.py:1021
 #, fuzzy
 #| msgid "Search here?"
 msgid "Search results"
 msgstr "Busca aquí?"
 
-#: .\newsletter\views.py:738
+#: .\newsletter\views.py:775
 msgid "Featured Doctors"
 msgstr "Doctores destacados"
 
-#: .\newsletter\views.py:741
+#: .\newsletter\views.py:778
 msgid ""
 "Specific doctors not found  at TravelDoctor.Check below for more results"
 msgstr ""
 "Médicos específicos no encontrados en TravelDoctor. Consulte a continuación "
 "para obtener más resultados."
 
-#: .\newsletter\views.py:987
+#: .\newsletter\views.py:1024
 msgid "Top Offers"
 msgstr "Ofertas principales"
 
-#: .\newsletter\views.py:1141
+#: .\newsletter\views.py:1178
 #: .\templates\doctortemplate\email_templates\email_template_bought_product.html:12
 #: .\templates\doctortemplate\email_templates\email_template_bought_product_to_owner.html:12
 #: .\templates\doctortemplate\email_templates\email_template_to_customer.html:12
@@ -1117,14 +1121,14 @@ msgstr "Ofertas principales"
 msgid "Appoitment"
 msgstr "Cita"
 
-#: .\newsletter\views.py:1188 .\newsletter\views.py:1235
-#: .\newsletter\views.py:1548
+#: .\newsletter\views.py:1225 .\newsletter\views.py:1272
+#: .\newsletter\views.py:1585
 msgid "Your message has been send.We will send notice on your email"
 msgstr ""
 "Su mensaje ha sido enviado. Le enviaremos un aviso en su correo electrónico"
 
-#: .\newsletter\views.py:1191 .\newsletter\views.py:1238
-#: .\newsletter\views.py:1551
+#: .\newsletter\views.py:1228 .\newsletter\views.py:1275
+#: .\newsletter\views.py:1588
 msgid ""
 "Sorry,it is our fault. Message has not been send. Please send us a email or "
 "give us a call"
@@ -1164,7 +1168,7 @@ msgstr "Estado del pedido:"
 
 #: .\products\templates\products\detail.html:283
 msgid "Telephone Medical Advice"
-msgstr "Asesoramiento médico telefónico"
+msgstr "Asesoria médica telefónica"
 
 #: .\products\templates\products\detail.html:289
 #: .\templates\discount_detail.html:322
@@ -1224,17 +1228,17 @@ msgstr "Precios antiguos"
 msgid "View"
 msgstr "Ver"
 
-#: .\products\templates\products\snippets\update-cart.html:6
+#: .\products\templates\products\snippets\update-cart.html:9
 msgid "In cart"
 msgstr "En el carrito"
 
-#: .\products\templates\products\snippets\update-cart.html:6
+#: .\products\templates\products\snippets\update-cart.html:9
 #: .\templates\account\email.html:36
 #: .\templates\socialaccount\connections.html:35
 msgid "Remove"
 msgstr "Eliminar"
 
-#: .\products\templates\products\snippets\update-cart.html:8
+#: .\products\templates\products\snippets\update-cart.html:11
 msgid "Add to cart"
 msgstr "Añadir al carrito"
 
@@ -1813,6 +1817,7 @@ msgstr "No dudes en preguntar, estamos aquí para ti"
 #: .\templates\doctortemplate\modal_appoitment_django.html:75
 #: .\templates\doctortemplate\modal_detail_package.html:76
 #: .\templates\doctortemplate\modal_package.html:75
+#: .\templates\landing\landingContactForm.html:53
 msgid "Send"
 msgstr "Enviar"
 
@@ -1849,6 +1854,7 @@ msgid "All Packages"
 msgstr "Todos los paquetes"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:94
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:94
 #: .\templates\doctortemplate\email_templates\email_template_package.html:94
 #: .\templates\doctortemplate\email_templates\email_template_to_customer.html:94
 #, fuzzy
@@ -1861,22 +1867,26 @@ msgid "New appoitment request"
 msgstr "Nueva solicitud de cita"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:201
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:201
 #: .\templates\doctortemplate\email_templates\email_template_package.html:207
 msgid " You have new request for appoitment from mr./ms "
 msgstr "Tiene una nueva solicitud de cita de mr./ms"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:202
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:202
 #: .\templates\doctortemplate\email_templates\email_template_package.html:208
 msgid " Message: "
 msgstr "Mensaje:"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:214
 #: .\templates\doctortemplate\email_templates\email_template_bought_product_to_owner.html:220
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:214
 #: .\templates\doctortemplate\email_templates\email_template_package.html:220
 msgid "Respond now"
 msgstr "Responde ahora"
 
 #: .\templates\doctortemplate\email_templates\email_template.html:249
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:249
 #: .\templates\doctortemplate\email_templates\email_template_package.html:255
 msgid "Your client  appoitment information "
 msgstr "La información de su cita con el cliente"
@@ -1947,6 +1957,12 @@ msgstr "Responsable de la información"
 msgid "Use order number or mail to check which user bought item"
 msgstr ""
 "Utilice el número de pedido o el correo cuando se comunique con el médico"
+
+#: .\templates\doctortemplate\email_templates\email_template_contact.html:198
+#, fuzzy
+#| msgid "Contact"
+msgid "New Contact"
+msgstr "Contacto"
 
 #: .\templates\doctortemplate\email_templates\email_template_package.html:195
 msgid "New appoitment request with discount offer"
@@ -2148,7 +2164,7 @@ msgstr ""
 "electrónico y haz uncita con nuestro experto que puede resolver su problema"
 
 #: .\templates\doctortemplate\homesection.html:69
-#: .\templates\doctortemplate\homesection.html:93
+#: .\templates\doctortemplate\homesection.html:99
 msgid "Apointment Now"
 msgstr "Cita ahora"
 
@@ -2164,7 +2180,12 @@ msgstr "Puede llamarnos para emergencias y"
 msgid "make an appointment out of clinic."
 msgstr "Haga una cita fuera de la clínica."
 
-#: .\templates\doctortemplate\homesection.html:99
+#: .\templates\doctortemplate\homesection.html:96
+#, fuzzy
+msgid "Consultation offer"
+msgstr "Oferta de consulta"
+
+#: .\templates\doctortemplate\homesection.html:105
 msgid "Opening Hour"
 msgstr "Hora de apertura"
 
@@ -2195,20 +2216,20 @@ msgstr "Citemos con nuestros exparts que intentan resolver su problema."
 
 #: .\templates\doctortemplate\modal_appoitment.html:20
 msgid "Name"
-msgstr "nombre"
+msgstr "Nombre"
 
 #: .\templates\doctortemplate\modal_appoitment.html:27
 #: .\templates\landing\landingfooter.html:35
 msgid "Email"
-msgstr "correo electrónico"
+msgstr "Correo electrónico"
 
 #: .\templates\doctortemplate\modal_appoitment.html:34
 msgid "Date"
-msgstr "fecha"
+msgstr "Fecha"
 
 #: .\templates\doctortemplate\modal_appoitment.html:41
 msgid "Phone"
-msgstr "teléfono"
+msgstr "Teléfono"
 
 #: .\templates\doctortemplate\modal_appoitment_django.html:27
 #: .\templates\doctortemplate\modal_detail_package.html:27
@@ -2667,6 +2688,40 @@ msgstr "Últimos comentarios"
 msgid "Latest Articles"
 msgstr "últimos artículos"
 
+#: .\templates\landing\landingContactForm.html:65
+#, fuzzy
+#| msgid "Contact Us"
+msgid "Contact us"
+msgstr "Contacta con nosotros"
+
+#: .\templates\landing\landingContactForm.html:66
+msgid "WE’D LOVE TO HEAR WHAT YOU THINK"
+msgstr ""
+
+#: .\templates\landing\landingContactForm.html:68
+msgid ""
+"Contact us or use chat help for any of your questions. We can make also demo "
+"tour, for showing page possibilites"
+msgstr ""
+
+#: .\templates\landing\landingContactForm.html:70
+#, fuzzy
+#| msgid "Adress"
+msgid "Our Address"
+msgstr "Dirección"
+
+#: .\templates\landing\landingNewsletterForm.html:24
+msgid "Subscribe Our News"
+msgstr ""
+
+#: .\templates\landing\landingNewsletterForm.html:39
+msgid "Get latest offers, updates and special deals"
+msgstr ""
+
+#: .\templates\landing\landingNewsletterForm.html:41
+msgid "SUBSCRIBE"
+msgstr ""
+
 #: .\templates\landing\landingfooter.html:31
 #, fuzzy
 #| msgid "Contact"
@@ -2676,6 +2731,189 @@ msgstr "contacto"
 #: .\templates\landing\landingfooter.html:42
 msgid "Links"
 msgstr "Enlaces"
+
+#: .\templates\landing\landingfordoctors.html:77
+#, fuzzy
+#| msgid "Accepted patients"
+msgid "Need new patients"
+msgstr "Pacientes aceptados"
+
+#: .\templates\landing\landingfordoctors.html:81
+msgid " Promote yourself with us and increase sales of your services."
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:81
+msgid " Be seen and let new patients find you."
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:81
+#, fuzzy
+#| msgid "Book special offer."
+msgid "Create your own special offers."
+msgstr "Reservar oferta especial."
+
+#: .\templates\landing\landingfordoctors.html:81
+#, fuzzy
+#| msgid "Check out these special offers and save money"
+msgid "Create your own special offers and get personal web page."
+msgstr "Vea estas ofertas especiales y ahorre dinero"
+
+#: .\templates\landing\landingfordoctors.html:81
+#, fuzzy
+#| msgid "  Services: "
+msgid "All services free."
+msgstr "Servicios:"
+
+#: .\templates\landing\landingfordoctors.html:83
+msgid "LEARN MORE"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:84
+msgid "LIVE DEMO"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:97
+#, fuzzy
+#| msgid " Personal web page"
+msgid "Your own web page"
+msgstr "Pagina web personal"
+
+#: .\templates\landing\landingfordoctors.html:98
+msgid "Easy built web page adapted to any device"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:109
+msgid "5 minutes"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:115
+msgid "To create your profile"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:126
+msgid " Easy and Simple to Use"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:132
+msgid "Just build your profile and insert content you want."
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:150
+msgid "Automatic update"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:156
+msgid "Page automatically updates with your profile change"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:167
+#, fuzzy
+#| msgid "Featured Doctors"
+msgid "Feature yourself"
+msgstr "Doctores destacados"
+
+#: .\templates\landing\landingfordoctors.html:171
+msgid "Highlighting your comparatives"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:172
+msgid "advantages and technology"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:192
+msgid "Easy marketing tool"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:195
+msgid "Save your money and get more patients"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:206
+msgid "Increase your visibility fast"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:211
+msgid "Sponzorship clinic and marketing trough portal TravelDoctor"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:211
+msgid "Medical tourism and advertisment in other countries"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:211
+msgid " Analytical data about your viewed profiles and appoitments"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:222
+msgid " Increase your profit"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:228
+msgid ""
+"Our goal is to get you new patients and launch your services on market. "
+"Clinic without patients is biggest expense."
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:254
+#, fuzzy
+#| msgid "Book special offer."
+msgid "Create special offers"
+msgstr "Reservar oferta especial."
+
+#: .\templates\landing\landingfordoctors.html:258
+msgid ""
+"Make your own packages with discounts in order to atract more patients and "
+"better promotion"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:270
+#, fuzzy
+#| msgid " Total regular price for services in package "
+msgid "Insert your services in package"
+msgstr "Precio regular total por servicios en paquete"
+
+#: .\templates\landing\landingfordoctors.html:276
+#, fuzzy
+#| msgid "Some of our services:"
+msgid "Sell more of your combined sevices"
+msgstr "Algunos de nuestros servicios:"
+
+#: .\templates\landing\landingfordoctors.html:276
+#, fuzzy
+#| msgid "special possibilites"
+msgid "with special prizes"
+msgstr "posibilidades especiales"
+
+#: .\templates\landing\landingfordoctors.html:287
+#, fuzzy
+#| msgid "Appointment."
+msgid "Receive appoitment"
+msgstr "Cita"
+
+#: .\templates\landing\landingfordoctors.html:293
+#, fuzzy
+#| msgid "New appoitment request"
+msgid "Receive appoitments reservation"
+msgstr "Nueva solicitud de cita"
+
+#: .\templates\landing\landingfordoctors.html:320
+msgid "Best Solutions"
+msgstr "Mejores soluciones"
+
+#: .\templates\landing\landingfordoctors.html:320
+msgid "For Your Business"
+msgstr "Para tu negocio"
+
+#: .\templates\landing\landingfordoctors.html:322
+msgid ""
+" As just beggining with medical practice, TravelDoctor helped me attract "
+"more patients and get my bussines going"
+msgstr ""
+
+#: .\templates\landing\landingfordoctors.html:333
+#, fuzzy
+msgid "Dental doctor"
+msgstr "Buscar doctores"
 
 #: .\templates\landing\landinghelp.html:68
 msgid "FREQUENTLY ASKED QUESTIONS"

@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{%  load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<section class="form cid-s5zlFLHk1U" id="extForm23-1g">
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto mbr-form" data-form-type="formoid">
+                <!--Formbuilder Form-->
+                
+                <form  class="ulockd-mailchimp" action='{% url "newsletter:newsletter" %}'   method="POST" class="mbr-form form-with-styler"  language="LANGUAGE_CODE" data-form-title="Newsletter" data-endpoint='{% url "newsletter:newsletter"%}' >{% csrf_token %}
+                    <input type="hidden" name="email" data-form-email="true" >
+                    <div class="form-row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out
+                            the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
+                            problem!</div>
+                    </div>
+                    <div class="dragArea form-row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 title align-center">
+                            <h3 class="mbr-section-subtitle mbr-semibold mbr-light mbr-fonts-style display-5"></h3>
+                            <h5 class="mbr-fonts-style align-center display-2">{% trans "Subscribe Our News"%}</h5>
+                        </div>
+                      <!--   <div class="col-lg-4 col-md-12 col-sm-12 form-group" data-for="last-name" style="transform: translateZ(0px);">
+                            <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri" for="last-name-extForm23-1g"></span>
+                            <input type="text" name="last-name" placeholder="Last Name" data-form-field="name" class="form-control display-7" required="required" value="" id="last-name-extForm23-1g">
+                        </div> -->
+                       <!--  <div data-for="first-name" class="col-lg-4 col-md-12 col-sm-12 form-group" style="transform: translateZ(0px);">
+                            <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri" for="first-name-extForm23-1g"></span>
+                            <input type="text" name="first-name" placeholder="First Name" data-form-field="first-name" class="form-control display-7" value="" id="first-name-extForm23-1g">
+                        </div> -->
+                        <div class="col-lg-4  offset-lg-4 col-md-12 col-sm-12 form-group" data-for="email">
+                            <span class="mbr-iconfont socicon-mail socicon" for="email-extForm23-1g"></span>
+                            <input type="email" name="EMAIL" placeholder="Email" data-form-field="email" class="form-control display-7" required="required" value="" id="">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center">
+                            <p class="mbr-fonts-style py-2 display-5">{%trans "Get latest offers, updates and special deals"%}</p>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-black display-7">{% trans "SUBSCRIBE"%}</button></div>
+                        <div class="show-alert-news  col-auto m-auto mbr-section-btn"></div>
+                    </div>
+                </form>
+                
+                <!--Formbuilder Form-->
+            </div>
+        </div>
+    </div>
+</section>
