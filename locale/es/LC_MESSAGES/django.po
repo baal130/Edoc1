@@ -2740,15 +2740,14 @@ msgstr "Pacientes aceptados"
 
 #: .\templates\landing\landingfordoctors.html:81
 msgid " Promote yourself with us and increase sales of your services."
-msgstr ""
+msgstr "Promuévete con nosotros y aumenta las ventas de tus servicios."
 
 #: .\templates\landing\landingfordoctors.html:81
 msgid " Be seen and let new patients find you."
-msgstr ""
+msgstr "Ser visto y dejar que nuevos pacientes te encuentren."
 
 #: .\templates\landing\landingfordoctors.html:81
 #, fuzzy
-#| msgid "Book special offer."
 msgid "Create your own special offers."
 msgstr "Reservar oferta especial."
 
@@ -2766,7 +2765,7 @@ msgstr "Servicios:"
 
 #: .\templates\landing\landingfordoctors.html:83
 msgid "LEARN MORE"
-msgstr ""
+msgstr "APRENDE MÁS"
 
 #: .\templates\landing\landingfordoctors.html:84
 msgid "LIVE DEMO"
@@ -2780,31 +2779,31 @@ msgstr "Pagina web personal"
 
 #: .\templates\landing\landingfordoctors.html:98
 msgid "Easy built web page adapted to any device"
-msgstr ""
+msgstr "Página web de fácil construcción adaptada a cualquier dispositivo"
 
 #: .\templates\landing\landingfordoctors.html:109
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutos"
 
 #: .\templates\landing\landingfordoctors.html:115
 msgid "To create your profile"
-msgstr ""
+msgstr "Para crear tu perfil"
 
 #: .\templates\landing\landingfordoctors.html:126
 msgid " Easy and Simple to Use"
-msgstr ""
+msgstr "Fácil y simple de usar"
 
 #: .\templates\landing\landingfordoctors.html:132
 msgid "Just build your profile and insert content you want."
-msgstr ""
+msgstr "Simplemente cree su perfil e inserte el contenido que desee."
 
 #: .\templates\landing\landingfordoctors.html:150
 msgid "Automatic update"
-msgstr ""
+msgstr "Actualización automática"
 
 #: .\templates\landing\landingfordoctors.html:156
 msgid "Page automatically updates with your profile change"
-msgstr ""
+msgstr "La página se actualiza automáticamente con su cambio de perfil"
 
 #: .\templates\landing\landingfordoctors.html:167
 #, fuzzy
@@ -2814,46 +2813,47 @@ msgstr "Doctores destacados"
 
 #: .\templates\landing\landingfordoctors.html:171
 msgid "Highlighting your comparatives"
-msgstr ""
+msgstr "Destacando sus comparativas"
 
 #: .\templates\landing\landingfordoctors.html:172
 msgid "advantages and technology"
-msgstr ""
+msgstr "ventajas y tecnología"
 
 #: .\templates\landing\landingfordoctors.html:192
 msgid "Easy marketing tool"
-msgstr ""
+msgstr "Herramienta de marketing sencilla"
 
 #: .\templates\landing\landingfordoctors.html:195
 msgid "Save your money and get more patients"
-msgstr ""
+msgstr "Ahorre su dinero y consiga más pacientes"
 
 #: .\templates\landing\landingfordoctors.html:206
 msgid "Increase your visibility fast"
-msgstr ""
+msgstr "Aumente su visibilidad rápidamente"
 
 #: .\templates\landing\landingfordoctors.html:211
 msgid "Sponzorship clinic and marketing trough portal TravelDoctor"
-msgstr ""
+msgstr "Clínica de patrocinio y marketing a través del portal TravelDoctor"
 
 #: .\templates\landing\landingfordoctors.html:211
 msgid "Medical tourism and advertisment in other countries"
-msgstr ""
+msgstr "Turismo médico y publicidad en otros países"
 
 #: .\templates\landing\landingfordoctors.html:211
 msgid " Analytical data about your viewed profiles and appoitments"
-msgstr ""
+msgstr "Datos analíticos sobre sus perfiles y nombramientos vistos"
 
 #: .\templates\landing\landingfordoctors.html:222
 msgid " Increase your profit"
-msgstr ""
+msgstr "Incrementa tus ganancias"
 
 #: .\templates\landing\landingfordoctors.html:228
 msgid ""
 "Our goal is to get you new patients and launch your services on market. "
 "Clinic without patients is biggest expense."
 msgstr ""
-
+"Nuestro objetivo es conseguirle nuevos pacientes y lanzar sus servicios al mercado"
+"La clínica sin pacientes es el mayor gasto"
 #: .\templates\landing\landingfordoctors.html:254
 #, fuzzy
 #| msgid "Book special offer."
@@ -2865,7 +2865,8 @@ msgid ""
 "Make your own packages with discounts in order to atract more patients and "
 "better promotion"
 msgstr ""
-
+"Haz tus propios paquetes con descuentos para atraer más pacientes y"
+"mejor promoción"
 #: .\templates\landing\landingfordoctors.html:270
 #, fuzzy
 #| msgid " Total regular price for services in package "
