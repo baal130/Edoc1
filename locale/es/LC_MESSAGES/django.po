@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 19:59+0100\n"
+"POT-Creation-Date: 2020-11-13 14:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,6 +173,7 @@ msgstr ""
 
 #: .\bootcamp\messenger\models.py:26
 #: .\templates\doctortemplate\modal_appoitment.html:48
+#: .\templates\landing\landingContactForm.html:47
 msgid "Message"
 msgstr "Mensaje"
 
@@ -2049,8 +2050,6 @@ msgid "Call us"
 msgstr "Llamanos"
 
 #: .\templates\doctortemplate\footersnippets\contactinfouser.html:20
-#, fuzzy
-#| msgid "Find doctors"
 msgid "Find us"
 msgstr "Encuentra doctores"
 
@@ -2060,10 +2059,8 @@ msgstr "Enlace importante"
 
 #: .\templates\doctortemplate\footersnippets\links.html:7
 #: .\templates\landing\landingfooter.html:45
-#, fuzzy
-#| msgid "Featured Doctors"
 msgid "For Doctors"
-msgstr "Doctores destacados"
+msgstr "Para especialistas"
 
 #: .\templates\doctortemplate\footersnippets\links.html:10
 #: .\templates\landing\landingfooter.html:47
@@ -2076,8 +2073,6 @@ msgid "Privacy policy"
 msgstr "Privacidad"
 
 #: .\templates\doctortemplate\funfactsection.html:9
-#, fuzzy
-#| msgid "Featured Doctors"
 msgid "Total Doctor's"
 msgstr "Doctores destacados"
 
@@ -2086,8 +2081,6 @@ msgid "Total Awards"
 msgstr "Premios totales"
 
 #: .\templates\doctortemplate\funfactsection.html:26
-#, fuzzy
-#| msgid "  Services: "
 msgid "Clinical Services"
 msgstr "Servicios:"
 
@@ -2219,6 +2212,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #: .\templates\doctortemplate\modal_appoitment.html:27
+#: .\templates\landing\landingContactForm.html:35
 #: .\templates\landing\landingfooter.html:35
 msgid "Email"
 msgstr "Correo electrónico"
@@ -2228,6 +2222,7 @@ msgid "Date"
 msgstr "Fecha"
 
 #: .\templates\doctortemplate\modal_appoitment.html:41
+#: .\templates\landing\landingContactForm.html:39
 msgid "Phone"
 msgstr "Teléfono"
 
@@ -2520,7 +2515,7 @@ msgid "Doctor list"
 msgstr "Lista de doctores"
 
 #: .\templates\doctortemplate\rightsidemenu.html:17
-#: .\templates\landingnavbar.html:52
+#: .\templates\landing\landingnavbar.html:52 .\templates\landingnavbar.html:52
 #, fuzzy
 #| msgid "Find doctors"
 msgid "For doctors"
@@ -2688,43 +2683,57 @@ msgstr "Últimos comentarios"
 msgid "Latest Articles"
 msgstr "últimos artículos"
 
+#: .\templates\landing\landingContactForm.html:25
+msgid "First Name"
+msgstr "Nombre"
+
+#: .\templates\landing\landingContactForm.html:29
+
+msgid "Last Name"
+msgstr "Apellido"
+
+#: .\templates\landing\landingContactForm.html:43
+msgid "Subject"
+msgstr "El tema"
+
+#: .\templates\landing\landingContactForm.html:51
+msgid "How did your hear about us"
+msgstr "Como te enteraste de nosotros"
+
 #: .\templates\landing\landingContactForm.html:65
-#, fuzzy
-#| msgid "Contact Us"
 msgid "Contact us"
 msgstr "Contacta con nosotros"
 
-#: .\templates\landing\landingContactForm.html:66
+#: .\templates\landing\landingContactForm.html:66for
 msgid "WE’D LOVE TO HEAR WHAT YOU THINK"
-msgstr ""
+msgstr "NOS ENCANTARÍA ESCUCHAR LO QUE USTED PIENSA"
 
 #: .\templates\landing\landingContactForm.html:68
 msgid ""
 "Contact us or use chat help for any of your questions. We can make also demo "
 "tour, for showing page possibilites"
 msgstr ""
+"Contáctenos o use la ayuda del chat para cualquiera de sus preguntas. "
+"También podemos hacer una demostraciónrecorrido, para mostrar las "
+"posibilidades de la página"
 
 #: .\templates\landing\landingContactForm.html:70
-#, fuzzy
-#| msgid "Adress"
 msgid "Our Address"
 msgstr "Dirección"
 
 #: .\templates\landing\landingNewsletterForm.html:24
 msgid "Subscribe Our News"
-msgstr ""
+msgstr "Suscríbete a nuestras noticias"
 
 #: .\templates\landing\landingNewsletterForm.html:39
 msgid "Get latest offers, updates and special deals"
-msgstr ""
+msgstr "Obtenga las últimas ofertas, actualizaciones y ofertas especiales"
 
 #: .\templates\landing\landingNewsletterForm.html:41
 msgid "SUBSCRIBE"
-msgstr ""
+msgstr "Suscríbete"
 
 #: .\templates\landing\landingfooter.html:31
-#, fuzzy
-#| msgid "Contact"
 msgid "Contacts"
 msgstr "contacto"
 
@@ -2733,10 +2742,8 @@ msgid "Links"
 msgstr "Enlaces"
 
 #: .\templates\landing\landingfordoctors.html:77
-#, fuzzy
-#| msgid "Accepted patients"
 msgid "Need new patients"
-msgstr "Pacientes aceptados"
+msgstr "Necesita nuevos pacientes"
 
 #: .\templates\landing\landingfordoctors.html:81
 msgid " Promote yourself with us and increase sales of your services."
@@ -2747,19 +2754,14 @@ msgid " Be seen and let new patients find you."
 msgstr "Ser visto y dejar que nuevos pacientes te encuentren."
 
 #: .\templates\landing\landingfordoctors.html:81
-#, fuzzy
 msgid "Create your own special offers."
 msgstr "Reservar oferta especial."
 
 #: .\templates\landing\landingfordoctors.html:81
-#, fuzzy
-#| msgid "Check out these special offers and save money"
 msgid "Create your own special offers and get personal web page."
 msgstr "Vea estas ofertas especiales y ahorre dinero"
 
 #: .\templates\landing\landingfordoctors.html:81
-#, fuzzy
-#| msgid "  Services: "
 msgid "All services free."
 msgstr "Servicios:"
 
@@ -2772,8 +2774,6 @@ msgid "LIVE DEMO"
 msgstr ""
 
 #: .\templates\landing\landingfordoctors.html:97
-#, fuzzy
-#| msgid " Personal web page"
 msgid "Your own web page"
 msgstr "Pagina web personal"
 
@@ -2806,10 +2806,8 @@ msgid "Page automatically updates with your profile change"
 msgstr "La página se actualiza automáticamente con su cambio de perfil"
 
 #: .\templates\landing\landingfordoctors.html:167
-#, fuzzy
-#| msgid "Featured Doctors"
 msgid "Feature yourself"
-msgstr "Doctores destacados"
+msgstr "Promocionarte a ti mismo"
 
 #: .\templates\landing\landingfordoctors.html:171
 msgid "Highlighting your comparatives"
@@ -2852,11 +2850,10 @@ msgid ""
 "Our goal is to get you new patients and launch your services on market. "
 "Clinic without patients is biggest expense."
 msgstr ""
-"Nuestro objetivo es conseguirle nuevos pacientes y lanzar sus servicios al mercado"
-"La clínica sin pacientes es el mayor gasto"
+"Nuestro objetivo es conseguirle nuevos pacientes y lanzar sus servicios al "
+"mercadoLa clínica sin pacientes es el mayor gasto"
+
 #: .\templates\landing\landingfordoctors.html:254
-#, fuzzy
-#| msgid "Book special offer."
 msgid "Create special offers"
 msgstr "Reservar oferta especial."
 
@@ -2865,35 +2862,27 @@ msgid ""
 "Make your own packages with discounts in order to atract more patients and "
 "better promotion"
 msgstr ""
-"Haz tus propios paquetes con descuentos para atraer más pacientes y"
-"mejor promoción"
+"Haz tus propios paquetes con descuentos para atraer más pacientes ymejor "
+"promoción"
+
 #: .\templates\landing\landingfordoctors.html:270
-#, fuzzy
-#| msgid " Total regular price for services in package "
 msgid "Insert your services in package"
-msgstr "Precio regular total por servicios en paquete"
+msgstr "Inserte sus servicios en el paquete"
 
 #: .\templates\landing\landingfordoctors.html:276
 #, fuzzy
-#| msgid "Some of our services:"
 msgid "Sell more of your combined sevices"
 msgstr "Algunos de nuestros servicios:"
 
 #: .\templates\landing\landingfordoctors.html:276
-#, fuzzy
-#| msgid "special possibilites"
 msgid "with special prizes"
 msgstr "posibilidades especiales"
 
 #: .\templates\landing\landingfordoctors.html:287
-#, fuzzy
-#| msgid "Appointment."
 msgid "Receive appoitment"
 msgstr "Cita"
 
 #: .\templates\landing\landingfordoctors.html:293
-#, fuzzy
-#| msgid "New appoitment request"
 msgid "Receive appoitments reservation"
 msgstr "Nueva solicitud de cita"
 
@@ -2910,6 +2899,8 @@ msgid ""
 " As just beggining with medical practice, TravelDoctor helped me attract "
 "more patients and get my bussines going"
 msgstr ""
+"Como recién comenzaba con la práctica médica, Travel Doctor me ayudó a "
+"atraermás pacientes y poner en marcha mi negocio"
 
 #: .\templates\landing\landingfordoctors.html:333
 #, fuzzy
