@@ -308,10 +308,10 @@ display: -ms-flexbox!important;
           </div>
          
         </div>
-{% cache 5000 landing %} 
+
     <div class="container-fluid ">
-        <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="500000">
-            <div class="carousel-inner " data-visible="4">
+        <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="7000">
+            <div class="carousel-inner " data-visible="5">
                 
                 
                 
@@ -320,7 +320,7 @@ display: -ms-flexbox!important;
            {% for objects in object_list %}      
             <div class="carousel-item ">
                   <div class="media-container-row">
-                    <div style=" height:100%" class="col-md-12 wrapper">
+                    <div style=" height:100%" class="col-md-12 col-lg-2 wrapper">
                       
                       <div style=" height:100%" class="wrap-img">
                         
@@ -856,7 +856,7 @@ display: -ms-flexbox!important;
 </section>
 
 {% include "landingfooter.html" %}
-{% endcache %}
+
 <script src="{% static 'landing/assets/web/assets/jquery/jquery.min.js'%}"></script>
   <script src="{% static 'landing/assets/popper/popper.min.js'%}"></script>
   <script src="{% static 'landing/assets/bootstrap/js/bootstrap.min.js'%}"></script>

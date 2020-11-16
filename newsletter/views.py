@@ -38,6 +38,7 @@ import json
 import googlemaps # https://github.com/googlemaps/google-maps-services-python
 from search.utils import yelp_search,GooglePlaces
 from analytics.models import UserSession
+from analytics.utils import get_client_ip,get_client_city_data
 import ast
 from .languages import categoryYelp
 from django.utils import timezone
@@ -46,6 +47,7 @@ from allauth.account.models import EmailAddress
 from allauth.account.decorators import verified_email_required
 from django.contrib.auth.models import User
 from django.views.decorators.cache import cache_page
+
 
 GOOGLE_CLIENT_API = getattr(settings, 'GOOGLE_CLIENT_API', 'None')
 
@@ -700,8 +702,19 @@ def doctor_list(request): #list items
 				print("location nearby")
 				print(current_location_lat)
 				print(current_location_lng)
+
+
+
 				lat=current_location_lat
 				lng=current_location_lng
+				ip_address = get_client_ip(request)
+				print(ip_address)
+	 
+	
+				city_data = get_client_city_data(ip_address) #ne radi na local serveru
+				request.session['CITY'] = str(city_data.get('city', 'New York'))	
+				print(request.session['CITY'] )	
+				
 			if x =="acceptanimales":
 				queryset_list=queryset_list.filter(Q(acceptanimales=True)).distinct()
 			if x =="invalidsaccess":
