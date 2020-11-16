@@ -699,6 +699,8 @@ def doctor_list(request): #list items
 				#https://developers.google.com/maps/documentation/geolocation/overview
 				current_location_lat=getloc_result['location']['lat']
 				current_location_lng=getloc_result['location']['lng']
+				accuracy=getloc_result['accuracy']
+				print(accuracy)
 				print("location nearby")
 				print(current_location_lat)
 				print(current_location_lng)
@@ -707,13 +709,17 @@ def doctor_list(request): #list items
 
 				lat=current_location_lat
 				lng=current_location_lng
-				ip_address = get_client_ip(request)
-				print(ip_address)
-	 
-	
-				city_data = get_client_city_data(ip_address) #ne radi na local serveru
-				request.session['CITY'] = str(city_data.get('city', 'New York'))	
-				print(request.session['CITY'] )	
+				#if accuracy is bad get location by ip adress 
+				if(accuracy > 2000): 
+					ip_address = get_client_ip(request)
+					print(ip_address)
+					city_data = get_client_city_data(ip_address) #ne radi na local serveru
+					request.session['CITY'] = str(city_data.get('city', 'New York'))	
+					lat=city_data.get('latitude')
+					lng=city_data.get('longitude')
+					print(lat)
+					print(lng)
+					print(request.session['CITY'] )	
 				
 			if x =="acceptanimales":
 				queryset_list=queryset_list.filter(Q(acceptanimales=True)).distinct()
